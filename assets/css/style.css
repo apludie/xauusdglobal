@@ -596,3 +596,49 @@ strong { color: #fff; font-weight: 600; }
 
 .confirm-badge { width: 72px; height: 72px; margin: 0 auto 22px; border-radius: 22px; display: grid; place-items: center; color: #17130a; background: var(--gold-grad); box-shadow: 0 16px 40px -12px rgba(242,193,78,.6); }
 .confirm-badge svg { width: 36px; height: 36px; }
+
+/* Mission messaging */
+.q-card { padding: 22px 24px; }
+.q-card h3 { font-size: 1.05rem; line-height: 1.4; margin: 0; font-weight: 500; color: var(--text); }
+.q-card h3::before { content: "\201C"; display: block; font-family: var(--font-display); font-size: 2.2rem; line-height: .8; color: var(--gold); margin-bottom: 6px; }
+@media (min-width: 900px) { .steps--6 { grid-template-columns: repeat(3, 1fr); } }
+.step .tag { margin-bottom: 10px; }
+.step h3 { margin-bottom: 6px; }
+
+/* About: gaps + pull quote */
+.text-center { text-align: center; }
+.gap__fix { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); font-size: .95rem; color: var(--text-2); }
+.gap__fix strong { color: var(--gold); font-weight: 600; }
+.prose blockquote.pull { font-family: var(--font-display); font-size: 1.25rem; line-height: 1.5; color: var(--text); }
+
+/* Articles: think-it-through, sources, companion */
+.prose .think { margin: 2.4em 0; padding: 26px 28px; border-radius: 18px; background: linear-gradient(180deg, rgba(242,193,78,.08), rgba(242,193,78,.02)); border: 1px solid rgba(242,193,78,.28); }
+.prose .think h2 { margin-top: 6px; }
+.prose .think ol { margin-bottom: 0; }
+.prose .think li { margin-bottom: 8px; }
+.prose .think .think__foot { margin: 16px 0 0; font-size: .92rem; color: var(--text-2); }
+.prose .sources ul { font-size: .95rem; }
+.prose .sources li { margin-bottom: 6px; color: var(--text-2); }
+.prose .companion { margin: 1.2em 0 0; padding: 12px 16px; border-left: 3px solid var(--gold); background: var(--surface); border-radius: 0 10px 10px 0; font-size: .95rem; }
+@media (max-width: 560px) { .prose .think { padding: 20px 18px; } }
+
+/* Position size calculator */
+.calc { display: grid; gap: 20px; padding: 24px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line-strong); }
+@media (min-width: 900px) { .calc { grid-template-columns: 1.3fr 1fr; padding: 32px; gap: 32px; } }
+.calc__grid { display: grid; gap: 16px; }
+@media (min-width: 560px) { .calc__grid { grid-template-columns: 1fr 1fr; } }
+.calc__field span { display: block; font-weight: 600; font-size: .9rem; margin-bottom: 7px; color: var(--text); }
+.calc__field small { font-weight: 400; color: var(--text-3); }
+.calc .input { width: 100%; min-height: 48px; padding: 11px 14px; border-radius: 10px; font: inherit; font-family: var(--font-mono); color: var(--text); background: rgba(255,255,255,.04); border: 1px solid var(--line-strong); }
+.calc .input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-glow); }
+.calc__note { margin: 14px 0 0; font-size: .85rem; color: var(--text-3); }
+.calc__out { padding: 22px; border-radius: 16px; background: linear-gradient(180deg, rgba(242,193,78,.10), rgba(242,193,78,.02)); border: 1px solid rgba(242,193,78,.3); }
+.calc__main span { display: block; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.calc__main strong { display: block; font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 3rem); line-height: 1.1; margin: 6px 0 4px; color: var(--text); }
+.calc__main small { color: var(--text-2); font-family: var(--font-mono); font-size: .85rem; }
+.calc__list { margin: 18px 0 0; display: grid; gap: 0; }
+.calc__list div { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+.calc__list dt { color: var(--text-2); font-size: .92rem; }
+.calc__list dd { margin: 0; font-family: var(--font-mono); font-size: .92rem; color: var(--text); text-align: right; }
+.calc__warn { margin: 14px 0 0; padding: 10px 12px; border-radius: 10px; background: rgba(255,120,90,.1); border: 1px solid rgba(255,120,90,.35); color: #ffb4a0; font-size: .88rem; }
+.calc__warn[hidden] { display: none; }
