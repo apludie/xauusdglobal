@@ -561,3 +561,7 @@ strong { color: #fff; font-weight: 600; }
 .site-nav .nav-cta a.btn--gold, .site-nav .nav-cta a.btn--gold:hover { color: #17130a; background: var(--gold-grad); }
 .tier .status-list li { padding: 12px 14px; color: var(--text-2); }
 .tier .status-list li::before { display: none; }
+
+.tv-box--calendar { height: 640px; }
+@media (max-width: 640px) { .tv-box--calendar { height: 560px; } }
+.news-card h3 { font-size: 1.05rem; line-height: 1.35; }
