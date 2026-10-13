@@ -15,7 +15,7 @@ eyebrow: "Contact"
 
 - **Content corrections.** If you believe an article contains an error, tell us the page and the issue. We take accuracy seriously and will review it.
 - **Website feedback.** Broken links, accessibility problems or display issues.
-- **Community questions.** General questions about the planned community. Registration is **not open yet**, and we can't accept sign-ups or payments.
+- **Community questions.** General questions about the planned community. Registration and payments are **not open yet**, but you can [join the waitlist](/membership/#registration) to be notified when membership launches.
 - **Partnership or media enquiries.**
 
 ## What we can't help with
@@ -25,7 +25,7 @@ eyebrow: "Contact"
 
 ## Beware of impersonation
 
-XAUUSD Global does not sell signals, manage accounts, or ask for payments through private messages. Registration and payments are not open. If anyone contacts you claiming to sell XAUUSD Global memberships or asking for money or wallet details on our behalf, do not respond.
+XAUUSD Global does not sell signals, manage accounts, or ask for payments through private messages. Registration and payments are not open, and we never ask for money or wallet details by email. If anyone contacts you claiming to sell XAUUSD Global memberships or asking for money or wallet details on our behalf, do not respond.
 
 ## Learn while you wait
 
