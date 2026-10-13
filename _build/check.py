@@ -68,7 +68,7 @@ def main():
     titles, descs = {}, {}
     for f, p in pages.items():
         rel = "/" + os.path.relpath(f, ROOT).replace("index.html", "")
-        is404 = rel == "/404.html"
+        is404 = rel == "/404.html" or "noindex" in p.meta.get("robots", "")
         if p.h1 != 1:
             errors.append(f"{rel}: {p.h1} <h1> elements")
         if not is404:
@@ -112,7 +112,7 @@ def main():
     for loc in locs:
         if not os.path.exists(url_to_file(loc.replace(C.SITE_URL, ""))):
             errors.append(f"sitemap entry missing: {loc}")
-    public = len(pages) - 1
+    public = sum(1 for q in pages.values() if "noindex" not in q.meta.get("robots", ""))
     if len(locs) != public:
         errors.append(f"sitemap has {len(locs)} URLs but {public} public pages exist")
     secrets = re.compile(r"(api[_-]?key|secret|token)\s*[:=]\s*['\"][A-Za-z0-9]{12,}", re.I)

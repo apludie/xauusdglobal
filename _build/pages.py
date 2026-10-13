@@ -920,6 +920,41 @@ def contact_body():
             "registration opens. We are not collecting messages through forms on this site.")
 
 
+def waitlist_confirmed():
+    """Shown after a visitor clicks the double opt-in link in Brevo's email."""
+    body = f"""<section class="hero grid-bg">
+  <div class="wrap wrap--text center">
+    <div class="confirm-badge" aria-hidden="true">{icon("shield")}</div>
+    <span class="eyebrow">Founding waitlist · Confirmed</span>
+    <h1>You're on the list. <span class="gold-text">Welcome.</span></h1>
+    <p class="hero__lede" style="margin-left:auto;margin-right:auto">Thank you for confirming your email. You're now on the XAUUSD Global founding waitlist, and you'll be among the first to hear when membership opens.</p>
+    <div class="btn-row" style="justify-content:center"><a class="btn btn--gold" href="/xauusd-trading-strategies/">Explore Trading Strategies {ARROW_BTN}</a><a class="btn btn--ghost" href="/community/">Read the Community Vision</a></div>
+  </div>
+</section>
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head section-head--center"><span class="eyebrow">What happens next</span><h2>Three things to know</h2></div>
+    <div class="steps" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+      <div class="step"><h3>We'll email you at launch</h3><p>You'll receive an invitation from <strong>updates@xauusdglobal.com</strong> as soon as registration opens. Add it to your contacts so it doesn't land in spam.</p></div>
+      <div class="step"><h3>No payment, no obligation</h3><p>Joining the waitlist is free. The final price and membership terms will be shown clearly before anyone is asked to pay.</p></div>
+      <div class="step"><h3>Unsubscribe anytime</h3><p>Every email includes a one-click unsubscribe link. Read how we handle your details in our <a href="/privacy-policy/">Privacy Policy</a>.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Start learning while you wait</span><h2>Popular guides</h2></div>
+    <div class="cards cards--3">
+      {card("/strategies/market-structure-xauusd/", "XAUUSD market structure", "The shared language most community discussions will use: swings, BOS and CHoCH.", tag="Guide")}
+      {card("/strategies/xauusd-risk-management/", "Risk management & position sizing", "Size gold positions from your stop distance and protect your account.", tag="Guide")}
+      {card("/blog/how-to-keep-a-trading-journal/", "How to keep a trading journal", "Build the review habit that structured community feedback depends on.", tag="Blog")}
+    </div>
+  </div>
+</section>"""
+    return L.page(path="/waitlist-confirmed/", title="You're on the Waitlist | XAUUSD Global",
+                  description="Your place on the XAUUSD Global founding waitlist is confirmed.", body=body, noindex=True)
+
+
 def not_found():
     body = f"""<section class="hero grid-bg"><div class="wrap wrap--text center">
   <span class="eyebrow">Error 404</span>

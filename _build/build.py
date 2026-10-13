@@ -130,6 +130,8 @@ def main():
 
     # 404 (not in sitemap, noindex)
     write("/404.html", P.not_found())
+    # private confirmation page (noindex, not in sitemap)
+    write("/waitlist-confirmed/", P.waitlist_confirmed())
 
     # sitemap
     urls = []
