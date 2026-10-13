@@ -148,16 +148,17 @@ strong { color: #fff; font-weight: 600; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--gold-2); }
 .site-nav .nav-cta { margin-top: 16px; border-bottom: 0; }
 
-@media (min-width: 1020px) {
+@media (min-width: 1180px) {
   .nav-toggle { display: none; }
   .site-nav { position: static; display: block; background: none; border: 0; padding: 0; overflow: visible; max-height: none; }
   .site-nav > ul { display: flex; align-items: center; gap: 2px; }
-  .site-nav a { border: 0; padding: 8px 11px; font-size: 0.93rem; border-radius: 8px; }
+  .site-nav a { border: 0; padding: 8px 9px; font-size: 0.92rem; border-radius: 8px; white-space: nowrap; }
   .site-nav a:hover { background: rgba(255, 255, 255, 0.04); }
   .site-nav a[aria-current="page"] { color: var(--gold-2); background: rgba(242, 193, 78, 0.07); }
   .site-nav .nav-cta { margin: 0 0 0 10px; }
   .site-nav .nav-cta a { padding: 8px 14px; }
 }
+@media (min-width: 1300px) { .site-nav a { padding: 8px 11px; font-size: 0.93rem; } }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -642,3 +643,13 @@ strong { color: #fff; font-weight: 600; }
 .calc__list dd { margin: 0; font-family: var(--font-mono); font-size: .92rem; color: var(--text); text-align: right; }
 .calc__warn { margin: 14px 0 0; padding: 10px 12px; border-radius: 10px; background: rgba(255,120,90,.1); border: 1px solid rgba(255,120,90,.35); color: #ffb4a0; font-size: .88rem; }
 .calc__warn[hidden] { display: none; }
+
+/* Tool promo band */
+.tool-band { display: grid; gap: 18px; align-items: center; padding: 22px 24px; border-radius: 18px; text-decoration: none; color: inherit; background: linear-gradient(120deg, rgba(242,193,78,.12), rgba(242,193,78,.02) 60%); border: 1px solid rgba(242,193,78,.3); transition: border-color .2s ease, transform .2s ease; }
+.tool-band:hover { border-color: var(--gold); transform: translateY(-2px); }
+.tool-band__icon { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: rgba(242,193,78,.14); color: var(--gold); }
+.tool-band__icon svg { width: 26px; height: 26px; }
+.tool-band h3 { margin: 4px 0 6px; }
+.tool-band p { margin: 0; color: var(--text-2); }
+.tool-band .btn { justify-self: start; }
+@media (min-width: 820px) { .tool-band { grid-template-columns: auto 1fr auto; padding: 24px 28px; } }
