@@ -593,3 +593,6 @@ strong { color: #fff; font-weight: 600; }
 .waitlist__msg--ok { background: rgba(60,207,145,.1); border: 1px solid rgba(60,207,145,.4); color: #c9f5e0; }
 .waitlist__msg--error { background: rgba(239,106,91,.1); border: 1px solid rgba(239,106,91,.4); color: #ffd3cc; }
 .sib-form-message-panel--active { display: block !important; }
+
+.confirm-badge { width: 72px; height: 72px; margin: 0 auto 22px; border-radius: 22px; display: grid; place-items: center; color: #17130a; background: var(--gold-grad); box-shadow: 0 16px 40px -12px rgba(242,193,78,.6); }
+.confirm-badge svg { width: 36px; height: 36px; }
