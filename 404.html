@@ -29,7 +29,9 @@
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/css/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.xauusdglobal.com/#organization","name":"XAUUSD Global","url":"https://www.xauusdglobal.com/","logo":{"@type":"ImageObject","url":"https://www.xauusdglobal.com/assets/images/logo-512.png","width":512,"height":512},"slogan":"One Market. One Global Community.","description":"An educational website and planned global community for XAUUSD (gold) traders."}]}</script>
 <script src="/assets/js/main.js" defer></script>
@@ -41,7 +43,7 @@
   <div class="wrap">
     <a class="brand" href="/" aria-label="XAUUSD Global home"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2c14e"/><stop offset="1" stop-color="#b8862b"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="16" fill="#111318" stroke="url(#lg-g)" stroke-width="2"/><path d="M18 18l28 28M46 18L18 46" stroke="url(#lg-g)" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="32" r="21" fill="none" stroke="#f2c14e" stroke-opacity=".28" stroke-width="1.5"/><rect x="28.5" y="24" width="7" height="16" rx="1.6" fill="#111318" stroke="#45d6c4" stroke-width="1.8"/><path d="M32 19v5M32 40v5" stroke="#45d6c4" stroke-width="1.8" stroke-linecap="round"/></svg><span class="brand__name">XAUUSD<span> Global</span></span></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-    <nav class="site-nav" id="site-nav" aria-label="Main"><ul><li><a href="/xauusd-price/">Gold Price</a></li><li><a href="/xauusd-news/">News</a></li><li><a href="/xauusd-trading-strategies/">Strategies</a></li><li><a href="/blog/">Blog</a></li><li><a href="/community/">Community</a></li><li><a href="/membership/">Membership</a></li><li><a href="/about/">About</a></li><li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Registration Opening Soon</a></li></ul></nav>
+    <nav class="site-nav" id="site-nav" aria-label="Main"><ul><li><a href="/xauusd-price/">Gold Price</a></li><li><a href="/xauusd-news/">News</a></li><li><a href="/xauusd-trading-strategies/">Strategies</a></li><li><a href="/blog/">Blog</a></li><li><a href="/community/">Community</a></li><li><a href="/membership/">Membership</a></li><li><a href="/about/">About</a></li><li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Get Launch Updates</a></li></ul></nav>
   </div>
 </header>
 <main id="main">
@@ -63,7 +65,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="brand" href="/" aria-label="XAUUSD Global home"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2c14e"/><stop offset="1" stop-color="#b8862b"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="16" fill="#111318" stroke="url(#lg-g)" stroke-width="2"/><path d="M18 18l28 28M46 18L18 46" stroke="url(#lg-g)" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="32" r="21" fill="none" stroke="#f2c14e" stroke-opacity=".28" stroke-width="1.5"/><rect x="28.5" y="24" width="7" height="16" rx="1.6" fill="#111318" stroke="#45d6c4" stroke-width="1.8"/><path d="M32 19v5M32 40v5" stroke="#45d6c4" stroke-width="1.8" stroke-linecap="round"/></svg><span class="brand__name">XAUUSD<span> Global</span></span></a>
-        <p>One Market. One Global Community. An educational hub and a planned community that connects gold traders so they can learn, exchange perspectives and improve together.</p>
+        <p>One Market. One Global Community. Free gold-trading education and a learning community built on market reasoning, honest discussion and transparent trade reviews.</p>
       </div>
       <div><h2>Markets</h2><ul>
         <li><a href="/xauusd-price/">XAUUSD price &amp; chart</a></li>
@@ -74,6 +76,7 @@
         <li><a href="/xauusd-trading-strategies/">Strategy hub</a></li>
         <li><a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts</a></li>
         <li><a href="/strategies/xauusd-risk-management/">Risk management</a></li>
+        <li><a href="/tools/position-size-calculator/">Position size calculator</a></li>
         <li><a href="/blog/">Blog</a></li>
       </ul></div>
       <div><h2>Community</h2><ul>
@@ -90,7 +93,7 @@
       </ul></div>
     </div>
     <div class="footer-risk"><strong>Risk warning:</strong> Trading leveraged products such as CFDs and spot gold (XAUUSD) carries a high level of risk and can result in losses that exceed your expectations, including substantial losses of capital. Everything on this website is general educational information, not personalised financial, investment or trading advice. No strategy, framework or community participation guarantees results. Read the full <a href="/risk-disclaimer/">risk disclaimer</a>.</div>
-    <div class="footer-bottom"><span>&copy; 2026 XAUUSD Global. Educational content only.</span><span>Community registration and payments are not open yet.</span></div>
+    <div class="footer-bottom"><span>&copy; 2026 XAUUSD Global. Educational content only.</span><span>Membership launching soon · Launch-updates waitlist open.</span></div>
   </div>
 </footer>
 </body>
