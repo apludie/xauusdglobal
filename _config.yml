@@ -1,0 +1,5 @@
+# GitHub Pages runs Jekyll by default. These pages are plain HTML (no front matter),
+# so Jekyll copies them unchanged. Keep build tooling and docs out of the published site.
+exclude:
+  - README.md
+  - _build
