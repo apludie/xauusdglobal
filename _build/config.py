@@ -19,7 +19,7 @@ TV_SYMBOL = "OANDA:XAUUSD"
 
 # Public contact address. Leave empty until a real, monitored inbox exists —
 # the contact page will then say the channel is being set up.
-CONTACT_EMAIL = ""
+CONTACT_EMAIL = "info@xauusdglobal.com"
 
 # Date the seed content was first published (ISO). Change only when true.
 FIRST_PUBLISHED = "2026-10-13"
@@ -33,3 +33,6 @@ PLANNED_PRICE = "$19.99"
 # Umami analytics (cookieless). Leave empty to disable on every page.
 UMAMI_WEBSITE_ID = "8800c2af-3b56-4a38-a647-648b303f758a"
 UMAMI_SCRIPT = "https://cloud.umami.is/script.js"
+
+# Brevo waitlist form endpoint (public form URL, not a secret).
+BREVO_FORM_ACTION = "https://a89ceefb.sibforms.com/serve/MUIFAHGfIidhPtSk4pDIdJfo6MfNsvNZ1Iylxx2xaD-FtwtUxJXYQ4ex5YC8HF0AM3B96cXyierwwFtdWbGjyavl6VTe8uulKUn2pKWRK36lG4YBFQdn0mUHOihWDFNjeGOZT-YE6E9XLbjcZmtDBeGvF_Ru-vRrCeQoYNnBJX0ObSYXFjDmt735NSGRmMGNmIx4zox-uGpAj6_wMw=="

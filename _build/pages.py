@@ -95,7 +95,7 @@ def home(strategies, posts):
     mini_cfg = {"symbol": C.TV_SYMBOL, "width": "100%", "height": "100%", "locale": "en", "dateRange": "1D",
                 "colorTheme": "dark", "isTransparent": True, "autosize": True, "largeChartUrl": ""}
     faqs = [
-        {"q": "Is XAUUSD Global open for registration?", "a": "Not yet. The educational website is public and free to read today. Community registration, payments and member access are being developed and are **not available yet**. We do not collect sign-ups or payment details at this stage."},
+        {"q": "Is XAUUSD Global open for registration?", "a": "Not yet. The educational website is public and free to read today. Community registration, payments and member access are still being developed — but you can [join the free founding waitlist](/membership/#registration) to be invited first when membership opens."},
         {"q": "Do you sell trading signals?", "a": "No. XAUUSD Global is built around discussion, analysis and review — learning *why* a trade idea exists and how it is risk-managed — not around copying unexplained entries."},
         {"q": "How much will membership cost?", "a": f"Membership is currently planned at **{C.PLANNED_PRICE} per month**. This is a planned price, not an active offer, and may change before launch. See [membership and trader levels](/membership/)."},
         {"q": "Will joining the community make me profitable?", "a": "No community, course or strategy can guarantee results. Trading leveraged gold products carries a high risk of loss. Our aim is to help traders build better analysis habits, discipline and review processes."},
@@ -110,11 +110,11 @@ def home(strategies, posts):
       <p class="hero__lede">XAUUSD Global is building a worldwide community where intermediate traders connect with advanced, Pro, and Degen traders to exchange market perspectives, study strategies, review trade ideas, and sharpen their trading skills.</p>
       <div class="btn-row">
         <a class="btn btn--gold" href="/xauusd-trading-strategies/">Explore Trading Strategies {ARROW_BTN}</a>
-        <a class="btn btn--ghost" href="/membership/#registration">Community Registration Opening Soon</a>
+        <a class="btn btn--ghost" href="/membership/#registration">Join the Founding Waitlist</a>
       </div>
       <div class="hero__status">
         <span class="status-pill"><span class="dot"></span>Free guides &amp; articles: available now</span>
-        <span class="status-pill"><span class="dot dot--gold"></span>Paid community: not open yet</span>
+        <span class="status-pill"><span class="dot dot--gold"></span>Paid community: waitlist open</span>
       </div>
     </div>
     <div class="hero__visual">
@@ -266,10 +266,11 @@ def home(strategies, posts):
           <p class="muted">One planned price. Access to discussion categories based on demonstrated analysis quality and contribution — not on paying more.</p>
           <ul class="status-list" style="margin-top:18px">
             <li><span class="badge badge--live">Live</span>Public educational website</li>
+            <li><span class="badge badge--live">Open</span>Founding waitlist</li>
             <li><span class="badge badge--soon">Soon</span>Community registration</li>
             <li><span class="badge badge--no">Not yet</span>Payments &amp; member access</li>
           </ul>
-          <div class="btn-row mt-2"><a class="btn btn--gold" href="/membership/">See membership &amp; levels {ARROW_BTN}</a></div>
+          <div class="btn-row mt-2"><a class="btn btn--gold" href="/membership/#registration">Join the Founding Waitlist {ARROW_BTN}</a></div>
         </div>
       </div>
     </div>
@@ -636,8 +637,8 @@ def community_page():
       </div>
       <div class="reveal">
         {L.notice("<strong>Membership does not guarantee profitable trading.</strong> The community is designed to improve analysis, discipline and review habits. It does not provide personalised financial advice, signals to follow, or any assurance of returns. Leveraged trading can result in substantial losses.", "risk", "alert")}
-        <div class="mt-2">{L.notice("<strong>Registration is not open yet.</strong> We are not collecting names, emails or payment details at this stage. When registration opens, it will be announced on this site.", "", "lock")}</div>
-        <div class="btn-row mt-2"><a class="btn btn--gold" href="/membership/">See membership &amp; trader levels {ARROW_BTN}</a></div>
+        <div class="mt-2">{L.notice("<strong>Registration is not open yet — but the founding waitlist is.</strong> Add your email to be invited first when membership opens. No payment, no obligation, unsubscribe anytime. <a href='/membership/#registration'>Join the waitlist</a>.", "", "lock")}</div>
+        <div class="btn-row mt-2"><a class="btn btn--gold" href="/membership/#registration">Join the Founding Waitlist {ARROW_BTN}</a><a class="btn btn--ghost" href="/membership/">See trader levels</a></div>
       </div>
     </div>
   </div>
@@ -680,7 +681,7 @@ def membership_page():
         f'<article class="tier tier--{k} reveal"><span class="tier__lvl">{lvl}</span><h3>{n}</h3><p class="tier__who">{w}</p>'
         f'<ul>{"".join(f"<li>{esc(x)}</li>" for x in items)}</ul></article>' for k, lvl, n, w, items in tiers)
     faqs = [
-        {"q": "Can I pay now or pre-register?", "a": "No. Payment and member access are not available yet, and we're not running a waiting list. Please don't send money to anyone claiming to sell XAUUSD Global memberships."},
+        {"q": "Can I pay now or pre-register?", "a": "You can't pay yet — payment and member access are not available. You can [join the free founding waitlist](#registration) to be notified first when membership opens. Please don't send money to anyone claiming to sell XAUUSD Global memberships."},
         {"q": "Does a higher level cost more?", "a": f"No. The plan is one membership at {C.PLANNED_PRICE} per month. Levels are discussion categories and participation privileges earned through contribution quality — they cannot be bought."},
         {"q": "How will I move between levels?", "a": "Advancement is planned to depend on demonstrated analytical quality, risk awareness, transparent reviews and meaningful contributions — not on payment or a single profitable trade. Exact criteria will be published before launch."},
         {"q": "Is the price final?", "a": f"{C.PLANNED_PRICE}/month is the currently planned price. It may change before launch, and the final price and terms will be shown clearly before anyone is asked to pay."},
@@ -692,9 +693,10 @@ def membership_page():
     <div class="price-hero reveal">
       <span class="eyebrow">Membership planned</span>
       <div class="price-big">{C.PLANNED_PRICE}<small> /month</small></div>
-      <p class="lead" style="max-width:640px;margin:16px auto 28px">Membership planned: {C.PLANNED_PRICE}/month. Registration opening soon. Payment and member access are not available yet.</p>
+      <p class="lead" style="max-width:640px;margin:16px auto 28px">Membership planned: {C.PLANNED_PRICE}/month. Registration opening soon. Payment and member access are not available yet — <a href="#registration">join the free founding waitlist</a> to be first in line.</p>
       <ul class="status-list" style="max-width:520px;margin:0 auto;text-align:left">
         <li><span class="badge badge--live">Live</span>Public educational website and guides</li>
+        <li><span class="badge badge--live">Open</span>Founding waitlist (free)</li>
         <li><span class="badge badge--soon">Soon</span>Community registration</li>
         <li><span class="badge badge--no">Not yet</span>Payment and member access</li>
       </ul>
@@ -740,15 +742,80 @@ def membership_page():
 </section>
 
 <section class="section section--alt" id="registration">
-  <div class="wrap wrap--text">
-    <div class="cta-band reveal">
-      <span class="eyebrow">Registration status</span>
-      <h2>Registration is not open yet.</h2>
-      <p>We're finishing the community platform, standards, privacy policy and terms before accepting any members. There is no sign-up form, waiting list or checkout on this site yet, and we are not collecting personal or payment details. When registration opens, this section will be updated.</p>
-      <p>Join the next chapter of gold trading by building your foundations now:</p>
-      <div class="btn-row"><a class="btn btn--gold" href="/xauusd-trading-strategies/">Explore Trading Strategies {ARROW_BTN}</a><a class="btn btn--ghost" href="/community/">Explore the Community Vision</a></div>
+  <div class="wrap">
+    <div class="waitlist reveal">
+      <div class="waitlist__intro">
+        <span class="eyebrow">Founding waitlist · Free</span>
+        <h2>Join the Founding Waitlist</h2>
+        <p class="lead">Be first to know when the XAUUSD Global community opens. Waitlist members get the first invitation to join.</p>
+        <ul class="checklist">
+          <li><strong>No payment now.</strong> Joining the waitlist is free and creates no obligation.</li>
+          <li><strong>No spam.</strong> We'll only email you about the membership launch.</li>
+          <li><strong>Unsubscribe anytime</strong> with one click from any email.</li>
+        </ul>
+        <p class="muted" style="font-size:.9rem">Registration, payments and member access are not open yet. Membership is planned at {C.PLANNED_PRICE}/month; the final price and terms will be shown before anyone is asked to pay.</p>
+      </div>
+      <div class="waitlist__card">
+        <div class="sib-form">
+          <div id="sib-form-container" class="sib-form-container">
+            <div id="error-message" class="sib-form-message-panel waitlist__msg waitlist__msg--error" role="alert">
+              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Sorry, we couldn't save your details. Please check your email address and try again.</span></div>
+            </div>
+            <div id="success-message" class="sib-form-message-panel waitlist__msg waitlist__msg--ok" role="status">
+              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text"><strong>Almost done!</strong> Please check your inbox and click the confirmation link to join the waitlist. (If you don't see it, check your spam or promotions folder.)</span></div>
+            </div>
+            <div id="sib-container" class="sib-container--large sib-container--vertical">
+              <form id="sib-form" method="POST" action="{C.BREVO_FORM_ACTION}" data-type="subscription">
+                <h3 class="waitlist__title">Reserve your early invitation</h3>
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row">
+                      <label class="entry__label" for="FIRSTNAME">First name <span class="muted">(optional)</span></label>
+                      <div class="entry__field"><input class="input" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="given-name" placeholder="Your first name"></div>
+                    </div>
+                    <label class="entry__error entry__error--primary"></label>
+                  </div>
+                </div>
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row">
+                      <label class="entry__label" for="EMAIL" data-required="*">Email address</label>
+                      <div class="entry__field"><input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email" value="" placeholder="you@example.com" data-required="true" required></div>
+                    </div>
+                    <label class="entry__error entry__error--primary"></label>
+                  </div>
+                </div>
+                <div class="sib-form-block">
+                  <button class="btn btn--gold waitlist__btn sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit" data-umami-event="waitlist-submit">
+                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/></svg>
+                    Join the Waitlist
+                  </button>
+                </div>
+                <p class="waitlist__legal">By joining, you agree to receive emails from XAUUSD Global about the membership launch. We'll send a confirmation email first. You can unsubscribe at any time. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+                <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="hidden" name="locale" value="en">
+              </form>
+            </div>
+          </div>
+        </div>
+        <noscript><p class="waitlist__legal">Please enable JavaScript to join the waitlist, or email us at {C.CONTACT_EMAIL}.</p></noscript>
+      </div>
     </div>
+    <div class="btn-row mt-3" style="justify-content:center"><a class="btn btn--ghost" href="/xauusd-trading-strategies/">Explore Trading Strategies {ARROW_BTN}</a><a class="btn btn--ghost" href="/community/">Explore the Community Vision</a></div>
   </div>
+  <script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'en';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Please enter a valid email address.";
+    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
+    window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please check and try again.";
+    window.INVALID_NUMBER = "The information provided is invalid. Please check and try again.";
+    window.INVALID_DATE = "Please enter a valid date";
+    window.REQUIRED_MULTISELECT_MESSAGE = 'Please select at least 1 option';
+    window.translation = {{ common: {{ selectedList: '{{quantity}} list selected', selectedLists: '{{quantity}} lists selected', selectedOption: '{{quantity}} selected', selectedOptions: '{{quantity}} selected' }} }};
+    var AUTOHIDE = Boolean(0);
+  </script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </section>
 
 <section class="section">
@@ -757,7 +824,7 @@ def membership_page():
   </div>
 </section>"""
     return L.page(path="/membership/", title=f"Membership & Trader Levels — Planned {C.PLANNED_PRICE}/month | XAUUSD Global",
-                  description=f"XAUUSD Global membership is planned at {C.PLANNED_PRICE}/month with Starter, Advanced, Pro and Degen discussion levels. Registration is opening soon; payments are not open yet.",
+                  description=f"XAUUSD Global membership is planned at {C.PLANNED_PRICE}/month with Starter, Advanced, Pro and Degen discussion levels. Join the free founding waitlist today.",
                   body=body, crumbs=crumbs)
 
 
