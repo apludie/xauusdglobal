@@ -17,12 +17,13 @@ Plain HTML, CSS and a small vanilla JS file. No backend, database or API keys. B
 ├── strategies/<11 guides>/        In-depth strategy articles
 ├── blog/ + blog/<10 articles>/    Blog with filter, search and "load more"
 ├── community/  membership/  about/  contact/  faq/
-├── risk-disclaimer/  privacy-policy/  terms/   (draft legal pages)
+├── risk-disclaimer/  privacy-policy/  terms/   (legal pages)
 ├── 404.html  robots.txt  sitemap.xml  CNAME  _config.yml
 ├── assets/css/style.css           Design system
 ├── assets/js/main.js              Nav, session clock, lazy chart widgets, blog filter, news feed
 ├── assets/images/                 Logo, favicons, social share image
-├── assets/data/news.json          Empty news feed (fill only with real, licensed items)
+├── assets/data/news.json          Headlines file (filled hourly by the workflow)
+├── .github/workflows/deploy.yml   Publishes the site + hourly news refresh
 └── _build/                        Generator source — NOT published
     ├── config.py                  Domain, contact email, widget switch, planned price
     ├── build.py                   Generates every page, sitemap, robots, CNAME
@@ -57,7 +58,7 @@ python3 _build/check.py              # verify before pushing
    git remote add origin https://github.com/YOUR-USERNAME/xauusdglobal.git
    git push -u origin main
    ```
-3. Repository → **Settings → Pages** → *Build and deployment* → Source: **Deploy from a branch** → Branch: **main**, folder **/ (root)** → Save.
+3. Repository → **Settings → Pages** → *Build and deployment* → Source: **GitHub Actions**. The included workflow (`.github/workflows/deploy.yml`) publishes the site on every push and refreshes news headlines every hour. Check progress in the **Actions** tab.
 4. Under **Custom domain**, enter `www.xauusdglobal.com` and save (the `CNAME` file already contains it).
 5. After DNS is working (section 4), tick **Enforce HTTPS**. GitHub issues the certificate automatically; this can take a while.
 
@@ -95,14 +96,8 @@ Indexing and rankings are never guaranteed; expect weeks, not days.
 ## 6. Data honesty — how the site handles prices and news
 
 - **Prices:** the price page and homepage preview embed **TradingView** widgets (symbol `OANDA:XAUUSD`, set in `config.py`). They load in the visitor's browser with no keys, are lazy-loaded, and are credited with a note that quotes may be delayed. Set `PRICE_WIDGETS = False` to replace them with a clearly labelled "no data source configured" state. Review TradingView's widget terms before launch.
-- **News:** `assets/data/news.json` is intentionally empty, so the news hub shows "Market news feed integration coming soon". When you connect a licensed feed, write items in this format (the page renders them with source, date and link):
-  ```json
-  {"source": "Provider name", "updated": "2026-10-13T09:00:00Z",
-   "items": [{"title": "...", "url": "https://...", "source": "Publisher",
-              "published": "2026-10-13T08:30:00Z", "category": "Federal Reserve",
-              "summary": "One or two sentences in your own words."}]}
-  ```
-  A scheduled GitHub Action could regenerate this file from an RSS/API source using a repository secret — never put API keys in `assets/`.
+- **News headlines:** `_build/fetch_news.py` runs inside the GitHub Actions workflow every hour, reads the RSS feeds listed in `_build/news_feeds.json` (FXStreet, Federal Reserve, European Central Bank), keeps gold-relevant items from the last 7 days, and writes `assets/data/news.json` into the published site. The News page and homepage show headline, source, time, a short excerpt and a link to the original. If every feed fails, the site still deploys and shows the honest "headlines on their way" message. To add or remove a source, edit `news_feeds.json` (check the publisher's terms first). To refresh immediately: Actions → "Deploy site and update news" → Run workflow. Note: GitHub pauses scheduled workflows in repositories with no activity for 60 days — re-enable from the Actions tab if that happens.
+- **Economic calendar:** TradingView's free Economic Calendar widget on `/xauusd-news/`, filtered to medium- and high-impact events for major economies (`cal_cfg` in `_build/pages.py`).
 
 ## 7. Optional integrations for later
 
@@ -121,12 +116,12 @@ The design already has slots for this: the header CTA, `#registration` section o
 ## 8. Pre-launch checklist
 
 - [ ] `python3 _build/check.py` passes (links, anchors, titles, descriptions, canonicals, sitemap, secrets)
-- [ ] Repository pushed; Pages source = `main` / root
+- [ ] Repository pushed; Pages source = **GitHub Actions**; first workflow run is green
 - [ ] DNS records added; custom domain shows a green check in Settings → Pages
 - [ ] **Enforce HTTPS** enabled; `http://`, apex and `www` all end at `https://www.xauusdglobal.com/`
 - [ ] Price page: TradingView chart loads in a normal browser (and you accept the widget terms)
 - [ ] `CONTACT_EMAIL` set to a monitored inbox, or left empty intentionally
-- [ ] Legal pages reviewed by a qualified professional (they are marked as drafts)
+- [ ] Legal pages reviewed by a qualified professional (recommended, especially before membership or payments launch)
 - [ ] Article authors/reviewers added only with real, verifiable identities; `reviewed` dates only after real reviews
 - [ ] Social preview checked (paste the URL into LinkedIn/X post composer)
 - [ ] Search Console property verified and sitemap submitted
