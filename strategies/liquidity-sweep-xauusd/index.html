@@ -1,1 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XAUUSD Liquidity Sweep Strategy: Trading Gold Stop Runs</title>
+<meta name="description" content="Identify XAUUSD liquidity sweeps: where gold liquidity sits, sweep vs breakout, confirmation, invalidation and risk management for stop-run reversals.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.xauusdglobal.com/strategies/liquidity-sweep-xauusd/">
+<meta name="theme-color" content="#08090b">
+<meta property="og:site_name" content="XAUUSD Global">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XAUUSD Liquidity Sweep Strategy: Trading Gold Stop Runs">
+<meta property="og:description" content="Identify XAUUSD liquidity sweeps: where gold liquidity sits, sweep vs breakout, confirmation, invalidation and risk management for stop-run reversals.">
+<meta property="og:url" content="https://www.xauusdglobal.com/strategies/liquidity-sweep-xauusd/">
+<meta property="og:image" content="https://www.xauusdglobal.com/assets/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="XAUUSD Global — One Market. One Global Community.">
+<meta property="article:published_time" content="2026-10-13"><meta property="article:section" content="Liquidity frameworks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="XAUUSD Liquidity Sweep Strategy: Trading Gold Stop Runs">
+<meta name="twitter:description" content="Identify XAUUSD liquidity sweeps: where gold liquidity sits, sweep vs breakout, confirmation, invalidation and risk management for stop-run reversals.">
+<meta name="twitter:image" content="https://www.xauusdglobal.com/assets/images/og-default.png">
 
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.xauusdglobal.com/#organization","name":"XAUUSD Global","url":"https://www.xauusdglobal.com/","logo":{"@type":"ImageObject","url":"https://www.xauusdglobal.com/assets/images/logo-512.png","width":512,"height":512},"slogan":"One Market. One Global Community.","description":"An educational website and planned global community for XAUUSD (gold) traders."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.xauusdglobal.com/"},{"@type":"ListItem","position":2,"name":"Trading Strategies","item":"https://www.xauusdglobal.com/xauusd-trading-strategies/"},{"@type":"ListItem","position":3,"name":"Liquidity Sweeps","item":"https://www.xauusdglobal.com/strategies/liquidity-sweep-xauusd/"}]},{"@type":"Article","headline":"Liquidity Sweeps on XAUUSD: How Gold Stop Runs Work","description":"Identify XAUUSD liquidity sweeps: where gold liquidity sits, sweep vs breakout, confirmation, invalidation and risk management for stop-run reversals.","datePublished":"2026-10-13","dateModified":"2026-10-13","author":{"@id":"https://www.xauusdglobal.com/#organization"},"publisher":{"@id":"https://www.xauusdglobal.com/#organization"},"image":"https://www.xauusdglobal.com/assets/images/og-default.png","mainEntityOfPage":"https://www.xauusdglobal.com/strategies/liquidity-sweep-xauusd/","articleSection":"Liquidity frameworks","inLanguage":"en"}]}</script>
+<script src="/assets/js/main.js" defer></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="8800c2af-3b56-4a38-a647-648b303f758a"></script>
+</head>
+<body data-price-widgets="on">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="XAUUSD Global home"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2c14e"/><stop offset="1" stop-color="#b8862b"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="16" fill="#111318" stroke="url(#lg-g)" stroke-width="2"/><path d="M18 18l28 28M46 18L18 46" stroke="url(#lg-g)" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="32" r="21" fill="none" stroke="#f2c14e" stroke-opacity=".28" stroke-width="1.5"/><rect x="28.5" y="24" width="7" height="16" rx="1.6" fill="#111318" stroke="#45d6c4" stroke-width="1.8"/><path d="M32 19v5M32 40v5" stroke="#45d6c4" stroke-width="1.8" stroke-linecap="round"/></svg><span class="brand__name">XAUUSD<span> Global</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main"><ul><li><a href="/xauusd-price/">Gold Price</a></li><li><a href="/xauusd-news/">News</a></li><li><a href="/xauusd-trading-strategies/">Strategies</a></li><li><a href="/blog/">Blog</a></li><li><a href="/community/">Community</a></li><li><a href="/membership/">Membership</a></li><li><a href="/about/">About</a></li><li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Registration Opening Soon</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-head grid-bg">
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/xauusd-trading-strategies/">Trading Strategies</a></li><li><span aria-current="page">Liquidity Sweeps</span></li></ol></nav>
+    <div style="margin-top:22px"><span class="eyebrow">Liquidity frameworks</span></div>
+    <h1>Liquidity Sweeps on XAUUSD: How Gold Stop Runs Work</h1>
+    <p class="lede">Gold has a habit of spiking through obvious highs and lows and then snapping back. Here&#x27;s how traders identify liquidity sweeps on XAUUSD, separate them from genuine breakouts, and manage the risk of trading them.</p>
+    <div class="byline">
+      <span>Published <b><time datetime="2026-10-13">13 October 2026</time></b></span>
+      <span><b>4 min</b> read</span>
+      <span>Author: <b>XAUUSD Global Editorial <span class="muted">(named author profile to be added)</span></b></span>
+      <span>Reviewer: <b>To be assigned <span class="muted">(qualified reviewer, credentials to be verified)</span></b></span>
+      <span>Last reviewed: <b>Pending editorial review</b></span>
+    </div>
+  </div>
+</section>
+<div class="wrap">
+  <div class="article-layout">
+    <aside class="toc" aria-label="Table of contents"><details><summary>On this page</summary><ol><li><a href="#what-a-liquidity-sweep-is">What a liquidity sweep is</a></li><li><a href="#where-liquidity-tends-to-sit-on-xauusd">Where liquidity tends to sit on XAUUSD</a></li><li><a href="#sweep-or-breakout-the-key-distinction">Sweep or breakout? The key distinction</a></li><li><a href="#step-by-step-analysing-a-potential-sweep">Step-by-step: analysing a potential sweep</a></li><li><a href="#entry-conditions-and-invalidation-educational-example">Entry conditions and invalidation (educational example)</a></li><li><a href="#risk-management">Risk management</a></li><li><a href="#common-mistakes-and-limitations">Common mistakes and limitations</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></details></aside>
+    <article class="prose">
+      <div class="notice notice--risk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9.5 17H2.5L12 3z"/><path d="M12 10v4M12 17.5v.01"/></svg><div><strong>Educational content, not financial advice.</strong> Examples are hypothetical and simplified. Trading leveraged gold products can result in substantial losses. <a href='/risk-disclaimer/'>Read the risk disclaimer</a>.</div></div>
+      <div style="height:1.4em"></div>
+      <h2 id="what-a-liquidity-sweep-is">What a liquidity sweep is</h2>
+<p>In trading, <strong>liquidity</strong> refers to the orders available to trade against. Many orders cluster at predictable places: just above obvious highs (stop-losses of short sellers and buy-stop breakout entries) and just below obvious lows (stop-losses of buyers and sell-stop breakout entries).</p>
+<p>A <strong>liquidity sweep</strong> is a move through one of those obvious levels that quickly reverses back inside the previous range. The orders beyond the level get triggered, but the move lacks follow-through. Traders also call this a stop hunt, a stop run or a false breakout.</p>
+<p>Whether the sweep is &ldquo;engineered&rdquo; by large players, as <a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts</a> suggests, or simply the natural result of many orders clustering in one place, the behaviour is real and visible on the chart — and gold produces plenty of it.</p>
+<h2 id="where-liquidity-tends-to-sit-on-xauusd">Where liquidity tends to sit on XAUUSD</h2>
+<ul>
+<li><strong>Previous day&rsquo;s high and low</strong> — widely watched by intraday gold traders.</li>
+<li><strong>The Asian-session range</strong> — frequently tested at the London open.</li>
+<li><strong>Equal highs and equal lows</strong> — two or more swing points at roughly the same price look like &ldquo;strong&rdquo; levels and attract stops.</li>
+<li><strong>Round numbers</strong> — gold often trades through whole numbers before reacting.</li>
+<li><strong>Obvious trendlines</strong> — many traders place stops just beyond them.</li>
+</ul>
+<figure class="figure"><svg viewBox="0 0 760 400" role="img" aria-labelledby="t-sweep-high" xmlns="http://www.w3.org/2000/svg" font-family="ui-monospace, Menlo, monospace"><title id="t-sweep-high">Hypothetical sweep of equal highs followed by rejection</title><rect width="760" height="400" rx="10" fill="#0d0f12"/><line x1="14" x2="670" y1="22.0" y2="22.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="26.0" font-size="11" fill="#6f6e69">3,832.9</text><line x1="14" x2="670" y1="80.7" y2="80.7" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="84.7" font-size="11" fill="#6f6e69">3,827.6</text><line x1="14" x2="670" y1="139.3" y2="139.3" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="143.3" font-size="11" fill="#6f6e69">3,822.3</text><line x1="14" x2="670" y1="198.0" y2="198.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="202.0" font-size="11" fill="#6f6e69">3,816.9</text><line x1="14" x2="670" y1="256.7" y2="256.7" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="260.7" font-size="11" fill="#6f6e69">3,811.6</text><line x1="14" x2="670" y1="315.3" y2="315.3" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="319.3" font-size="11" fill="#6f6e69">3,806.3</text><line x1="14" x2="670" y1="374.0" y2="374.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="378.0" font-size="11" fill="#6f6e69">3,800.9</text><line y1="22" y2="374" x1="95.2" x2="95.2" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="176.5" x2="176.5" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="257.8" x2="257.8" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="339.0" x2="339.0" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="420.2" x2="420.2" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="501.5" x2="501.5" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="582.8" x2="582.8" stroke="#ffffff" stroke-opacity=".035"/><line x1="85.1" x2="511.7" y1="104.7" y2="104.7" stroke="#8a8983" stroke-width="1.4" stroke-dasharray="6 5"/><text x="505.7" y="97.7" font-size="11.5" text-anchor="end" fill="#8a8983" font-weight="600">Equal highs — buy-side liquidity</text><line x1="166.3" x2="633.5" y1="223.6" y2="223.6" stroke="#8a8983" stroke-width="1.4" stroke-dasharray="6 5"/><text x="627.5" y="239.6" font-size="11.5" text-anchor="end" fill="#8a8983" font-weight="600">Range low</text><line x1="24.2" x2="24.2" y1="265.3" y2="296.0" stroke="#3ccf91" stroke-width="1.3"/><rect x="18.3" y="276.8" width="11.8" height="16.0" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="44.5" x2="44.5" y1="238.7" y2="281.2" stroke="#3ccf91" stroke-width="1.3"/><rect x="38.6" y="241.5" width="11.8" height="35.3" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="64.8" x2="64.8" y1="203.9" y2="249.9" stroke="#3ccf91" stroke-width="1.3"/><rect x="58.9" y="208.0" width="11.8" height="33.6" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="85.1" x2="85.1" y1="175.7" y2="214.9" stroke="#3ccf91" stroke-width="1.3"/><rect x="79.2" y="182.1" width="11.8" height="25.8" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="105.4" x2="105.4" y1="143.6" y2="185.0" stroke="#3ccf91" stroke-width="1.3"/><rect x="99.5" y="153.8" width="11.8" height="28.4" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="125.7" x2="125.7" y1="120.4" y2="158.4" stroke="#3ccf91" stroke-width="1.3"/><rect x="119.8" y="122.6" width="11.8" height="31.2" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="146.0" x2="146.0" y1="111.6" y2="148.7" stroke="#ef6a5b" stroke-width="1.3"/><rect x="140.1" y="122.6" width="11.8" height="20.4" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="166.3" x2="166.3" y1="138.4" y2="179.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="160.5" y="143.0" width="11.8" height="24.7" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="186.7" x2="186.7" y1="159.6" y2="195.9" stroke="#ef6a5b" stroke-width="1.3"/><rect x="180.8" y="167.7" width="11.8" height="22.5" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="207.0" x2="207.0" y1="184.9" y2="215.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="201.1" y="190.2" width="11.8" height="16.5" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="227.3" x2="227.3" y1="177.8" y2="217.6" stroke="#3ccf91" stroke-width="1.3"/><rect x="221.4" y="186.2" width="11.8" height="20.5" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="247.6" x2="247.6" y1="160.0" y2="188.8" stroke="#3ccf91" stroke-width="1.3"/><rect x="241.7" y="163.4" width="11.8" height="22.8" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="267.9" x2="267.9" y1="131.2" y2="167.3" stroke="#3ccf91" stroke-width="1.3"/><rect x="262.0" y="138.0" width="11.8" height="25.4" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="288.2" x2="288.2" y1="108.3" y2="147.2" stroke="#3ccf91" stroke-width="1.3"/><rect x="282.3" y="116.0" width="11.8" height="22.0" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="308.5" x2="308.5" y1="111.2" y2="144.1" stroke="#ef6a5b" stroke-width="1.3"/><rect x="302.6" y="116.0" width="11.8" height="22.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="328.8" x2="328.8" y1="135.3" y2="170.2" stroke="#ef6a5b" stroke-width="1.3"/><rect x="323.0" y="138.6" width="11.8" height="22.1" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="349.2" x2="349.2" y1="151.8" y2="198.8" stroke="#ef6a5b" stroke-width="1.3"/><rect x="343.3" y="160.7" width="11.8" height="29.2" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="369.5" x2="369.5" y1="179.6" y2="211.0" stroke="#ef6a5b" stroke-width="1.3"/><rect x="363.6" y="189.9" width="11.8" height="14.1" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="389.8" x2="389.8" y1="188.3" y2="211.3" stroke="#3ccf91" stroke-width="1.3"/><rect x="383.9" y="191.7" width="11.8" height="12.3" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="410.1" x2="410.1" y1="166.9" y2="202.7" stroke="#3ccf91" stroke-width="1.3"/><rect x="404.2" y="169.6" width="11.8" height="22.2" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="430.4" x2="430.4" y1="141.4" y2="173.7" stroke="#3ccf91" stroke-width="1.3"/><rect x="424.5" y="150.3" width="11.8" height="19.2" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="450.7" x2="450.7" y1="51.8" y2="155.7" stroke="#3ccf91" stroke-width="1.3"/><rect x="444.8" y="137.7" width="11.8" height="12.6" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="471.0" x2="471.0" y1="127.3" y2="155.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="465.1" y="137.7" width="11.8" height="12.1" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="491.3" x2="491.3" y1="139.0" y2="164.8" stroke="#ef6a5b" stroke-width="1.3"/><rect x="485.5" y="149.8" width="11.8" height="11.3" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="511.7" x2="511.7" y1="157.4" y2="195.7" stroke="#ef6a5b" stroke-width="1.3"/><rect x="505.8" y="161.1" width="11.8" height="26.1" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="532.0" x2="532.0" y1="183.2" y2="213.4" stroke="#ef6a5b" stroke-width="1.3"/><rect x="526.1" y="187.1" width="11.8" height="16.7" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="552.3" x2="552.3" y1="201.7" y2="241.6" stroke="#ef6a5b" stroke-width="1.3"/><rect x="546.4" y="203.8" width="11.8" height="28.3" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="572.6" x2="572.6" y1="228.4" y2="260.0" stroke="#ef6a5b" stroke-width="1.3"/><rect x="566.7" y="232.1" width="11.8" height="21.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="592.9" x2="592.9" y1="247.7" y2="283.2" stroke="#ef6a5b" stroke-width="1.3"/><rect x="587.0" y="253.7" width="11.8" height="23.0" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="613.2" x2="613.2" y1="268.9" y2="301.9" stroke="#ef6a5b" stroke-width="1.3"/><rect x="607.3" y="276.8" width="11.8" height="20.3" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="633.5" x2="633.5" y1="294.2" y2="325.1" stroke="#ef6a5b" stroke-width="1.3"/><rect x="627.6" y="297.1" width="11.8" height="25.0" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="653.8" x2="653.8" y1="316.5" y2="350.1" stroke="#ef6a5b" stroke-width="1.3"/><rect x="648.0" y="322.1" width="11.8" height="18.1" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><circle cx="450.7" cy="51.8" r="4" fill="#f2c14e" stroke="#0d0f12" stroke-width="1.5"/><text x="450.7" y="37.8" font-size="11.5" text-anchor="middle" fill="#f2c14e" font-weight="700">Sweep + close back inside</text><circle cx="592.9" cy="257.8" r="4" fill="#ef6a5b" stroke="#0d0f12" stroke-width="1.5"/><text x="592.9" y="279.8" font-size="11.5" text-anchor="middle" fill="#ef6a5b" font-weight="700">Range low breaks</text><text x="20" y="392" font-size="10.5" fill="#6f6e69">HYPOTHETICAL DATA · ILLUSTRATION ONLY · NOT A REAL XAUUSD CHART</text></svg><figcaption><b>Hypothetical sweep of equal highs followed by rejection.</b> Two roughly equal highs create an obvious cluster of buy stops above. Price spikes through, fails to hold, and closes back inside the range before breaking lower. Hypothetical data.</figcaption></figure>
+
+<h2 id="sweep-or-breakout-the-key-distinction">Sweep or breakout? The key distinction</h2>
+<p>Every sweep starts out looking like a breakout. The difference only appears afterwards:</p>
+<table>
+<thead>
+<tr>
+<th>Behaviour</th>
+<th>Likely sweep</th>
+<th>Likely breakout</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Close after the move</td>
+<td>Back inside the prior range</td>
+<td>Beyond the level</td>
+</tr>
+<tr>
+<td>Follow-through</td>
+<td>Little or none</td>
+<td>Continues or consolidates beyond the level</td>
+</tr>
+<tr>
+<td>Retest</td>
+<td>Level becomes resistance/support against the move</td>
+<td>Level holds from the other side</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>Short-term structure shifts back</td>
+<td>Structure continues in breakout direction</td>
+</tr>
+</tbody>
+</table>
+<figure class="figure"><svg viewBox="0 0 760 400" role="img" aria-labelledby="t-sweep-vs-break" xmlns="http://www.w3.org/2000/svg" font-family="ui-monospace, Menlo, monospace"><title id="t-sweep-vs-break">Hypothetical genuine breakout: no rejection, acceptance above the level</title><rect width="760" height="400" rx="10" fill="#0d0f12"/><line x1="14" x2="670" y1="22.0" y2="22.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="26.0" font-size="11" fill="#6f6e69">3,844.5</text><line x1="14" x2="670" y1="80.7" y2="80.7" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="84.7" font-size="11" fill="#6f6e69">3,837.9</text><line x1="14" x2="670" y1="139.3" y2="139.3" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="143.3" font-size="11" fill="#6f6e69">3,831.3</text><line x1="14" x2="670" y1="198.0" y2="198.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="202.0" font-size="11" fill="#6f6e69">3,824.8</text><line x1="14" x2="670" y1="256.7" y2="256.7" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="260.7" font-size="11" fill="#6f6e69">3,818.2</text><line x1="14" x2="670" y1="315.3" y2="315.3" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="319.3" font-size="11" fill="#6f6e69">3,811.6</text><line x1="14" x2="670" y1="374.0" y2="374.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="378.0" font-size="11" fill="#6f6e69">3,805.0</text><line y1="22" y2="374" x1="95.2" x2="95.2" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="176.5" x2="176.5" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="257.8" x2="257.8" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="339.0" x2="339.0" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="420.2" x2="420.2" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="501.5" x2="501.5" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="582.8" x2="582.8" stroke="#ffffff" stroke-opacity=".035"/><line x1="87.4" x2="653.5" y1="192.2" y2="192.2" stroke="#8a8983" stroke-width="1.4" stroke-dasharray="6 5"/><text x="647.5" y="185.2" font-size="11.5" text-anchor="end" fill="#8a8983" font-weight="600">Equal highs</text><line x1="24.5" x2="24.5" y1="320.2" y2="350.1" stroke="#3ccf91" stroke-width="1.3"/><rect x="18.4" y="328.1" width="12.2" height="16.3" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="45.5" x2="45.5" y1="299.6" y2="337.7" stroke="#3ccf91" stroke-width="1.3"/><rect x="39.4" y="304.4" width="12.2" height="23.7" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="66.4" x2="66.4" y1="278.3" y2="308.1" stroke="#3ccf91" stroke-width="1.3"/><rect x="60.3" y="281.1" width="12.2" height="23.3" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="87.4" x2="87.4" y1="252.1" y2="284.8" stroke="#3ccf91" stroke-width="1.3"/><rect x="81.3" y="256.4" width="12.2" height="24.7" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="108.4" x2="108.4" y1="228.4" y2="260.5" stroke="#3ccf91" stroke-width="1.3"/><rect x="102.3" y="232.6" width="12.2" height="23.8" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="129.3" x2="129.3" y1="201.0" y2="234.7" stroke="#3ccf91" stroke-width="1.3"/><rect x="123.2" y="204.2" width="12.2" height="28.4" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="150.3" x2="150.3" y1="198.2" y2="229.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="144.2" y="204.2" width="12.2" height="20.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="171.3" x2="171.3" y1="216.7" y2="243.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="165.2" y="224.7" width="12.2" height="13.8" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="192.2" x2="192.2" y1="231.1" y2="268.8" stroke="#ef6a5b" stroke-width="1.3"/><rect x="186.1" y="238.6" width="12.2" height="22.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="213.2" x2="213.2" y1="254.3" y2="280.7" stroke="#ef6a5b" stroke-width="1.3"/><rect x="207.1" y="261.1" width="12.2" height="15.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="234.2" x2="234.2" y1="246.8" y2="284.7" stroke="#3ccf91" stroke-width="1.3"/><rect x="228.1" y="255.0" width="12.2" height="21.7" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="255.1" x2="255.1" y1="233.5" y2="261.0" stroke="#3ccf91" stroke-width="1.3"/><rect x="249.0" y="236.9" width="12.2" height="18.1" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="276.1" x2="276.1" y1="212.8" y2="241.7" stroke="#3ccf91" stroke-width="1.3"/><rect x="270.0" y="220.8" width="12.2" height="16.1" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="297.1" x2="297.1" y1="200.8" y2="223.2" stroke="#3ccf91" stroke-width="1.3"/><rect x="291.0" y="207.4" width="12.2" height="13.4" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="318.0" x2="318.0" y1="205.7" y2="224.0" stroke="#ef6a5b" stroke-width="1.3"/><rect x="312.0" y="207.4" width="12.2" height="11.3" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="339.0" x2="339.0" y1="216.2" y2="241.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="332.9" y="218.8" width="12.2" height="17.3" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="360.0" x2="360.0" y1="231.5" y2="260.2" stroke="#ef6a5b" stroke-width="1.3"/><rect x="353.9" y="236.0" width="12.2" height="15.4" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="380.9" x2="380.9" y1="242.7" y2="267.9" stroke="#ef6a5b" stroke-width="1.3"/><rect x="374.9" y="251.5" width="12.2" height="12.8" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="401.9" x2="401.9" y1="239.3" y2="266.8" stroke="#3ccf91" stroke-width="1.3"/><rect x="395.8" y="243.9" width="12.2" height="20.4" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="422.9" x2="422.9" y1="208.4" y2="246.5" stroke="#3ccf91" stroke-width="1.3"/><rect x="416.8" y="212.1" width="12.2" height="31.8" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="443.8" x2="443.8" y1="183.7" y2="219.6" stroke="#3ccf91" stroke-width="1.3"/><rect x="437.8" y="188.5" width="12.2" height="23.6" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="464.8" x2="464.8" y1="156.4" y2="195.5" stroke="#3ccf91" stroke-width="1.3"/><rect x="458.7" y="160.5" width="12.2" height="28.0" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="485.8" x2="485.8" y1="157.2" y2="175.1" stroke="#ef6a5b" stroke-width="1.3"/><rect x="479.7" y="160.5" width="12.2" height="7.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="506.7" x2="506.7" y1="164.8" y2="170.2" stroke="#3ccf91" stroke-width="1.3"/><rect x="500.7" y="167.2" width="12.2" height="1.4" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="527.7" x2="527.7" y1="160.3" y2="175.2" stroke="#ef6a5b" stroke-width="1.3"/><rect x="521.6" y="167.2" width="12.2" height="6.3" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="548.7" x2="548.7" y1="169.7" y2="180.7" stroke="#ef6a5b" stroke-width="1.3"/><rect x="542.6" y="173.5" width="12.2" height="5.0" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="569.6" x2="569.6" y1="153.4" y2="183.8" stroke="#3ccf91" stroke-width="1.3"/><rect x="563.6" y="157.3" width="12.2" height="21.2" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="590.6" x2="590.6" y1="128.0" y2="165.9" stroke="#3ccf91" stroke-width="1.3"/><rect x="584.5" y="134.6" width="12.2" height="22.7" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="611.6" x2="611.6" y1="105.0" y2="141.4" stroke="#3ccf91" stroke-width="1.3"/><rect x="605.5" y="107.1" width="12.2" height="27.4" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="632.5" x2="632.5" y1="82.7" y2="111.8" stroke="#3ccf91" stroke-width="1.3"/><rect x="626.5" y="84.3" width="12.2" height="22.8" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="653.5" x2="653.5" y1="51.8" y2="93.4" stroke="#3ccf91" stroke-width="1.3"/><rect x="647.4" y="61.1" width="12.2" height="23.3" fill="#3ccf91" fill-opacity="0.9" rx="1"/><circle cx="485.8" cy="157.2" r="4" fill="#45d6c4" stroke="#0d0f12" stroke-width="1.5"/><text x="485.8" y="143.2" font-size="11.5" text-anchor="middle" fill="#45d6c4" font-weight="700">Closes hold above</text><text x="20" y="392" font-size="10.5" fill="#6f6e69">HYPOTHETICAL DATA · ILLUSTRATION ONLY · NOT A REAL XAUUSD CHART</text></svg><figcaption><b>Hypothetical genuine breakout: no rejection, acceptance above the level.</b> Price moves through the same kind of level but keeps closing above it and builds a base. Without a rejection back inside, there is no sweep — just a breakout. Hypothetical data.</figcaption></figure>
+
+<p>This is why the most important rule in sweep trading is <strong>wait for the rejection</strong>. Trying to fade a move while it&rsquo;s still pushing through a level is simply betting against a breakout.</p>
+<h2 id="step-by-step-analysing-a-potential-sweep">Step-by-step: analysing a potential sweep</h2>
+<ol>
+<li><strong>Mark obvious liquidity in advance.</strong> Before the session, mark the previous-day high/low, the Asian range and any equal highs or lows.</li>
+<li><strong>Define context.</strong> What is the higher-timeframe trend? Sweeps against the higher-timeframe trend into a major level are generally more interesting than sweeps in the middle of a range.</li>
+<li><strong>Watch for the run.</strong> Price trades through the level.</li>
+<li><strong>Require rejection.</strong> A close back inside the range on your execution timeframe — and, for a stricter rule, a break of the short-term swing in the opposite direction (<a href="/strategies/market-structure-xauusd/">market structure shift</a>).</li>
+<li><strong>Define the plan.</strong> Entry area (often a pullback after the rejection), invalidation beyond the sweep extreme, and an objective such as the opposite side of the range.</li>
+</ol>
+<h2 id="entry-conditions-and-invalidation-educational-example">Entry conditions and invalidation (educational example)</h2>
+<div class="callout callout--hypo">
+<p>On a hypothetical H1 chart, gold has formed equal highs near 3,825.4 with a range low near 3,814.6. Early in the New York session price spikes to 3,830.2, then the candle closes back at 3,822.4, inside the range. A trader using a sweep model might wait for a pullback toward the swept level, considering a short with invalidation above 3,830.2 plus a buffer (for example 3,833), and the range low around 3,814.6 as an initial objective. A sustained close back above the equal highs would show the move was a breakout, not a sweep.</p>
+</div>
+<h2 id="risk-management">Risk management</h2>
+<ul>
+<li><strong>Invalidation beyond the extreme.</strong> The sweep wick defines where the idea fails. A stop inside the wick will often be taken by a second probe.</li>
+<li><strong>Second sweeps happen.</strong> Gold sometimes sweeps a level twice. Decide in advance whether you&rsquo;ll re-enter, and with what risk.</li>
+<li><strong>News distortion.</strong> Sweeps around US data are often fast and wide, with slippage. Many traders avoid entries in the minutes around releases.</li>
+<li><strong>Size from the stop.</strong> Sweep wicks on gold can be large, so the logical stop can be wide. Reduce size accordingly — see <a href="/strategies/xauusd-risk-management/">XAUUSD risk management</a>.</li>
+</ul>
+<h2 id="common-mistakes-and-limitations">Common mistakes and limitations</h2>
+<ul>
+<li><strong>Calling every break a sweep.</strong> Many breakouts are genuine. If you fade them all, you&rsquo;ll be on the wrong side of every trend day.</li>
+<li><strong>Entering before the rejection.</strong> &ldquo;It&rsquo;s going to sweep and reverse&rdquo; is a prediction, not a setup.</li>
+<li><strong>Labelling after the fact.</strong> Sweeps are easy to spot in hindsight. Mark the liquidity before the session to test yourself honestly.</li>
+<li><strong>Ignoring the trend.</strong> A sweep of a low in a strong downtrend often leads only to a brief bounce.</li>
+</ul>
+<p>The limitation of any liquidity-based model is that the concept describes a common pattern but can&rsquo;t tell you which instance will follow through. Clear rules, consistent invalidation and honest journaling are what turn the idea into a testable approach.</p>
+      <h2 id="faq">Frequently asked questions</h2><div class="faq-list"><details><summary>What is a liquidity sweep in gold trading?</summary><div><p>It&rsquo;s a move through an obvious high or low — where many stop and breakout orders are likely clustered — that quickly reverses back inside the prior range. Traders also call it a stop hunt, stop run or false breakout.</p></div></details><details><summary>How do I know whether it&#x27;s a sweep or a real breakout?</summary><div><p>You can&rsquo;t know in advance. The difference is confirmed by what happens next: a sweep closes back inside the range and fails to hold beyond the level; a breakout holds, builds acceptance and often retests the level from the other side.</p></div></details><details><summary>Where should the stop go on a sweep trade?</summary><div><p>Most traders place invalidation beyond the extreme of the sweep, plus a buffer. If price returns beyond that extreme, the sweep interpretation is wrong.</p></div></details><details><summary>Are sweeps more common at certain times?</summary><div><p>On XAUUSD, sweeps of the Asian range and previous-day extremes are frequently discussed around the London open and the New York open, and around major data releases. They can happen at any time.</p></div></details></div>
+      <section class="related" aria-labelledby="rel-h"><h2 id="rel-h">Continue learning</h2><ul><li><a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts (SMC) for XAUUSD: A Balanced Guide</a></li><li><a href="/strategies/gold-breakout-retest-strategy/">Gold Breakout and Retest Strategy for XAUUSD</a></li><li><a href="/strategies/market-structure-xauusd/">XAUUSD Market Structure: Trends, BOS and CHoCH Explained</a></li><li><a href="/strategies/london-session-gold-trading/">London Session Gold Trading: How XAUUSD Behaves at the London Open</a></li></ul></section>
+      <aside class="cta-band" aria-labelledby="cta-h">
+  <span class="eyebrow">Stop learning alone</span>
+  <h2 id="cta-h">Learn the reasoning behind a trade, not just the entry.</h2>
+  <p>XAUUSD Global is building a community where intermediate traders compare analysis with advanced, Pro and Degen traders. Registration is not open yet — explore the vision and the planned membership.</p>
+  <div class="btn-row"><a class="btn btn--gold" href="/community/">Explore the Community Vision <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--ghost" href="/membership/#registration">Registration Opening Soon</a></div>
+</aside>
+    </article>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="XAUUSD Global home"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2c14e"/><stop offset="1" stop-color="#b8862b"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="16" fill="#111318" stroke="url(#lg-g)" stroke-width="2"/><path d="M18 18l28 28M46 18L18 46" stroke="url(#lg-g)" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="32" r="21" fill="none" stroke="#f2c14e" stroke-opacity=".28" stroke-width="1.5"/><rect x="28.5" y="24" width="7" height="16" rx="1.6" fill="#111318" stroke="#45d6c4" stroke-width="1.8"/><path d="M32 19v5M32 40v5" stroke="#45d6c4" stroke-width="1.8" stroke-linecap="round"/></svg><span class="brand__name">XAUUSD<span> Global</span></span></a>
+        <p>One Market. One Global Community. An educational hub and a planned community that connects gold traders so they can learn, exchange perspectives and improve together.</p>
+      </div>
+      <div><h2>Markets</h2><ul>
+        <li><a href="/xauusd-price/">XAUUSD price &amp; chart</a></li>
+        <li><a href="/xauusd-news/">Gold market news</a></li>
+        <li><a href="/blog/what-moves-gold-prices/">What moves gold</a></li>
+      </ul></div>
+      <div><h2>Learn</h2><ul>
+        <li><a href="/xauusd-trading-strategies/">Strategy hub</a></li>
+        <li><a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts</a></li>
+        <li><a href="/strategies/xauusd-risk-management/">Risk management</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul></div>
+      <div><h2>Community</h2><ul>
+        <li><a href="/community/">Community vision</a></li>
+        <li><a href="/membership/">Membership &amp; levels</a></li>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div><h2>Legal</h2><ul>
+        <li><a href="/risk-disclaimer/">Risk disclaimer</a></li>
+        <li><a href="/privacy-policy/">Privacy policy</a></li>
+        <li><a href="/terms/">Terms of use</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-risk"><strong>Risk warning:</strong> Trading leveraged products such as CFDs and spot gold (XAUUSD) carries a high level of risk and can result in losses that exceed your expectations, including substantial losses of capital. Everything on this website is general educational information, not personalised financial, investment or trading advice. No strategy, framework or community participation guarantees results. Read the full <a href="/risk-disclaimer/">risk disclaimer</a>.</div>
+    <div class="footer-bottom"><span>&copy; 2026 XAUUSD Global. Educational content only.</span><span>Community registration and payments are not open yet.</span></div>
+  </div>
+</footer>
+</body>
+</html>
