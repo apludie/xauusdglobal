@@ -1,1 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fair Value Gap Gold Strategy: Trading XAUUSD FVGs</title>
+<meta name="description" content="What a fair value gap is, how to spot bullish and bearish FVGs on XAUUSD, filter meaningful gaps, set entries and invalidation, and avoid FVG mistakes.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.xauusdglobal.com/strategies/fair-value-gap-xauusd/">
+<meta name="theme-color" content="#08090b">
+<meta property="og:site_name" content="XAUUSD Global">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fair Value Gap Gold Strategy: Trading XAUUSD FVGs">
+<meta property="og:description" content="What a fair value gap is, how to spot bullish and bearish FVGs on XAUUSD, filter meaningful gaps, set entries and invalidation, and avoid FVG mistakes.">
+<meta property="og:url" content="https://www.xauusdglobal.com/strategies/fair-value-gap-xauusd/">
+<meta property="og:image" content="https://www.xauusdglobal.com/assets/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="XAUUSD Global — One Market. One Global Community.">
+<meta property="article:published_time" content="2026-10-13"><meta property="article:section" content="Liquidity frameworks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fair Value Gap Gold Strategy: Trading XAUUSD FVGs">
+<meta name="twitter:description" content="What a fair value gap is, how to spot bullish and bearish FVGs on XAUUSD, filter meaningful gaps, set entries and invalidation, and avoid FVG mistakes.">
+<meta name="twitter:image" content="https://www.xauusdglobal.com/assets/images/og-default.png">
 
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.xauusdglobal.com/#organization","name":"XAUUSD Global","url":"https://www.xauusdglobal.com/","logo":{"@type":"ImageObject","url":"https://www.xauusdglobal.com/assets/images/logo-512.png","width":512,"height":512},"slogan":"One Market. One Global Community.","description":"An educational website and planned global community for XAUUSD (gold) traders."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.xauusdglobal.com/"},{"@type":"ListItem","position":2,"name":"Trading Strategies","item":"https://www.xauusdglobal.com/xauusd-trading-strategies/"},{"@type":"ListItem","position":3,"name":"Fair Value Gaps","item":"https://www.xauusdglobal.com/strategies/fair-value-gap-xauusd/"}]},{"@type":"Article","headline":"Fair Value Gaps (FVG) on XAUUSD: A Practical Guide","description":"What a fair value gap is, how to spot bullish and bearish FVGs on XAUUSD, filter meaningful gaps, set entries and invalidation, and avoid FVG mistakes.","datePublished":"2026-10-13","dateModified":"2026-10-13","author":{"@id":"https://www.xauusdglobal.com/#organization"},"publisher":{"@id":"https://www.xauusdglobal.com/#organization"},"image":"https://www.xauusdglobal.com/assets/images/og-default.png","mainEntityOfPage":"https://www.xauusdglobal.com/strategies/fair-value-gap-xauusd/","articleSection":"Liquidity frameworks","inLanguage":"en"}]}</script>
+<script src="/assets/js/main.js" defer></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="8800c2af-3b56-4a38-a647-648b303f758a"></script>
+</head>
+<body data-price-widgets="on">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="XAUUSD Global home"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2c14e"/><stop offset="1" stop-color="#b8862b"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="16" fill="#111318" stroke="url(#lg-g)" stroke-width="2"/><path d="M18 18l28 28M46 18L18 46" stroke="url(#lg-g)" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="32" r="21" fill="none" stroke="#f2c14e" stroke-opacity=".28" stroke-width="1.5"/><rect x="28.5" y="24" width="7" height="16" rx="1.6" fill="#111318" stroke="#45d6c4" stroke-width="1.8"/><path d="M32 19v5M32 40v5" stroke="#45d6c4" stroke-width="1.8" stroke-linecap="round"/></svg><span class="brand__name">XAUUSD<span> Global</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main"><ul><li><a href="/xauusd-price/">Gold Price</a></li><li><a href="/xauusd-news/">News</a></li><li><a href="/xauusd-trading-strategies/">Strategies</a></li><li><a href="/blog/">Blog</a></li><li><a href="/community/">Community</a></li><li><a href="/membership/">Membership</a></li><li><a href="/about/">About</a></li><li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Registration Opening Soon</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-head grid-bg">
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/xauusd-trading-strategies/">Trading Strategies</a></li><li><span aria-current="page">Fair Value Gaps</span></li></ol></nav>
+    <div style="margin-top:22px"><span class="eyebrow">Liquidity frameworks</span></div>
+    <h1>Fair Value Gaps (FVG) on XAUUSD: A Practical Guide</h1>
+    <p class="lede">Fair value gaps appear on almost every fast gold move. That&#x27;s exactly the problem. Learn how to identify FVGs precisely, filter the few that matter, and manage risk when you trade them.</p>
+    <div class="byline">
+      <span>Published <b><time datetime="2026-10-13">13 October 2026</time></b></span>
+      <span><b>3 min</b> read</span>
+      <span>Author: <b>XAUUSD Global Editorial <span class="muted">(named author profile to be added)</span></b></span>
+      <span>Reviewer: <b>To be assigned <span class="muted">(qualified reviewer, credentials to be verified)</span></b></span>
+      <span>Last reviewed: <b>Pending editorial review</b></span>
+    </div>
+  </div>
+</section>
+<div class="wrap">
+  <div class="article-layout">
+    <aside class="toc" aria-label="Table of contents"><details><summary>On this page</summary><ol><li><a href="#what-a-fair-value-gap-is">What a fair value gap is</a></li><li><a href="#why-fvgs-are-everywhere-on-xauusd">Why FVGs are everywhere on XAUUSD</a></li><li><a href="#filtering-meaningful-gaps">Filtering meaningful gaps</a></li><li><a href="#ways-traders-use-fvgs">Ways traders use FVGs</a></li><li><a href="#entry-conditions-and-invalidation-educational-example">Entry conditions and invalidation (educational example)</a></li><li><a href="#risk-management">Risk management</a></li><li><a href="#common-mistakes-and-limitations">Common mistakes and limitations</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></details></aside>
+    <article class="prose">
+      <div class="notice notice--risk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9.5 17H2.5L12 3z"/><path d="M12 10v4M12 17.5v.01"/></svg><div><strong>Educational content, not financial advice.</strong> Examples are hypothetical and simplified. Trading leveraged gold products can result in substantial losses. <a href='/risk-disclaimer/'>Read the risk disclaimer</a>.</div></div>
+      <div style="height:1.4em"></div>
+      <h2 id="what-a-fair-value-gap-is">What a fair value gap is</h2>
+<p>A <strong>fair value gap (FVG)</strong> — also called an imbalance or inefficiency — is a three-candle pattern that marks an area where price moved so quickly that trading only happened in one direction.</p>
+<ul>
+<li><strong>Bullish FVG:</strong> the <strong>high of candle 1</strong> is below the <strong>low of candle 3</strong>. The gap between them, inside the large middle candle, is the FVG.</li>
+<li><strong>Bearish FVG:</strong> the <strong>low of candle 1</strong> is above the <strong>high of candle 3</strong>.</li>
+</ul>
+<figure class="figure"><svg viewBox="0 0 760 400" role="img" aria-labelledby="t-fvg-bull" xmlns="http://www.w3.org/2000/svg" font-family="ui-monospace, Menlo, monospace"><title id="t-fvg-bull">Hypothetical bullish fair value gap and partial fill</title><rect width="760" height="400" rx="10" fill="#0d0f12"/><line x1="14" x2="670" y1="22.0" y2="22.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="26.0" font-size="11" fill="#6f6e69">3,837.6</text><line x1="14" x2="670" y1="80.7" y2="80.7" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="84.7" font-size="11" fill="#6f6e69">3,831.7</text><line x1="14" x2="670" y1="139.3" y2="139.3" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="143.3" font-size="11" fill="#6f6e69">3,825.9</text><line x1="14" x2="670" y1="198.0" y2="198.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="202.0" font-size="11" fill="#6f6e69">3,820.1</text><line x1="14" x2="670" y1="256.7" y2="256.7" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="260.7" font-size="11" fill="#6f6e69">3,814.3</text><line x1="14" x2="670" y1="315.3" y2="315.3" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="319.3" font-size="11" fill="#6f6e69">3,808.4</text><line x1="14" x2="670" y1="374.0" y2="374.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="378.0" font-size="11" fill="#6f6e69">3,802.6</text><line y1="22" y2="374" x1="95.2" x2="95.2" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="176.5" x2="176.5" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="257.8" x2="257.8" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="339.0" x2="339.0" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="420.2" x2="420.2" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="501.5" x2="501.5" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="582.8" x2="582.8" stroke="#ffffff" stroke-opacity=".035"/><rect x="269.4" y="253.3" width="394.6" height="34.2" fill="#45d6c4" fill-opacity=".12" stroke="#45d6c4" stroke-opacity=".55" stroke-dasharray="4 3"/><text x="275.4" y="301.6" font-size="11.5" fill="#45d6c4" font-weight="600">BULLISH FVG</text><line x1="25.6" x2="25.6" y1="293.7" y2="303.3" stroke="#ef6a5b" stroke-width="1.3"/><rect x="18.9" y="295.6" width="13.5" height="1.4" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="48.8" x2="48.8" y1="287.6" y2="311.1" stroke="#ef6a5b" stroke-width="1.3"/><rect x="42.1" y="296.3" width="13.5" height="10.2" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="72.0" x2="72.0" y1="303.8" y2="319.1" stroke="#ef6a5b" stroke-width="1.3"/><rect x="65.3" y="306.5" width="13.5" height="3.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="95.2" x2="95.2" y1="307.2" y2="324.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="88.5" y="310.1" width="13.5" height="10.3" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="118.5" x2="118.5" y1="318.6" y2="330.0" stroke="#ef6a5b" stroke-width="1.3"/><rect x="111.7" y="320.4" width="13.5" height="5.2" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="141.7" x2="141.7" y1="323.5" y2="339.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="134.9" y="325.6" width="13.5" height="11.1" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="164.9" x2="164.9" y1="333.1" y2="349.2" stroke="#ef6a5b" stroke-width="1.3"/><rect x="158.2" y="336.7" width="13.5" height="5.2" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="188.1" x2="188.1" y1="322.5" y2="350.1" stroke="#3ccf91" stroke-width="1.3"/><rect x="181.4" y="330.5" width="13.5" height="11.4" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="211.3" x2="211.3" y1="308.3" y2="336.3" stroke="#3ccf91" stroke-width="1.3"/><rect x="204.6" y="317.0" width="13.5" height="13.5" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="234.5" x2="234.5" y1="300.3" y2="322.6" stroke="#3ccf91" stroke-width="1.3"/><rect x="227.8" y="308.5" width="13.5" height="8.5" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="257.8" x2="257.8" y1="287.6" y2="315.8" stroke="#3ccf91" stroke-width="1.3"/><rect x="251.0" y="293.6" width="13.5" height="14.1" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="281.0" x2="281.0" y1="211.0" y2="297.6" stroke="#3ccf91" stroke-width="1.3"/><rect x="274.2" y="216.0" width="13.5" height="77.6" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="304.2" x2="304.2" y1="174.7" y2="253.3" stroke="#3ccf91" stroke-width="1.3"/><rect x="297.4" y="183.8" width="13.5" height="32.2" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="327.4" x2="327.4" y1="182.6" y2="229.3" stroke="#ef6a5b" stroke-width="1.3"/><rect x="320.7" y="183.8" width="13.5" height="1.4" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="350.6" x2="350.6" y1="131.9" y2="189.3" stroke="#3ccf91" stroke-width="1.3"/><rect x="343.9" y="137.4" width="13.5" height="46.9" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="373.8" x2="373.8" y1="128.3" y2="140.3" stroke="#3ccf91" stroke-width="1.3"/><rect x="367.1" y="130.7" width="13.5" height="6.7" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="397.0" x2="397.0" y1="114.9" y2="134.6" stroke="#3ccf91" stroke-width="1.3"/><rect x="390.3" y="121.0" width="13.5" height="9.8" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="420.2" x2="420.2" y1="103.1" y2="126.6" stroke="#3ccf91" stroke-width="1.3"/><rect x="413.5" y="107.9" width="13.5" height="13.1" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="443.5" x2="443.5" y1="89.1" y2="110.5" stroke="#3ccf91" stroke-width="1.3"/><rect x="436.7" y="96.5" width="13.5" height="11.4" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="466.7" x2="466.7" y1="88.5" y2="127.8" stroke="#ef6a5b" stroke-width="1.3"/><rect x="459.9" y="96.5" width="13.5" height="23.7" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="489.9" x2="489.9" y1="111.4" y2="156.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="483.2" y="120.1" width="13.5" height="28.8" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="513.1" x2="513.1" y1="142.2" y2="183.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="506.4" y="148.9" width="13.5" height="26.7" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="536.3" x2="536.3" y1="167.3" y2="202.6" stroke="#ef6a5b" stroke-width="1.3"/><rect x="529.6" y="175.6" width="13.5" height="21.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="559.5" x2="559.5" y1="167.4" y2="203.7" stroke="#3ccf91" stroke-width="1.3"/><rect x="552.8" y="169.5" width="13.5" height="27.6" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="582.8" x2="582.8" y1="138.0" y2="177.8" stroke="#3ccf91" stroke-width="1.3"/><rect x="576.0" y="145.0" width="13.5" height="24.5" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="606.0" x2="606.0" y1="113.2" y2="146.8" stroke="#3ccf91" stroke-width="1.3"/><rect x="599.2" y="115.2" width="13.5" height="29.8" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="629.2" x2="629.2" y1="83.3" y2="122.3" stroke="#3ccf91" stroke-width="1.3"/><rect x="622.4" y="86.0" width="13.5" height="29.2" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="652.4" x2="652.4" y1="51.8" y2="92.6" stroke="#3ccf91" stroke-width="1.3"/><rect x="645.7" y="57.1" width="13.5" height="28.9" fill="#3ccf91" fill-opacity="0.9" rx="1"/><circle cx="257.8" cy="287.6" r="4" fill="#8a8983" stroke="#0d0f12" stroke-width="1.5"/><text x="257.8" y="273.6" font-size="11.5" text-anchor="middle" fill="#8a8983" font-weight="700">C1 high</text><circle cx="304.2" cy="253.3" r="4" fill="#8a8983" stroke="#0d0f12" stroke-width="1.5"/><text x="304.2" y="275.3" font-size="11.5" text-anchor="middle" fill="#8a8983" font-weight="700">C3 low</text><circle cx="536.3" cy="202.6" r="4" fill="#f2c14e" stroke="#0d0f12" stroke-width="1.5"/><text x="536.3" y="224.6" font-size="11.5" text-anchor="middle" fill="#f2c14e" font-weight="700">Retrace into gap</text><text x="20" y="392" font-size="10.5" fill="#6f6e69">HYPOTHETICAL DATA · ILLUSTRATION ONLY · NOT A REAL XAUUSD CHART</text></svg><figcaption><b>Hypothetical bullish fair value gap and partial fill.</b> The high of candle 1 and the low of candle 3 do not overlap, leaving a gap inside candle 2. Price later retraces into the gap and reacts. Hypothetical data.</figcaption></figure>
+
+<p>The concept is central to <a href="/strategies/ict-trading-xauusd/">ICT concepts</a> and <a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts</a>. The theory is that price may return to &ldquo;rebalance&rdquo; the area before continuing. In practice, an FVG is simply a measurable footprint of a fast move — useful for marking where momentum originated, but not a promise of anything.</p>
+<h2 id="why-fvgs-are-everywhere-on-xauusd">Why FVGs are everywhere on XAUUSD</h2>
+<p>Gold regularly moves several dollars in a single candle around session opens and economic releases. That means FVGs appear constantly, on every timeframe. If you treat them all as trade signals, you&rsquo;ll have dozens of &ldquo;setups&rdquo; per day. The real skill is <strong>filtering</strong>.</p>
+<h2 id="filtering-meaningful-gaps">Filtering meaningful gaps</h2>
+<p>Traders commonly prioritise FVGs that:</p>
+<ol>
+<li><strong>Formed during displacement that broke structure</strong> — for example the move that created a <a href="/strategies/market-structure-xauusd/">Change of Character</a>.</li>
+<li><strong>Followed a liquidity sweep</strong> — see <a href="/strategies/liquidity-sweep-xauusd/">liquidity sweeps</a>.</li>
+<li><strong>Align with the higher-timeframe direction.</strong></li>
+<li><strong>Sit in discount (for longs) or premium (for shorts)</strong> of the relevant swing.</li>
+<li><strong>Formed on a meaningful timeframe</strong> — H1 or higher for context, lower timeframes only for entry refinement.</li>
+<li><strong>Are still unfilled</strong> — a gap that has already been fully traded through has lost its relevance in most frameworks.</li>
+</ol>
+<h2 id="ways-traders-use-fvgs">Ways traders use FVGs</h2>
+<ul>
+<li><strong>As an entry area.</strong> Placing an order inside the gap (at its edge or midpoint) in the direction of the original move.</li>
+<li><strong>As confluence.</strong> Combining an FVG with an <a href="/strategies/order-blocks-xauusd/">order block</a> or a support zone.</li>
+<li><strong>As a target.</strong> Some traders treat unfilled gaps on the opposite side as potential objectives.</li>
+<li><strong>As a strength gauge.</strong> A gap that price respects quickly suggests strong momentum; a gap that price slices through suggests the move is weakening.</li>
+</ul>
+<h2 id="entry-conditions-and-invalidation-educational-example">Entry conditions and invalidation (educational example)</h2>
+<div class="callout callout--hypo">
+<p>On a hypothetical M15 chart during the London session, gold sweeps a prior low and then rallies hard. Candle 1 has a high of 3,811.2; candle 3 has a low of 3,814.6. The bullish FVG sits between 3,811.2 and 3,814.6, and the rally breaks the most recent lower high. A trader might place a limit order near the top of the gap (around 3,814.5) or wait for price to enter the gap and show a lower-timeframe bullish reaction. Invalidation could sit below the swing low that started the move rather than just below the gap, because price often trades through the full gap before reversing. A close well below the gap would mark the setup as failed.</p>
+</div>
+<h2 id="risk-management">Risk management</h2>
+<ul>
+<li><strong>Don&rsquo;t place stops just below the gap by default.</strong> Price often fills the entire gap and a little more. Use the swing low/high that created the move as a more robust invalidation, and size down.</li>
+<li><strong>Expect missed trades.</strong> In strong momentum, price may never return.</li>
+<li><strong>Be careful around news.</strong> FVGs created by a data release can be revisited violently, with wide spreads.</li>
+<li><strong>Fixed risk per trade.</strong> Read <a href="/strategies/xauusd-risk-management/">XAUUSD risk management</a>.</li>
+</ul>
+<h2 id="common-mistakes-and-limitations">Common mistakes and limitations</h2>
+<ul>
+<li><strong>&ldquo;Gaps must fill.&rdquo;</strong> They don&rsquo;t. Treating fills as inevitable leads to counter-trend trades against strong moves.</li>
+<li><strong>Trading every gap.</strong> Without filters, FVGs become noise.</li>
+<li><strong>Ignoring timeframe.</strong> An M1 gap has little to do with H4 structure.</li>
+<li><strong>Using inconsistent levels</strong> — the edge on one trade, the midpoint on the next.</li>
+<li><strong>Hindsight.</strong> The gaps that &ldquo;worked&rdquo; stand out; the ones that failed are forgotten. Journal every FVG you would have traded, not only the ones you did.</li>
+</ul>
+<p>Fair value gaps are best thought of as a precise way to describe <em>where</em> a fast move began. Combined with structure, liquidity and strict risk rules, they can help define locations. On their own, they&rsquo;re not a strategy.</p>
+      <h2 id="faq">Frequently asked questions</h2><div class="faq-list"><details><summary>What is a fair value gap?</summary><div><p>A fair value gap (FVG) is a three-candle pattern in which the first candle&rsquo;s high and the third candle&rsquo;s low (bullish) — or the first candle&rsquo;s low and the third candle&rsquo;s high (bearish) — do not overlap. The space between them, inside the middle candle, is the gap.</p></div></details><details><summary>Do fair value gaps always get filled?</summary><div><p>No. Many FVGs are only partly revisited and many are never revisited at all, especially in strong trends. The idea that gaps must be filled is a common and costly misconception.</p></div></details><details><summary>Is an FVG the same as a price gap?</summary><div><p>No. A classic price gap is a jump between one candle&rsquo;s close and the next candle&rsquo;s open, often over a weekend. An FVG is formed within continuous trading by three overlapping candles.</p></div></details><details><summary>What timeframe is best for FVGs on gold?</summary><div><p>Gaps on higher timeframes (H1 and above) are generally considered more significant than those on M1 or M5, where gaps are extremely common. Many traders use higher-timeframe gaps as areas of interest and lower timeframes to time entries.</p></div></details></div>
+      <section class="related" aria-labelledby="rel-h"><h2 id="rel-h">Continue learning</h2><ul><li><a href="/strategies/ict-trading-xauusd/">ICT Trading Concepts for XAUUSD: Time, Liquidity and Imbalance</a></li><li><a href="/strategies/order-blocks-xauusd/">Order Blocks on XAUUSD: Identification, Refinement and Risk</a></li><li><a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts (SMC) for XAUUSD: A Balanced Guide</a></li><li><a href="/blog/ict-concepts-for-gold-trading/">ICT Concepts for Gold Trading: Liquidity, FVGs and Market Structure</a></li></ul></section>
+      <aside class="cta-band" aria-labelledby="cta-h">
+  <span class="eyebrow">Stop learning alone</span>
+  <h2 id="cta-h">Learn the reasoning behind a trade, not just the entry.</h2>
+  <p>XAUUSD Global is building a community where intermediate traders compare analysis with advanced, Pro and Degen traders. Registration is not open yet — explore the vision and the planned membership.</p>
+  <div class="btn-row"><a class="btn btn--gold" href="/community/">Explore the Community Vision <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--ghost" href="/membership/#registration">Registration Opening Soon</a></div>
+</aside>
+    </article>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="XAUUSD Global home"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2c14e"/><stop offset="1" stop-color="#b8862b"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="16" fill="#111318" stroke="url(#lg-g)" stroke-width="2"/><path d="M18 18l28 28M46 18L18 46" stroke="url(#lg-g)" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="32" r="21" fill="none" stroke="#f2c14e" stroke-opacity=".28" stroke-width="1.5"/><rect x="28.5" y="24" width="7" height="16" rx="1.6" fill="#111318" stroke="#45d6c4" stroke-width="1.8"/><path d="M32 19v5M32 40v5" stroke="#45d6c4" stroke-width="1.8" stroke-linecap="round"/></svg><span class="brand__name">XAUUSD<span> Global</span></span></a>
+        <p>One Market. One Global Community. An educational hub and a planned community that connects gold traders so they can learn, exchange perspectives and improve together.</p>
+      </div>
+      <div><h2>Markets</h2><ul>
+        <li><a href="/xauusd-price/">XAUUSD price &amp; chart</a></li>
+        <li><a href="/xauusd-news/">Gold market news</a></li>
+        <li><a href="/blog/what-moves-gold-prices/">What moves gold</a></li>
+      </ul></div>
+      <div><h2>Learn</h2><ul>
+        <li><a href="/xauusd-trading-strategies/">Strategy hub</a></li>
+        <li><a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts</a></li>
+        <li><a href="/strategies/xauusd-risk-management/">Risk management</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul></div>
+      <div><h2>Community</h2><ul>
+        <li><a href="/community/">Community vision</a></li>
+        <li><a href="/membership/">Membership &amp; levels</a></li>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div><h2>Legal</h2><ul>
+        <li><a href="/risk-disclaimer/">Risk disclaimer</a></li>
+        <li><a href="/privacy-policy/">Privacy policy</a></li>
+        <li><a href="/terms/">Terms of use</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-risk"><strong>Risk warning:</strong> Trading leveraged products such as CFDs and spot gold (XAUUSD) carries a high level of risk and can result in losses that exceed your expectations, including substantial losses of capital. Everything on this website is general educational information, not personalised financial, investment or trading advice. No strategy, framework or community participation guarantees results. Read the full <a href="/risk-disclaimer/">risk disclaimer</a>.</div>
+    <div class="footer-bottom"><span>&copy; 2026 XAUUSD Global. Educational content only.</span><span>Community registration and payments are not open yet.</span></div>
+  </div>
+</footer>
+</body>
+</html>
