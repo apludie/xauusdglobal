@@ -1,0 +1,28 @@
+{
+  "_comment": "RSS sources for the hourly news job. 'include' is a case-insensitive regular expression matched against the headline, excerpt and link; only matching items are kept. Show headlines, short excerpts and links only. Check each publisher's terms before adding a feed.",
+  "max_total": 40,
+  "max_age_days": 7,
+  "excerpt_chars": 180,
+  "feeds": [
+    {
+      "name": "FXStreet",
+      "url": "https://www.fxstreet.com/rss/news",
+      "include": "\\b(gold|xau|bullion|precious metals?|fed|fomc|powell|federal reserve|cpi|pce|inflation|nonfarm|nfp|payrolls|us dollar|dxy|treasury|yields?|rate cut|rate hike)\\b",
+      "max_items": 25
+    },
+    {
+      "name": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "include": "(monetary|fomc|federal open market|economic projections|discount rate)",
+      "category": "Federal Reserve",
+      "max_items": 6
+    },
+    {
+      "name": "European Central Bank",
+      "url": "https://www.ecb.europa.eu/rss/press.html",
+      "include": "(monetary policy|policy decisions|interest rates?|meeting of|lagarde)",
+      "category": "Central banks",
+      "max_items": 4
+    }
+  ]
+}

@@ -142,7 +142,7 @@ def main():
     host = C.SITE_URL.split("://", 1)[1]
     open(os.path.join(ROOT, "CNAME"), "w").write(host + "\n")
 
-    # news data file (kept empty until a real feed is connected)
+    # news data file (filled hourly by _build/fetch_news.py in the GitHub Actions workflow)
     news_fp = os.path.join(ROOT, "assets", "data", "news.json")
     if not os.path.exists(news_fp):
         json.dump({"source": None, "updated": None, "items": []}, open(news_fp, "w"), indent=2)

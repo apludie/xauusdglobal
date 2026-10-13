@@ -24,8 +24,8 @@ TITLES = {
     "/contact/": "Contact XAUUSD Global",
     "/faq/": "Frequently asked questions",
     "/risk-disclaimer/": "Risk disclaimer",
-    "/privacy-policy/": "Privacy policy (draft)",
-    "/terms/": "Terms of use (draft)",
+    "/privacy-policy/": "Privacy policy",
+    "/terms/": "Terms of use",
 }
 
 
@@ -211,14 +211,20 @@ def home(strategies, posts):
 
 <section class="section section--alt">
   <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">Latest gold-market news</span><h2>News that moves gold — with the context to read it.</h2></div>
-    {L.notice("<strong>Market news feed integration coming soon.</strong> We don't publish invented or copied headlines. Until a licensed news feed is connected, our news hub explains the event types that move gold and how traders interpret them.", "info", "news")}
-    <div class="cards cards--3 mt-2">
-      {card("/xauusd-news/#fed", "Federal Reserve decisions", "Rate decisions and guidance shift real yields and the dollar — two of gold's key drivers.", tag="Explainer")}
-      {card("/xauusd-news/#inflation", "Inflation data", "CPI and PCE releases change rate expectations, often producing sharp intraday gold moves.", tag="Explainer")}
-      {card("/xauusd-news/#central-banks", "Central-bank gold demand", "Official-sector buying and selling is a slower-moving but important structural factor.", tag="Explainer")}
+    <div class="section-head reveal"><span class="eyebrow">Latest gold-market news</span><h2>News that moves gold — with the context to read it.</h2>
+      <p>Hourly headlines on gold, the Fed, inflation and the dollar, plus an economic calendar on our news hub.</p></div>
+    <div data-news-feed="{C.BASE_PATH}/assets/data/news.json" data-news-limit="3">
+      <div class="news-empty">
+        {L.notice("<strong>Live headlines refresh every hour.</strong> Until the first update arrives, here's what typically moves gold and why.", "info", "news")}
+        <div class="cards cards--3 mt-2">
+          {card("/xauusd-news/#fed", "Federal Reserve decisions", "Rate decisions and guidance shift real yields and the dollar — two of gold's key drivers.", tag="Explainer")}
+          {card("/xauusd-news/#inflation", "Inflation data", "CPI and PCE releases change rate expectations, often producing sharp intraday gold moves.", tag="Explainer")}
+          {card("/xauusd-news/#central-banks", "Central-bank gold demand", "Official-sector buying and selling is a slower-moving but important structural factor.", tag="Explainer")}
+        </div>
+      </div>
+      <div class="cards cards--3 news-feed" hidden></div>
     </div>
-    <div class="mt-3"><a class="btn btn--ghost" href="/xauusd-news/">Visit the XAUUSD news hub {ARROW_BTN}</a></div>
+    <div class="mt-3"><a class="btn btn--ghost" href="/xauusd-news/">All headlines &amp; the economic calendar {ARROW_BTN}</a></div>
   </div>
 </section>
 
@@ -397,22 +403,35 @@ def news_page():
         f'<div class="card__meta"><a href="{p}">Related: {esc(t)}</a></div></article>'
         for i, n, ic, d, p, t in NEWS_CATS)
     feed_url = C.BASE_PATH + "/assets/data/news.json"
-    body = f"""{L.page_head(crumbs, 'XAUUSD News: <span class="gold-text">What Moves Gold</span> and Why', 'A gold-market news hub built to explain, not just report: the event categories that drive XAUUSD, how traders interpret them, and how to prepare your risk around them.', eyebrow='Gold market news')}
-<section class="section section--tight">
-  <div class="wrap" data-news-feed="{feed_url}">
-    <h2>Latest gold-market headlines</h2>
-    <div class="news-empty">{L.notice("<strong>Market news feed integration coming soon.</strong> XAUUSD Global does not invent headlines, dates or quotes, and we don't republish other publishers' articles. When a licensed feed is connected, headlines will appear here with the source, publication date, an original summary and a link to the original reporting. Until then, the explainers below are evergreen educational content — not time-sensitive news.", "info", "news")}</div>
-    <div class="cards cards--3 news-feed" hidden></div>
+    cal_cfg = {"colorTheme": "dark", "isTransparent": True, "width": "100%", "height": "100%", "locale": "en",
+               "importanceFilter": "0,1", "countryFilter": "us,eu,gb,jp,cn,ch,ca,au"}
+    body = f"""{L.page_head(crumbs, 'XAUUSD News &amp; <span class="gold-text">Economic Calendar</span>', 'An economic calendar, hourly gold-market headlines, and clear explanations of the events that drive XAUUSD — so you know what is scheduled, what is happening, and why it matters.', eyebrow='Gold market news')}
+<section class="section section--tight" id="calendar">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:24px"><span class="eyebrow">Economic calendar</span><h2>This week's market-moving events</h2>
+      <p>Scheduled releases and central-bank events with forecast, previous and actual figures. High-impact US data — inflation, jobs and Federal Reserve decisions — tends to matter most for gold. Times are shown in your local time zone.</p></div>
+    {tv_box("events", cal_cfg, "tv-box--calendar", "economic calendar")}
+    <p class="data-credit">Economic calendar provided by an embedded <a href="https://www.tradingview.com/economic-calendar/" rel="noopener nofollow" target="_blank">TradingView</a> widget. Event times, forecasts and results come from the provider and may change; XAUUSD Global does not produce or verify them.</p>
   </div>
 </section>
-<section class="section section--alt">
+<section class="section section--alt" id="headlines">
+  <div class="wrap" data-news-feed="{feed_url}" data-news-limit="24">
+    <div class="section-head" style="margin-bottom:24px"><span class="eyebrow">Latest headlines</span><h2>Gold-market news</h2>
+      <p>Headlines collected automatically every hour from public RSS feeds and filtered for gold, the Federal Reserve, inflation, the US dollar and yields. Each card links to the original publisher — read the full story at the source.</p>
+      <p class="data-credit" data-news-updated hidden></p></div>
+    <div class="news-empty">{L.notice("<strong>Headlines are on their way.</strong> The news feed refreshes automatically every hour. If nothing appears here yet, the first update hasn't run or the sources are temporarily unavailable. XAUUSD Global never invents headlines, dates or quotes.", "info", "news")}</div>
+    <div class="cards cards--3 news-feed" hidden></div>
+    <p class="muted mt-2" style="font-size:.85rem">Headlines, excerpts and trademarks belong to their respective publishers. Inclusion of a headline is not an endorsement of its content and is not financial advice.</p>
+  </div>
+</section>
+<section class="section">
   <div class="wrap">
     <div class="section-head reveal"><span class="eyebrow">Evergreen explainers</span><h2>News categories and why they affect gold</h2>
       <p>Knowing <em>why</em> a type of event matters helps you decide whether to trade, wait, or reduce size around it.</p></div>
     <div class="news-cats">{cats}</div>
   </div>
 </section>
-<section class="section">
+<section class="section section--alt">
   <div class="wrap wrap--text prose">
     <h2 class="mt-0">How to read gold news as a trader</h2>
     <ol>
@@ -431,8 +450,8 @@ def news_page():
   </div>
 </section>
 <section class="section--tight section"><div class="wrap">{L.community_cta()}</div></section>"""
-    return L.page(path="/xauusd-news/", title="XAUUSD News — Gold Market Drivers Explained | XAUUSD Global",
-                  description="Gold market news hub for XAUUSD traders: how the Fed, inflation, the US dollar, Treasury yields, geopolitics and central banks affect the gold price.",
+    return L.page(path="/xauusd-news/", title="XAUUSD News & Economic Calendar — Gold Market Headlines",
+                  description="Gold market news for XAUUSD traders: economic calendar, hourly gold headlines, and how the Fed, inflation, the dollar and yields move the gold price.",
                   body=body, crumbs=crumbs)
 
 
@@ -604,7 +623,7 @@ def community_page():
   <div class="wrap">
     <div class="split">
       <div class="reveal">
-        <span class="eyebrow">Community standards (draft)</span>
+        <span class="eyebrow">Planned community standards</span>
         <h2>Principles we intend to hold members to</h2>
         <ul class="checklist">
           <li><strong>Explain the reasoning.</strong> Ideas without a thesis and invalidation don't belong in analysis threads.</li>
@@ -792,7 +811,7 @@ def about_page():
     <ul>
       <li>Articles are original, educational and written to explain concepts, not to sell outcomes.</li>
       <li>Hypothetical examples are labelled as hypothetical. We do not present illustrations as real trades.</li>
-      <li>News is never invented. Until a licensed feed is connected, our news hub contains clearly labelled explainers only.</li>
+      <li>News is never invented. Headlines are collected automatically from public RSS feeds, always credited to the original publisher and linked to the source; we show only the headline and a short excerpt.</li>
       <li>Each article shows its publication date and a “last reviewed” field that is only updated when a genuine review takes place.</li>
       <li>We aren't a regulated financial adviser and nothing on this site is personalised advice. See our <a href="/risk-disclaimer/">risk disclaimer</a>.</li>
     </ul>
@@ -811,8 +830,6 @@ def prose_page(meta, body_md, path):
     crumbs = [("/", "Home"), (path, meta["short"])]
     html_body, _ = L.render_md(body_md)
     extra = ""
-    if meta.get("draft_notice"):
-        extra = f'<div class="mt-2">{L.notice("<strong>Draft — not final.</strong> " + meta["draft_notice"], "", "info")}</div>'
     faqs = meta.get("faqs") or []
     faq_block = ""
     schema = []
