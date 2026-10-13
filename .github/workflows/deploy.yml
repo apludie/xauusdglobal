@@ -37,7 +37,7 @@ jobs:
         run: |
           mkdir _site
           rsync -a --exclude '.git' --exclude '.github' --exclude '_build' \
-                   --exclude '_site' --exclude 'README.md' --exclude '_config.yml' ./ _site/
+                   --exclude '_site' --exclude '*.md' --exclude '_config.yml' ./ _site/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
