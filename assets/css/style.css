@@ -565,3 +565,31 @@ strong { color: #fff; font-weight: 600; }
 .tv-box--calendar { height: 640px; }
 @media (max-width: 640px) { .tv-box--calendar { height: 560px; } }
 .news-card h3 { font-size: 1.05rem; line-height: 1.35; }
+
+/* ---------- Waitlist (Brevo form, restyled) ---------- */
+.waitlist { display: grid; gap: 36px; align-items: center; }
+@media (min-width: 940px) { .waitlist { grid-template-columns: 1fr 460px; gap: 56px; } }
+.waitlist__card { position: relative; border-radius: 20px; padding: 30px 26px; background: radial-gradient(ellipse at 100% 0%, rgba(242,193,78,.16), transparent 60%), linear-gradient(180deg, #15181d, #0e1013); border: 1px solid rgba(242,193,78,.3); box-shadow: var(--shadow); }
+.waitlist__title { font-size: 1.3rem; margin-bottom: 18px; }
+.waitlist .sib-form, .waitlist #sib-container { background: none; padding: 0; border: 0; text-align: left; }
+.waitlist .sib-form-block { margin-bottom: 16px; }
+.waitlist .entry__label { display: block; font-weight: 600; font-size: .92rem; margin-bottom: 7px; color: var(--text); }
+.waitlist .entry__label[data-required]::after { content: " *"; color: var(--gold); }
+.waitlist .input { width: 100%; min-height: 48px; padding: 11px 14px; border-radius: 10px; font: inherit; color: var(--text); background: rgba(255,255,255,.04); border: 1px solid var(--line-strong); transition: border-color .2s ease, box-shadow .2s ease; }
+.waitlist .input::placeholder { color: var(--text-3); }
+.waitlist .input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-glow); }
+.waitlist .entry__error { display: none; margin-top: 6px; font-size: .85rem; color: #ffb4aa; }
+.waitlist .entry_errored .entry__error { display: block; }
+.waitlist .entry_errored .input { border-color: var(--red); }
+.waitlist__btn { width: 100%; }
+.waitlist__btn .progress-indicator__icon { width: 18px; height: 18px; fill: currentColor; }
+@media (prefers-reduced-motion: no-preference) { .waitlist__btn .progress-indicator__icon { animation: spin 1s linear infinite; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.sib-hide-loader-icon { display: none !important; }
+.input--hidden { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+.waitlist__legal { font-size: .8rem; color: var(--text-3); margin: 6px 0 0; line-height: 1.55; }
+.sib-form-message-panel { display: none; }
+.waitlist__msg { border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; font-size: .95rem; }
+.waitlist__msg--ok { background: rgba(60,207,145,.1); border: 1px solid rgba(60,207,145,.4); color: #c9f5e0; }
+.waitlist__msg--error { background: rgba(239,106,91,.1); border: 1px solid rgba(239,106,91,.4); color: #ffd3cc; }
+.sib-form-message-panel--active { display: block !important; }
