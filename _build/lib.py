@@ -7,6 +7,7 @@ import random
 import re
 
 import markdown
+import os
 import yaml
 
 import config as C
@@ -348,7 +349,7 @@ def header(current):
     for path, label in NAV:
         cur = ' aria-current="page"' if current and current.startswith(path) else ""
         links.append(f'<li><a href="{path}"{cur}>{label}</a></li>')
-    links.append('<li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Registration Opening Soon</a></li>')
+    links.append('<li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Get Launch Updates</a></li>')
     return f"""<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
@@ -366,7 +367,7 @@ def footer():
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="brand" href="/" aria-label="{C.SITE_NAME} home">{LOGO_SVG}<span class="brand__name">XAUUSD<span> Global</span></span></a>
-        <p>{C.TAGLINE} An educational hub and a planned community that connects gold traders so they can learn, exchange perspectives and improve together.</p>
+        <p>{C.TAGLINE} Free gold-trading education and a learning community built on market reasoning, honest discussion and transparent trade reviews.</p>
       </div>
       <div><h2>Markets</h2><ul>
         <li><a href="/xauusd-price/">XAUUSD price &amp; chart</a></li>
@@ -377,6 +378,7 @@ def footer():
         <li><a href="/xauusd-trading-strategies/">Strategy hub</a></li>
         <li><a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts</a></li>
         <li><a href="/strategies/xauusd-risk-management/">Risk management</a></li>
+        <li><a href="/tools/position-size-calculator/">Position size calculator</a></li>
         <li><a href="/blog/">Blog</a></li>
       </ul></div>
       <div><h2>Community</h2><ul>
@@ -393,7 +395,7 @@ def footer():
       </ul></div>
     </div>
     <div class="footer-risk"><strong>Risk warning:</strong> Trading leveraged products such as CFDs and spot gold (XAUUSD) carries a high level of risk and can result in losses that exceed your expectations, including substantial losses of capital. Everything on this website is general educational information, not personalised financial, investment or trading advice. No strategy, framework or community participation guarantees results. Read the full <a href="/risk-disclaimer/">risk disclaimer</a>.</div>
-    <div class="footer-bottom"><span>&copy; {year} {C.SITE_NAME}. Educational content only.</span><span>Community registration and payments are not open yet.</span></div>
+    <div class="footer-bottom"><span>&copy; {year} {C.SITE_NAME}. Educational content only.</span><span>Membership launching soon · Launch-updates waitlist open.</span></div>
   </div>
 </footer>"""
 
@@ -401,10 +403,24 @@ def footer():
 FONT_URL = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
 
 
+OG_MANIFEST = []
+
+
+def og_key(path):
+    return path.strip("/").replace("/", "-") or "home"
+
+
 def page(*, path, title, description, body, crumbs=None, og_type="website", schema_extra=None,
          article_meta=None, noindex=False, body_attrs=""):
     url = canonical(path)
     og_img = C.SITE_URL + "/assets/images/og-default.png"
+    og_alt = "XAUUSD Global — One Market. One Global Community."
+    if not noindex and path != "/":
+        key = og_key(path)
+        OG_MANIFEST.append({"key": key, "path": path, "title": title.split(" | ")[0]})
+        if os.path.exists(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "images", "og", key + ".jpg")):
+            og_img = f"{C.SITE_URL}/assets/images/og/{key}.jpg"
+            og_alt = title.split(" | ")[0]
     graph = [org_schema()]
     if path == "/":
         graph.append({"@type": "WebSite", "@id": C.SITE_URL + "/#website", "url": C.SITE_URL + "/",
@@ -444,7 +460,7 @@ def page(*, path, title, description, body, crumbs=None, og_type="website", sche
 <meta property="og:image" content="{og_img}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XAUUSD Global — One Market. One Global Community.">
+<meta property="og:image:alt" content="{esc(og_alt)}">
 {art}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(title)}">
@@ -456,7 +472,9 @@ def page(*, path, title, description, body, crumbs=None, og_type="website", sche
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="{FONT_URL}">
+<link rel="preload" as="style" href="{FONT_URL}">
+<link rel="stylesheet" href="{FONT_URL}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{FONT_URL}"></noscript>
 <link rel="stylesheet" href="/assets/css/style.css">
 <script type="application/ld+json">{ld}</script>
 <script src="/assets/js/main.js" defer></script>
@@ -506,8 +524,8 @@ def faq_schema(faqs):
 
 def community_cta(compact=False):
     return f"""<aside class="cta-band" aria-labelledby="cta-h">
-  <span class="eyebrow">Stop learning alone</span>
-  <h2 id="cta-h">Learn the reasoning behind a trade, not just the entry.</h2>
-  <p>XAUUSD Global is building a community where intermediate traders compare analysis with advanced, Pro and Degen traders. Registration is not open yet — explore the vision and the planned membership.</p>
-  <div class="btn-row"><a class="btn btn--gold" href="/community/">Explore the Community Vision {icon("arrow")}</a><a class="btn btn--ghost" href="/membership/#registration">Registration Opening Soon</a></div>
+  <span class="eyebrow">Bring your charts. Bring your questions.</span>
+  <h2 id="cta-h">A trade idea can be useful. Understanding it lasts longer.</h2>
+  <p>XAUUSD Global is building a learning community around market reasoning, honest discussion and transparent trade reviews. Membership isn't open yet — get launch updates and be first to hear when it is.</p>
+  <div class="btn-row"><a class="btn btn--gold" href="/membership/#registration">Get Launch Updates {icon("arrow")}</a><a class="btn btn--ghost" href="/community/">How the community will work</a></div>
 </aside>"""

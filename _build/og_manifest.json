@@ -1,0 +1,172 @@
+[
+ {
+  "key": "strategies-support-and-resistance-xauusd",
+  "path": "/strategies/support-and-resistance-xauusd/",
+  "title": "Gold Support and Resistance Strategy for XAUUSD"
+ },
+ {
+  "key": "strategies-market-structure-xauusd",
+  "path": "/strategies/market-structure-xauusd/",
+  "title": "XAUUSD Market Structure: BOS & CHoCH for Gold Traders"
+ },
+ {
+  "key": "strategies-smart-money-concepts-xauusd",
+  "path": "/strategies/smart-money-concepts-xauusd/",
+  "title": "Smart Money Concepts XAUUSD: SMC Gold Trading Guide"
+ },
+ {
+  "key": "strategies-ict-trading-xauusd",
+  "path": "/strategies/ict-trading-xauusd/",
+  "title": "ICT Gold Trading: ICT Concepts Applied to XAUUSD"
+ },
+ {
+  "key": "strategies-liquidity-sweep-xauusd",
+  "path": "/strategies/liquidity-sweep-xauusd/",
+  "title": "XAUUSD Liquidity Sweep Strategy: Trading Gold Stop Runs"
+ },
+ {
+  "key": "strategies-order-blocks-xauusd",
+  "path": "/strategies/order-blocks-xauusd/",
+  "title": "XAUUSD Order Blocks: How to Find and Trade Gold Order Blocks"
+ },
+ {
+  "key": "strategies-fair-value-gap-xauusd",
+  "path": "/strategies/fair-value-gap-xauusd/",
+  "title": "Fair Value Gap Gold Strategy: Trading XAUUSD FVGs"
+ },
+ {
+  "key": "strategies-gold-breakout-retest-strategy",
+  "path": "/strategies/gold-breakout-retest-strategy/",
+  "title": "Gold Breakout and Retest Strategy: XAUUSD Guide"
+ },
+ {
+  "key": "strategies-xauusd-risk-management",
+  "path": "/strategies/xauusd-risk-management/",
+  "title": "Gold Trading Risk Management: XAUUSD Position Sizing Guide"
+ },
+ {
+  "key": "strategies-london-session-gold-trading",
+  "path": "/strategies/london-session-gold-trading/",
+  "title": "London Session Gold Trading: XAUUSD at the London Open"
+ },
+ {
+  "key": "strategies-new-york-session-gold-trading",
+  "path": "/strategies/new-york-session-gold-trading/",
+  "title": "New York Session Gold Trading: XAUUSD Around US Data"
+ },
+ {
+  "key": "blog-what-is-xauusd",
+  "path": "/blog/what-is-xauusd/",
+  "title": "What Is XAUUSD? A Practical Guide to Trading Gold"
+ },
+ {
+  "key": "blog-what-moves-gold-prices",
+  "path": "/blog/what-moves-gold-prices/",
+  "title": "What Moves Gold Prices? Dollar, Yields, Inflation & the Fed"
+ },
+ {
+  "key": "blog-how-to-identify-support-and-resistance-gold",
+  "path": "/blog/how-to-identify-support-and-resistance-gold/",
+  "title": "How to Identify Support and Resistance on a Gold Chart"
+ },
+ {
+  "key": "blog-smart-money-concepts-explained-xauusd",
+  "path": "/blog/smart-money-concepts-explained-xauusd/",
+  "title": "Smart Money Concepts Explained for XAUUSD Traders"
+ },
+ {
+  "key": "blog-ict-concepts-for-gold-trading",
+  "path": "/blog/ict-concepts-for-gold-trading/",
+  "title": "ICT Concepts for Gold Trading: Liquidity, FVGs, Structure"
+ },
+ {
+  "key": "blog-how-to-build-a-xauusd-trading-plan",
+  "path": "/blog/how-to-build-a-xauusd-trading-plan/",
+  "title": "How to Build a XAUUSD Trading Plan (with Template)"
+ },
+ {
+  "key": "blog-common-mistakes-intermediate-gold-traders",
+  "path": "/blog/common-mistakes-intermediate-gold-traders/",
+  "title": "Common Mistakes Intermediate Gold Traders Make (and Fixes)"
+ },
+ {
+  "key": "blog-risk-management-volatile-gold-markets",
+  "path": "/blog/risk-management-volatile-gold-markets/",
+  "title": "Risk Management for Volatile Gold Markets"
+ },
+ {
+  "key": "blog-how-to-keep-a-trading-journal",
+  "path": "/blog/how-to-keep-a-trading-journal/",
+  "title": "How to Keep a Trading Journal for Gold (XAUUSD)"
+ },
+ {
+  "key": "blog-london-vs-new-york-sessions",
+  "path": "/blog/london-vs-new-york-sessions/",
+  "title": "London vs New York Session for Gold Trading (XAUUSD)"
+ },
+ {
+  "key": "xauusd-price",
+  "path": "/xauusd-price/",
+  "title": "XAUUSD Price Today \u2014 Live Gold Price Chart"
+ },
+ {
+  "key": "xauusd-news",
+  "path": "/xauusd-news/",
+  "title": "XAUUSD News & Economic Calendar \u2014 Gold Market Headlines"
+ },
+ {
+  "key": "xauusd-trading-strategies",
+  "path": "/xauusd-trading-strategies/",
+  "title": "XAUUSD Trading Strategies \u2014 18 Gold Trading Methods Explained"
+ },
+ {
+  "key": "blog",
+  "path": "/blog/",
+  "title": "Gold Trading Blog \u2014 XAUUSD Analysis & Education"
+ },
+ {
+  "key": "community",
+  "path": "/community/",
+  "title": "XAUUSD Trading Community \u2014 Learn Gold Trading Together"
+ },
+ {
+  "key": "membership",
+  "path": "/membership/",
+  "title": "Membership & Trader Levels \u2014 Planned $19.99/month"
+ },
+ {
+  "key": "about",
+  "path": "/about/",
+  "title": "About XAUUSD Global \u2014 Our Mission and Philosophy"
+ },
+ {
+  "key": "tools-position-size-calculator",
+  "path": "/tools/position-size-calculator/",
+  "title": "XAUUSD Position Size Calculator \u2014 Gold Lot Size Calculator"
+ },
+ {
+  "key": "contact",
+  "path": "/contact/",
+  "title": "Contact XAUUSD Global"
+ },
+ {
+  "key": "faq",
+  "path": "/faq/",
+  "title": "FAQ \u2014 XAUUSD Global Gold Trading Community"
+ },
+ {
+  "key": "risk-disclaimer",
+  "path": "/risk-disclaimer/",
+  "title": "Risk Disclaimer"
+ },
+ {
+  "key": "privacy-policy",
+  "path": "/privacy-policy/",
+  "title": "Privacy Policy"
+ },
+ {
+  "key": "terms",
+  "path": "/terms/",
+  "title": "Terms of Use"
+ }
+]
