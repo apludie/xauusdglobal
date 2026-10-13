@@ -1,1 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gold Trading Risk Management: XAUUSD Position Sizing Guide</title>
+<meta name="description" content="XAUUSD risk management: position sizing from stop distance, contract size, leverage, stop placement, loss limits, and news and gap risk, with examples.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.xauusdglobal.com/strategies/xauusd-risk-management/">
+<meta name="theme-color" content="#08090b">
+<meta property="og:site_name" content="XAUUSD Global">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gold Trading Risk Management: XAUUSD Position Sizing Guide">
+<meta property="og:description" content="XAUUSD risk management: position sizing from stop distance, contract size, leverage, stop placement, loss limits, and news and gap risk, with examples.">
+<meta property="og:url" content="https://www.xauusdglobal.com/strategies/xauusd-risk-management/">
+<meta property="og:image" content="https://www.xauusdglobal.com/assets/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="XAUUSD Global — One Market. One Global Community.">
+<meta property="article:published_time" content="2026-10-13"><meta property="article:section" content="Risk &amp; process">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gold Trading Risk Management: XAUUSD Position Sizing Guide">
+<meta name="twitter:description" content="XAUUSD risk management: position sizing from stop distance, contract size, leverage, stop placement, loss limits, and news and gap risk, with examples.">
+<meta name="twitter:image" content="https://www.xauusdglobal.com/assets/images/og-default.png">
 
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.xauusdglobal.com/#organization","name":"XAUUSD Global","url":"https://www.xauusdglobal.com/","logo":{"@type":"ImageObject","url":"https://www.xauusdglobal.com/assets/images/logo-512.png","width":512,"height":512},"slogan":"One Market. One Global Community.","description":"An educational website and planned global community for XAUUSD (gold) traders."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.xauusdglobal.com/"},{"@type":"ListItem","position":2,"name":"Trading Strategies","item":"https://www.xauusdglobal.com/xauusd-trading-strategies/"},{"@type":"ListItem","position":3,"name":"Risk Management","item":"https://www.xauusdglobal.com/strategies/xauusd-risk-management/"}]},{"@type":"Article","headline":"XAUUSD Risk Management and Position Sizing","description":"XAUUSD risk management: position sizing from stop distance, contract size, leverage, stop placement, loss limits, and news and gap risk, with examples.","datePublished":"2026-10-13","dateModified":"2026-10-13","author":{"@id":"https://www.xauusdglobal.com/#organization"},"publisher":{"@id":"https://www.xauusdglobal.com/#organization"},"image":"https://www.xauusdglobal.com/assets/images/og-default.png","mainEntityOfPage":"https://www.xauusdglobal.com/strategies/xauusd-risk-management/","articleSection":"Risk & process","inLanguage":"en"}]}</script>
+<script src="/assets/js/main.js" defer></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="8800c2af-3b56-4a38-a647-648b303f758a"></script>
+</head>
+<body data-price-widgets="on">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="XAUUSD Global home"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2c14e"/><stop offset="1" stop-color="#b8862b"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="16" fill="#111318" stroke="url(#lg-g)" stroke-width="2"/><path d="M18 18l28 28M46 18L18 46" stroke="url(#lg-g)" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="32" r="21" fill="none" stroke="#f2c14e" stroke-opacity=".28" stroke-width="1.5"/><rect x="28.5" y="24" width="7" height="16" rx="1.6" fill="#111318" stroke="#45d6c4" stroke-width="1.8"/><path d="M32 19v5M32 40v5" stroke="#45d6c4" stroke-width="1.8" stroke-linecap="round"/></svg><span class="brand__name">XAUUSD<span> Global</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main"><ul><li><a href="/xauusd-price/">Gold Price</a></li><li><a href="/xauusd-news/">News</a></li><li><a href="/xauusd-trading-strategies/">Strategies</a></li><li><a href="/blog/">Blog</a></li><li><a href="/community/">Community</a></li><li><a href="/membership/">Membership</a></li><li><a href="/about/">About</a></li><li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Registration Opening Soon</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-head grid-bg">
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/xauusd-trading-strategies/">Trading Strategies</a></li><li><span aria-current="page">Risk Management</span></li></ol></nav>
+    <div style="margin-top:22px"><span class="eyebrow">Risk &amp; process</span></div>
+    <h1>XAUUSD Risk Management and Position Sizing</h1>
+    <p class="lede">Most traders don&#x27;t fail because their analysis is bad — they fail because one bad week takes too much of their account. This guide shows how to size XAUUSD positions, where stops belong, and how to build limits that keep you trading.</p>
+    <div class="byline">
+      <span>Published <b><time datetime="2026-10-13">13 October 2026</time></b></span>
+      <span><b>4 min</b> read</span>
+      <span>Author: <b>XAUUSD Global Editorial <span class="muted">(named author profile to be added)</span></b></span>
+      <span>Reviewer: <b>To be assigned <span class="muted">(qualified reviewer, credentials to be verified)</span></b></span>
+      <span>Last reviewed: <b>Pending editorial review</b></span>
+    </div>
+  </div>
+</section>
+<div class="wrap">
+  <div class="article-layout">
+    <aside class="toc" aria-label="Table of contents"><details><summary>On this page</summary><ol><li><a href="#why-risk-management-comes-first">Why risk management comes first</a></li><li><a href="#understanding-xauusd-contract-size">Understanding XAUUSD contract size</a></li><li><a href="#position-sizing-from-the-stop-distance">Position sizing from the stop distance</a></li><li><a href="#where-stops-belong">Where stops belong</a></li><li><a href="#limits-that-protect-the-account">Limits that protect the account</a></li><li><a href="#news-gaps-and-slippage">News, gaps and slippage</a></li><li><a href="#reward-to-risk-and-expectancy">Reward-to-risk and expectancy</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></details></aside>
+    <article class="prose">
+      <div class="notice notice--risk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9.5 17H2.5L12 3z"/><path d="M12 10v4M12 17.5v.01"/></svg><div><strong>Educational content, not financial advice.</strong> Examples are hypothetical and simplified. Trading leveraged gold products can result in substantial losses. <a href='/risk-disclaimer/'>Read the risk disclaimer</a>.</div></div>
+      <div style="height:1.4em"></div>
+      <h2 id="why-risk-management-comes-first">Why risk management comes first</h2>
+<p>Gold is one of the most volatile major markets that retail traders commonly access. It can move many dollars within minutes around US data, and it can gap over a weekend. With leverage, those moves translate directly into large swings in account value.</p>
+<p>Risk management is what keeps a run of normal losses from becoming a disaster. Every strategy — <a href="/strategies/support-and-resistance-xauusd/">support and resistance</a>, <a href="/strategies/smart-money-concepts-xauusd/">SMC</a>, <a href="/strategies/gold-breakout-retest-strategy/">breakouts</a> — will have losing streaks. Your sizing rules decide whether you survive them.</p>
+<div class="callout callout--warn">
+<p>Leveraged trading and CFDs can result in substantial losses. Nothing in this guide is a personal recommendation. Check your broker&rsquo;s contract specifications, margin rules and stop-loss terms before trading.</p>
+</div>
+<h2 id="understanding-xauusd-contract-size">Understanding XAUUSD contract size</h2>
+<p>Before you can size a position, you need to know what a price move is worth. On many platforms:</p>
+<table>
+<thead>
+<tr>
+<th>Position size</th>
+<th>Ounces</th>
+<th>Value of a $1 move</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.00 lot</td>
+<td>100 oz</td>
+<td>about $100</td>
+</tr>
+<tr>
+<td>0.10 lot</td>
+<td>10 oz</td>
+<td>about $10</td>
+</tr>
+<tr>
+<td>0.01 lot</td>
+<td>1 oz</td>
+<td>about $1</td>
+</tr>
+</tbody>
+</table>
+<p>So a $10 move against a 1-lot position is roughly a $1,000 loss. Because brokers can define lots differently, confirm this in your own platform before relying on it.</p>
+<h2 id="position-sizing-from-the-stop-distance">Position sizing from the stop distance</h2>
+<p>The standard approach is:</p>
+<blockquote>
+<p><strong>Position size = (Account balance × risk %) ÷ (stop distance in $ × value per $1 move per lot)</strong></p>
+</blockquote>
+<h3 id="worked-example">Worked example</h3>
+<div class="callout callout--hypo">
+<p>A trader has a $10,000 account and risks 1% per trade: $100. The trade idea&rsquo;s logical invalidation is $8 away from the entry. With a contract where $1 per ounce equals $100 per lot, one lot would lose $800 at the stop. Position size = $100 ÷ $800 = 0.125 lots, which the trader rounds <strong>down</strong> to 0.12 lots. If the stop were $16 away instead, the position would be roughly 0.06 lots — half the size for the same dollar risk.</p>
+</div>
+<p>The key principle: <strong>the stop is decided by the chart; the position size is decided by the stop.</strong> Never pick a lot size first and then squeeze the stop to fit it.</p>
+<h2 id="where-stops-belong">Where stops belong</h2>
+<p>A stop should sit where your trade idea is clearly wrong, plus a buffer for normal noise.</p>
+<figure class="figure"><svg viewBox="0 0 760 400" role="img" aria-labelledby="t-rm-stop" xmlns="http://www.w3.org/2000/svg" font-family="ui-monospace, Menlo, monospace"><title id="t-rm-stop">Hypothetical stop placement: inside noise versus beyond structure</title><rect width="760" height="400" rx="10" fill="#0d0f12"/><line x1="14" x2="670" y1="22.0" y2="22.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="26.0" font-size="11" fill="#6f6e69">3,834.4</text><line x1="14" x2="670" y1="80.7" y2="80.7" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="84.7" font-size="11" fill="#6f6e69">3,829.4</text><line x1="14" x2="670" y1="139.3" y2="139.3" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="143.3" font-size="11" fill="#6f6e69">3,824.5</text><line x1="14" x2="670" y1="198.0" y2="198.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="202.0" font-size="11" fill="#6f6e69">3,819.6</text><line x1="14" x2="670" y1="256.7" y2="256.7" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="260.7" font-size="11" fill="#6f6e69">3,814.6</text><line x1="14" x2="670" y1="315.3" y2="315.3" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="319.3" font-size="11" fill="#6f6e69">3,809.7</text><line x1="14" x2="670" y1="374.0" y2="374.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="378.0" font-size="11" fill="#6f6e69">3,804.8</text><line y1="22" y2="374" x1="95.2" x2="95.2" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="176.5" x2="176.5" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="257.8" x2="257.8" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="339.0" x2="339.0" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="420.2" x2="420.2" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="501.5" x2="501.5" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="582.8" x2="582.8" stroke="#ffffff" stroke-opacity=".035"/><rect x="103.7" y="252.5" width="560.3" height="31.0" fill="#3ccf91" fill-opacity=".12" stroke="#3ccf91" stroke-opacity=".55" stroke-dasharray="4 3"/><text x="109.7" y="246.5" font-size="11.5" fill="#3ccf91" font-weight="600">SUPPORT ZONE</text><line x1="361.4" x2="652.8" y1="293.0" y2="293.0" stroke="#ef6a5b" stroke-width="1.4" stroke-dasharray="6 5"/><text x="646.8" y="309.0" font-size="11.5" text-anchor="end" fill="#ef6a5b" font-weight="600">Tight stop — inside noise</text><line x1="361.4" x2="652.8" y1="350.1" y2="350.1" stroke="#f2c14e" stroke-width="1.4" stroke-dasharray="6 5"/><text x="646.8" y="366.1" font-size="11.5" text-anchor="end" fill="#f2c14e" font-weight="600">Structural stop + buffer</text><line x1="25.2" x2="25.2" y1="101.5" y2="123.2" stroke="#ef6a5b" stroke-width="1.3"/><rect x="18.7" y="107.2" width="13.0" height="11.3" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="47.6" x2="47.6" y1="115.1" y2="149.3" stroke="#ef6a5b" stroke-width="1.3"/><rect x="41.1" y="118.5" width="13.0" height="23.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="70.0" x2="70.0" y1="133.4" y2="172.2" stroke="#ef6a5b" stroke-width="1.3"/><rect x="63.5" y="142.1" width="13.0" height="26.5" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="92.4" x2="92.4" y1="161.0" y2="202.9" stroke="#ef6a5b" stroke-width="1.3"/><rect x="85.9" y="168.5" width="13.0" height="23.1" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="114.9" x2="114.9" y1="179.2" y2="225.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="108.4" y="191.6" width="13.0" height="29.8" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="137.3" x2="137.3" y1="213.9" y2="248.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="130.8" y="221.5" width="13.0" height="16.0" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="159.7" x2="159.7" y1="231.8" y2="270.6" stroke="#ef6a5b" stroke-width="1.3"/><rect x="153.2" y="237.4" width="13.0" height="30.1" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="182.1" x2="182.1" y1="235.9" y2="271.9" stroke="#3ccf91" stroke-width="1.3"/><rect x="175.6" y="243.7" width="13.0" height="23.8" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="204.5" x2="204.5" y1="228.7" y2="248.0" stroke="#3ccf91" stroke-width="1.3"/><rect x="198.0" y="231.7" width="13.0" height="12.0" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="226.9" x2="226.9" y1="203.4" y2="241.4" stroke="#3ccf91" stroke-width="1.3"/><rect x="220.4" y="210.2" width="13.0" height="21.6" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="249.3" x2="249.3" y1="186.0" y2="222.9" stroke="#3ccf91" stroke-width="1.3"/><rect x="242.8" y="197.2" width="13.0" height="13.0" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="271.8" x2="271.8" y1="187.1" y2="221.1" stroke="#ef6a5b" stroke-width="1.3"/><rect x="265.3" y="197.2" width="13.0" height="12.7" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="294.2" x2="294.2" y1="202.8" y2="238.7" stroke="#ef6a5b" stroke-width="1.3"/><rect x="287.7" y="209.9" width="13.0" height="25.8" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="316.6" x2="316.6" y1="227.8" y2="251.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="310.1" y="235.7" width="13.0" height="12.5" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="339.0" x2="339.0" y1="237.7" y2="279.0" stroke="#ef6a5b" stroke-width="1.3"/><rect x="332.5" y="248.2" width="13.0" height="22.7" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="361.4" x2="361.4" y1="247.1" y2="273.6" stroke="#3ccf91" stroke-width="1.3"/><rect x="354.9" y="259.2" width="13.0" height="11.7" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="383.8" x2="383.8" y1="224.5" y2="269.4" stroke="#3ccf91" stroke-width="1.3"/><rect x="377.3" y="237.1" width="13.0" height="22.1" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="406.2" x2="406.2" y1="229.3" y2="256.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="399.7" y="237.1" width="13.0" height="14.9" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="428.7" x2="428.7" y1="241.9" y2="283.0" stroke="#ef6a5b" stroke-width="1.3"/><rect x="422.2" y="252.0" width="13.0" height="20.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="451.1" x2="451.1" y1="260.3" y2="316.8" stroke="#ef6a5b" stroke-width="1.3"/><rect x="444.6" y="272.6" width="13.0" height="16.8" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="473.5" x2="473.5" y1="249.9" y2="295.3" stroke="#3ccf91" stroke-width="1.3"/><rect x="467.0" y="252.5" width="13.0" height="36.8" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="495.9" x2="495.9" y1="208.4" y2="265.2" stroke="#3ccf91" stroke-width="1.3"/><rect x="489.4" y="211.8" width="13.0" height="40.7" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="518.3" x2="518.3" y1="167.4" y2="214.6" stroke="#3ccf91" stroke-width="1.3"/><rect x="511.8" y="177.0" width="13.0" height="34.9" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="540.7" x2="540.7" y1="136.0" y2="180.1" stroke="#3ccf91" stroke-width="1.3"/><rect x="534.2" y="145.6" width="13.0" height="31.4" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="563.1" x2="563.1" y1="125.1" y2="156.8" stroke="#3ccf91" stroke-width="1.3"/><rect x="556.6" y="128.2" width="13.0" height="17.3" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="585.6" x2="585.6" y1="91.0" y2="138.4" stroke="#3ccf91" stroke-width="1.3"/><rect x="579.1" y="103.0" width="13.0" height="25.2" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="608.0" x2="608.0" y1="84.5" y2="110.3" stroke="#3ccf91" stroke-width="1.3"/><rect x="601.5" y="87.4" width="13.0" height="15.7" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="630.4" x2="630.4" y1="56.2" y2="89.8" stroke="#3ccf91" stroke-width="1.3"/><rect x="623.9" y="66.4" width="13.0" height="20.9" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="652.8" x2="652.8" y1="51.8" y2="78.5" stroke="#3ccf91" stroke-width="1.3"/><rect x="646.3" y="54.9" width="13.0" height="11.5" fill="#3ccf91" fill-opacity="0.9" rx="1"/><circle cx="451.1" cy="316.8" r="4" fill="#ef6a5b" stroke="#0d0f12" stroke-width="1.5"/><text x="451.1" y="338.8" font-size="11.5" text-anchor="middle" fill="#ef6a5b" font-weight="700">Wick takes tight stop</text><text x="20" y="392" font-size="10.5" fill="#6f6e69">HYPOTHETICAL DATA · ILLUSTRATION ONLY · NOT A REAL XAUUSD CHART</text></svg><figcaption><b>Hypothetical stop placement: inside noise versus beyond structure.</b> A stop just below the support line sits inside normal gold noise and is hit before the move develops. A stop beyond the swing low plus a buffer survives — with a smaller position size to keep the same dollar risk. Hypothetical data.</figcaption></figure>
+
+<ul>
+<li><strong>Beyond structure, not at it.</strong> Below the swing low that defines your idea, not just below the support line.</li>
+<li><strong>Add a volatility buffer.</strong> Many traders use a fraction of ATR on their execution timeframe.</li>
+<li><strong>Account for the spread.</strong> Sell stops trigger on the bid and buy stops on the ask; spreads widen at news and during thin hours.</li>
+<li><strong>If the logical stop is too wide</strong>, the answer is a smaller position — or skipping the trade.</li>
+</ul>
+<h2 id="limits-that-protect-the-account">Limits that protect the account</h2>
+<p>Individual trade risk isn&rsquo;t enough on its own. Common additional limits include:</p>
+<ul>
+<li><strong>Daily loss limit</strong> — for example stopping for the day after losing a set multiple of normal risk.</li>
+<li><strong>Weekly drawdown limit</strong> — stepping back to review after a defined weekly loss.</li>
+<li><strong>Maximum open risk</strong> — capping total risk across all open positions, including correlated ones (for example gold and silver, or gold and a dollar pair).</li>
+<li><strong>Losing-streak rule</strong> — reducing size after a run of losses, rather than increasing it to &ldquo;win it back&rdquo;.</li>
+</ul>
+<p>Write these into your <a href="/blog/how-to-build-a-xauusd-trading-plan/">trading plan</a> before you need them.</p>
+<h2 id="news-gaps-and-slippage">News, gaps and slippage</h2>
+<ul>
+<li><strong>Scheduled news:</strong> consider being flat, reducing size, or not entering in the minutes before and after major US releases. See <a href="/strategies/new-york-session-gold-trading/">New York-session gold trading</a>.</li>
+<li><strong>Weekend gaps:</strong> gold can open Monday far from Friday&rsquo;s close. Positions held over the weekend carry gap risk that stops cannot fully control.</li>
+<li><strong>Slippage:</strong> in fast markets, stops can fill worse than the stop price. Your real worst-case loss can exceed your planned risk.</li>
+</ul>
+<h2 id="reward-to-risk-and-expectancy">Reward-to-risk and expectancy</h2>
+<p>Reward-to-risk compares the potential gain to the planned loss. A 2:1 ratio means aiming to make twice what you risk. On its own it says nothing about profitability: what matters is <strong>expectancy</strong> — win rate and average win versus average loss across many trades. A high-ratio setup that rarely works can lose money; a lower-ratio setup with a higher win rate may not. Only a journal of real or carefully simulated trades can tell you which you have — see <a href="/blog/how-to-keep-a-trading-journal/">how to keep a trading journal</a>.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul>
+<li>Sizing by &ldquo;feel&rdquo; or by a fixed lot regardless of stop distance.</li>
+<li>Moving the stop further away once the trade goes against you.</li>
+<li>Increasing size after losses.</li>
+<li>Ignoring correlation between positions.</li>
+<li>Holding full size through major news or over weekends without a plan.</li>
+<li>Treating a stop-loss as a guaranteed maximum loss.</li>
+</ul>
+<p>Good risk management is unglamorous. It doesn&rsquo;t make any single trade better. It makes sure that you&rsquo;re still here — with capital and confidence intact — when your analysis is right.</p>
+      <h2 id="faq">Frequently asked questions</h2><div class="faq-list"><details><summary>How much should I risk per gold trade?</summary><div><p>Many educators suggest risking a small, fixed percentage of the account per trade — often cited in the range of 0.5% to 2%. What&rsquo;s appropriate depends on your experience, strategy and circumstances. This is general education, not a personal recommendation.</p></div></details><details><summary>How much is one lot of XAUUSD?</summary><div><p>On many platforms, one standard lot of XAUUSD is 100 troy ounces, so a $1 move in price equals about $100 per lot. Some brokers use different contract sizes, so always check your broker&rsquo;s contract specifications.</p></div></details><details><summary>Is a stop-loss guaranteed to limit my loss?</summary><div><p>No. A standard stop-loss becomes a market order when triggered. During fast markets, news releases and weekend gaps, it can be filled at a worse price (slippage). Some brokers offer guaranteed stops for a fee; terms vary.</p></div></details><details><summary>Does high leverage increase risk?</summary><div><p>Leverage itself only determines how much margin a position requires. The real risk is position size relative to your account. High leverage makes it easy to open positions that are far too large, which is why it contributes to large losses.</p></div></details></div>
+      <section class="related" aria-labelledby="rel-h"><h2 id="rel-h">Continue learning</h2><ul><li><a href="/blog/risk-management-volatile-gold-markets/">Risk Management for Volatile Gold Markets</a></li><li><a href="/blog/how-to-build-a-xauusd-trading-plan/">How to Build a Trading Plan for XAUUSD</a></li><li><a href="/blog/how-to-keep-a-trading-journal/">How to Keep a Trading Journal and Review Your Setups</a></li><li><a href="/strategies/new-york-session-gold-trading/">New York Session Gold Trading: US Data, the Overlap and Volatility</a></li></ul></section>
+      <aside class="cta-band" aria-labelledby="cta-h">
+  <span class="eyebrow">Stop learning alone</span>
+  <h2 id="cta-h">Learn the reasoning behind a trade, not just the entry.</h2>
+  <p>XAUUSD Global is building a community where intermediate traders compare analysis with advanced, Pro and Degen traders. Registration is not open yet — explore the vision and the planned membership.</p>
+  <div class="btn-row"><a class="btn btn--gold" href="/community/">Explore the Community Vision <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--ghost" href="/membership/#registration">Registration Opening Soon</a></div>
+</aside>
+    </article>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="XAUUSD Global home"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2c14e"/><stop offset="1" stop-color="#b8862b"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="16" fill="#111318" stroke="url(#lg-g)" stroke-width="2"/><path d="M18 18l28 28M46 18L18 46" stroke="url(#lg-g)" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="32" r="21" fill="none" stroke="#f2c14e" stroke-opacity=".28" stroke-width="1.5"/><rect x="28.5" y="24" width="7" height="16" rx="1.6" fill="#111318" stroke="#45d6c4" stroke-width="1.8"/><path d="M32 19v5M32 40v5" stroke="#45d6c4" stroke-width="1.8" stroke-linecap="round"/></svg><span class="brand__name">XAUUSD<span> Global</span></span></a>
+        <p>One Market. One Global Community. An educational hub and a planned community that connects gold traders so they can learn, exchange perspectives and improve together.</p>
+      </div>
+      <div><h2>Markets</h2><ul>
+        <li><a href="/xauusd-price/">XAUUSD price &amp; chart</a></li>
+        <li><a href="/xauusd-news/">Gold market news</a></li>
+        <li><a href="/blog/what-moves-gold-prices/">What moves gold</a></li>
+      </ul></div>
+      <div><h2>Learn</h2><ul>
+        <li><a href="/xauusd-trading-strategies/">Strategy hub</a></li>
+        <li><a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts</a></li>
+        <li><a href="/strategies/xauusd-risk-management/">Risk management</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul></div>
+      <div><h2>Community</h2><ul>
+        <li><a href="/community/">Community vision</a></li>
+        <li><a href="/membership/">Membership &amp; levels</a></li>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div><h2>Legal</h2><ul>
+        <li><a href="/risk-disclaimer/">Risk disclaimer</a></li>
+        <li><a href="/privacy-policy/">Privacy policy</a></li>
+        <li><a href="/terms/">Terms of use</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-risk"><strong>Risk warning:</strong> Trading leveraged products such as CFDs and spot gold (XAUUSD) carries a high level of risk and can result in losses that exceed your expectations, including substantial losses of capital. Everything on this website is general educational information, not personalised financial, investment or trading advice. No strategy, framework or community participation guarantees results. Read the full <a href="/risk-disclaimer/">risk disclaimer</a>.</div>
+    <div class="footer-bottom"><span>&copy; 2026 XAUUSD Global. Educational content only.</span><span>Community registration and payments are not open yet.</span></div>
+  </div>
+</footer>
+</body>
+</html>
