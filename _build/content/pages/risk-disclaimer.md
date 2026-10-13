@@ -2,45 +2,62 @@
 title: "Risk Disclaimer"
 short: "Risk Disclaimer"
 seo_title: "Risk Disclaimer | XAUUSD Global"
-description: "Important risk information for XAUUSD Global visitors: leveraged gold and CFD trading risks, educational content only, no guarantees, no personal advice."
-lede: "Please read this before acting on anything you learn on XAUUSD Global."
+description: "Important risk information for XAUUSD Global visitors: leveraged gold and CFD trading risks, educational content only, no guarantees and no personal advice."
+lede: "Trading gold and other leveraged products carries significant risk. Please read this disclaimer carefully before acting on any information published on XAUUSD Global."
 eyebrow: "Important information"
-draft_notice: "This disclaimer is a working draft and should be reviewed by a qualified legal professional, particularly before community membership or payments are launched."
 updated: "2026-10-13"
 ---
 
-## Trading involves substantial risk
+## 1. High risk of loss
 
-**Leveraged trading and CFDs can result in substantial losses.** Trading spot gold (XAUUSD), gold CFDs, futures or other leveraged products carries a high level of risk and is not suitable for everyone. Leverage magnifies both gains and losses. You can lose money rapidly, and depending on your broker and jurisdiction, losses may exceed your initial deposit.
+**Trading leveraged products, including spot gold (XAUUSD), contracts for difference (CFDs), futures and options, carries a high level of risk and may not be suitable for all investors.** Leverage magnifies both gains and losses. A relatively small price movement can result in a large loss, and you may lose some or all of the money you deposit. Depending on your broker, account type and jurisdiction, losses may exceed your initial deposit.
 
-Before trading, consider your objectives, experience and financial situation, and seek independent advice from a suitably qualified and authorised professional if you have any doubts.
+Before deciding to trade, you should carefully consider your investment objectives, level of experience, financial situation and risk appetite. You should not trade with money that you cannot afford to lose.
 
-## Educational information only
+## 2. Volatility of the gold market
 
-All content on this website — including articles, strategy guides, diagrams, examples, FAQs and any future community discussions — is **general educational information**. It is **not** personalised financial, investment, tax or legal advice, and it is not a recommendation or solicitation to buy or sell any financial instrument.
+The gold market can be highly volatile. Prices may move rapidly and unpredictably in response to economic data, central-bank decisions, changes in interest rates and currency values, geopolitical events and shifts in market sentiment. Periods of high volatility can lead to sudden losses, wider spreads, reduced liquidity and difficulty in executing orders at the intended price.
 
-XAUUSD Global is not a broker, investment adviser or financial institution. We do not claim regulatory authorisation of any kind.
+## 3. Educational content only
 
-## No guarantees
+All information published on XAUUSD Global — including articles, strategy guides, diagrams, examples, market explainers, frequently asked questions and any future community content — is provided for **general educational and informational purposes only**.
 
-**No strategy, framework or community participation guarantees results.** Concepts such as support and resistance, Smart Money Concepts, ICT concepts, order blocks, fair value gaps and session-based approaches are interpretive frameworks. They can and do fail. Past performance — whether of a strategy, an example or any trader — does not indicate future results.
+It does **not** constitute financial, investment, trading, tax or legal advice, and it is **not** a recommendation, offer or solicitation to buy or sell any financial instrument or to follow any particular strategy. The content does not take into account your personal circumstances. You should seek independent advice from a suitably qualified and authorised financial professional before making any trading or investment decision.
 
-## Hypothetical examples
+XAUUSD Global is not a broker, investment adviser or financial institution, and does not provide personalised advice, trading signals or account management services.
 
-Examples and charts on this site use **hypothetical data** and are clearly labelled as illustrations. They are simplified, do not represent real trades or real market prices, and do not account for spreads, commissions, swap costs, slippage, execution delays or the psychological pressure of real trading.
+## 4. No guarantee of results
 
-## Market data
+**No trading strategy, analytical framework, educational resource or community participation can guarantee profits or prevent losses.** The methods discussed on this Website — including support and resistance, market structure, Smart Money Concepts (SMC), ICT concepts, liquidity sweeps, order blocks, fair value gaps, breakout strategies and session-based approaches — are interpretive tools. They can and frequently do fail, and their effectiveness varies with market conditions and with the skill and discipline of the individual trader.
 
-Price charts and quotes displayed on this site, where available, are supplied by third-party providers through embedded widgets. They may be delayed, indicative or inaccurate and may differ from your broker's prices. We do not guarantee their accuracy, completeness or timeliness. Do not rely on them for trading decisions.
+Past performance, whether actual or simulated, is not a reliable indicator of future results.
 
-## Stop-losses are not guaranteed
+## 5. Hypothetical examples and illustrations
 
-Standard stop-loss orders may be filled at a worse price than requested during fast markets, news events, low liquidity or price gaps — for example over weekends. Your actual loss can exceed your planned risk.
+Examples, scenarios, price levels and chart diagrams presented on this Website are **hypothetical** and are provided solely to illustrate concepts. They do not represent actual trades, real accounts or current market prices. Hypothetical examples have inherent limitations: they are prepared with the benefit of hindsight, and they do not reflect the effect of spreads, commissions, overnight financing charges, slippage, execution delays, liquidity constraints or the psychological pressures of real trading.
 
-## Community content (future)
+## 6. Stop-loss orders and execution risk
 
-When the community launches, members may share analysis, opinions and trade reviews. These will reflect the views of individual members, not XAUUSD Global, and will not be verified as accurate or suitable for you. You remain solely responsible for your own trading decisions.
+Stop-loss and other risk-management orders do not guarantee that losses will be limited to the intended amount. In fast-moving markets, during economic announcements, at market opening times, or when prices gap — for example, between the close of trading on Friday and the opening on Monday — orders may be executed at a significantly worse price than requested. Guaranteed stop-loss orders, where offered by a broker, are subject to that broker's terms and charges.
 
-## Your responsibility
+## 7. Market data
 
-By using this website you acknowledge that you are responsible for your own decisions and that XAUUSD Global accepts no liability for losses arising from the use of information on this site, to the extent permitted by applicable law. See also our [terms of use](/terms/) and [privacy policy](/privacy-policy/).
+Prices, charts and other market data displayed on the Website are supplied by third-party providers through embedded widgets. This information may be delayed, indicative or inaccurate and may differ from the prices quoted by your broker. XAUUSD Global does not generate, verify or guarantee such data, and it should not be relied upon for trading decisions.
+
+## 8. Broker and counterparty risk
+
+Spot gold and CFDs are typically traded over the counter with a broker acting as your counterparty. Prices, spreads, contract specifications, margin requirements, leverage limits and client protections vary between brokers and jurisdictions. You are responsible for selecting a suitable, appropriately regulated broker and for understanding its terms before trading.
+
+## 9. Regulatory considerations
+
+The availability of leveraged products and the rules that apply to them vary by country. Some products may be restricted or prohibited in your jurisdiction. You are responsible for ensuring that your trading activities comply with the laws and regulations that apply to you. XAUUSD Global does not represent that any content or product discussed on the Website is appropriate or available in your location.
+
+## 10. Community content
+
+When the XAUUSD Global community launches, members may share their own analysis, opinions, trade ideas and reviews. Such content will represent the views of the individual members concerned, not those of XAUUSD Global. It will not be verified for accuracy and will not constitute advice. Participation in the community does not guarantee any trading outcome.
+
+## 11. Your responsibility
+
+You are solely responsible for your trading and investment decisions and for any resulting gains or losses. By using this Website, you acknowledge that you have read and understood this Risk Disclaimer and that, to the fullest extent permitted by law, XAUUSD Global accepts no liability for any loss or damage, including trading losses, arising directly or indirectly from the use of or reliance on any information provided on the Website.
+
+This Risk Disclaimer should be read together with our [Terms of Use](/terms/) and [Privacy Policy](/privacy-policy/). If you have any questions, please reach us through our [contact page](/contact/).

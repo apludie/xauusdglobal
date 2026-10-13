@@ -43,9 +43,9 @@ We use Umami Cloud to measure Website traffic and usage. Umami helps us understa
 
 According to Umami, its service does not use cookies and does not collect information that is intended to identify individual visitors. We use analytics data only in aggregated form to maintain and improve the Website and its content. We do not use analytics data to build profiles of individuals or for advertising.
 
-### 3.3 Hosting and server logs (GitHub Pages)
+### 3.3 Hosting and server logs
 
-The Website is hosted on GitHub Pages, a service provided by GitHub, Inc. When you visit the Website, your browser's request is processed by GitHub's infrastructure. As with most web hosting services, GitHub may process technical information such as your IP address, the date and time of your request, the pages requested and your browser type, for purposes including security, abuse prevention and service operation. This processing is governed by GitHub's own privacy statement.
+The Website is served by a third-party hosting provider. When you visit the Website, your browser's request is processed by that provider's infrastructure. As with most web hosting services, the provider may process technical information such as your IP address, the date and time of your request, the pages requested and your browser type, for purposes including security, abuse prevention and service operation. This processing is governed by the hosting provider's own privacy terms.
 
 ### 3.4 Web fonts (Google Fonts)
 
@@ -99,7 +99,7 @@ We take reasonable measures to protect the Website, including serving all pages 
 
 ## 11. Your rights
 
-Depending on where you live, you may have rights in relation to your personal information, which may include the right to request access, correction or deletion; to object to or restrict certain processing; to data portability; and to lodge a complaint with a data-protection authority. Apart from waitlist details you choose to give us, we do not maintain user accounts, and our analytics are designed not to identify individuals. You can unsubscribe from waitlist emails at any time using the link in every email. If you wish to make a request, please contact us through our [contact page](/contact/), and we will respond in accordance with applicable law. For information held by GitHub, Google, Umami, Brevo or TradingView, you may also contact those providers directly.
+Depending on where you live, you may have rights in relation to your personal information, which may include the right to request access, correction or deletion; to object to or restrict certain processing; to data portability; and to lodge a complaint with a data-protection authority. Apart from waitlist details you choose to give us, we do not maintain user accounts, and our analytics are designed not to identify individuals. You can unsubscribe from waitlist emails at any time using the link in every email. If you wish to make a request, please contact us through our [contact page](/contact/), and we will respond in accordance with applicable law. For information held by our hosting provider, Google, Umami, Brevo or TradingView, you may also contact those providers directly.
 
 ## 12. Children's privacy
 
