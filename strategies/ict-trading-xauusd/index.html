@@ -1,1 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICT Gold Trading: ICT Concepts Applied to XAUUSD</title>
+<meta name="description" content="ICT gold trading explained: draw on liquidity, kill zones, fair value gaps, optimal trade entry and premium/discount on XAUUSD, with limits and risk rules.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.xauusdglobal.com/strategies/ict-trading-xauusd/">
+<meta name="theme-color" content="#08090b">
+<meta property="og:site_name" content="XAUUSD Global">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICT Gold Trading: ICT Concepts Applied to XAUUSD">
+<meta property="og:description" content="ICT gold trading explained: draw on liquidity, kill zones, fair value gaps, optimal trade entry and premium/discount on XAUUSD, with limits and risk rules.">
+<meta property="og:url" content="https://www.xauusdglobal.com/strategies/ict-trading-xauusd/">
+<meta property="og:image" content="https://www.xauusdglobal.com/assets/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="XAUUSD Global — One Market. One Global Community.">
+<meta property="article:published_time" content="2026-10-13"><meta property="article:section" content="Liquidity frameworks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ICT Gold Trading: ICT Concepts Applied to XAUUSD">
+<meta name="twitter:description" content="ICT gold trading explained: draw on liquidity, kill zones, fair value gaps, optimal trade entry and premium/discount on XAUUSD, with limits and risk rules.">
+<meta name="twitter:image" content="https://www.xauusdglobal.com/assets/images/og-default.png">
 
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.xauusdglobal.com/#organization","name":"XAUUSD Global","url":"https://www.xauusdglobal.com/","logo":{"@type":"ImageObject","url":"https://www.xauusdglobal.com/assets/images/logo-512.png","width":512,"height":512},"slogan":"One Market. One Global Community.","description":"An educational website and planned global community for XAUUSD (gold) traders."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.xauusdglobal.com/"},{"@type":"ListItem","position":2,"name":"Trading Strategies","item":"https://www.xauusdglobal.com/xauusd-trading-strategies/"},{"@type":"ListItem","position":3,"name":"ICT Concepts","item":"https://www.xauusdglobal.com/strategies/ict-trading-xauusd/"}]},{"@type":"Article","headline":"ICT Trading Concepts for XAUUSD: Time, Liquidity and Imbalance","description":"ICT gold trading explained: draw on liquidity, kill zones, fair value gaps, optimal trade entry and premium/discount on XAUUSD, with limits and risk rules.","datePublished":"2026-10-13","dateModified":"2026-10-13","author":{"@id":"https://www.xauusdglobal.com/#organization"},"publisher":{"@id":"https://www.xauusdglobal.com/#organization"},"image":"https://www.xauusdglobal.com/assets/images/og-default.png","mainEntityOfPage":"https://www.xauusdglobal.com/strategies/ict-trading-xauusd/","articleSection":"Liquidity frameworks","inLanguage":"en"}]}</script>
+<script src="/assets/js/main.js" defer></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="8800c2af-3b56-4a38-a647-648b303f758a"></script>
+</head>
+<body data-price-widgets="on">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="XAUUSD Global home"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2c14e"/><stop offset="1" stop-color="#b8862b"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="16" fill="#111318" stroke="url(#lg-g)" stroke-width="2"/><path d="M18 18l28 28M46 18L18 46" stroke="url(#lg-g)" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="32" r="21" fill="none" stroke="#f2c14e" stroke-opacity=".28" stroke-width="1.5"/><rect x="28.5" y="24" width="7" height="16" rx="1.6" fill="#111318" stroke="#45d6c4" stroke-width="1.8"/><path d="M32 19v5M32 40v5" stroke="#45d6c4" stroke-width="1.8" stroke-linecap="round"/></svg><span class="brand__name">XAUUSD<span> Global</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main"><ul><li><a href="/xauusd-price/">Gold Price</a></li><li><a href="/xauusd-news/">News</a></li><li><a href="/xauusd-trading-strategies/">Strategies</a></li><li><a href="/blog/">Blog</a></li><li><a href="/community/">Community</a></li><li><a href="/membership/">Membership</a></li><li><a href="/about/">About</a></li><li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Registration Opening Soon</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-head grid-bg">
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/xauusd-trading-strategies/">Trading Strategies</a></li><li><span aria-current="page">ICT Concepts</span></li></ol></nav>
+    <div style="margin-top:22px"><span class="eyebrow">Liquidity frameworks</span></div>
+    <h1>ICT Trading Concepts for XAUUSD: Time, Liquidity and Imbalance</h1>
+    <p class="lede">ICT concepts combine time, liquidity and imbalance into a detailed model of intraday price. Here&#x27;s how gold traders apply them to XAUUSD, and how to use them without falling into the framework&#x27;s biggest traps.</p>
+    <div class="byline">
+      <span>Published <b><time datetime="2026-10-13">13 October 2026</time></b></span>
+      <span><b>4 min</b> read</span>
+      <span>Author: <b>XAUUSD Global Editorial <span class="muted">(named author profile to be added)</span></b></span>
+      <span>Reviewer: <b>To be assigned <span class="muted">(qualified reviewer, credentials to be verified)</span></b></span>
+      <span>Last reviewed: <b>Pending editorial review</b></span>
+    </div>
+  </div>
+</section>
+<div class="wrap">
+  <div class="article-layout">
+    <aside class="toc" aria-label="Table of contents"><details><summary>On this page</summary><ol><li><a href="#what-ict-concepts-refers-to">What &amp;ldquo;ICT concepts&amp;rdquo; refers to</a></li><li><a href="#the-key-ideas">The key ideas</a></li><li><a href="#a-step-by-step-ict-style-process-for-xauusd">A step-by-step ICT-style process for XAUUSD</a></li><li><a href="#entry-conditions-and-invalidation-educational-example">Entry conditions and invalidation (educational example)</a></li><li><a href="#risk-management">Risk management</a></li><li><a href="#limitations-and-common-mistakes">Limitations and common mistakes</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></details></aside>
+    <article class="prose">
+      <div class="notice notice--risk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9.5 17H2.5L12 3z"/><path d="M12 10v4M12 17.5v.01"/></svg><div><strong>Educational content, not financial advice.</strong> Examples are hypothetical and simplified. Trading leveraged gold products can result in substantial losses. <a href='/risk-disclaimer/'>Read the risk disclaimer</a>.</div></div>
+      <div style="height:1.4em"></div>
+      <h2 id="what-ict-concepts-refers-to">What &ldquo;ICT concepts&rdquo; refers to</h2>
+<p><strong>ICT concepts</strong> are a body of trading ideas popularised by the educator known as the Inner Circle Trader. They describe price in terms of <strong>liquidity</strong> (where orders are likely resting), <strong>imbalance</strong> (where price moved too quickly for two-sided trade), and <strong>time</strong> (specific windows in which meaningful moves are expected).</p>
+<p>Like <a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts</a>, ICT uses a narrative about large participants engineering price toward liquidity. That narrative is not something a retail chart can confirm. The value of ICT for most traders lies in its precise vocabulary and its insistence on combining <em>where</em> with <em>when</em> — not in any proof of institutional intent.</p>
+<h2 id="the-key-ideas">The key ideas</h2>
+<h3 id="draw-on-liquidity">Draw on liquidity</h3>
+<p>The <strong>draw on liquidity</strong> is the area price is expected to move toward next — typically an obvious high or low, such as the previous day&rsquo;s high, the previous week&rsquo;s low, or a cluster of equal highs. ICT traders decide the likely draw on a higher timeframe before looking for an entry.</p>
+<h3 id="time-windows-kill-zones">Time windows (&ldquo;kill zones&rdquo;)</h3>
+<p>ICT emphasises that the same pattern means more at certain times. For gold, the London open and the New York open (including scheduled US data around 8:30 a.m. New York time) are the windows most often studied. Outside them, setups are treated with more scepticism. Our guides to <a href="/strategies/london-session-gold-trading/">London-session</a> and <a href="/strategies/new-york-session-gold-trading/">New York-session</a> gold trading cover these windows in detail.</p>
+<h3 id="displacement-and-fair-value-gaps">Displacement and fair value gaps</h3>
+<p><strong>Displacement</strong> is a strong, fast move — often a sequence of large-bodied candles — that suggests urgency. It typically leaves a <a href="/strategies/fair-value-gap-xauusd/">fair value gap</a>, a three-candle imbalance that ICT traders watch for a retracement.</p>
+<h3 id="premium-discount-and-optimal-trade-entry-ote">Premium, discount and optimal trade entry (OTE)</h3>
+<p>A swing range is split into premium (above 50%) and discount (below 50%). The <strong>optimal trade entry</strong> is a retracement band — commonly cited as roughly 62% to 79% of the swing — where ICT traders look to enter in the direction of the displacement.</p>
+<h3 id="market-structure-shift">Market structure shift</h3>
+<p>A break of the most recent short-term swing after liquidity is taken, signalling that the immediate direction may have changed. This is closely related to a <a href="/strategies/market-structure-xauusd/">Change of Character</a>.</p>
+<figure class="figure"><svg viewBox="0 0 760 400" role="img" aria-labelledby="t-ict-ote" xmlns="http://www.w3.org/2000/svg" font-family="ui-monospace, Menlo, monospace"><title id="t-ict-ote">Hypothetical ICT-style sequence with a fair value gap and OTE retracement</title><rect width="760" height="400" rx="10" fill="#0d0f12"/><line x1="14" x2="670" y1="22.0" y2="22.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="26.0" font-size="11" fill="#6f6e69">3,839.5</text><line x1="14" x2="670" y1="80.7" y2="80.7" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="84.7" font-size="11" fill="#6f6e69">3,833.0</text><line x1="14" x2="670" y1="139.3" y2="139.3" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="143.3" font-size="11" fill="#6f6e69">3,826.5</text><line x1="14" x2="670" y1="198.0" y2="198.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="202.0" font-size="11" fill="#6f6e69">3,820.0</text><line x1="14" x2="670" y1="256.7" y2="256.7" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="260.7" font-size="11" fill="#6f6e69">3,813.5</text><line x1="14" x2="670" y1="315.3" y2="315.3" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="319.3" font-size="11" fill="#6f6e69">3,807.0</text><line x1="14" x2="670" y1="374.0" y2="374.0" stroke="#ffffff" stroke-opacity=".05"/><text x="676" y="378.0" font-size="11" fill="#6f6e69">3,800.5</text><line y1="22" y2="374" x1="95.2" x2="95.2" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="176.5" x2="176.5" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="257.8" x2="257.8" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="339.0" x2="339.0" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="420.2" x2="420.2" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="501.5" x2="501.5" stroke="#ffffff" stroke-opacity=".035"/><line y1="22" y2="374" x1="582.8" x2="582.8" stroke="#ffffff" stroke-opacity=".035"/><rect x="339.0" y="121.3" width="243.8" height="31.6" fill="#45d6c4" fill-opacity=".12" stroke="#45d6c4" stroke-opacity=".55" stroke-dasharray="4 3"/><text x="345.0" y="115.3" font-size="11.5" fill="#45d6c4" font-weight="600">FVG</text><rect x="420.2" y="94.2" width="162.5" height="35.2" fill="#f2c14e" fill-opacity=".12" stroke="#f2c14e" stroke-opacity=".55" stroke-dasharray="4 3"/><text x="426.2" y="88.2" font-size="11.5" fill="#f2c14e" font-weight="600">OTE 62–79%</text><line x1="207.0" x2="349.2" y1="96.0" y2="96.0" stroke="#8a8983" stroke-width="1.4" stroke-dasharray="6 5"/><text x="343.2" y="89.0" font-size="11.5" text-anchor="end" fill="#8a8983" font-weight="600">Prior high (buy-side liquidity)</text><line x1="24.2" x2="24.2" y1="217.2" y2="229.5" stroke="#3ccf91" stroke-width="1.3"/><rect x="18.3" y="219.7" width="11.8" height="5.0" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="44.5" x2="44.5" y1="197.4" y2="222.3" stroke="#3ccf91" stroke-width="1.3"/><rect x="38.6" y="200.2" width="11.8" height="19.5" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="64.8" x2="64.8" y1="181.4" y2="203.0" stroke="#3ccf91" stroke-width="1.3"/><rect x="58.9" y="189.2" width="11.8" height="11.0" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="85.1" x2="85.1" y1="163.9" y2="191.9" stroke="#3ccf91" stroke-width="1.3"/><rect x="79.2" y="170.9" width="11.8" height="18.3" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="105.4" x2="105.4" y1="152.8" y2="175.9" stroke="#3ccf91" stroke-width="1.3"/><rect x="99.5" y="158.0" width="11.8" height="12.9" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="125.7" x2="125.7" y1="137.7" y2="159.8" stroke="#3ccf91" stroke-width="1.3"/><rect x="119.8" y="140.1" width="11.8" height="17.9" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="146.0" x2="146.0" y1="135.2" y2="155.8" stroke="#ef6a5b" stroke-width="1.3"/><rect x="140.1" y="140.1" width="11.8" height="12.5" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="166.3" x2="166.3" y1="148.0" y2="178.6" stroke="#ef6a5b" stroke-width="1.3"/><rect x="160.5" y="152.5" width="11.8" height="16.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="186.7" x2="186.7" y1="165.8" y2="188.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="180.8" y="169.2" width="11.8" height="12.9" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="207.0" x2="207.0" y1="152.2" y2="190.6" stroke="#3ccf91" stroke-width="1.3"/><rect x="201.1" y="161.5" width="11.8" height="20.6" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="227.3" x2="227.3" y1="141.7" y2="169.9" stroke="#3ccf91" stroke-width="1.3"/><rect x="221.4" y="144.9" width="11.8" height="16.6" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="247.6" x2="247.6" y1="120.2" y2="152.5" stroke="#3ccf91" stroke-width="1.3"/><rect x="241.7" y="122.1" width="11.8" height="22.8" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="267.9" x2="267.9" y1="98.1" y2="125.5" stroke="#3ccf91" stroke-width="1.3"/><rect x="262.0" y="105.0" width="11.8" height="17.1" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="288.2" x2="288.2" y1="84.4" y2="108.2" stroke="#3ccf91" stroke-width="1.3"/><rect x="282.3" y="92.0" width="11.8" height="13.0" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="308.5" x2="308.5" y1="51.8" y2="93.9" stroke="#3ccf91" stroke-width="1.3"/><rect x="302.6" y="85.2" width="11.8" height="6.8" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="328.8" x2="328.8" y1="80.7" y2="121.3" stroke="#ef6a5b" stroke-width="1.3"/><rect x="323.0" y="85.2" width="11.8" height="31.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="349.2" x2="349.2" y1="113.2" y2="220.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="343.3" y="116.8" width="11.8" height="99.2" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="369.5" x2="369.5" y1="152.9" y2="255.7" stroke="#ef6a5b" stroke-width="1.3"/><rect x="363.6" y="216.0" width="11.8" height="31.6" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="389.8" x2="389.8" y1="236.4" y2="269.3" stroke="#ef6a5b" stroke-width="1.3"/><rect x="383.9" y="247.6" width="11.8" height="15.0" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="410.1" x2="410.1" y1="255.5" y2="281.2" stroke="#ef6a5b" stroke-width="1.3"/><rect x="404.2" y="262.6" width="11.8" height="16.2" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="430.4" x2="430.4" y1="243.1" y2="285.3" stroke="#3ccf91" stroke-width="1.3"/><rect x="424.5" y="252.2" width="11.8" height="26.6" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="450.7" x2="450.7" y1="216.6" y2="257.0" stroke="#3ccf91" stroke-width="1.3"/><rect x="444.8" y="219.0" width="11.8" height="33.1" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="471.0" x2="471.0" y1="181.2" y2="228.7" stroke="#3ccf91" stroke-width="1.3"/><rect x="465.1" y="188.1" width="11.8" height="30.9" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="491.3" x2="491.3" y1="158.9" y2="196.2" stroke="#3ccf91" stroke-width="1.3"/><rect x="485.5" y="164.2" width="11.8" height="23.9" fill="#3ccf91" fill-opacity="0.9" rx="1"/><line x1="511.7" x2="511.7" y1="156.2" y2="186.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="505.8" y="164.2" width="11.8" height="16.2" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="532.0" x2="532.0" y1="177.9" y2="210.5" stroke="#ef6a5b" stroke-width="1.3"/><rect x="526.1" y="180.4" width="11.8" height="20.5" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="552.3" x2="552.3" y1="197.7" y2="223.2" stroke="#ef6a5b" stroke-width="1.3"/><rect x="546.4" y="200.9" width="11.8" height="18.0" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="572.6" x2="572.6" y1="210.3" y2="245.1" stroke="#ef6a5b" stroke-width="1.3"/><rect x="566.7" y="218.9" width="11.8" height="20.8" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="592.9" x2="592.9" y1="231.6" y2="270.4" stroke="#ef6a5b" stroke-width="1.3"/><rect x="587.0" y="239.7" width="11.8" height="26.9" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="613.2" x2="613.2" y1="260.0" y2="299.6" stroke="#ef6a5b" stroke-width="1.3"/><rect x="607.3" y="266.6" width="11.8" height="26.2" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="633.5" x2="633.5" y1="290.2" y2="323.3" stroke="#ef6a5b" stroke-width="1.3"/><rect x="627.6" y="292.8" width="11.8" height="27.8" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><line x1="653.8" x2="653.8" y1="313.3" y2="350.1" stroke="#ef6a5b" stroke-width="1.3"/><rect x="648.0" y="320.6" width="11.8" height="20.1" fill="#ef6a5b" fill-opacity="0.85" rx="1"/><circle cx="308.5" cy="51.8" r="4" fill="#f2c14e" stroke="#0d0f12" stroke-width="1.5"/><text x="308.5" y="37.8" font-size="11.5" text-anchor="middle" fill="#f2c14e" font-weight="700">Liquidity taken</text><circle cx="491.3" cy="158.9" r="4" fill="#f2c14e" stroke="#0d0f12" stroke-width="1.5"/><text x="491.3" y="144.9" font-size="11.5" text-anchor="middle" fill="#f2c14e" font-weight="700">Retrace</text><text x="20" y="392" font-size="10.5" fill="#6f6e69">HYPOTHETICAL DATA · ILLUSTRATION ONLY · NOT A REAL XAUUSD CHART</text></svg><figcaption><b>Hypothetical ICT-style sequence with a fair value gap and OTE retracement.</b> During a session window, price takes liquidity above a prior high, displaces lower leaving a fair value gap, then retraces into the 62–79% &#x27;optimal trade entry&#x27; band of the move. Hypothetical data.</figcaption></figure>
+
+<h2 id="a-step-by-step-ict-style-process-for-xauusd">A step-by-step ICT-style process for XAUUSD</h2>
+<ol>
+<li><strong>Daily and H4:</strong> Identify the trend and the most likely draw on liquidity.</li>
+<li><strong>Calendar:</strong> Note high-impact US releases and central-bank events. Decide in advance whether you&rsquo;ll trade around them.</li>
+<li><strong>Session window:</strong> Focus on the London or New York window you&rsquo;ve chosen. Mark the Asian range and the previous day&rsquo;s high and low.</li>
+<li><strong>Liquidity event:</strong> Wait for price to take one of those obvious levels.</li>
+<li><strong>Shift and displacement:</strong> Look for a strong move back the other way that breaks short-term structure and leaves a fair value gap.</li>
+<li><strong>Entry area:</strong> Define the overlap between the FVG and the OTE band of the displacement leg.</li>
+<li><strong>Risk:</strong> Place invalidation beyond the liquidity-taking extreme and size the position accordingly.</li>
+</ol>
+<h2 id="entry-conditions-and-invalidation-educational-example">Entry conditions and invalidation (educational example)</h2>
+<div class="callout callout--hypo">
+<p>During a hypothetical London window, gold rallies above the previous session&rsquo;s high at 3,831.3, reaching 3,836.2. Within a few candles it drops sharply to 3,814, breaking the short-term higher low and leaving a fair value gap between roughly 3,825.0 and 3,828.5. The 62–79% retracement of the drop (3,836.2 to 3,813.6) sits roughly between 3,827.6 and 3,831.5, so the two areas overlap around 3,827.6–3,828.5. A trader applying an ICT model might watch the overlap of those areas for a short entry, with invalidation above 3,836.2 plus a buffer, and look toward lower liquidity — such as the Asian low — as an objective. If price trades back above the high that took liquidity, the model is invalid.</p>
+</div>
+<h2 id="risk-management">Risk management</h2>
+<ul>
+<li><strong>The liquidity extreme is the invalidation.</strong> If price returns beyond the high or low that was taken, the narrative has failed.</li>
+<li><strong>Precision is not probability.</strong> ICT entries can produce tight stops and large reward-to-risk ratios on paper, but many setups fail. Keep risk per trade small and consistent.</li>
+<li><strong>Spreads and slippage matter.</strong> Around the New York open and US data, spreads on XAUUSD can widen sharply. Tight stops become unreliable exactly when ICT windows are most active.</li>
+<li><strong>Plan for missed trades.</strong> Many displacements never retrace to the OTE band.</li>
+</ul>
+<p>Read <a href="/strategies/xauusd-risk-management/">XAUUSD risk management</a> for position sizing examples.</p>
+<h2 id="limitations-and-common-mistakes">Limitations and common mistakes</h2>
+<ul>
+<li><strong>Too many tools.</strong> ICT includes many concepts. Combining them all creates a framework that can justify any trade — or explain any move afterwards.</li>
+<li><strong>Educator dependence.</strong> Definitions shift between sources. Write your own precise rules and test them.</li>
+<li><strong>Time windows aren&rsquo;t magic.</strong> Holidays, data surprises and quiet days break the pattern.</li>
+<li><strong>Ignoring macro.</strong> A perfect ICT setup can be overwhelmed by a Federal Reserve surprise.</li>
+<li><strong>Over-trading lower timeframes.</strong> One-minute charts produce endless &ldquo;shifts&rdquo; and gaps; most of them are noise.</li>
+</ul>
+<p>Used carefully, ICT concepts encourage good habits: knowing your timing, defining liquidity targets in advance, and placing invalidation where the idea is clearly wrong. Used carelessly, they become a vocabulary for rationalising impulsive trades.</p>
+      <h2 id="faq">Frequently asked questions</h2><div class="faq-list"><details><summary>What does ICT stand for?</summary><div><p>ICT refers to the Inner Circle Trader, the online name of the educator who popularised many of these concepts. The terms are now widely used, and often redefined, across the trading community.</p></div></details><details><summary>What are ICT kill zones for gold?</summary><div><p>Kill zones are time windows when ICT practitioners expect the most meaningful moves — typically around the London open and the New York open. For XAUUSD, many traders focus on the London morning and the period around US data releases and the New York open. Exact hours vary between educators.</p></div></details><details><summary>Is ICT the same as SMC?</summary><div><p>They overlap heavily. SMC grew partly out of ICT ideas. ICT places more emphasis on time windows, specific entry models and concepts like optimal trade entry; SMC is often presented as a simplified, structure-and-liquidity version.</p></div></details><details><summary>Do ICT concepts work on XAUUSD?</summary><div><p>Some traders find the vocabulary helpful for describing gold&rsquo;s session-driven moves. No framework &lsquo;works&rsquo; in the sense of producing reliable profits on its own. Results depend on clear rules, testing, execution and risk management.</p></div></details></div>
+      <section class="related" aria-labelledby="rel-h"><h2 id="rel-h">Continue learning</h2><ul><li><a href="/blog/ict-concepts-for-gold-trading/">ICT Concepts for Gold Trading: Liquidity, FVGs and Market Structure</a></li><li><a href="/strategies/fair-value-gap-xauusd/">Fair Value Gaps (FVG) on XAUUSD: A Practical Guide</a></li><li><a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts (SMC) for XAUUSD: A Balanced Guide</a></li><li><a href="/strategies/london-session-gold-trading/">London Session Gold Trading: How XAUUSD Behaves at the London Open</a></li><li><a href="/strategies/new-york-session-gold-trading/">New York Session Gold Trading: US Data, the Overlap and Volatility</a></li></ul></section>
+      <aside class="cta-band" aria-labelledby="cta-h">
+  <span class="eyebrow">Stop learning alone</span>
+  <h2 id="cta-h">Learn the reasoning behind a trade, not just the entry.</h2>
+  <p>XAUUSD Global is building a community where intermediate traders compare analysis with advanced, Pro and Degen traders. Registration is not open yet — explore the vision and the planned membership.</p>
+  <div class="btn-row"><a class="btn btn--gold" href="/community/">Explore the Community Vision <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--ghost" href="/membership/#registration">Registration Opening Soon</a></div>
+</aside>
+    </article>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="XAUUSD Global home"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="lg-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2c14e"/><stop offset="1" stop-color="#b8862b"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="16" fill="#111318" stroke="url(#lg-g)" stroke-width="2"/><path d="M18 18l28 28M46 18L18 46" stroke="url(#lg-g)" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="32" r="21" fill="none" stroke="#f2c14e" stroke-opacity=".28" stroke-width="1.5"/><rect x="28.5" y="24" width="7" height="16" rx="1.6" fill="#111318" stroke="#45d6c4" stroke-width="1.8"/><path d="M32 19v5M32 40v5" stroke="#45d6c4" stroke-width="1.8" stroke-linecap="round"/></svg><span class="brand__name">XAUUSD<span> Global</span></span></a>
+        <p>One Market. One Global Community. An educational hub and a planned community that connects gold traders so they can learn, exchange perspectives and improve together.</p>
+      </div>
+      <div><h2>Markets</h2><ul>
+        <li><a href="/xauusd-price/">XAUUSD price &amp; chart</a></li>
+        <li><a href="/xauusd-news/">Gold market news</a></li>
+        <li><a href="/blog/what-moves-gold-prices/">What moves gold</a></li>
+      </ul></div>
+      <div><h2>Learn</h2><ul>
+        <li><a href="/xauusd-trading-strategies/">Strategy hub</a></li>
+        <li><a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts</a></li>
+        <li><a href="/strategies/xauusd-risk-management/">Risk management</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul></div>
+      <div><h2>Community</h2><ul>
+        <li><a href="/community/">Community vision</a></li>
+        <li><a href="/membership/">Membership &amp; levels</a></li>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div><h2>Legal</h2><ul>
+        <li><a href="/risk-disclaimer/">Risk disclaimer</a></li>
+        <li><a href="/privacy-policy/">Privacy policy</a></li>
+        <li><a href="/terms/">Terms of use</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-risk"><strong>Risk warning:</strong> Trading leveraged products such as CFDs and spot gold (XAUUSD) carries a high level of risk and can result in losses that exceed your expectations, including substantial losses of capital. Everything on this website is general educational information, not personalised financial, investment or trading advice. No strategy, framework or community participation guarantees results. Read the full <a href="/risk-disclaimer/">risk disclaimer</a>.</div>
+    <div class="footer-bottom"><span>&copy; 2026 XAUUSD Global. Educational content only.</span><span>Community registration and payments are not open yet.</span></div>
+  </div>
+</footer>
+</body>
+</html>
