@@ -1,0 +1,209 @@
+groups:
+  - id: foundations
+    name: Foundations of chart analysis
+    intro: The core skills almost every gold trader relies on, whatever framework they eventually prefer. Master these before layering on more complex models.
+    topics:
+      - id: support-resistance
+        name: Support and resistance trading
+        summary: Mark price areas where gold has repeatedly reacted and plan around them.
+        what: Support is an area below price where buying interest has previously stopped declines; resistance is an area above price where selling has previously capped rallies. They are zones, not exact prices.
+        interpret: Traders look for reactions at these zones — rejections to trade a bounce, or acceptance beyond them to trade a continuation. The more clearly and recently a zone has mattered, the more attention it tends to receive.
+        xau: Gold respects round numbers, prior daily and weekly highs and lows, and the edges of the Asian range. Because XAUUSD often spikes several dollars through a level before reversing, zones need to be wide enough to absorb that noise.
+        limits: Levels are subjective, and in a strong trend or around major news gold can slice through several without pausing. A level that holds many times can also become the obvious place for a stop run.
+        mistakes: Drawing a line at every wick, treating a zone as an exact price, placing stops just beyond the obvious level, and ignoring the higher-timeframe trend.
+        links:
+          - ["/strategies/support-and-resistance-xauusd/", "Support and resistance for XAUUSD (full guide)"]
+          - ["/blog/how-to-identify-support-and-resistance-gold/", "How to identify support and resistance on a gold chart"]
+      - id: price-action
+        name: Price action trading
+        summary: Read raw candles and swings without relying on indicators.
+        what: Price action trading means making decisions from the behaviour of price itself — candle structure, swing sequences, momentum and the reaction at key areas — rather than from lagging indicators.
+        interpret: Traders read strong-bodied candles as conviction, long wicks as rejection, and compressing ranges as building pressure. Context matters more than any single candle pattern.
+        xau: Gold's large intraday ranges make price action rich in information. A pin bar at the London open into a prior-day high means something very different from the same candle in a quiet Asian session.
+        limits: Candle patterns in isolation have a weak edge, and reading them is subjective. Two traders can describe the same chart differently, which is exactly why comparing interpretations is valuable.
+        mistakes: Trading patterns without location or context, changing interpretation after entry, and confusing a single strong candle with a change in trend.
+        links:
+          - ["/strategies/market-structure-xauusd/", "Market structure for XAUUSD"]
+          - ["/strategies/gold-breakout-retest-strategy/", "Gold breakout and retest strategy"]
+      - id: trend-structure
+        name: Trend-following and market structure
+        summary: Use the sequence of swing highs and lows to define trend and bias.
+        what: An uptrend makes higher highs and higher lows; a downtrend makes lower highs and lower lows. Market structure is the framework for labelling those swings and deciding when a trend is intact or failing.
+        interpret: Trend-followers look to trade in the direction of the prevailing structure, typically entering on pullbacks toward support in an uptrend or resistance in a downtrend.
+        xau: Gold can trend strongly for weeks during macro-driven moves, then chop violently in ranges. Defining structure on the H4 or daily chart and executing on a lower timeframe is a common approach.
+        limits: Swing labelling depends on which timeframe and which swings you consider significant. Trends end without warning, and structure-based entries in ranges produce repeated losses.
+        mistakes: Labelling every minor wiggle as a swing, fighting a clear higher-timeframe trend, and entering late after an extended move with no nearby invalidation.
+        links:
+          - ["/strategies/market-structure-xauusd/", "Market structure for XAUUSD (full guide)"]
+      - id: breakout-retest
+        name: Breakout and retest setups
+        summary: Trade the move out of a range after price comes back to confirm the broken level.
+        what: A breakout occurs when price closes decisively beyond a well-defined range or level. A retest is the subsequent return to that level, which may then act in its new role — old resistance as new support, or vice versa.
+        interpret: Waiting for a retest aims to filter false breakouts and offers a defined invalidation just beyond the retested zone, at the cost of missing breakouts that never come back.
+        xau: Asian-session ranges broken during London, and consolidations broken after US data, are common gold breakout contexts. Gold frequently produces false breaks, so confirmation matters.
+        limits: Many breakouts fail, and many valid breakouts never retest. Retests can also overshoot the level, triggering tight stops before continuing.
+        mistakes: Chasing the breakout candle, treating any touch as a confirmed retest, and placing the stop inside the old range where normal noise reaches it.
+        links:
+          - ["/strategies/gold-breakout-retest-strategy/", "Gold breakout and retest strategy (full guide)"]
+      - id: supply-demand
+        name: Supply and demand zones
+        summary: Mark the origin of strong moves where imbalances may remain.
+        what: Supply and demand zones are price areas where a sharp move began, on the theory that unfilled orders may remain there. A demand zone sits at the base of a strong rally; a supply zone at the top of a strong decline.
+        interpret: Traders look for the first return to a fresh zone, preferring zones that price left quickly and that align with the higher-timeframe direction.
+        xau: On gold, zones that form at session opens or around news releases can be very wide. Traders often refine them on a lower timeframe to define tighter risk.
+        limits: The idea that orders remain in a zone is a model, not something you can observe. Zones weaken with each retest and fail frequently in strong opposing trends.
+        mistakes: Marking zones everywhere, drawing them too wide or too narrow, and trading zones against a strong trend.
+        links:
+          - ["/strategies/order-blocks-xauusd/", "Order blocks on XAUUSD"]
+          - ["/strategies/support-and-resistance-xauusd/", "Support and resistance for XAUUSD"]
+      - id: multi-timeframe
+        name: Multi-timeframe analysis
+        summary: Align a higher-timeframe bias with lower-timeframe execution.
+        what: Multi-timeframe analysis uses a higher timeframe to define context and direction, a middle timeframe to locate setups, and a lower timeframe to time entries and define risk.
+        interpret: A common approach is daily or H4 for bias, H1 for setup areas, and M15 or M5 for entry. The aim is to trade with the larger flow while keeping risk small.
+        xau: Because gold's daily range is large, a lower-timeframe entry can reduce the stop distance considerably compared with a higher-timeframe entry — but it also increases the chance of being stopped by noise.
+        limits: More timeframes mean more opportunities to find a reason for any trade. Timeframes can conflict, and constant switching can cause analysis paralysis.
+        mistakes: Using too many timeframes, ignoring the higher timeframe once in a trade, and dropping to ever-lower timeframes to justify an entry.
+        links:
+          - ["/strategies/market-structure-xauusd/", "Market structure for XAUUSD"]
+          - ["/blog/how-to-build-a-xauusd-trading-plan/", "How to build a trading plan for XAUUSD"]
+  - id: liquidity
+    name: Liquidity-based frameworks (SMC and ICT)
+    intro: Popular frameworks that interpret price in terms of liquidity, imbalance and structure. They provide useful vocabulary, but they are interpretations — not proof of what institutions are doing.
+    topics:
+      - id: smc
+        name: Smart Money Concepts (SMC)
+        summary: A framework built on structure, liquidity, order blocks and imbalances.
+        what: SMC is a community-developed framework that describes price movement through liquidity pools, structure breaks, order blocks and imbalances, using the narrative that large participants drive price toward liquidity.
+        interpret: Practitioners typically look for liquidity to be taken, a shift in structure, and a return to an order block or imbalance as an entry area.
+        xau: Gold's tendency to spike through obvious highs and lows before reversing makes the SMC vocabulary popular among XAUUSD traders, especially around session opens.
+        limits: The "smart money" narrative is not verifiable from a retail chart. Definitions vary widely between educators, and the many rules invite hindsight bias.
+        mistakes: Treating the narrative as fact, finding a setup on every chart, and skipping risk management because the model "should" work.
+        links:
+          - ["/strategies/smart-money-concepts-xauusd/", "Smart Money Concepts for XAUUSD (full guide)"]
+          - ["/blog/smart-money-concepts-explained-xauusd/", "SMC explained for XAUUSD traders"]
+      - id: ict
+        name: ICT concepts
+        summary: Time-and-price concepts such as kill zones, liquidity and fair value gaps.
+        what: ICT refers to concepts popularised by the educator known as the Inner Circle Trader, including liquidity, fair value gaps, premium and discount, optimal trade entry, and session-based "kill zones".
+        interpret: ICT-style traders combine a higher-timeframe draw on liquidity with a specific time window and a lower-timeframe entry pattern.
+        xau: Gold's London and New York open volatility fits the time-window emphasis of ICT, and many traders apply these windows to XAUUSD.
+        limits: Like SMC, ICT describes price through a narrative that cannot be confirmed. The large vocabulary makes it easy to explain any move after it happens.
+        mistakes: Over-complicating entries, ignoring the date and macro calendar, and forcing a model onto a market that is simply ranging.
+        links:
+          - ["/strategies/ict-trading-xauusd/", "ICT trading concepts for XAUUSD (full guide)"]
+          - ["/blog/ict-concepts-for-gold-trading/", "ICT concepts for gold trading"]
+      - id: liquidity-sweeps
+        name: Liquidity sweeps
+        summary: Moves through obvious highs or lows that quickly reverse.
+        what: A liquidity sweep (or stop hunt) is a move beyond an obvious high or low — where stop orders are likely clustered — followed by a quick rejection back inside the prior range.
+        interpret: Traders view a sweep plus a strong rejection as a sign that a move beyond the level lacked follow-through, potentially setting up a reversal.
+        xau: Previous-day highs and lows, the Asian range and equal highs or lows are common sweep areas on gold, particularly in the first hours of London and New York.
+        limits: Not every move through a level is a sweep; some are genuine breakouts. The label can only be confirmed after the rejection occurs.
+        mistakes: Entering before rejection is confirmed, calling every breakout a sweep, and placing stops just beyond the sweep wick where they can be taken again.
+        links:
+          - ["/strategies/liquidity-sweep-xauusd/", "Liquidity sweeps on XAUUSD (full guide)"]
+      - id: order-blocks
+        name: Order blocks
+        summary: The last opposing candle before a strong, structure-breaking move.
+        what: In SMC usage, a bullish order block is typically the last down candle before a strong rally that breaks structure, and a bearish order block the last up candle before a strong decline.
+        interpret: Traders expect price may react when it returns to the order block, using its range to define entry and invalidation.
+        xau: On XAUUSD, order blocks are often refined to lower timeframes because the higher-timeframe candle can span many dollars.
+        limits: Definitions vary, many order blocks fail, and identifying the "right" candle is subjective. It is closely related to traditional supply and demand.
+        mistakes: Marking every opposing candle, ignoring whether the move actually broke structure, and trading order blocks against the higher-timeframe trend.
+        links:
+          - ["/strategies/order-blocks-xauusd/", "Order blocks on XAUUSD (full guide)"]
+      - id: fvg
+        name: Fair value gaps (FVG)
+        summary: Three-candle imbalances where price moved too fast to trade both ways.
+        what: A fair value gap is a three-candle pattern in which the wicks of the first and third candles do not overlap, leaving a gap in the middle candle's range.
+        interpret: Traders expect price may revisit part of the gap, and use it as a potential entry area in the direction of the move that created it.
+        xau: Gold creates many FVGs during fast news-driven moves. Traders usually filter for gaps that form with a structure break or after a liquidity sweep.
+        limits: FVGs are extremely common, many are never revisited, and many are revisited only to fail. On their own they are not a strong signal.
+        mistakes: Trading every gap, ignoring the timeframe the gap formed on, and assuming gaps must be filled.
+        links:
+          - ["/strategies/fair-value-gap-xauusd/", "Fair value gaps on XAUUSD (full guide)"]
+      - id: bos
+        name: Break of Structure (BOS)
+        summary: A continuation signal when price breaks the last swing in the trend direction.
+        what: A Break of Structure occurs when price breaks beyond the most recent significant swing in the direction of the existing trend — a new higher high in an uptrend or a new lower low in a downtrend.
+        interpret: Traders use BOS as confirmation that the trend is continuing, and often look for the next pullback to enter.
+        xau: Many gold traders require a candle close beyond the swing rather than a wick, because XAUUSD frequently wicks through levels and reverses.
+        limits: A BOS is only obvious in hindsight on the timeframe you chose. Lower-timeframe breaks can be meaningless noise within a higher-timeframe range.
+        mistakes: Using wicks instead of closes without a clear rule, labelling minor swings, and entering on the break itself far from a sensible stop.
+        links:
+          - ["/strategies/market-structure-xauusd/", "Market structure, BOS and CHoCH on XAUUSD"]
+      - id: choch
+        name: Change of Character (CHoCH)
+        summary: The first break against the trend that may signal a reversal.
+        what: A Change of Character is the first break of structure against the prevailing trend — for example, the first break below a higher low in an uptrend.
+        interpret: Traders treat a CHoCH as an early warning that the trend may be changing and may start looking for setups in the new direction.
+        xau: On gold, a CHoCH after a liquidity sweep of a key high or low is a commonly discussed reversal sequence.
+        limits: Many CHoCHs are just deep pullbacks within a continuing trend. Treating every one as a reversal leads to trading against strong trends.
+        mistakes: Reversing immediately on the first CHoCH, using a timeframe too low to matter, and ignoring higher-timeframe context.
+        links:
+          - ["/strategies/market-structure-xauusd/", "Market structure, BOS and CHoCH on XAUUSD"]
+          - ["/strategies/liquidity-sweep-xauusd/", "Liquidity sweeps on XAUUSD"]
+  - id: timing
+    name: Sessions and events
+    intro: When you trade gold can matter as much as how you trade it. Liquidity, volatility and behaviour change through the day and around scheduled data.
+    topics:
+      - id: london
+        name: London-session trading
+        summary: Trading gold through the London open and morning.
+        what: The London session is the heart of the over-the-counter gold market. Its open typically brings a jump in liquidity and volatility after the quieter Asian session.
+        interpret: Session traders watch how London treats the Asian range — whether it breaks out, sweeps one side and reverses, or stays contained.
+        xau: The London open often sets an early high or low of the day for gold, and the LBMA Gold Price auctions take place during London hours.
+        limits: Session tendencies are not rules. Data releases, holidays and macro events can override typical behaviour.
+        mistakes: Trading the first spike without a plan, ignoring the economic calendar, and assuming the same pattern repeats every day.
+        links:
+          - ["/strategies/london-session-gold-trading/", "London-session gold trading (full guide)"]
+          - ["/blog/london-vs-new-york-sessions/", "London vs. New York sessions"]
+      - id: newyork
+        name: New York-session trading
+        summary: Trading the overlap, US data releases and the US afternoon.
+        what: The New York session overlaps with London in the morning and includes most high-impact US economic releases, making it one of the most volatile periods for gold.
+        interpret: Traders often look for continuation or reversal of the London move, and plan specifically around scheduled US data.
+        xau: US inflation, employment and Federal Reserve events can move gold sharply within minutes; spreads may widen and slippage may occur.
+        limits: News-driven volatility can invalidate technical setups instantly, and reactions can reverse within the same session.
+        mistakes: Holding full-size positions through data without a plan, entering on the first news candle, and overtrading the afternoon after London liquidity fades.
+        links:
+          - ["/strategies/new-york-session-gold-trading/", "New York-session gold trading (full guide)"]
+      - id: news-trading
+        name: Trading around high-impact economic news
+        summary: Plan for volatility before major data and central-bank events.
+        what: News trading covers both trading the reaction to scheduled releases and managing open positions around them.
+        interpret: Some traders stand aside before and immediately after releases; others wait for the initial whipsaw to settle and trade the structure that forms afterwards.
+        xau: Gold reacts strongly to US data because of its link to rate expectations, the dollar and real yields. Reactions depend on the surprise relative to forecasts.
+        limits: Spreads widen, liquidity thins and slippage can make stop-losses fill at worse prices than expected. The first move is often reversed.
+        mistakes: Not checking the calendar, entering on the release candle, and using normal position size during extreme volatility.
+        links:
+          - ["/xauusd-news/", "XAUUSD news hub"]
+          - ["/blog/what-moves-gold-prices/", "What moves gold prices"]
+          - ["/strategies/new-york-session-gold-trading/", "New York-session gold trading"]
+  - id: process
+    name: Risk and process
+    intro: The skills that decide whether a trader survives long enough for any strategy to matter.
+    topics:
+      - id: risk
+        name: Risk management and position sizing
+        summary: Size positions so that being wrong is affordable.
+        what: Risk management is the set of rules that limit losses — fixed-percentage risk per trade, stop-loss placement, position sizing, daily and weekly loss limits, and exposure caps.
+        interpret: Most experienced traders define risk per trade first, then calculate position size from the stop distance, rather than choosing a size and hoping the stop fits.
+        xau: Because many brokers define one gold lot as 100 ounces, a $10 stop on one lot risks around $1,000. Gold's volatility makes correct sizing essential.
+        limits: Stops are not guaranteed to fill at the chosen price, especially during gaps and news. Risk rules only work if they are followed consistently.
+        mistakes: Moving stops further away, increasing size after losses, ignoring correlated positions, and risking a fixed lot size regardless of stop distance.
+        links:
+          - ["/strategies/xauusd-risk-management/", "XAUUSD risk management (full guide)"]
+          - ["/blog/risk-management-volatile-gold-markets/", "Risk management for volatile gold markets"]
+      - id: journaling
+        name: Trade journaling and post-trade analysis
+        summary: Record and review every trade to find patterns in your decisions.
+        what: A trading journal records the setup, reasoning, risk, execution, outcome and emotional state for each trade. Post-trade analysis reviews those records to improve decisions.
+        interpret: The goal is to judge decision quality separately from outcome, and to identify which setups and conditions actually suit you.
+        xau: Tagging gold trades by session, setup type and news proximity often reveals strong differences in performance.
+        limits: Journals need many entries to be meaningful, and small samples can mislead. Honest recording is harder than it sounds.
+        mistakes: Only recording winners, writing reasons after the fact, and collecting data without ever reviewing it.
+        links:
+          - ["/blog/how-to-keep-a-trading-journal/", "How to keep a trading journal"]
+          - ["/community/", "How the community plans to use post-trade reviews"]
