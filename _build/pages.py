@@ -181,7 +181,7 @@ def home(strategies, posts):
   <div class="wrap">
     <div class="split split--mock">
       <div class="reveal">
-        <span class="eyebrow">A look inside the community</span>
+        <span class="eyebrow">A preview of the community</span>
         <h2>Not a signal feed. A room full of reasoning.</h2>
         <p class="lead">Post your chart and your thinking. Get it tested by traders who read gold differently — then review what really happened.</p>
         <ul class="checklist">

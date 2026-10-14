@@ -85,8 +85,7 @@ def chat_mockup(compact=False):
             '<div><dt>Invalidation</dt><dd>H1 close below the zone</dd></div>'
             '<div><dt>Risk</dt><dd>0.5% of account</dd></div></dl></div></div></div>')
     cls = "mock-wrap mock-wrap--compact" if compact else "mock-wrap"
-    return f'''<figure class="{cls}" data-tilt>
-  <figcaption class="mock-label"><span class="dot dot--gold"></span>Design preview · example conversation, not real members</figcaption>
+    return f'''<figure class="{cls}" data-tilt aria-label="Preview of the planned community chat">
   <div class="mock">
     <aside class="mock-side" aria-hidden="true"><div class="mock-brand">XAUUSD <span>Global</span></div><ul class="mock-rooms">{rooms}</ul></aside>
     <div class="mock-main">
