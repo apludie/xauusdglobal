@@ -73,9 +73,9 @@ def chat_mockup(compact=False):
     review = "" if compact else (
         '<div class="mock-review" style="--z:80px"><div class="mock-review__head"><span class="mock-pin">Trade review</span>'
         f'<b>@new_to_gold</b>{_lvl("Starter")}</div><ul>'
-        '<li><span>Result</span>Stopped out — loss of 0.5%</li>'
-        '<li><span>Decision quality</span>Plan followed, risk as planned ✓</li>'
-        '<li><span>Lesson</span>Check the calendar before entry</li></ul></div>')
+        '<li><span>Result:</span> Stopped out — loss of 0.5%</li>'
+        '<li><span>Decision quality:</span> Plan followed, risk as planned ✓</li>'
+        '<li><span>Lesson:</span> Check the calendar before entry</li></ul></div>')
     post = (f'<div class="mock-msg mock-msg--post" style="--z:24px">{_av("NG", "d")}<div>'
             f'<div class="mock-meta"><b>@new_to_gold</b>{_lvl("Starter")}<time>London session</time></div>'
             '<p>XAUUSD H1 — considering a long from this demand zone after the sweep. Real reversal or just a pullback? What am I missing?</p>'
@@ -85,7 +85,7 @@ def chat_mockup(compact=False):
             '<div><dt>Invalidation</dt><dd>H1 close below the zone</dd></div>'
             '<div><dt>Risk</dt><dd>0.5% of account</dd></div></dl></div></div></div>')
     cls = "mock-wrap mock-wrap--compact" if compact else "mock-wrap"
-    return f'''<figure class="{cls}" data-tilt aria-label="Preview of the planned community chat">
+    return f'''<figure class="{cls}" data-tilt aria-label="Preview of the community chat">
   <div class="mock">
     <aside class="mock-side" aria-hidden="true"><div class="mock-brand">XAUUSD <span>Global</span></div><ul class="mock-rooms">{rooms}</ul></aside>
     <div class="mock-main">

@@ -60,7 +60,7 @@
   var US = gl.getUniformLocation(SPH, "uS"), UL = gl.getUniformLocation(SPH, "uL");
   var aQ = gl.getAttribLocation(SPH, "a"), aP = gl.getAttribLocation(PP, "p"), aK = gl.getAttribLocation(PP, "k");
   var W, H, R, dpr;
-  function resize() { dpr = Math.min(window.devicePixelRatio || 1, 2); W = cv.clientWidth; H = cv.clientHeight; cv.width = lab.width = Math.round(W*dpr); cv.height = lab.height = Math.round(H*dpr); R = Math.min(W, H) * 0.385; gl.viewport(0, 0, cv.width, cv.height); lc.setTransform(dpr,0,0,dpr,0,0); }
+  function resize() { dpr = Math.min(window.devicePixelRatio || 1, 1.75); W = cv.clientWidth; H = cv.clientHeight; cv.width = lab.width = Math.round(W*dpr); cv.height = lab.height = Math.round(H*dpr); R = Math.min(W, H) * 0.385; gl.viewport(0, 0, cv.width, cv.height); lc.setTransform(dpr,0,0,dpr,0,0); }
   if ("ResizeObserver" in window) new ResizeObserver(resize).observe(cv); else window.addEventListener("resize", resize);
   resize();
   function m3(ry, rx) { var cy = Math.cos(ry), sy = Math.sin(ry), cx = Math.cos(rx), sx = Math.sin(rx); return new Float32Array([cy, sx*sy, -cx*sy, 0, cx, sx, sy, -sx*cy, cx*cy]); }

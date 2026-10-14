@@ -10,6 +10,7 @@ which is exactly what GitHub Pages serves.
 """
 import glob
 import json
+import html as html_lib
 import os
 import re
 import sys
@@ -72,7 +73,25 @@ COMPANIONS = {
 }
 
 
+_VER = {}
+
+
+def _bust(m):
+    """Append a content hash to local CSS/JS URLs so browsers never use stale cached styles."""
+    url = m.group(2)
+    if url not in _VER:
+        fp = os.path.join(ROOT, url.lstrip("/"))
+        try:
+            import hashlib
+            _VER[url] = hashlib.md5(open(fp, "rb").read()).hexdigest()[:8]
+        except OSError:
+            _VER[url] = ""
+    v = _VER[url]
+    return f'{m.group(1)}="{url}?v={v}"' if v else m.group(0)
+
+
 def write(path, html):
+    html = re.sub(r'(href|src)="(/assets/(?:css|js)/[\w.-]+\.(?:css|js))"', _bust, html)
     rel = path.strip("/")
     target = os.path.join(ROOT, rel, "index.html") if not rel.endswith(".html") else os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(target), exist_ok=True)
@@ -138,7 +157,7 @@ def render_article(a, titles):
     comp_block = ""
     if comp and comp[0] in titles:
         comp_block = f'<p class="companion">{comp[1]} <a href="{comp[0]}">{L.esc(titles[comp[0]])}</a>.</p>' 
-    toc_html = "".join(f'<li><a href="#{i}">{L.esc(n)}</a></li>' for i, n in toc)
+    toc_html = "".join(f'<li><a href="#{i}">{L.esc(html_lib.unescape(n))}</a></li>' for i, n in toc)
     body = f"""{L.page_head(crumbs, L.esc(a['title']), L.esc(a['lede']), eyebrow=a.get('category'), extra=byline)}
 <div class="wrap">
   <div class="article-layout">

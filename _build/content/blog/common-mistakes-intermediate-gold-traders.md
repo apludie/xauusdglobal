@@ -80,7 +80,7 @@ Here are ten patterns that show up repeatedly, and what to do about them.
 
 **The pattern:** making the same mistake for months because no one is there to point it out.
 
-**The fix:** share your analysis and reviews with traders who will challenge them — ideally including people more experienced than you. This is the idea at the heart of the [XAUUSD Global community vision](/community/).
+**The fix:** share your analysis and reviews with traders who will challenge them — ideally including people more experienced than you. This is the idea at the heart of the [XAUUSD Global community](/community/).
 
 ## Turning this list into action
 

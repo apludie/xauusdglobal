@@ -85,7 +85,7 @@ Set a fixed time each week. Keep it to about 30–45 minutes:
 
 ## Post-trade reviews with others
 
-Reviewing your own trades has a blind spot: you. Sharing a few journal entries — especially losses — with traders who will challenge your reasoning can surface mistakes you'd never see alone. Structured post-trade reviews are a core part of the [XAUUSD Global community vision](/community/).
+Reviewing your own trades has a blind spot: you. Sharing a few journal entries — especially losses — with traders who will challenge your reasoning can surface mistakes you'd never see alone. Structured post-trade reviews are a core part of the [XAUUSD Global community](/community/).
 
 ## Tools
 

@@ -2,8 +2,8 @@
 title: "Contact XAUUSD Global"
 short: "Contact"
 seo_title: "Contact XAUUSD Global"
-description: "How to contact XAUUSD Global about the website, content corrections, partnership questions or the upcoming gold trading community."
-lede: "Questions about the website, a correction to an article, or interest in the upcoming community? Here's how to reach us."
+description: "How to contact XAUUSD Global about the website, content corrections, partnership questions or the XAUUSD Global trading community."
+lede: "Questions about the website, a correction to an article, or questions about the community? Here's how to reach us."
 eyebrow: "Contact"
 ---
 
@@ -25,10 +25,10 @@ eyebrow: "Contact"
 
 ## Beware of impersonation
 
-XAUUSD Global does not sell signals, manage accounts, or ask for payments through private messages. Registration and payments are not open, and we never ask for money or wallet details by email. If anyone contacts you claiming to sell XAUUSD Global memberships or asking for money or wallet details on our behalf, do not respond.
+Your safety matters to us: we never ask for money or wallet details by email or private message. Membership is only ever claimed through our [membership page](/membership/#registration).
 
-## Learn while you wait
+## Keep learning
 
 - [XAUUSD trading strategies hub](/xauusd-trading-strategies/)
 - [Frequently asked questions](/faq/)
-- [The community vision](/community/)
+- [Inside the community](/community/)

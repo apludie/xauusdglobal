@@ -227,24 +227,144 @@
   }
 })();
 
-/* 3D tilt: chat preview and hero chart follow the pointer (desktop only, respects reduced motion) */
+/* =====================================================================
+   Premium motion layer — all effects respect prefers-reduced-motion
+   ===================================================================== */
 (function () {
-  if (!window.matchMedia || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-  var els = document.querySelectorAll("[data-tilt], .hero__visual");
-  Array.prototype.forEach.call(els, function (el) {
-    var base = el.classList.contains("hero__visual") ? [4, -8] : el.classList.contains("mock-wrap--compact") ? [6, -10] : [4, -5];
+  "use strict";
+  var mm = window.matchMedia ? function (q) { return window.matchMedia(q).matches; } : function () { return false; };
+  var reduce = mm("(prefers-reduced-motion: reduce)");
+  var fine = mm("(hover: hover) and (pointer: fine)");
+  var header = document.querySelector(".site-header");
+
+  /* stagger index for reveals that share a parent */
+  var groups = new Map();
+  Array.prototype.forEach.call(document.querySelectorAll(".reveal"), function (el) {
+    var p = el.parentNode, n = groups.get(p) || 0; groups.set(p, n + 1); el.style.setProperty("--i", Math.min(n, 6));
+  });
+
+  /* word-by-word scroll statement */
+  var stmts = [];
+  Array.prototype.forEach.call(document.querySelectorAll("[data-words]"), function (el) {
+    function wrap(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (ch) {
+        if (ch.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          ch.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+            var sp = document.createElement("span"); sp.className = "w"; sp.textContent = part; frag.appendChild(sp);
+          });
+          node.replaceChild(frag, ch);
+        } else if (ch.nodeType === 1) wrap(ch);
+      });
+    }
+    wrap(el);
+    stmts.push({ sec: el.closest(".statement") || el, words: el.querySelectorAll(".w"), lit: -1 });
+  });
+
+  /* reading progress bar on articles */
+  var bar = null, art = document.querySelector(".article-layout .prose");
+  if (art) { bar = document.createElement("div"); bar.className = "read-progress"; bar.setAttribute("aria-hidden", "true"); document.body.appendChild(bar); }
+
+  var ticking = false;
+  function onScroll() {
+    ticking = false;
+    var y = window.scrollY || window.pageYOffset, vh = window.innerHeight;
+    if (header) header.classList.toggle("is-scrolled", y > 8);
+    stmts.forEach(function (st) {
+      var r = st.sec.getBoundingClientRect();
+      var p = reduce ? 1 : Math.max(0, Math.min(1, (-r.top + vh * 0.25) / Math.max(1, r.height - vh * 0.9)));
+      var n = Math.round(p * st.words.length);
+      if (n !== st.lit) { for (var i = 0; i < st.words.length; i++) st.words[i].classList.toggle("on", i < n); st.lit = n; }
+    });
+    if (bar) {
+      var ar = art.getBoundingClientRect();
+      var prog = Math.max(0, Math.min(1, (vh * 0.3 - ar.top) / Math.max(1, ar.height - vh * 0.5)));
+      bar.style.transform = "scaleX(" + prog.toFixed(4) + ")";
+    }
+  }
+  function req() { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }
+  window.addEventListener("scroll", req, { passive: true });
+  window.addEventListener("resize", req);
+  onScroll();
+
+  if (reduce) return;
+
+  /* buttery wheel scrolling (desktop mice/trackpads; touch keeps native momentum) */
+  if (fine && !mm("(any-pointer: coarse)")) {
+    var target = 0, cur = 0, running = false;
+    var maxY = function () { return document.documentElement.scrollHeight - window.innerHeight; };
+    var canScroll = function (el, dy) {
+      while (el && el !== document.body && el !== document.documentElement) {
+        if (el.scrollHeight > el.clientHeight + 1) {
+          var oy = getComputedStyle(el).overflowY;
+          if ((oy === "auto" || oy === "scroll") && ((dy < 0 && el.scrollTop > 0) || (dy > 0 && el.scrollTop + el.clientHeight < el.scrollHeight - 1))) return true;
+        }
+        el = el.parentElement;
+      }
+      return false;
+    };
+    var step = function () {
+      cur += (target - cur) * 0.12;
+      if (Math.abs(target - cur) < 0.4) { cur = target; running = false; }
+      window.scrollTo({ top: cur, left: 0, behavior: "instant" });
+      if (running) requestAnimationFrame(step);
+    };
+    window.addEventListener("wheel", function (e) {
+      if (e.ctrlKey || e.defaultPrevented || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+      if (document.body.classList.contains("nav-open") || canScroll(e.target, e.deltaY)) return;
+      if (e.target.closest && e.target.closest("iframe, .tradingview-widget-container, [data-native-scroll]")) return;
+      e.preventDefault();
+      var d = e.deltaY * (e.deltaMode === 1 ? 36 : e.deltaMode === 2 ? window.innerHeight : 1);
+      if (!running) { cur = target = window.scrollY; }
+      target = Math.max(0, Math.min(maxY(), target + d));
+      if (!running) { running = true; requestAnimationFrame(step); }
+    }, { passive: false });
+    ["keydown", "mousedown", "touchstart"].forEach(function (ev) { window.addEventListener(ev, function () { running = false; }, { passive: true }); });
+  }
+
+  if (!fine) return;
+
+  /* cursor spotlight on cards */
+  var spot = null, sx = 0, sy = 0, sraf = 0;
+  document.addEventListener("pointermove", function (e) {
+    var c = e.target.closest && e.target.closest(".card, .tier, .offer-box");
+    if (!c) return; spot = c; sx = e.clientX; sy = e.clientY;
+    if (!sraf) sraf = requestAnimationFrame(function () {
+      sraf = 0; var r = spot.getBoundingClientRect();
+      spot.style.setProperty("--mx", (sx - r.left) + "px"); spot.style.setProperty("--my", (sy - r.top) + "px");
+    });
+  }, { passive: true });
+
+  /* magnetic primary buttons */
+  Array.prototype.forEach.call(document.querySelectorAll(".magnetic"), function (b) {
+    var r = null;
+    b.addEventListener("pointerenter", function () { r = b.getBoundingClientRect(); b.style.transition = "transform .25s var(--ease-out)"; });
+    b.addEventListener("pointermove", function (e) {
+      if (!r) return;
+      var x = (e.clientX - r.left - r.width / 2) / r.width, y = (e.clientY - r.top - r.height / 2) / r.height;
+      b.style.transform = "translate(" + (x * 10).toFixed(1) + "px," + (y * 8).toFixed(1) + "px)";
+    });
+    b.addEventListener("pointerleave", function () { r = null; b.style.transition = "transform .7s var(--ease-spring)"; b.style.transform = ""; });
+  });
+
+  /* 3D tilt on the chat preview: eased in rAF, rect read once per hover */
+  Array.prototype.forEach.call(document.querySelectorAll("[data-tilt]"), function (el) {
+    var base = el.classList.contains("mock-wrap--compact") ? [6, -10] : [4, -5];
+    var cx = base[0], cy = base[1], tx = cx, ty = cy, rect = null, raf = 0;
+    function loop() {
+      cx += (tx - cx) * 0.1; cy += (ty - cy) * 0.1;
+      el.style.setProperty("--rx", cx.toFixed(3) + "deg"); el.style.setProperty("--ry", cy.toFixed(3) + "deg");
+      raf = (Math.abs(tx - cx) + Math.abs(ty - cy) > 0.01) ? requestAnimationFrame(loop) : 0;
+    }
+    function go() { if (!raf) raf = requestAnimationFrame(loop); }
+    el.addEventListener("pointerenter", function () { rect = el.getBoundingClientRect(); });
     el.addEventListener("pointermove", function (e) {
-      var r = el.getBoundingClientRect();
-      var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-      el.classList.add("is-tilting");
-      el.style.setProperty("--ry", (x * 14).toFixed(2) + "deg");
-      el.style.setProperty("--rx", (-y * 10).toFixed(2) + "deg");
+      if (!rect) rect = el.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5, y = (e.clientY - rect.top) / rect.height - 0.5;
+      ty = x * 14; tx = -y * 10; go();
     });
-    el.addEventListener("pointerleave", function () {
-      el.classList.remove("is-tilting");
-      el.style.setProperty("--ry", base[1] + "deg");
-      el.style.setProperty("--rx", base[0] + "deg");
-    });
+    el.addEventListener("pointerleave", function () { rect = null; tx = base[0]; ty = base[1]; go(); });
   });
 })();

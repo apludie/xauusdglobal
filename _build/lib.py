@@ -351,7 +351,7 @@ def header(current):
     for path, label in NAV:
         cur = ' aria-current="page"' if current and current.startswith(path) else ""
         links.append(f'<li><a href="{path}"{cur}>{label}</a></li>')
-    links.append('<li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Claim Free Spot</a></li>')
+    links.append('<li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Claim my free spot</a></li>')
     return f"""<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
@@ -395,7 +395,7 @@ def footer():
         <li><a href="/blog/">Blog</a></li>
       </ul></div>
       <div><h2>Community</h2><ul>
-        <li><a href="/community/">Community vision</a></li>
+        <li><a href="/community/">Community</a></li>
         <li><a href="/membership/">Membership &amp; levels</a></li>
         <li><a href="/about/">About us</a></li>
         <li><a href="/faq/">FAQ</a></li>
@@ -413,7 +413,7 @@ def footer():
 </footer>"""
 
 
-FONT_URL = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+FONT_URL = "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap"
 
 
 OG_MANIFEST = []
@@ -538,33 +538,34 @@ def faq_schema(faqs):
 def community_cta(compact=False):
     return f"""<aside class="cta-band" aria-labelledby="cta-h">
   <span class="eyebrow">Founding 50 · 3 months free</span>
-  <h2 id="cta-h">Find your mentor. Find your people. Trade gold together.</h2>
+  <h2 id="cta-h">Find your mentor. Find your people. Trade gold <em class="serif gold-text">together.</em></h2>
   <p>Traders from every corner of the world are taking their seats. Learn live on the market, get your charts reviewed by experienced traders, and grow your skills every single day. The first 50 members join <strong>free for 3 months</strong> — then just {C.PLANNED_PRICE}/month.</p>
-  <div class="btn-row"><a class="btn btn--gold" href="/membership/#registration">Claim My Free Spot {icon("arrow")}</a><a class="btn btn--ghost" href="/community/">See inside the community</a></div>
+  <div class="btn-row"><a class="btn btn--gold" href="/membership/#registration">Claim my free spot {icon("arrow")}</a><a class="btn btn--ghost" href="/community/">See inside the community</a></div>
   <p class="cta-sign">See you in the community rooms soon. ✦</p>
 </aside>"""
 
 
 BENEFITS = [
     ("bolt", "Learn live on the market", "We don't sell courses. We teach you on the live gold market — real candles, real decisions, explained as they happen."),
-    ("users", "Mentors &amp; experienced traders", "Learn from seasoned gold traders, educators and mentors who share their process openly. Many members find their guru right here."),
+    ("users", "Mentors &amp; experienced traders", "Learn from seasoned gold traders, educators and mentors who share their process openly. Find your mentor right here."),
     ("globe", "Traders from around the world", "Connect in real time with XAUUSD traders from London, New York, Dubai, Mumbai, Singapore and beyond — the room never sleeps."),
     ("chart", "Real-time trade ideas", "See live setups with the full reasoning behind them, so you can act on ideas with confidence and build your own edge."),
     ("target", "Your charts reviewed", "Post your analysis and get feedback from traders at the next level. The fastest way to sharpen your skills."),
     ("news", "Daily gold game plan", "Key levels, sessions and the news that moves gold — so you start every day prepared."),
-    ("layers", "Level rooms that grow with you", "Intermediate, Advanced, Pro and Degen rooms. Level up through contribution and unlock new circles."),
+    ("layers", "Level rooms that grow with you", "Starter, Advanced, Pro and Degen rooms. Level up through contribution and unlock new circles."),
     ("message", "A community that has your back", "Ask anything, any time. Celebrate wins, break down lessons and grow together with people who get it."),
 ]
 
 
-def benefits_grid():
+def benefits_grid(n=None):
+    items = BENEFITS[:n] if n else BENEFITS
     return '<div class="cards cards--4 benefits">' + "".join(
-        f'<article class="card benefit reveal"><div class="card__icon">{icon(i)}</div><h3>{t}</h3><p>{d}</p></article>' for i, t, d in BENEFITS) + "</div>"
+        f'<article class="card benefit reveal"><div class="card__icon">{icon(i)}</div><h3>{t}</h3><p>{d}</p></article>' for i, t, d in items) + "</div>"
 
 
 def offer_box():
     return f"""<div class="offer-box">
-  <div class="offer-box__price"><span class="offer-box__free">3 MONTHS FREE</span><span class="offer-box__then">for the first 50 members · then {C.PLANNED_PRICE}/month</span></div>
-  <a class="btn btn--gold" href="/membership/#registration">Claim My Free Spot {icon("arrow")}</a>
+  <p class="offer-box__price"><span class="offer-box__free">3 months <em class="serif">free</em></span> <span class="offer-box__then">for the first 50 members, then {C.PLANNED_PRICE}/month</span></p>
+  <a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free spot {icon("arrow")}</a>
   <p class="offer-box__note">No card needed to claim your spot. See you in the community rooms soon.</p>
 </div>"""
