@@ -164,7 +164,6 @@ def render_article(a, titles):
     <aside class="toc" aria-label="Table of contents"><details><summary>On this page</summary><ol>{toc_html}</ol></details></aside>
     <article class="prose">
       {comp_block}{tool_block}
-      <div style="height:1.4em"></div>
       {html_body}
       {think_block}
       {faq_block}

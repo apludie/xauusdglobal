@@ -23,6 +23,8 @@ TITLES = {
     "/community/": "Inside the XAUUSD Global community",
     "/membership/": "Membership: first 50 get 3 months free",
     "/about/": "About XAUUSD Global",
+    "/tools/gold-market-hours/": "Live gold market hours in your time zone",
+    "/tools/": "Free gold trading tools",
     "/contact/": "Contact XAUUSD Global",
     "/faq/": "Frequently asked questions",
     "/risk-disclaimer/": "Risk disclaimer",
