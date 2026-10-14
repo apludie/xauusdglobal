@@ -117,7 +117,7 @@ def home(strategies, posts):
   <div class="wrap hero__grid">
     <div>
       <span class="status-pill"><span class="dot"></span>Free guides available now · Community launching soon</span>
-      <h1>Trade Gold. Think Deeper. <span class="gold-text">Grow Together.</span></h1>
+      <h1 class="hero__title"><span class="ht-l">Connect Traders Around the&nbsp;World</span> <span class="ht-l ht-sub">One Market, One Goal.</span> <span class="ht-l gold-text">Trade&nbsp;Smarter Together.</span></h1>
       <p class="hero__lede">Learn to read the market, question trading ideas, review your decisions, and develop your own process alongside traders who take improvement seriously.</p>
       <div class="btn-row">
         <a class="btn btn--gold" href="/xauusd-trading-strategies/">Explore the Free Guides {ARROW_BTN}</a>

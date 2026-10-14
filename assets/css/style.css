@@ -721,3 +721,6 @@ strong { color: #fff; font-weight: 600; }
   background: linear-gradient(90deg, rgba(8,9,11,.97) 0%, rgba(8,9,11,.9) 36%, rgba(8,9,11,.4) 58%, rgba(8,9,11,0) 74%); }
 .hero--3d .hero3d { z-index: 0; }
 @media (max-width: 899px) { .hero3d { height: 45%; } .hero3d.on { opacity: .55; } .hero3d-shade { background: linear-gradient(180deg, rgba(8,9,11,.5), rgba(8,9,11,.15)); } }
+.hero h1.hero__title { font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.08; }
+.hero__title .ht-l { display: block; }
+.hero__title .ht-sub { color: var(--text-2); }
