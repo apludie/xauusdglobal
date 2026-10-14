@@ -192,7 +192,6 @@ def render_article(a, titles):
 
 
 def main():
-    import elegant; elegant.build()
     strategies = load_collection("strategies")
     posts = load_collection("blog")
     titles = {a["path"]: a["title"] for a in strategies + posts}

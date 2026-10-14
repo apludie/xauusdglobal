@@ -401,11 +401,3 @@
   var gb = document.querySelector(".globe-box");
   if (gb) gb.addEventListener("transitionend", function (e) { if (e.propertyName === "filter" && gb.classList.contains("on")) gb.classList.add("settled"); });
 })();
-
-/* look preview switch */
-(function () {
-  if (!document.documentElement.classList.contains("look-elegant")) return;
-  var d = document.createElement("div"); d.className = "look-switch";
-  d.innerHTML = 'Elegant look preview <a href="?look=original">Back to original</a>';
-  document.body.appendChild(d);
-})();
