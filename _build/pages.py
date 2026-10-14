@@ -129,7 +129,7 @@ def home(strategies, posts):
       <p class="hero__lede intro" style="--d:5">A global community of gold traders. Learn live on the market with mentors and experienced traders, and connect with XAUUSD traders in every time zone.</p>
       <div class="btn-row intro" style="--d:6">
         <a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free spot {ARROW_BTN}</a>
-        <a class="btn btn--ghost btn--inside" href="#rooms"><span class="live-dot" aria-hidden="true"></span>Look inside the rooms</a>
+        <a class="btn btn--ghost btn--inside" href="/community/inside/"><span class="live-dot" aria-hidden="true"></span>Look inside the rooms</a>
       </div>
       <p class="hero__fine intro" style="--d:7">Only 50 founding spots · then {C.PLANNED_PRICE}/month</p>
     </div>

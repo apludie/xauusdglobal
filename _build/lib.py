@@ -352,7 +352,7 @@ def header(current):
         cur = ' aria-current="page"' if current and current.startswith(path) and not (inside and path == "/community/") else ""
         links.append(f'<li><a href="{path}"{cur}>{label}</a></li>')
     icur = ' aria-current="page"' if inside else ""
-    ihref = "#rooms" if current == "/" else "/community/inside/"
+    ihref = "/community/inside/"
     links.append(f'<li class="nav-inside"><a href="{ihref}"{icur}><span class="live-dot" aria-hidden="true"></span>Inside the rooms</a></li>')
     links.append('<li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Claim my free spot</a></li>')
     return f"""<a class="skip-link" href="#main">Skip to content</a>
