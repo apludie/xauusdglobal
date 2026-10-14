@@ -15,7 +15,7 @@ eyebrow: "Contact"
 
 - **Content corrections.** If you believe an article contains an error, tell us the page and the issue. We take accuracy seriously and will review it.
 - **Website feedback.** Broken links, accessibility problems or display issues.
-- **Community questions.** General questions about the planned community. Registration and payments are **not open yet**, but you can [join the waitlist](/membership/#registration) to be notified when membership launches.
+- **Community questions.** Anything about the community or the Founding 50 offer. [Claim your free spot](/membership/#registration) — the first 50 members get 3 months free.
 - **Partnership or media enquiries.**
 
 ## What we can't help with

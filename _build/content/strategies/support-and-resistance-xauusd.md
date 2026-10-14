@@ -127,8 +127,8 @@ Most losses on level trades come not from the idea being wrong, but from stops b
 - **Size from the stop.** A wider stop means a smaller position. If risking 1% of a $10,000 account ($100) with a $10 stop on a contract where $1 per ounce equals $100 per lot, the position is about 0.10 lots. Check your broker's contract specifications.
 - **Respect the calendar.** A clean level can be blown through instantly by a surprise inflation print or a Federal Reserve decision.
 
-:::warn
-Stop-loss orders are not guaranteed to fill at your price. During news releases, weekend gaps or thin liquidity, gold can gap through stops and losses can exceed what you planned. Read our [XAUUSD risk management guide](/strategies/xauusd-risk-management/).
+:::note
+**Pro tip:** around big news releases and weekend gaps, gold can move fast. Pros trade smaller or wait for the spike to settle before stepping in.
 :::
 
 ## Common mistakes and limitations

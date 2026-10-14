@@ -747,3 +747,20 @@ strong { color: #fff; font-weight: 600; }
 .globe-box::before { content: ""; display: block; padding-top: 100%; }
 .globe-box .globe { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; aspect-ratio: auto; }
 .globe-box .globe-labels { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* ---- Founding 50 offer ---- */
+.status-pill--offer { border-color: rgba(242,193,78,.55); background: rgba(242,193,78,.1); color: var(--gold); font-weight: 600; }
+.benefits .benefit { transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s; }
+.benefits .benefit:hover { transform: translateY(-4px); border-color: rgba(242,193,78,.45); }
+.benefits .benefit h3 { font-size: 1.05rem; }
+.benefits .benefit p { font-size: .93rem; }
+.offer-box { display: inline-flex; flex-direction: column; align-items: center; gap: 16px; padding: 30px 34px; border-radius: 22px; max-width: 560px; width: 100%;
+  background: radial-gradient(120% 140% at 50% 0%, rgba(242,193,78,.16), rgba(242,193,78,.03) 60%), var(--surface);
+  border: 1px solid rgba(242,193,78,.45); box-shadow: 0 20px 60px -30px rgba(242,193,78,.45); text-align: center; }
+.offer-box__price { display: flex; flex-direction: column; gap: 6px; }
+.offer-box__free { font-family: var(--font-display); font-size: clamp(1.9rem, 5vw, 2.6rem); font-weight: 800; letter-spacing: -.02em;
+  background: linear-gradient(135deg,#ffe08a,#f2c14e 45%,#c9922f); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.offer-box__then { color: var(--text-2); font-size: .98rem; }
+.offer-box__note { margin: 0; color: var(--text-3); font-size: .88rem; }
+.cta-sign { margin-top: 14px; color: var(--gold); font-style: italic; font-weight: 500; }
+.offer-sec { padding-top: clamp(48px, 7vw, 84px); }

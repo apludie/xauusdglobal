@@ -144,7 +144,6 @@ def render_article(a, titles):
   <div class="article-layout">
     <aside class="toc" aria-label="Table of contents"><details><summary>On this page</summary><ol>{toc_html}</ol></details></aside>
     <article class="prose">
-      {L.notice("<strong>Educational content, not financial advice.</strong> Examples are hypothetical and simplified. Trading leveraged gold products can result in substantial losses. <a href='/risk-disclaimer/'>Read the risk disclaimer</a>.", "risk", "alert")}
       {comp_block}{tool_block}
       <div style="height:1.4em"></div>
       {html_body}

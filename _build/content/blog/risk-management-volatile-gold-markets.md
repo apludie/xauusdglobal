@@ -22,8 +22,8 @@ Imagine the same setup on two different weeks. In a calm week, the logical stop 
 
 That's why risk management for gold has to account for **changing volatility**, not just fixed rules.
 
-:::warn
-This article is general education. Leveraged trading can result in substantial losses, and stop-losses are not guaranteed to fill at your chosen price during volatile conditions.
+:::note
+**Pro tip:** when volatility jumps, shrink your lot size so your dollar risk stays the same. That one habit keeps you steady through the wildest gold days.
 :::
 
 ## Measuring volatility simply

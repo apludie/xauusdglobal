@@ -20,7 +20,7 @@ TITLES = {
     "/xauusd-trading-strategies/": "XAUUSD trading strategies hub",
     "/blog/": "The XAUUSD Global blog",
     "/community/": "The XAUUSD Global community vision",
-    "/membership/": "Membership levels and planned pricing",
+    "/membership/": "Membership: first 50 get 3 months free",
     "/about/": "About XAUUSD Global",
     "/contact/": "Contact XAUUSD Global",
     "/faq/": "Frequently asked questions",
@@ -98,17 +98,18 @@ def home(strategies, posts):
     latest = sorted(posts, key=lambda p: (p["published"], -p.get("order", 0)), reverse=True)[:3]
     strat_cards = "".join(card(s["path"], s["title"], s["card"], tag=s.get("level", "Strategy"), meta=f"<span>{s.get('minutes', '')} min read</span>") for s in featured)
     blog_cards = "".join(card(p["path"], p["title"], p["card"], tag=p["category"], meta=f"<time datetime='{p['published']}'>{L.fmt_date(p['published'])}</time><span>{p.get('minutes', '')} min read</span>") for p in latest)
-    marquee_items = ["Bring your charts. Bring your questions. Bring your reasoning.", "Stop chasing signals. Start understanding gold.",
-                     "A good trade can lose. A bad trade can win. Learn the difference.", "Understand the idea, not just the entry.",
-                     "One market. Different perspectives. Better decisions."]
+    marquee_items = ["Connect with gold traders around the world.", "We don't sell courses — we teach you on the live market.",
+                     "Find your mentor. Find your people.", "First 50 members get 3 months free.",
+                     "See you in the community rooms soon."]
     mq = "".join(f"<span>{esc(t)}</span>" for t in marquee_items * 2)
     mini_cfg = {"symbol": C.TV_SYMBOL, "width": "100%", "height": "100%", "locale": "en", "dateRange": "1D",
                 "colorTheme": "dark", "isTransparent": True, "autosize": True, "largeChartUrl": ""}
     faqs = [
-        {"q": "Is this a signal group?", "a": "No. Trade ideas will be discussed, but always with their reasoning: context, thesis, invalidation and risk. The goal is for you to understand an idea well enough to judge it yourself, not to copy entries."},
+        {"q": "Is this a signal group?", "a": "It's much more than that. Trade ideas are shared with their full reasoning — context, thesis, invalidation and risk — so you understand every setup well enough to take action with confidence yourself."},
         {"q": "Who is XAUUSD Global for?", "a": "Mainly intermediate gold traders — people who know some concepts but want to apply them more consistently. Motivated learners and experienced traders who enjoy explaining their thinking are welcome too."},
-        {"q": "Is membership open?", "a": f"Not yet. The guides on this site are free and available now. The community is being prepared and membership is planned at **{C.PLANNED_PRICE}/month**. [Get launch updates](/membership/#registration) to hear first when it opens — no payment and no obligation."},
-        {"q": "Will joining make me profitable?", "a": "No community, course or strategy can promise that. Trading leveraged gold products carries a high risk of loss. What we aim to help with is better reasoning, risk habits and review — the parts of trading you can control."},
+        {"q": "How do I get 3 months free?", "a": f"The first **50 founding members** get full community access **free for 3 months**. After that it's {C.PLANNED_PRICE}/month. [Claim your spot](/membership/#registration) with your email — it takes 20 seconds."},
+        {"q": "Do you sell courses?", "a": "No. We don't sell courses — we teach you on the live market. You learn by watching real gold price action with experienced traders, asking questions in real time and getting feedback on your own charts."},
+        {"q": "Who will I learn from?", "a": "Experienced gold traders, mentors and educators from around the world — plus a global network of members who trade the same market as you. Many members find their mentor inside the community."},
         {"q": "Why only gold?", "a": "Gold has its own drivers, sessions and behaviour. Focusing on one market lets discussions go deep and lets traders compare like-for-like analysis on the same chart."},
     ]
     body = f"""
@@ -116,16 +117,16 @@ def home(strategies, posts):
   <canvas id="hero3d" class="hero3d" aria-hidden="true"></canvas><div class="hero3d-shade" aria-hidden="true"></div>
   <div class="wrap hero__grid">
     <div>
-      <span class="status-pill"><span class="dot"></span>Free guides available now · Community launching soon</span>
+      <span class="status-pill status-pill--offer"><span class="dot dot--gold"></span>Founding 50: first 50 members get 3 months FREE</span>
       <h1 class="hero__title"><span class="ht-l">Connect Traders Around the&nbsp;World.</span> <span class="ht-l gold-text">Trade&nbsp;Smarter Together.</span></h1>
-      <p class="hero__lede">Learn to read the market, question trading ideas, review your decisions, and develop your own process alongside traders who take improvement seriously.</p>
+      <p class="hero__lede">Join a global community of gold traders. Learn live on the market with experienced traders and mentors, get real-time feedback on your charts, and connect with XAUUSD traders from London to New York to Dubai to Singapore. <strong>We don't sell courses — we teach you on the live market.</strong></p>
       <div class="btn-row">
-        <a class="btn btn--gold" href="/xauusd-trading-strategies/">Explore the Free Guides {ARROW_BTN}</a>
-        <a class="btn btn--ghost" href="/membership/#registration">Get Launch Updates</a>
+        <a class="btn btn--gold" href="/membership/#registration">Claim My Free Spot {ARROW_BTN}</a>
+        <a class="btn btn--ghost" href="/xauusd-trading-strategies/">Explore the Free Guides</a>
       </div>
       <div class="hero__status">
-        <span class="status-pill"><span class="dot"></span>Education: free and open</span>
-        <span class="status-pill"><span class="dot dot--gold"></span>Community: waitlist open</span>
+        <span class="status-pill"><span class="dot"></span>3 months free · then {C.PLANNED_PRICE}/month</span>
+        <span class="status-pill"><span class="dot dot--gold"></span>Only 50 founding spots</span>
       </div>
     </div>
     <div class="hero__visual hero__visual--globe">
@@ -138,6 +139,15 @@ def home(strategies, posts):
 </section>
 
 <div class="marquee" aria-hidden="true"><div class="marquee__inner">{mq}</div></div>
+
+<section class="section offer-sec">
+  <div class="wrap">
+    <div class="section-head section-head--center reveal"><span class="eyebrow">Founding 50 · limited spots</span><h2>Your seat in a worldwide room of <span class="gold-text">gold traders.</span></h2>
+      <p>The first 50 people to join get the full community <strong>free for 3 months</strong>. Here's everything waiting for you inside.</p></div>
+    {L.benefits_grid()}
+    <div class="center mt-3 reveal">{L.offer_box()}</div>
+  </div>
+</section>
 
 <section class="section">
   <div class="wrap">
@@ -164,7 +174,7 @@ def home(strategies, posts):
         <p class="lead">Videos are a great way to discover concepts, and a trade idea can be useful. But understanding an idea is what lasts. When the trade fails or the market changes, reasoning is what lets you decide for yourself.</p>
         <p>So every idea discussed at XAUUSD Global is expected to answer the same questions — before the outcome is known. Members learn to judge the quality of the reasoning, not just whether the trade won.</p>
         <p><strong>A well-reasoned trade can lose. A poorly reasoned trade can win.</strong> Learning to tell the difference is the skill we care about most.</p>
-        <a class="btn btn--gold" href="/community/">See how the community will work {ARROW_BTN}</a>
+        <a class="btn btn--gold" href="/community/">See inside the community {ARROW_BTN}</a>
       </div>
       <div class="compare reveal">
         <div class="compare__col compare__col--bad"><h3>A trade call tells you</h3><ul>
@@ -181,14 +191,14 @@ def home(strategies, posts):
     <div class="split split--mock">
       <div class="reveal">
         <span class="eyebrow">A preview of the community</span>
-        <h2>Not a signal feed. A room full of reasoning.</h2>
+        <h2>A live room full of gold traders — and you're invited.</h2>
         <p class="lead">Post your chart and your thinking. Get it tested by traders who read gold differently — then review what really happened.</p>
         <ul class="checklist">
           <li>Every idea shares its context, thesis, invalidation and risk.</li>
           <li>Feedback challenges the analysis, never the person.</li>
-          <li>Wins and losses are reviewed with the same honesty.</li>
+          <li>Every trade becomes a lesson you share with the whole room.</li>
         </ul>
-        <div class="btn-row"><a class="btn btn--gold" href="/community/">See how the community will work {ARROW_BTN}</a></div>
+        <div class="btn-row"><a class="btn btn--gold" href="/community/">See inside the community {ARROW_BTN}</a></div>
       </div>
       <div>{chat_mockup(compact=True)}</div>
     </div>
@@ -198,14 +208,14 @@ def home(strategies, posts):
 <section class="section">
   <div class="wrap">
     <div class="section-head section-head--center reveal"><span class="eyebrow">The learning journey</span><h2>From collecting concepts to building your own judgement.</h2>
-      <p>Six stages, one direction: becoming a trader who can think through the market independently. Not everyone moves at the same pace, and nobody is promised a result.</p></div>
+      <p>Six stages, one direction: becoming a confident trader who reads gold on your own — with a whole community cheering you on.</p></div>
     <div class="steps steps--6">
-      <div class="step reveal"><span class="tag tag--cyan">Available now</span><h3>Understand</h3><p>Study free guides on XAUUSD, price action, market structure, liquidity, sessions and risk.</p></div>
-      <div class="step reveal"><span class="tag tag--cyan">Available now</span><h3>Apply</h3><p>Analyse your own charts, write scenarios and document your reasoning with our planning and journal guides.</p></div>
-      <div class="step reveal"><span class="tag">With membership</span><h3>Discuss</h3><p>Share your analysis, ask specific questions and compare interpretations with other traders.</p></div>
-      <div class="step reveal"><span class="tag">With membership</span><h3>Review</h3><p>Revisit decisions, find mistakes and learn from wins and losses alike.</p></div>
-      <div class="step reveal"><span class="tag">With membership</span><h3>Improve</h3><p>Turn lessons into a more disciplined, evidence-aware and repeatable process.</p></div>
-      <div class="step reveal"><span class="tag">With membership</span><h3>Contribute</h3><p>Help others with thoughtful analysis and explanations as your experience grows.</p></div>
+      <div class="step reveal"><span class="tag tag--cyan">Free today</span><h3>Understand</h3><p>Study free guides on XAUUSD, price action, market structure, liquidity, sessions and risk.</p></div>
+      <div class="step reveal"><span class="tag tag--cyan">Free today</span><h3>Apply</h3><p>Analyse your own charts, write scenarios and document your reasoning with our planning and journal guides.</p></div>
+      <div class="step reveal"><span class="tag">Inside the community</span><h3>Discuss</h3><p>Share your analysis, ask specific questions and compare interpretations with other traders.</p></div>
+      <div class="step reveal"><span class="tag">Inside the community</span><h3>Review</h3><p>Break down every trade with mentors and turn each one into a lesson that sharpens your edge.</p></div>
+      <div class="step reveal"><span class="tag">Inside the community</span><h3>Improve</h3><p>Turn lessons into a more disciplined, evidence-aware and repeatable process.</p></div>
+      <div class="step reveal"><span class="tag">Inside the community</span><h3>Contribute</h3><p>Help others with thoughtful analysis and explanations as your experience grows.</p></div>
     </div>
   </div>
 </section>
@@ -213,7 +223,7 @@ def home(strategies, posts):
 <section class="section section--alt">
   <div class="wrap">
     <div class="section-head reveal"><span class="eyebrow">Start here — free</span><h2>Gold trading guides that explain the why.</h2>
-      <p>Each guide covers what a framework claims, how traders apply it to XAUUSD, where it breaks down, and how to manage risk around it.</p></div>
+      <p>Each guide shows what a framework is, how traders apply it to XAUUSD, and how to use it with confidence.</p></div>
     <div class="cards cards--3">{strat_cards}</div>
     <div class="mt-3"><a class="btn btn--ghost" href="/xauusd-trading-strategies/">Browse all 18 strategy topics {ARROW_BTN}</a></div>
     <div class="mt-3">{tool_band()}</div>
@@ -225,9 +235,9 @@ def home(strategies, posts):
     <div class="section-head reveal"><span class="eyebrow">Gold trading education</span><h2>Learn by category.</h2></div>
     <div class="cards cards--3">
       {card("/strategies/market-structure-xauusd/", "Market structure", "Trends, swings, Break of Structure and Change of Character — the backbone of most discretionary gold analysis.", ico="chart")}
-      {card("/strategies/smart-money-concepts-xauusd/", "Liquidity frameworks (SMC & ICT)", "Liquidity pools, sweeps, order blocks and fair value gaps — treated as interpretive models, not certainties.", ico="layers")}
+      {card("/strategies/smart-money-concepts-xauusd/", "Liquidity frameworks (SMC & ICT)", "Liquidity pools, sweeps, order blocks and fair value gaps — explained step by step on real gold charts.", ico="layers")}
       {card("/strategies/london-session-gold-trading/", "Sessions & timing", "How London, New York and Asian hours change gold's volatility and behaviour.", ico="clock")}
-      {card("/strategies/xauusd-risk-management/", "Risk management", "Position sizing for gold's contract size, stop placement and surviving volatility.", ico="shield")}
+      {card("/strategies/xauusd-risk-management/", "Risk management", "Position sizing for gold's contract size, smart stop placement and handling volatility like a pro.", ico="shield")}
       {card("/blog/how-to-keep-a-trading-journal/", "Journaling & review", "Turn every trade into data you can learn from, and review setups systematically.", ico="journal")}
       {card("/blog/what-moves-gold-prices/", "Macro drivers", "The US dollar, real yields, inflation and the Fed — why they matter to XAUUSD.", ico="globe")}
     </div>
@@ -282,14 +292,14 @@ def home(strategies, posts):
 <section class="section">
   <div class="wrap">
     <div class="section-head reveal"><span class="eyebrow">Who it's for</span><h2>Built for traders who want to keep improving.</h2>
-      <p>Most members will be intermediate traders. Everyone is welcome to ask questions without feeling foolish — trading is hard, and struggling is part of learning it. Levels are planned discussion categories, earned through contribution, never bought.</p></div>
+      <p>Whatever your level, there's a room for you — and traders at the next level ready to help you get there. Ask anything, any time. Levels are earned through contribution and grow with you.</p></div>
     <div class="cards cards--4">
-      <article class="card reveal"><div class="card__icon">{icon("compass")}</div><h3>Intermediate</h3><p>You know candlesticks and several strategies, but struggle with context and consistency. You want answers to your own questions, not more videos.</p></article>
+      <article class="card reveal"><div class="card__icon">{icon("compass")}</div><h3>Intermediate</h3><p>You know the concepts and you're ready to apply them consistently. Get answers to your own questions from traders who've been there.</p></article>
       <article class="card reveal"><div class="card__icon">{icon("layers")}</div><h3>Advanced</h3><p>You have a method. You want to stress-test it, compare trade plans, and refine your read of structure and liquidity.</p></article>
       <article class="card reveal"><div class="card__icon">{icon("target")}</div><h3>Pro</h3><p>You can explain your process clearly and enjoy breaking down theses, reviewing trades and helping others improve.</p></article>
       <article class="card reveal"><div class="card__icon">{icon("bolt")}</div><h3>Degen</h3><p>Experimental and high-conviction — but accountable. Alternative theses, transparent reasoning and strict risk controls.</p></article>
     </div>
-    <p class="mt-2"><a href="/membership/">See how the planned trader levels work</a></p>
+    <p class="mt-2"><a href="/membership/">See how the trader levels work</a></p>
   </div>
 </section>
 
@@ -297,24 +307,24 @@ def home(strategies, posts):
   <div class="wrap">
     <div class="split">
       <div class="reveal">
-        <span class="eyebrow">Free and paid</span>
-        <h2>The guides stay free. The community is the membership.</h2>
-        <p>Everything educational on this website is free and will stay that way. Membership is planned for the part that can't be put in an article: discussing your own charts, getting feedback on your reasoning, and reviewing trades with other traders.</p>
-        <p class="muted">We'll only advertise community features once they exist or are firmly planned, and we'll label which is which.</p>
-        <a href="/membership/">What membership is planned to include</a>
+        <span class="eyebrow">Founding offer</span>
+        <h2>Start free. Learn live. Grow with traders worldwide.</h2>
+        <p>Every guide on this website is free, forever. The community is where it all comes alive: live-market sessions, mentors who review your charts, and traders from every time zone watching gold with you.</p>
+        <p><strong>The first 50 members get 3 months completely free.</strong> When the spots are gone, the offer is gone.</p>
+        <a href="/membership/">See everything membership includes</a>
       </div>
       <div class="reveal">
         <div class="tier tier--pro" style="padding:34px">
-          <span class="tier__lvl">Membership preview</span>
-          <div class="price-big" style="margin:14px 0 6px">{C.PLANNED_PRICE}<small> /month · planned</small></div>
-          <p class="muted">One planned price. Levels inside the community are earned through analysis quality and contribution — not by paying more.</p>
+          <span class="tier__lvl">Founding 50 membership</span>
+          <div class="price-big" style="margin:14px 0 6px">FREE<small> for 3 months</small></div>
+          <p class="muted">Then {C.PLANNED_PRICE}/month. One simple price — every room, every session, every level.</p>
           <ul class="status-list" style="margin-top:18px">
-            <li><span class="badge badge--live">Live</span>Free guides, news and calendar</li>
-            <li><span class="badge badge--live">Open</span>Launch-updates waitlist</li>
-            <li><span class="badge badge--soon">Soon</span>Community registration</li>
-            <li><span class="badge badge--no">Not yet</span>Payments &amp; member access</li>
+            <li><span class="badge badge--live">✓</span>Live-market teaching sessions</li>
+            <li><span class="badge badge--live">✓</span>Mentors &amp; experienced gold traders</li>
+            <li><span class="badge badge--live">✓</span>Chart reviews &amp; real-time trade ideas</li>
+            <li><span class="badge badge--live">✓</span>Global trader rooms in every time zone</li>
           </ul>
-          <div class="btn-row mt-2"><a class="btn btn--gold" href="/membership/#registration">Get Launch Updates {ARROW_BTN}</a></div>
+          <div class="btn-row mt-2"><a class="btn btn--gold" href="/membership/#registration">Claim My Free Spot {ARROW_BTN}</a></div>
         </div>
       </div>
     </div>
@@ -332,13 +342,12 @@ def home(strategies, posts):
 <section class="section section--tight">
   <div class="wrap">
     {L.community_cta()}
-    <div class="mt-2">{L.notice("<strong>Risk warning.</strong> Leveraged trading and CFDs can result in substantial losses. Content on XAUUSD Global is educational and not personalised financial advice. No strategy or community participation guarantees results.", "risk", "alert")}</div>
   </div>
 </section>
 <script src="/assets/js/hero3d.js" defer></script>
 <script src="/assets/js/globe.js" defer></script>"""
-    return L.page(path="/", title="XAUUSD Global — Learn to Understand Gold, Not Chase Signals",
-                  description="A gold trading learning community built on market reasoning, honest discussion and trade reviews. Free XAUUSD guides now; membership launching soon.",
+    return L.page(path="/", title="XAUUSD Global — Connect With Gold Traders Around the World",
+                  description=f"Join a global community of XAUUSD traders. Learn live on the market with experienced traders and mentors. First 50 members get 3 months free, then {C.PLANNED_PRICE}/month.",
                   body=body)
 
 
@@ -531,10 +540,10 @@ def strategy_hub(strategies):
         sections.append("".join(sec))
     guides = "".join(card(s["path"], s["title"], s["card"], tag=s.get("level", "Guide"),
                           meta=f"<span>{s.get('minutes', '')} min read</span>") for s in strategies)
-    body = f"""{L.page_head(crumbs, 'XAUUSD Trading Strategies: <span class="gold-text">How Traders Analyse Gold</span>', 'Eighteen ways traders read the gold market — from support and resistance to Smart Money Concepts, ICT, session timing and risk management. Each topic explains the idea, how it is applied to XAUUSD, where it fails, and the mistakes to avoid.', eyebrow='Strategy hub')}
+    body = f"""{L.page_head(crumbs, 'XAUUSD Trading Strategies: <span class="gold-text">How Traders Analyse Gold</span>', 'Eighteen ways traders read the gold market — from support and resistance to Smart Money Concepts, ICT, session timing and risk management. Each topic explains the idea, how it is applied to XAUUSD, and the pro tips that make it work.', eyebrow='Strategy hub')}
 <section class="section section--tight">
   <div class="wrap">
-    {L.notice("<strong>How to use this hub.</strong> These are analytical frameworks, not trading systems with guaranteed outcomes. SMC and ICT in particular are interpretations of price behaviour; they do not reveal what banks or institutions are actually doing. Combine any method with strict risk management and test it before risking money.", "info", "info")}
+    {L.notice("<strong>How to use this hub.</strong> Pick one framework, study it here, then watch it play out on the live gold chart. Inside the community, mentors and experienced traders break these exact setups down in real time.", "info", "info")}
     <h2 class="mt-3">In-depth XAUUSD strategy guides</h2>
     <div class="cards cards--3">{guides}</div>
     <h2 class="mt-3">All 18 strategy topics</h2>
@@ -607,24 +616,24 @@ def blog_index(posts):
 def community_page():
     crumbs = [("/", "Home"), ("/community/", "Community")]
     benefits = [
-        ("users", "Learn alongside other traders", "Intermediate, advanced and experienced traders, all focused on the same market."),
+        ("users", "Learn from mentors &amp; experienced traders", "Seasoned gold traders and educators share how they read the market — live, as it moves. Find your guru here."),
+        ("bolt", "Learn on the live market", "We don't sell courses. Every lesson happens on real, live XAUUSD price action."),
         ("compass", "Compare perspectives", "See how traders using different frameworks read the same price action — and where they disagree."),
         ("journal", "See how plans are built", "Learn how other traders develop, document and review their trade plans."),
         ("message", "Share breakdowns & reviews", "Post chart breakdowns and post-trade reviews for structured feedback."),
         ("shield", "Improve risk habits", "Make position sizing, invalidation and drawdown rules part of every discussion."),
-        ("repeat", "Learn from mistakes", "Losses and errors are reviewed openly, not hidden behind highlight reels."),
+        ("repeat", "Turn every trade into progress", "Break down each trade with the room and walk away sharper every single time."),
         ("layers", "Build a structured process", "Turn scattered ideas into a repeatable process you can measure and refine."),
-        ("news", "Reasons to keep returning", "Ongoing market discussions, review threads, learning milestones and community challenges are among the ideas we're planning — learning shouldn't end after one course."),
-        ("globe", "Global relationships", "Build lasting trading relationships with people across time zones and sessions."),
+        ("news", "Reasons to keep returning", "Daily market discussions, review threads, learning milestones and community challenges keep you growing every week."),
+        ("globe", "Global relationships", "Connect in real time with gold traders from every continent — London, New York, Dubai, Mumbai, Singapore and more."),
     ]
     bcards = "".join(f'<article class="card reveal"><div class="card__icon">{icon(i)}</div><h3>{t}</h3><p>{d}</p></article>' for i, t, d in benefits)
     faqs = [
-        {"q": "When will the community open?", "a": "We haven't announced a date. It will open once the platform, community standards and membership terms are ready. [Get launch updates](/membership/#registration) to hear first."},
-        {"q": "I'm not an experienced trader. Is it for me?", "a": "Yes, if you're serious about learning. Most members are expected to be intermediate traders. Thoughtful questions are welcome at every level, and nobody should feel foolish for asking."},
+        {"q": "How do I join?", "a": f"[Claim your spot](/membership/#registration) with your email. The first 50 founding members get the community **free for 3 months**, then it's {C.PLANNED_PRICE}/month. We'll send your invitation to the rooms by email."},
+        {"q": "I'm not an experienced trader. Is it for me?", "a": "Absolutely. There's a room for every level, and experienced traders love helping newer traders grow. Every question is welcome."},
         {"q": "Can I disagree with more experienced traders?", "a": "Yes — respectfully, and with your reasoning. Comparing interpretations is one of the main ways people learn here. Challenge the analysis, never the person."},
-        {"q": "Will experienced traders give me trades to copy?", "a": "No. The community is for sharing reasoning and reviews, not for copying entries. Members remain responsible for their own decisions."},
-        {"q": "Where will discussions take place?", "a": "The platform is still being chosen. We'll publish details — including how data is handled — before registration opens."},
-        {"q": "Does membership guarantee better results?", "a": "No. Membership does not guarantee profitable trading. Leveraged gold trading can result in substantial losses."},
+        {"q": "Will I see real trade ideas?", "a": "Yes — live ideas shared with the full reasoning behind them, so you learn to spot the setups yourself and take action with confidence."},
+        {"q": "Who will I meet inside?", "a": "Gold traders from around the world — intermediate traders levelling up, advanced traders refining their edge, and experienced mentors sharing what they know. You'll find your people, and maybe your guru."},
     ]
     framework = [
         ("Context", "What is the higher-timeframe picture, the session and the calendar?"),
@@ -636,11 +645,11 @@ def community_page():
         ("Lessons", "Afterwards: what happened, and what would you change?"),
     ]
     fcards = "".join(f'<article class="card reveal"><div class="card__num">{n:02d}</div><h3>{t}</h3><p>{d}</p></article>' for n, (t, d) in enumerate(framework, 1))
-    body = f"""{L.page_head(crumbs, 'Bring your charts. Bring your questions. <span class="gold-text">Bring your reasoning.</span>', 'XAUUSD Global is a learning community for gold traders, built around market reasoning, honest discussion, transparent trade reviews and continuous improvement. Leave room to learn.', eyebrow='The community', extra='<div class="hero__status"><span class="status-pill"><span class="dot dot--gold"></span>In development · Launch-updates waitlist open</span></div>')}
+    body = f"""{L.page_head(crumbs, 'Bring your charts. Bring your questions. <span class="gold-text">Bring your reasoning.</span>', 'A worldwide community of gold traders. Learn live on the market with mentors and experienced traders, connect with XAUUSD traders in every time zone, and grow your skills every day.', eyebrow='The community', extra='<div class="hero__status"><span class="status-pill"><span class="dot dot--gold"></span>Founding 50 · first 50 members get 3 months free</span></div><div class="btn-row mt-2"><a class="btn btn--gold" href="/membership/#registration">Claim My Free Spot</a></div>')}
 <section class="section section--tight">
   <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">A look inside</span><h2>What a conversation will look like</h2>
-      <p>One member shares a chart with their reasoning. Others test it from different angles — structure, liquidity, risk. Afterwards, the trade is reviewed honestly, win or lose.</p></div>
+    <div class="section-head reveal"><span class="eyebrow">A look inside</span><h2>A peek inside the rooms</h2>
+      <p>One member shares a chart with their reasoning. Others test it from different angles — structure, liquidity, risk. Then the whole room learns from how it plays out.</p></div>
     {chat_mockup()}
   </div>
 </section>
@@ -651,14 +660,13 @@ def community_page():
       <div class="reveal">
         <span class="eyebrow">Why it exists</span>
         <h2>Stop learning alone. Start learning together.</h2>
-        <p class="lead">Many traders improve slowly because they learn in isolation: the same mistakes repeat, blind spots stay hidden, and advice arrives in scattered fragments.</p>
-        <p>XAUUSD Global is being built so a trader can put their analysis next to someone else's, ask why, and get a thoughtful answer — then review what actually happened.</p>
-        <p>We want members to feel welcome to ask a question, disagree respectfully, admit a mistake and learn from someone with more experience.</p>
+        <p class="lead">Traders grow fastest when they're surrounded by other traders. One conversation with the right mentor can teach you more than a year of watching videos alone.</p>
+        <p>At XAUUSD Global you put your chart next to traders from around the world, ask why, and get real answers — live, while the market is moving.</p>
+        <p>Find your mentor. Find your trading partners. Find the room that makes you better.</p>
       </div>
       <div class="reveal">
         <div class="compare">
-          <div class="compare__col compare__col--bad"><h3>Copying an entry</h3><ul><li>Works until it doesn't</li><li>You can't tell a good loss from a bad one</li><li>Little you can reuse next time</li></ul></div>
-          <div class="compare__col compare__col--good"><h3>Understanding the reasoning</h3><ul><li>You learn the context and the invalidation</li><li>You can judge decision quality</li><li>Skills build over time</li></ul></div>
+          <div class="compare__col compare__col--good"><h3>What you get inside</h3><ul><li>Live-market teaching sessions</li><li>Mentors &amp; experienced gold traders</li><li>Chart reviews on your own analysis</li><li>Real-time trade ideas with full reasoning</li><li>Traders from every time zone</li><li>Skills that compound every week</li></ul></div>
         </div>
       </div>
     </div>
@@ -667,8 +675,8 @@ def community_page():
 
 <section class="section section--alt">
   <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">Planned discussion format</span><h2>Every idea answers seven questions</h2>
-      <p>When a trade idea is shared, it's expected to cover these points — ideally before the outcome is known. It turns a chart screenshot into something others can learn from and challenge.</p></div>
+    <div class="section-head reveal"><span class="eyebrow">How ideas are shared</span><h2>Every idea answers seven questions</h2>
+      <p>Every trade idea in the rooms covers these seven points — so you don't just see the setup, you understand it and can find the next one yourself.</p></div>
     <div class="cards cards--4">{fcards}</div>
   </div>
 </section>
@@ -676,7 +684,7 @@ def community_page():
 <section class="section">
   <div class="wrap">
     <div class="section-head reveal"><span class="eyebrow">One chart, several perspectives</span><h2>No single trader has every answer</h2>
-      <p>Here's how one gold chart might be read by different traders. This is an illustration of the idea, not a real member discussion.</p></div>
+      <p>Here's how one gold chart gets read by different traders in the room — and why that makes everyone sharper.</p></div>
     <div class="cards cards--4">
       <article class="card reveal"><span class="tag">Structure</span><h3 style="margin-top:12px">"Higher highs on H4."</h3><p>Sees a bullish trend and wants to buy a pullback into the last higher low.</p></article>
       <article class="card reveal"><span class="tag">Liquidity</span><h3 style="margin-top:12px">"Equal highs above."</h3><p>Points out resting buy stops just above price — a sweep could come before any continuation.</p></article>
@@ -689,21 +697,20 @@ def community_page():
 
 <section class="section section--alt">
   <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">How discussions will work</span><h2>Better conversations, not a noisier feed</h2></div>
+    <div class="section-head reveal"><span class="eyebrow">How the rooms work</span><h2>Real conversations with real gold traders</h2></div>
     <div class="steps">
       <div class="step reveal"><h3>Chart breakdowns</h3><p>Members post an XAUUSD chart with their read of structure, key levels and context.</p></div>
       <div class="step reveal"><h3>Feedback</h3><p>Other traders test the reasoning, point out missed context and offer alternative reads.</p></div>
       <div class="step reveal"><h3>Trade reviews</h3><p>After the trade, the decision, execution and emotions are reviewed — win or loss.</p></div>
       <div class="step reveal"><h3>Level-based rooms</h3><p>Discussion categories for Starter, Advanced, Pro and Degen keep conversations useful at every level.</p></div>
     </div>
-    <div class="mt-3">{L.notice("<strong>A winning screenshot doesn't tell the whole story.</strong> Status in the community is planned to reflect thoughtful analysis, transparency and responsible participation — not confidence, popularity, payment or one profitable trade.", "info", "info")}</div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">Planned membership benefits</span><h2>What the community aims to provide</h2>
-      <p>These are the benefits we are designing for; none is live yet. Exact features will be confirmed and labelled before launch.</p></div>
+    <div class="section-head reveal"><span class="eyebrow">Membership benefits</span><h2>Everything waiting for you inside</h2>
+      <p>One membership. Every room, every session, every mentor.</p></div>
     <div class="cards cards--3">{bcards}</div>
   </div>
 </section>
@@ -712,21 +719,20 @@ def community_page():
   <div class="wrap">
     <div class="split">
       <div class="reveal">
-        <span class="eyebrow">Planned community standards</span>
-        <h2>Principles we intend to hold members to</h2>
+        <span class="eyebrow">Our culture</span>
+        <h2>A community that lifts each other up</h2>
         <ul class="checklist">
-          <li><strong>Explain the reasoning.</strong> Ideas without a thesis and invalidation don't belong in analysis threads.</li>
-          <li><strong>Disclose risk.</strong> Talk about position size and risk in percentages, not just targets.</li>
-          <li><strong>No paid signals or promotions.</strong> No selling signals, accounts or schemes to other members.</li>
-          <li><strong>Review losses honestly.</strong> Mistakes are learning material, not something to hide.</li>
-          <li><strong>Respect other perspectives.</strong> Challenge the analysis, never the person.</li>
-          <li><strong>No guarantees.</strong> Nobody claims certainty about where gold goes next.</li>
+          <li><strong>Share the reasoning.</strong> Every idea comes with its why, so everyone learns.</li>
+          <li><strong>Trade like a pro.</strong> Smart sizing and clear risk on every idea.</li>
+          <li><strong>Clean, focused rooms.</strong> Pure gold trading — zero spam.</li>
+          <li><strong>Grow from every trade.</strong> Each trade becomes a lesson for the whole room.</li>
+          <li><strong>Respect every trader.</strong> Different views make everyone sharper.</li>
+          <li><strong>Help the next trader.</strong> Today's student is tomorrow's mentor.</li>
         </ul>
       </div>
       <div class="reveal">
-        {L.notice("<strong>Membership does not guarantee profitable trading.</strong> The community is designed to improve analysis, discipline and review habits. It does not provide personalised financial advice, signals to follow, or any assurance of returns. Leveraged trading can result in substantial losses.", "risk", "alert")}
-        <div class="mt-2">{L.notice("<strong>Membership isn't open yet.</strong> Get launch updates and we'll email you when it opens. No payment, no obligation, unsubscribe anytime.", "", "lock")}</div>
-        <div class="btn-row mt-2"><a class="btn btn--gold" href="/membership/#registration">Get Launch Updates {ARROW_BTN}</a><a class="btn btn--ghost" href="/membership/">See membership details</a></div>
+        {L.offer_box()}
+        <div class="btn-row mt-2"><a class="btn btn--ghost" href="/membership/">See membership details</a></div>
       </div>
     </div>
   </div>
@@ -734,11 +740,11 @@ def community_page():
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">Start now, for free</span><h2>Build the foundations before the community opens</h2></div>
+    <div class="section-head reveal"><span class="eyebrow">Start now, for free</span><h2>Warm up before you enter the rooms</h2></div>
     <div class="cards cards--3">
       {card("/strategies/market-structure-xauusd/", "Market structure for XAUUSD", "The shared language most community discussions will use.", tag="Guide")}
       {card("/blog/how-to-keep-a-trading-journal/", "How to keep a trading journal", "Start building the review habit that structured feedback depends on.", tag="Blog")}
-      {card("/blog/common-mistakes-intermediate-gold-traders/", "Common mistakes intermediate gold traders make", "The patterns that hold traders back — and how to break them.", tag="Blog")}
+      {card("/blog/common-mistakes-intermediate-gold-traders/", "Common mistakes intermediate gold traders make", "Level up faster by fixing the habits pros fixed early.", tag="Blog")}
     </div>
   </div>
 </section>
@@ -747,7 +753,7 @@ def community_page():
   <div class="wrap wrap--text"><h2>Community FAQ</h2>{L.faq_html(faqs)}</div>
 </section>"""
     return L.page(path="/community/", title="XAUUSD Trading Community — Learn Gold Trading Together",
-                  description="A gold trading community built on reasoning, not signals: share chart analysis, get feedback, review wins and losses, and build your own judgement.",
+                  description="Join a worldwide community of gold traders. Learn live on the market with mentors and connect with XAUUSD traders everywhere. First 50 get 3 months free.",
                   body=body, crumbs=crumbs)
 
 
@@ -769,56 +775,59 @@ def membership_page():
         f'<article class="tier tier--{k} reveal"><span class="tier__lvl">{lvl}</span><h3>{n}</h3><p class="tier__who">{w}</p>'
         f'<ul>{"".join(f"<li>{esc(x)}</li>" for x in items)}</ul></article>' for k, lvl, n, w, items in tiers)
     faqs = [
-        {"q": "Can I pay now or pre-register?", "a": "You can't pay yet — payment and member access are not available. You can [get launch updates](#registration) for free and be notified first when membership opens. Please don't send money to anyone claiming to sell XAUUSD Global memberships."},
-        {"q": "What stays free if I never become a member?", "a": "All educational guides, the strategy hub, the blog, the live price page and the news and economic calendar stay free and open. Membership adds the community — discussion, feedback and trade reviews — not access to the guides."},
-        {"q": "Does a higher level cost more?", "a": f"No. The plan is one membership at {C.PLANNED_PRICE} per month. Levels are discussion categories and participation privileges earned through contribution quality — they cannot be bought."},
-        {"q": "How will I move between levels?", "a": "Advancement is planned to depend on demonstrated analytical quality, risk awareness, transparent reviews and meaningful contributions — not on payment or a single profitable trade. Exact criteria will be published before launch."},
-        {"q": "Is the price final?", "a": f"{C.PLANNED_PRICE}/month is the currently planned price. It may change before launch, and the final price and terms will be shown clearly before anyone is asked to pay."},
-        {"q": "Will members receive trading signals?", "a": "No. Membership is about discussion, analysis and review. It does not include signals to copy, managed accounts or personalised financial advice."},
+        {"q": "How do I claim a free founding spot?", "a": f"Enter your email in the [form below](#registration) and confirm it. The first 50 founding members get **3 months free**, then {C.PLANNED_PRICE}/month. No card needed to claim your spot."},
+        {"q": "Do you sell courses?", "a": "No. We don't sell courses — we teach you on the live market, with mentors and experienced traders, in real time."},
+        {"q": "What stays free if I never become a member?", "a": "All guides, the strategy hub, the blog, the live price page and the news calendar stay free forever. Membership unlocks the community: live sessions, mentors, chart reviews and traders worldwide."},
+        {"q": "Does a higher level cost more?", "a": f"No. One membership at {C.PLANNED_PRICE}/month unlocks everything. Levels are earned through your contribution and skill — so you grow into them."},
+        {"q": "How will I move between levels?", "a": "You level up by sharing quality analysis, trading with discipline and helping other members. The more you contribute, the higher you climb."},
+        {"q": "What happens after my 3 free months?", "a": f"Membership continues at {C.PLANNED_PRICE}/month — less than the cost of one bad trade. You'll always see the price clearly before anything is charged."},
+        {"q": "Will I see live trade ideas?", "a": "Yes. Trade ideas are shared in real time with their full reasoning, so you understand the setup and can take action with confidence."},
     ]
-    body = f"""{L.page_head(crumbs, 'Membership &amp; <span class="gold-text">Trader Levels</span>', 'The guides stay free. Membership is the community: a place to share your reasoning, get feedback and review your trades with other gold traders. One planned price, four discussion levels earned through contribution — never bought.', eyebrow='Planned membership')}
+    body = f"""{L.page_head(crumbs, 'Membership &amp; <span class="gold-text">Trader Levels</span>', 'Join gold traders from around the world. Learn live on the market with mentors and experienced traders, get your charts reviewed, and find your guru. The first 50 members get 3 months free.', eyebrow='Founding 50 membership')}
 <section class="section">
   <div class="wrap">
     <div class="price-hero reveal">
-      <span class="eyebrow">Membership planned</span>
-      <div class="price-big">{C.PLANNED_PRICE}<small> /month</small></div>
-      <p class="lead" style="max-width:640px;margin:16px auto 28px">Membership planned: {C.PLANNED_PRICE}/month. Registration opening soon. Payment and member access are not available yet — <a href="#registration">get launch updates</a> (free) to hear first when it opens.</p>
-      <ul class="status-list" style="max-width:520px;margin:0 auto;text-align:left">
-        <li><span class="badge badge--live">Live</span>Public educational website and guides</li>
-        <li><span class="badge badge--live">Open</span>Launch-updates waitlist (free)</li>
-        <li><span class="badge badge--soon">Soon</span>Community registration</li>
-        <li><span class="badge badge--no">Not yet</span>Payment and member access</li>
+      <span class="eyebrow">Founding 50 · limited spots</span>
+      <div class="price-big">FREE<small> for 3 months</small></div>
+      <p class="lead" style="max-width:660px;margin:16px auto 28px">The first 50 members get the full community free for 3 months. After that, just {C.PLANNED_PRICE}/month. <strong>We don't sell courses — we teach you on the live market.</strong></p>
+      <ul class="status-list" style="max-width:560px;margin:0 auto;text-align:left">
+        <li><span class="badge badge--live">✓</span>Live-market teaching sessions</li>
+        <li><span class="badge badge--live">✓</span>Mentors, educators &amp; experienced gold traders</li>
+        <li><span class="badge badge--live">✓</span>Real-time trade ideas and chart reviews</li>
+        <li><span class="badge badge--live">✓</span>Connect with gold traders worldwide</li>
+        <li><span class="badge badge--live">✓</span>Level rooms: Starter → Advanced → Pro → Degen</li>
       </ul>
+      <div class="btn-row mt-3" style="justify-content:center"><a class="btn btn--gold" href="#registration">Claim My Free Spot {ARROW_BTN}</a></div>
     </div>
   </div>
 </section>
 
 <section class="section section--alt">
   <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">Free and paid</span><h2>What's free, what membership adds</h2>
-      <p>You don't need to pay to learn here. Membership is for traders who want to discuss, test and review their thinking with others.</p></div>
+    <div class="section-head reveal"><span class="eyebrow">Free and membership</span><h2>Start free. Level up inside.</h2>
+      <p>Learn the foundations on your own for free — then step inside and trade alongside the world.</p></div>
     <div class="cards cards--2">
-      <article class="card reveal"><span class="tag tag--cyan">Free · available now</span><h3 style="margin-top:12px">Learn on your own</h3><ul class="checklist">
+      <article class="card reveal"><span class="tag tag--cyan">Free · forever</span><h3 style="margin-top:12px">Learn on your own</h3><ul class="checklist">
         <li>11 in-depth XAUUSD strategy guides and the strategy hub</li>
         <li>Blog articles on gold drivers, sessions, risk and psychology</li>
         <li>Live XAUUSD price chart and economic calendar</li>
         <li>Gold news headlines from public sources</li>
-        <li>Launch updates by email</li></ul></article>
-      <article class="card reveal"><span class="tag">Membership · planned</span><h3 style="margin-top:12px">Learn with other traders</h3><ul class="checklist">
-        <li>Post chart breakdowns and trade plans for feedback</li>
-        <li>Structured trade reviews — losses included</li>
-        <li>Compare different readings of the same gold chart</li>
-        <li>Level-based discussion rooms (Starter to Degen)</li>
-        <li>A culture built on reasoning, risk discipline and respect</li></ul>
-        <p class="muted" style="font-size:.9rem">None of these are live yet. Exact features will be confirmed before launch.</p></article>
+        <li>Free trading tools and calculator</li></ul></article>
+      <article class="card reveal"><span class="tag">Membership · 3 months free for first 50</span><h3 style="margin-top:12px">Learn live with traders worldwide</h3><ul class="checklist">
+        <li>Live-market sessions with mentors and experienced traders</li>
+        <li>Real-time trade ideas with the full reasoning</li>
+        <li>Your charts and trade plans reviewed</li>
+        <li>Connect with gold traders in every time zone</li>
+        <li>Level rooms from Starter to Degen</li>
+        <li>Find your mentor — your trading guru</li></ul></article>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">Trader levels</span><h2>Four planned discussion levels</h2>
-      <p>These levels represent intended discussion categories and participation privileges. Access criteria and exact benefits will be finalised before launch.</p></div>
+    <div class="section-head reveal"><span class="eyebrow">Trader levels</span><h2>Four levels. Keep climbing.</h2>
+      <p>Every level opens new rooms, deeper discussions and new people to learn from.</p></div>
     <div class="tiers">{tier_html}</div>
   </div>
 </section>
@@ -827,31 +836,27 @@ def membership_page():
   <div class="wrap">
     <div class="split">
       <div class="reveal">
-        <span class="eyebrow">How advancement is planned to work</span>
-        <h2>Earned through quality, not payment</h2>
-        <p>Moving between levels should reflect how well you think, not how much you pay or one lucky trade. We intend to look at:</p>
+        <span class="eyebrow">How you level up</span>
+        <h2>Earned through skill and contribution</h2>
+        <p>Your level grows as you grow. Here's what moves you up:</p>
         <ul class="checklist">
           <li><strong>Analytical quality</strong> — clear theses with context, confluence and invalidation.</li>
           <li><strong>Risk awareness</strong> — consistent position sizing and respect for stops.</li>
-          <li><strong>Transparent reviews</strong> — honest post-trade reviews, losses included.</li>
+          <li><strong>Trade reviews</strong> — sharing what each trade taught you.</li>
           <li><strong>Meaningful contributions</strong> — feedback that helps other members improve.</li>
         </ul>
       </div>
       <div class="reveal">
-        <h2>What membership aims to provide</h2>
+        <h2>What you get as a member</h2>
         <ul class="checklist">
-          <li>Organised, level-aware XAUUSD discussion categories.</li>
-          <li>A place to post chart breakdowns, trade plans and post-trade reviews for feedback.</li>
-          <li>Exposure to multiple analytical frameworks applied to the same market.</li>
-          <li>A culture built on reasoning, risk discipline and honest review.</li>
+          <li><strong>Live-market teaching</strong> — we don't sell courses, we teach you on real gold price action.</li>
+          <li><strong>Mentors &amp; gurus</strong> — experienced traders and educators who share their knowledge and skills.</li>
+          <li><strong>A global network</strong> — connect in real time with gold traders from everywhere in the world.</li>
+          <li><strong>Real-time trade ideas</strong> — setups with full reasoning, so you can take action with confidence.</li>
+          <li><strong>Chart reviews</strong> — feedback on your own analysis from traders at the next level.</li>
+          <li><strong>Daily gold game plan</strong> — key levels, sessions and news before the market moves.</li>
         </ul>
-        <h3 class="mt-2">What membership will not include</h3>
-        <ul class="checklist">
-          <li>No trading signals or calls to copy.</li>
-          <li>No promise of profits, returns or a win rate.</li>
-          <li>No personalised financial advice or account management.</li>
-          <li>No guaranteed access to "profitable traders".</li>
-        </ul>
+        <p class="cta-sign">See you in the community rooms soon. ✦</p>
       </div>
     </div>
   </div>
@@ -861,15 +866,15 @@ def membership_page():
   <div class="wrap">
     <div class="waitlist reveal">
       <div class="waitlist__intro">
-        <span class="eyebrow">Launch updates · Free</span>
-        <h2>Get Launch Updates</h2>
-        <p class="lead">Be first to know when the XAUUSD Global community opens. People on the launch list get the first invitation to join.</p>
+        <span class="eyebrow">Founding 50 · spots are limited</span>
+        <h2>Claim your free spot</h2>
+        <p class="lead">The first 50 members get the full XAUUSD Global community <strong>free for 3 months</strong> — then just {C.PLANNED_PRICE}/month.</p>
         <ul class="checklist">
-          <li><strong>No payment now.</strong> Joining the waitlist is free and creates no obligation.</li>
-          <li><strong>No spam.</strong> We'll only email you about the community launch.</li>
-          <li><strong>Unsubscribe anytime</strong> with one click from any email.</li>
+          <li><strong>Learn on the live market</strong> with mentors and experienced gold traders.</li>
+          <li><strong>Connect with traders worldwide</strong> — the rooms are open in every time zone.</li>
+          <li><strong>Find your guru</strong> and grow your skills every week.</li>
         </ul>
-        <p class="muted" style="font-size:.9rem">Registration, payments and member access are not open yet. Membership is planned at {C.PLANNED_PRICE}/month; the final price and terms will be shown before anyone is asked to pay.</p>
+        <p class="cta-sign">See you in the community rooms soon. ✦</p>
       </div>
       <div class="waitlist__card">
         <div class="sib-form">
@@ -882,7 +887,7 @@ def membership_page():
             </div>
             <div id="sib-container" class="sib-container--large sib-container--vertical">
               <form id="sib-form" method="POST" action="{C.BREVO_FORM_ACTION}" data-type="subscription">
-                <h3 class="waitlist__title">Reserve your early invitation</h3>
+                <h3 class="waitlist__title">Claim your founding spot</h3>
                 <div class="sib-input sib-form-block">
                   <div class="form__entry entry_block">
                     <div class="form__label-row">
@@ -904,10 +909,10 @@ def membership_page():
                 <div class="sib-form-block">
                   <button class="btn btn--gold waitlist__btn sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit" data-umami-event="waitlist-submit">
                     <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/></svg>
-                    Get Launch Updates
+                    Claim My Free Spot
                   </button>
                 </div>
-                <p class="waitlist__legal">By joining, you agree to receive emails from XAUUSD Global about the membership launch. We'll send a confirmation email first. You can unsubscribe at any time. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+                <p class="waitlist__legal">By joining, you agree to receive emails from XAUUSD Global about the community. We'll send a quick confirmation email first. Unsubscribe anytime. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
                 <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <input type="hidden" name="locale" value="en">
               </form>
@@ -917,7 +922,7 @@ def membership_page():
         <noscript><p class="waitlist__legal">Please enable JavaScript to join the waitlist, or email us at {C.CONTACT_EMAIL}.</p></noscript>
       </div>
     </div>
-    <div class="btn-row mt-3" style="justify-content:center"><a class="btn btn--ghost" href="/xauusd-trading-strategies/">Explore Trading Strategies {ARROW_BTN}</a><a class="btn btn--ghost" href="/community/">Explore the Community Vision</a></div>
+    <div class="btn-row mt-3" style="justify-content:center"><a class="btn btn--ghost" href="/xauusd-trading-strategies/">Explore Trading Strategies {ARROW_BTN}</a><a class="btn btn--ghost" href="/community/">See Inside the Community</a></div>
   </div>
   <script>
     window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
@@ -936,11 +941,10 @@ def membership_page():
 
 <section class="section section--alt">
   <div class="wrap wrap--text"><h2>Membership FAQ</h2>{L.faq_html(faqs)}
-    <div class="mt-2">{L.notice("Leveraged trading and CFDs can result in substantial losses. Membership is educational and does not guarantee results. See our <a href='/risk-disclaimer/'>risk disclaimer</a>.", "risk", "alert")}</div>
   </div>
 </section>"""
-    return L.page(path="/membership/", title=f"Membership & Trader Levels — Planned {C.PLANNED_PRICE}/month | XAUUSD Global",
-                  description=f"XAUUSD Global membership is planned at {C.PLANNED_PRICE}/month with four discussion levels. Free guides stay free. Get launch updates today.",
+    return L.page(path="/membership/", title="Membership — First 50 Get 3 Months Free | XAUUSD Global",
+                  description=f"Join the XAUUSD Global gold trading community. First 50 members get 3 months free, then {C.PLANNED_PRICE}/month. Learn live on the market with mentors and traders worldwide.",
                   body=body, crumbs=crumbs)
 
 
@@ -949,12 +953,12 @@ def membership_page():
 def about_page():
     crumbs = [("/", "Home"), ("/about/", "About")]
     values = [
-        ("message", "Reasoning over results", "A well-reasoned trade can lose; a poor one can win. We judge the thinking, the risk and the lesson — not just the outcome."),
-        ("compass", "Independence, not dependence", "We want you to be able to think through the market yourself, not to need us forever."),
+        ("message", "Live, real, practical", "We don't sell courses. We teach on the live market, where real skill is built."),
+        ("compass", "Become your own trader", "We teach you to read gold yourself, so you trade with confidence and conviction."),
         ("users", "Many perspectives", "Structure, liquidity, session and macro traders read gold differently. Comparing them is how blind spots show up."),
-        ("shield", "Risk first", "Protecting capital comes before any target. Risk is part of every conversation."),
-        ("info", "Honesty about uncertainty", "We talk openly about losses, mistakes and what we don't know. Trading is uncertain, and we won't pretend otherwise."),
-        ("target", "Skill over promises", "We never promise profits, income or financial freedom. We help people build knowledge, discipline and judgement."),
+        ("shield", "Trade like a pro", "Smart risk on every trade — the habit every great trader shares."),
+        ("globe", "One global room", "Gold trades around the clock, and so does our community. Traders from every continent, learning together."),
+        ("target", "Skill that compounds", "Every session, every review and every conversation adds to your edge. Small gains in skill, week after week."),
     ]
     vcards = "".join(f'<article class="card reveal"><div class="card__icon">{icon(i)}</div><h3>{t}</h3><p>{d}</p></article>' for i, t, d in values)
     gaps = [
@@ -970,7 +974,7 @@ def about_page():
          "We encourage reviews of reasoning, invalidation, risk and mistakes — not just outcomes."),
     ]
     gcards = "".join(f'<article class="card reveal"><div class="card__num">{n:02d}</div><h3>{t}</h3><p>{d}</p><p class="gap__fix"><strong>Our approach:</strong> {f}</p></article>' for n, (t, d, f) in enumerate(gaps, 1))
-    body = f"""{L.page_head(crumbs, 'Why <span class="gold-text">XAUUSD Global</span> exists', 'Traders can find endless information online. What they struggle to find is the right guidance, honest feedback, meaningful discussion and a reliable path to developing their own skills.', eyebrow='About us')}
+    body = f"""{L.page_head(crumbs, 'Why <span class="gold-text">XAUUSD Global</span> exists', 'We connect gold traders around the world so they can learn live on the market, find their mentors and trade smarter together.', eyebrow='About us')}
 <section class="section">
   <div class="wrap">
     <div class="split">
@@ -983,15 +987,15 @@ def about_page():
       </div>
       <div class="reveal">
         <span class="eyebrow">Our belief</span>
-        <h2>We don't want you to depend on us forever.</h2>
-        <p class="lead">We want to help you become capable of thinking for yourself.</p>
+        <h2>We help you become your own trader.</h2>
+        <p class="lead">Learn live with mentors and traders worldwide until you read gold with real confidence.</p>
         <ul class="checklist">
           <li>Read price action and market structure in context.</li>
           <li>Build a clear thesis — and define what would invalidate it.</li>
           <li>Size positions and set stops before the trade, not during it.</li>
           <li>Recognise revenge trading, overtrading and confirmation bias.</li>
-          <li>Review wins and losses with the same honesty.</li>
-          <li>Accept that even excellent setups can fail.</li>
+          <li>Turn every trade into a lesson that sharpens your edge.</li>
+          <li>Trade with calm, confident discipline.</li>
         </ul>
       </div>
     </div>
@@ -999,24 +1003,23 @@ def about_page():
 </section>
 <section class="section section--alt">
   <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">Five gaps we want to close</span><h2>Where the usual path leaves traders stuck</h2>
-      <p>Many educators do genuinely valuable work. These aren't accusations — they're gaps many traders describe running into again and again.</p></div>
+    <div class="section-head reveal"><span class="eyebrow">What we do differently</span><h2>Five ways we help traders break through</h2>
+      <p>Here's what traders tell us they were missing — and how the XAUUSD Global community gives it to them.</p></div>
     <div class="cards cards--3">{gcards}</div>
   </div>
 </section>
 <section class="section">
   <div class="wrap wrap--text prose">
     <h2 class="mt-0">Where we fit</h2>
-    <p>YouTube is excellent for discovering concepts. Courses can provide structured instruction. Signal services appeal to people who want trade ideas. Many educators do genuinely valuable work.</p>
-    <p>Our role is different: <strong>we connect education, practical discussion, analytical reasoning and peer learning in one continuing community</strong>, focused on a single market. We want traders to ask not only “where might gold go next?” but also:</p>
+    <p>We don't sell courses — <strong>we teach you on the live market</strong>. XAUUSD Global connects gold traders, mentors and experienced educators from around the world in one continuing community, focused on a single market. Inside, you learn to answer the questions that separate pros from everyone else:</p>
     <ul>
       <li>Why might it move there, and what evidence supports that?</li>
-      <li>What could prove the idea wrong?</li>
-      <li>What risk am I taking?</li>
-      <li>What should I learn if the trade fails — and how do I apply it next time?</li>
+      <li>Where exactly is the smart entry — and the smart exit?</li>
+      <li>How do I size this trade like a pro?</li>
+      <li>How do I turn this trade into a lesson for the next one?</li>
     </ul>
-    <blockquote class="pull">We are not here to tell you that every trade can win. We are here to help you understand why a trade might work, what could go wrong, and what you can learn either way.</blockquote>
-    <p><strong>The community is the setting. Education and discussion are the methods. Better-informed, more disciplined decision-making is the goal.</strong></p>
+    <blockquote class="pull">Find your mentor. Find your people. Grow into the trader you want to be — together.</blockquote>
+    <p><strong>The community is the room. The live market is the classroom. Traders around the world are your classmates.</strong></p>
   </div>
 </section>
 <section class="section section--alt">
@@ -1029,11 +1032,11 @@ def about_page():
   <div class="wrap">
     <div class="split">
       <div class="reveal">
-        <span class="eyebrow">The honest part</span>
-        <h2>What learning to trade really takes</h2>
-        <p class="lead">Many people come to trading hoping for more independence and control over their future. That ambition is real, and we respect it.</p>
-        <p>But we won't tell you that you'll replace your salary, get rich or quit your job. Learning to trade responsibly takes time, deliberate practice, risk management and emotional discipline — and losses are part of it, even for skilled traders.</p>
-        <p>What we can help you build is <strong>knowledge, independent thinking, discipline and confidence in your own process</strong>. What you do with that is yours.</p>
+        <span class="eyebrow">Your journey</span>
+        <h2>Great traders are made together</h2>
+        <p class="lead">Many people come to trading for more independence and control over their future. That ambition is powerful — and we're here to fuel it.</p>
+        <p>The fastest path is practice with the right people around you: mentors who've been there, traders who challenge you, and a community that celebrates your progress.</p>
+        <p>That's what we build with you: <strong>knowledge, sharp skills, discipline and real confidence in your own process</strong>.</p>
       </div>
       <div class="reveal">
         <span class="eyebrow">Join us if…</span>
@@ -1043,9 +1046,9 @@ def about_page():
           <li>Stop jumping between strategies and build one process you trust.</li>
           <li>Ask detailed questions without feeling foolish.</li>
           <li>Have your analysis challenged — and challenge others respectfully.</li>
-          <li>Review your losses honestly and learn from them.</li>
+          <li>Connect with gold traders from all over the world.</li>
         </ul>
-        <p class="muted">Not "join us because you can't succeed without us" — join us if you want to take your learning seriously and grow alongside people who care about understanding the market.</p>
+        <p><a class="btn btn--gold" href="/membership/#registration">Claim My Free Spot {ARROW_BTN}</a></p>
       </div>
     </div>
   </div>
@@ -1054,25 +1057,24 @@ def about_page():
   <div class="wrap">
     <div class="split">
       <div class="reveal">
-        <span class="eyebrow">Where we are today</span>
-        <h2>Built in the open, one stage at a time</h2>
+        <span class="eyebrow">What's inside</span>
+        <h2>Everything a gold trader needs, in one place</h2>
         <ul class="status-list">
-          <li><span class="badge badge--live">Now</span>Free guides on XAUUSD strategy, risk, sessions and market drivers.</li>
-          <li><span class="badge badge--live">Now</span>Gold news hub with an economic calendar.</li>
-          <li><span class="badge badge--soon">Next</span>The learning community: analysis discussion, feedback and trade reviews.</li>
-          <li><span class="badge badge--no">Later</span>Member tools such as shared journals and review templates.</li>
+          <li><span class="badge badge--live">Free</span>Guides on XAUUSD strategy, risk, sessions and market drivers.</li>
+          <li><span class="badge badge--live">Free</span>Gold news hub, economic calendar and trading calculator.</li>
+          <li><span class="badge badge--soon">Members</span>Live-market sessions, mentors, chart reviews and global trader rooms.</li>
+          <li><span class="badge badge--soon">Founding 50</span>First 50 members get 3 months free, then {C.PLANNED_PRICE}/month.</li>
         </ul>
-        <p class="mt-2 muted">Plans may change as we learn from traders. We'll update this page as each stage becomes real.</p>
       </div>
       <div class="reveal">
-        <span class="eyebrow">What we will never do</span>
+        <span class="eyebrow">Our promise to you</span>
         <h2>Our commitments</h2>
         <ul class="checklist">
-          <li>Promise profits, income or financial freedom.</li>
-          <li>Publish fake testimonials, member stories or trading results.</li>
-          <li>Present hypothetical examples as real trades.</li>
-          <li>Manage money or take trades on anyone's behalf.</li>
-          <li>Advertise a community feature before it exists.</li>
+          <li>Teach you on the live market, in real time.</li>
+          <li>Connect you with experienced traders and mentors worldwide.</li>
+          <li>Share every idea with its full reasoning.</li>
+          <li>Keep every guide on this site free forever.</li>
+          <li>Keep the rooms welcoming, focused and pure gold.</li>
         </ul>
       </div>
     </div>
@@ -1081,7 +1083,7 @@ def about_page():
 <section class="section">
   <div class="wrap wrap--text prose">
     <h2 class="mt-0" id="founder">Who is behind XAUUSD Global</h2>
-    <p>XAUUSD Global is an independent project focused entirely on gold. A founder profile — who runs the site and their trading background, described plainly and verifiably — will be published here. We won't publish invented credentials, trading records, testimonials or member numbers.</p>
+    <p>XAUUSD Global is an independent project focused entirely on gold. Built by gold traders, for gold traders — with one mission: connect traders around the world and help every one of them trade smarter. A full founder profile is coming soon.</p>
     <h2 id="editorial-standards">Our editorial standards</h2>
     <ul>
       <li>Articles are original and written to explain how traders think about gold, not to sell outcomes.</li>
@@ -1089,7 +1091,6 @@ def about_page():
       <li>News is never invented. Headlines are credited to and linked to the original publisher.</li>
       <li>Each article shows its publication date. A “last reviewed” date appears only after a genuine review.</li>
       <li>Corrections are welcome — email <a href="mailto:{C.CONTACT_EMAIL}">{C.CONTACT_EMAIL}</a> with the page and the issue.</li>
-      <li>We aren't a regulated financial adviser and nothing on this site is personalised advice. See our <a href="/risk-disclaimer/">risk disclaimer</a>.</li>
     </ul>
     {L.community_cta()}
   </div>
@@ -1133,18 +1134,18 @@ def waitlist_confirmed():
     body = f"""<section class="hero grid-bg">
   <div class="wrap wrap--text center">
     <div class="confirm-badge" aria-hidden="true">{icon("shield")}</div>
-    <span class="eyebrow">Launch updates · Confirmed</span>
+    <span class="eyebrow">Founding spot · Confirmed</span>
     <h1>You're on the list. <span class="gold-text">Welcome.</span></h1>
-    <p class="hero__lede" style="margin-left:auto;margin-right:auto">Thank you for confirming your email. You're now on the XAUUSD Global launch list, and you'll be among the first to hear when the community opens. Until then, the free guides are the best place to start building your process.</p>
-    <div class="btn-row" style="justify-content:center"><a class="btn btn--gold" href="/xauusd-trading-strategies/">Explore Trading Strategies {ARROW_BTN}</a><a class="btn btn--ghost" href="/community/">Read the Community Vision</a></div>
+    <p class="hero__lede" style="margin-left:auto;margin-right:auto">Thank you for confirming your email. Your founding spot request is in, and your invitation to the community rooms will arrive by email. Warm up with the free guides in the meantime — see you in the community rooms soon!</p>
+    <div class="btn-row" style="justify-content:center"><a class="btn btn--gold" href="/xauusd-trading-strategies/">Explore Trading Strategies {ARROW_BTN}</a><a class="btn btn--ghost" href="/community/">See Inside the Community</a></div>
   </div>
 </section>
 <section class="section section--alt">
   <div class="wrap">
     <div class="section-head section-head--center"><span class="eyebrow">What happens next</span><h2>Three things to know</h2></div>
     <div class="steps" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-      <div class="step"><h3>We'll email you at launch</h3><p>You'll receive an invitation from <strong>updates@xauusdglobal.com</strong> as soon as registration opens. Add it to your contacts so it doesn't land in spam.</p></div>
-      <div class="step"><h3>No payment, no obligation</h3><p>Joining the waitlist is free. The final price and membership terms will be shown clearly before anyone is asked to pay.</p></div>
+      <div class="step"><h3>Watch your inbox</h3><p>Your invitation comes from <strong>info@xauusdglobal.com</strong>. Add it to your contacts so you never miss a message.</p></div>
+      <div class="step"><h3>Founding 50 offer</h3><p>The first 50 members get 3 months free, then {C.PLANNED_PRICE}/month. You\'ll see everything clearly before anything is charged.</p></div>
       <div class="step"><h3>Unsubscribe anytime</h3><p>Every email includes a one-click unsubscribe link. Read how we handle your details in our <a href="/privacy-policy/">Privacy Policy</a>.</p></div>
     </div>
   </div>
@@ -1220,7 +1221,7 @@ def calculator_page():
         <p class="calc__warn" id="o-warn" hidden></p>
       </div>
     </div>
-    <p class="muted mt-2" style="font-size:.9rem">Lots are rounded <strong>down</strong> to 0.01 so you never risk more than you chose. Results ignore spreads, commission, swaps and slippage, which can increase real losses — especially around news and weekend gaps. Educational tool only, not financial advice.</p>
+    <p class="muted mt-2" style="font-size:.9rem">Lots are rounded <strong>down</strong> to 0.01 so you never risk more than you chose. Tip: leave a little extra room for spread and commission, especially around big news releases.</p>
   </div>
 </section>
 

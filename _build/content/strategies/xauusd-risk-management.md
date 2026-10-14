@@ -49,8 +49,8 @@ Gold is one of the most volatile major markets that retail traders commonly acce
 
 Risk management is what keeps a run of normal losses from becoming a disaster. Every strategy — [support and resistance](/strategies/support-and-resistance-xauusd/), [SMC](/strategies/smart-money-concepts-xauusd/), [breakouts](/strategies/gold-breakout-retest-strategy/) — will have losing streaks. Your sizing rules decide whether you survive them.
 
-:::warn
-Leveraged trading and CFDs can result in substantial losses. Nothing in this guide is a personal recommendation. Check your broker's contract specifications, margin rules and stop-loss terms before trading.
+:::note
+**Pro tip:** check your broker's contract size and margin rules once, write them down, and size every trade from them. Pros never guess their lot size.
 :::
 
 ## Understanding XAUUSD contract size
