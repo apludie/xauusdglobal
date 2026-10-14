@@ -112,7 +112,8 @@ def home(strategies, posts):
         {"q": "Why only gold?", "a": "Gold has its own drivers, sessions and behaviour. Focusing on one market lets discussions go deep and lets traders compare like-for-like analysis on the same chart."},
     ]
     body = f"""
-<section class="hero grid-bg">
+<section class="hero grid-bg hero--3d">
+  <canvas id="hero3d" class="hero3d" aria-hidden="true"></canvas><div class="hero3d-shade" aria-hidden="true"></div>
   <div class="wrap hero__grid">
     <div>
       <span class="status-pill"><span class="dot"></span>Free guides available now · Community launching soon</span>
@@ -335,7 +336,8 @@ def home(strategies, posts):
     {L.community_cta()}
     <div class="mt-2">{L.notice("<strong>Risk warning.</strong> Leveraged trading and CFDs can result in substantial losses. Content on XAUUSD Global is educational and not personalised financial advice. No strategy or community participation guarantees results.", "risk", "alert")}</div>
   </div>
-</section>"""
+</section>
+<script src="/assets/js/hero3d.js" defer></script>"""
     return L.page(path="/", title="XAUUSD Global — Learn to Understand Gold, Not Chase Signals",
                   description="A gold trading learning community built on market reasoning, honest discussion and trade reviews. Free XAUUSD guides now; membership launching soon.",
                   body=body)

@@ -711,3 +711,13 @@ strong { color: #fff; font-weight: 600; }
 .hero__visual.is-tilting .chart-card { transition: transform .12s linear; }
 @media (max-width: 899px) { .hero__visual .chart-card { transform: none; } }
 @media (prefers-reduced-motion: reduce) { .mock, .hero__visual .chart-card, .mock-msg, .mock-review { transform: none !important; transition: none !important; } }
+
+/* ---------- Homepage 3D market landscape ---------- */
+.hero--3d { position: relative; overflow: hidden; isolation: isolate; }
+.hero3d { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 78%; z-index: -1; pointer-events: none; opacity: 0; transition: opacity 1.6s ease;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 45%, #000 85%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0%, #000 45%, #000 85%, transparent 100%); }
+.hero3d.on { opacity: .85; }
+.hero3d-shade { position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(8,9,11,.97) 0%, rgba(8,9,11,.9) 36%, rgba(8,9,11,.4) 58%, rgba(8,9,11,0) 74%); }
+.hero--3d .hero3d { z-index: 0; }
+@media (max-width: 899px) { .hero3d { height: 45%; } .hero3d.on { opacity: .55; } .hero3d-shade { background: linear-gradient(180deg, rgba(8,9,11,.5), rgba(8,9,11,.15)); } }
