@@ -227,6 +227,30 @@
   }
 })();
 
+/* Lazy-load heavy 3D scripts so the intro animation has the main thread to itself */
+(function () {
+  "use strict";
+  var els = document.querySelectorAll("[data-lazy-js]");
+  if (!els.length) return;
+  var h = document.documentElement;
+  function load(src) { var s = document.createElement("script"); s.src = src; s.async = true; document.body.appendChild(s); }
+  function afterIntro(cb) {
+    var t0 = Date.now();
+    (function chk() { if (!h.classList.contains("intro-wait") || Date.now() - t0 > 1500) cb(); else setTimeout(chk, 40); })();
+  }
+  var idle = window.requestIdleCallback || function (f) { return setTimeout(f, 1); };
+  Array.prototype.forEach.call(els, function (el) {
+    var src = el.getAttribute("data-src"), when = el.getAttribute("data-when");
+    if (when === "idle") { afterIntro(function () { setTimeout(function () { idle(function () { load(src); }, { timeout: 400 }); }, 250); }); return; }
+    var target = document.querySelector(when);
+    if (!target || !("IntersectionObserver" in window)) { afterIntro(function () { load(src); }); return; }
+    var io = new IntersectionObserver(function (en) {
+      for (var i = 0; i < en.length; i++) if (en[i].isIntersecting) { io.disconnect(); idle(function () { load(src); }, { timeout: 300 }); return; }
+    }, { rootMargin: "700px 0px" });
+    io.observe(target);
+  });
+})();
+
 /* =====================================================================
    Premium motion layer — all effects respect prefers-reduced-motion
    ===================================================================== */

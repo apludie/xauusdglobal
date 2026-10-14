@@ -123,15 +123,15 @@ def home(strategies, posts):
   <div class="wrap hero__grid">
     <div class="hero__copy">
       <span class="status-pill status-pill--offer intro" style="--d:0"><span class="dot dot--gold"></span>Founding 50 · 3 months free</span>
-      <h1 class="hero__title"><span class="ht-l intro" style="--d:1">Connect traders</span> <span class="ht-l intro" style="--d:2">around the world.</span> <span class="ht-l intro gold-text" style="--d:3">Trade smarter</span> <span class="ht-l intro" style="--d:4"><em class="serif gold-text">together.</em></span></h1>
+      <h1 class="hero__title"><span class="ht-l"><span class="ht-in" style="--d:1">Connect traders</span></span> <span class="ht-l"><span class="ht-in" style="--d:2">around the world.</span></span> <span class="ht-l"><span class="ht-in gold-text" style="--d:3">Trade smarter</span></span> <span class="ht-l ht-l--serif"><span class="ht-in" style="--d:4"><em class="serif gold-text">together.</em></span></span></h1>
       <p class="hero__lede intro" style="--d:5">A global community of gold traders. Learn live on the market with mentors and experienced traders, and connect with XAUUSD traders in every time zone.</p>
-      <div class="btn-row intro" style="--d:5">
+      <div class="btn-row intro" style="--d:6">
         <a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free spot {ARROW_BTN}</a>
         <a class="btn btn--ghost" href="/xauusd-trading-strategies/">Explore free guides</a>
       </div>
-      <p class="hero__fine intro" style="--d:6">Only 50 founding spots · then {C.PLANNED_PRICE}/month</p>
+      <p class="hero__fine intro" style="--d:7">Only 50 founding spots · then {C.PLANNED_PRICE}/month</p>
     </div>
-    <div class="hero__visual hero__visual--globe intro intro--globe" style="--d:2">
+    <div class="hero__visual hero__visual--globe">
       <div class="globe-card">
         <div class="globe-box"><canvas id="globe" class="globe" aria-label="Rotating globe connecting gold trading hubs: London, New York, Zürich, Dubai, Mumbai, Singapore, Hong Kong, Tokyo and Sydney" role="img"></canvas></div>
       </div>
@@ -266,9 +266,9 @@ def home(strategies, posts):
     </div>
   </div>
 </section>
-<script src="/assets/js/hero3d.js" defer></script>
-<script src="/assets/js/globe.js" defer></script>
-<script src="/assets/js/coin.js" defer></script>"""
+<i hidden data-lazy-js data-src="/assets/js/globe.js" data-when="idle"></i>
+<i hidden data-lazy-js data-src="/assets/js/coin.js" data-when=".coin3d"></i>
+<i hidden data-lazy-js data-src="/assets/js/hero3d.js" data-when="#hero3d"></i>"""
     return L.page(path="/", title="XAUUSD Global — Connect With Gold Traders Around the World",
                   description=f"Join a global community of XAUUSD traders. Learn live on the market with experienced traders and mentors. First 50 members get 3 months free, then {C.PLANNED_PRICE}/month.",
                   body=body)
@@ -867,7 +867,7 @@ def membership_page():
   <div class="wrap wrap--text"><h2>Membership FAQ</h2>{L.faq_html(faqs)}
   </div>
 </section>
-<script src="/assets/js/coin.js" defer></script>"""
+<i hidden data-lazy-js data-src="/assets/js/coin.js" data-when=".coin3d"></i>"""
     return L.page(path="/membership/", title="Membership — First 50 Get 3 Months Free | XAUUSD Global",
                   description=f"Join the XAUUSD Global gold trading community. First 50 members get 3 months free, then {C.PLANNED_PRICE}/month. Learn live on the market with mentors and traders worldwide.",
                   body=body, crumbs=crumbs)

@@ -486,8 +486,9 @@ def page(*, path, title, description, body, crumbs=None, og_type="website", sche
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>(function(d,w){{var h=d.documentElement;h.classList.add("js","intro-wait");var ok=0;function go(){{if(!ok){{ok=1;h.classList.remove("intro-wait");}}}}w.__gf=function(){{try{{Promise.race([Promise.all([d.fonts.load('600 1em "Inter Tight"'),d.fonts.load('italic 400 1em "Instrument Serif"'),d.fonts.load('400 1em "Inter"')]),new Promise(function(r){{setTimeout(r,700)}})]).then(go,go);}}catch(e){{go();}}}};setTimeout(go,1300);}})(document,window)</script>
 <link rel="preload" as="style" href="{FONT_URL}">
-<link rel="stylesheet" href="{FONT_URL}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{FONT_URL}" media="print" onload="this.media='all';window.__gf&&window.__gf()">
 <noscript><link rel="stylesheet" href="{FONT_URL}"></noscript>
 <link rel="stylesheet" href="/assets/css/style.css">
 <script type="application/ld+json">{ld}</script>

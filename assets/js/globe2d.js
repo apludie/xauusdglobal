@@ -2,6 +2,7 @@
    Canvas 2D, no external files. Land points generated from public-domain world outlines.
    Smooth time-based rotation, drag with inertia, pauses off-screen, respects reduced motion. */
 (function () {
+  try { var gb = document.getElementById("globe"); if (gb) gb.parentNode.classList.add("on"); } catch (e) {}
   "use strict";
   var cv = document.getElementById("globe");
   if (!cv || !cv.getContext) return;

@@ -98,12 +98,14 @@
       lc.fillStyle = "rgba(255,244,220," + Math.min(1, (q[2]-0.45)*2.6).toFixed(2) + ")"; lc.fillText(HUBS[j][0], W/2 + q[0]*R + 10, H/2 - q[1]*R - 9); }
   }
   var clock = 0, last = 0, raf = 0, visible = true;
+  var shown = false;
   function frame(now) {
     var dt = last ? Math.min(0.05, (now - last) / 1000) : 0; last = now;
     if (!drag) { if (Math.abs(vy) > 0.02) { rotY += vy * dt; vy *= Math.pow(0.05, dt); } else if (!reduce) rotY += spin * dt; }
     tilt += (tiltT - tilt) * Math.min(1, dt * 4);
     if (!reduce) clock += dt;
     render(clock);
+    if (!shown) { shown = true; cv.parentNode.classList.add("on"); }
     raf = (!reduce || drag || Math.abs(vy) > 0.02) && visible && !document.hidden ? requestAnimationFrame(frame) : 0;
   }
   function kick() { if (!raf && visible && !document.hidden) { last = 0; raf = requestAnimationFrame(frame); } }

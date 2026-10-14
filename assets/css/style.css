@@ -973,3 +973,19 @@ h3 { letter-spacing: -0.015em; }
 @media (max-width: 560px) { .sess-card__time { font-size: .95rem; } .tl-ticks span:nth-child(even) { display: none; } }
 .tool-bands { display: grid; gap: 14px; }
 @media (min-width: 1100px) { .tool-bands { grid-template-columns: 1fr 1fr; } .tool-bands .tool-band { grid-template-columns: auto 1fr; } .tool-bands .tool-band .btn { grid-column: 2; } }
+
+/* ---------- Butter intro: transform/opacity only (GPU-composited), starts after fonts ---------- */
+.hero--home .hero__title .ht-l { display: block; overflow: hidden; padding: 0 .08em .16em 0; margin-bottom: -.16em; }
+.hero--home .hero__title .ht-l--serif { padding-bottom: .24em; margin-bottom: -.2em; }
+.hero--home .hero__title .ht-in { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .intro { opacity: 0; transform: translate3d(0, 18px, 0); filter: none; will-change: transform, opacity;
+    animation: introUp 1.15s cubic-bezier(.22, 1, .36, 1) both; animation-delay: calc(var(--d, 0) * 110ms + 60ms); }
+  .js .hero--home .ht-in { transform: translate3d(0, 108%, 0); will-change: transform;
+    animation: lineUp 1.25s cubic-bezier(.22, 1, .36, 1) both; animation-delay: calc(var(--d, 0) * 110ms); }
+  .js.intro-wait .intro, .js.intro-wait .ht-in { animation-play-state: paused; }
+  .js .globe-box { opacity: 0; transform: scale(.94); transition: opacity 1.6s cubic-bezier(.22, 1, .36, 1), transform 2.2s cubic-bezier(.22, 1, .36, 1); will-change: transform, opacity; }
+  .js .globe-box.on { opacity: 1; transform: none; }
+}
+@keyframes introUp { from { opacity: 0; transform: translate3d(0, 18px, 0); } to { opacity: 1; transform: none; } }
+@keyframes lineUp { from { transform: translate3d(0, 108%, 0); } to { transform: none; } }
