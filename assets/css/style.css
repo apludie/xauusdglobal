@@ -724,3 +724,11 @@ strong { color: #fff; font-weight: 600; }
 .hero h1.hero__title { font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.08; }
 .hero__title .ht-l { display: block; }
 .hero__title .ht-sub { color: var(--text-2); }
+
+/* Footer social links */
+.footer-social { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding: 22px 0; border-top: 1px solid var(--line); margin-top: 28px; }
+.footer-social > span { font-family: var(--font-mono); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.footer-social__links { display: flex; flex-wrap: wrap; gap: 10px; }
+.footer-social__links a { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; color: var(--text-2); background: rgba(255,255,255,.04); border: 1px solid var(--line); transition: color .2s ease, border-color .2s ease, transform .2s ease; }
+.footer-social__links a:hover { color: var(--gold); border-color: rgba(242,193,78,.5); transform: translateY(-2px); }
+.footer-social__links svg { width: 19px; height: 19px; fill: currentColor; }

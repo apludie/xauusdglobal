@@ -321,6 +321,7 @@ def org_schema():
         "url": C.SITE_URL + "/",
         "logo": {"@type": "ImageObject", "url": C.SITE_URL + "/assets/images/logo-512.png", "width": 512, "height": 512},
         "slogan": C.TAGLINE,
+        "sameAs": [u for _, u in getattr(C, "SOCIAL", [])],
         "description": "An educational website and planned global community for XAUUSD (gold) traders.",
     }
 
@@ -361,6 +362,17 @@ def header(current):
 </header>"""
 
 
+_SOCIAL_SVG = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "social_svg.json")))
+
+
+def social_links():
+    items = "".join(
+        f'<a href="{u}" target="_blank" rel="noopener me" aria-label="XAUUSD Global on {n}" title="{n}">'
+        f'<svg viewBox="0 0 24 24" aria-hidden="true">{_SOCIAL_SVG.get(n, "")}</svg></a>'
+        for n, u in getattr(C, "SOCIAL", []))
+    return f'<div class="footer-social"><span>Follow XAUUSD Global</span><div class="footer-social__links">{items}</div></div>'
+
+
 def footer():
     year = C.FIRST_PUBLISHED[:4]
     return f"""<footer class="site-footer">
@@ -396,6 +408,7 @@ def footer():
       </ul></div>
     </div>
     <div class="footer-risk"><strong>Risk warning:</strong> Trading leveraged products such as CFDs and spot gold (XAUUSD) carries a high level of risk and can result in losses that exceed your expectations, including substantial losses of capital. Everything on this website is general educational information, not personalised financial, investment or trading advice. No strategy, framework or community participation guarantees results. Read the full <a href="/risk-disclaimer/">risk disclaimer</a>.</div>
+    {social_links()}
     <div class="footer-bottom"><span>&copy; {year} {C.SITE_NAME}. All rights reserved.</span><span>Membership launching soon · Launch-updates waitlist open.</span></div>
   </div>
 </footer>"""

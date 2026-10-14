@@ -39,3 +39,14 @@ BREVO_FORM_ACTION = "https://a89ceefb.sibforms.com/serve/MUIFAHGfIidhPtSk4pDIdJf
 
 # Pinterest website claim (Settings -> Claimed accounts)
 PINTEREST_VERIFY = "a272e1fcadf957d6a047ec1f5fdea1e0"
+
+# Official social profiles (footer links + Organization sameAs schema)
+SOCIAL = [
+    ("YouTube", "https://www.youtube.com/@XAUUSDGlobal"),
+    ("Instagram", "https://www.instagram.com/xauusdglobal/"),
+    ("X", "https://x.com/xauusdglobalcom"),
+    ("TradingView", "https://www.tradingview.com/u/XAUUSDGlobal/"),
+    ("Pinterest", "https://www.pinterest.com/xauusdglobalcom/"),
+    ("Medium", "https://medium.com/@xauusdglobal"),
+    ("Quora", "https://www.quora.com/profile/XAUUSD-Global"),
+]
