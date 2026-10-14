@@ -129,7 +129,7 @@ def home(strategies, posts):
       <p class="hero__lede intro" style="--d:5">A global community of gold traders. Learn live on the market with mentors and experienced traders, and connect with XAUUSD traders in every time zone.</p>
       <div class="btn-row intro" style="--d:6">
         <a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free spot {ARROW_BTN}</a>
-        <a class="btn btn--ghost" href="/xauusd-trading-strategies/">Explore free guides</a>
+        <a class="btn btn--ghost btn--inside" href="#rooms"><span class="live-dot" aria-hidden="true"></span>Look inside the rooms</a>
       </div>
       <p class="hero__fine intro" style="--d:7">Only 50 founding spots · then {C.PLANNED_PRICE}/month</p>
     </div>
@@ -142,6 +142,18 @@ def home(strategies, posts):
 </section>
 
 <div class="marquee marquee--cities" aria-hidden="true"><div class="marquee__inner">{mq}</div></div>
+
+<section class="showcase" id="rooms" aria-labelledby="rooms-h">
+  <div class="wrap center showcase__head">
+    <span class="eyebrow reveal">Live preview · click any room</span>
+    <h2 id="rooms-h" class="showcase__title reveal">Step inside <em class="serif gold-text">the rooms.</em></h2>
+    <p class="lead reveal">This is what you get. Plan the day, get your charts reviewed and ask Goldie anything, with gold traders in every time zone. Click around: it's live.</p>
+  </div>
+  {IP.room_stage()}
+  <div class="wrap center showcase__cta">
+    <div class="btn-row" style="justify-content:center"><a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free spot {ARROW_BTN}</a><a class="btn btn--ghost" href="/community/inside/">Take the full tour</a></div>
+  </div>
+</section>
 
 <section class="section offer-sec">
   <div class="wrap">
@@ -181,24 +193,6 @@ def home(strategies, posts):
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="split split--mock">
-      <div class="reveal">
-        <span class="eyebrow">A preview of the community</span>
-        <h2>A live room full of gold traders — and you're invited.</h2>
-        <p class="lead">Post your chart and your thinking. Get it tested by traders who read gold differently — then review what really happened.</p>
-        <ul class="checklist">
-          <li>Every idea shares its context, thesis, invalidation and risk.</li>
-          <li>Feedback challenges the analysis, never the person.</li>
-          <li>Every trade becomes a lesson you share with the whole room.</li>
-        </ul>
-        <div class="btn-row"><a class="btn btn--gold" href="/community/inside/">Look inside the rooms {ARROW_BTN}</a></div>
-      </div>
-      <div>{chat_mockup(compact=True)}</div>
-    </div>
-  </div>
-</section>
 
 <section class="section">
   <div class="wrap">
@@ -268,6 +262,7 @@ def home(strategies, posts):
     </div>
   </div>
 </section>
+{IP.room_scripts()}
 <i hidden data-lazy-js data-src="/assets/js/globe.js" data-when="idle"></i>
 <i hidden data-lazy-js data-src="/assets/js/coin.js" data-when=".coin3d"></i>
 <i hidden data-lazy-js data-src="/assets/js/hero3d.js" data-when="#hero3d"></i>"""

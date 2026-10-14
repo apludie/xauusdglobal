@@ -307,7 +307,6 @@ NAV = [
     ("/tools/", "Tools"),
     ("/community/", "Community"),
     ("/membership/", "Membership"),
-    ("/about/", "About"),
 ]
 
 ORG_ID = C.SITE_URL + "/#organization"
@@ -348,14 +347,19 @@ def breadcrumbs_html(crumbs):
 
 def header(current):
     links = []
+    inside = bool(current and current.startswith("/community/inside/"))
     for path, label in NAV:
-        cur = ' aria-current="page"' if current and current.startswith(path) else ""
+        cur = ' aria-current="page"' if current and current.startswith(path) and not (inside and path == "/community/") else ""
         links.append(f'<li><a href="{path}"{cur}>{label}</a></li>')
+    icur = ' aria-current="page"' if inside else ""
+    ihref = "#rooms" if current == "/" else "/community/inside/"
+    links.append(f'<li class="nav-inside"><a href="{ihref}"{icur}><span class="live-dot" aria-hidden="true"></span>Inside the rooms</a></li>')
     links.append('<li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Claim my free spot</a></li>')
     return f"""<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/" aria-label="{C.SITE_NAME} home">{LOGO_SVG}<span class="brand__name">XAUUSD<span> Global</span></span></a>
+    <a class="hdr-inside" href="/community/inside/"><span class="live-dot" aria-hidden="true"></span>Rooms</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">{icon("menu", "icon-open")}{icon("close", "icon-close")}</button>
     <nav class="site-nav" id="site-nav" aria-label="Main"><ul>{"".join(links)}</ul></nav>
   </div>
@@ -542,7 +546,7 @@ def community_cta(compact=False):
   <span class="eyebrow">Founding 50 · 3 months free</span>
   <h2 id="cta-h">Find your mentor. Find your people. Trade gold <em class="serif gold-text">together.</em></h2>
   <p>Traders from every corner of the world are taking their seats. Learn live on the market, get your charts reviewed by experienced traders, and grow your skills every single day. The first 50 members join <strong>free for 3 months</strong> — then just {C.PLANNED_PRICE}/month.</p>
-  <div class="btn-row"><a class="btn btn--gold" href="/membership/#registration">Claim my free spot {icon("arrow")}</a><a class="btn btn--ghost" href="/community/inside/">Look inside the rooms</a></div>
+  <div class="btn-row"><a class="btn btn--gold" href="/membership/#registration">Claim my free spot {icon("arrow")}</a><a class="btn btn--ghost" href="/community/inside/">Take the full tour</a></div>
   <p class="cta-sign">See you in the community rooms soon. ✦</p>
 </aside>"""
 

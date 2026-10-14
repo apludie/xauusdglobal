@@ -52,32 +52,10 @@ def _feature_demo(kind):
             '<span class="lv lv--d">Degen <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span></div>')
 
 
-def inside_page():
-    path = "/community/inside/"
-    crumbs = [("/", "Home"), ("/community/", "Community"), (path, "Look Inside")]
-    d = _data()
-    payload = json.dumps(d, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    feats = "".join(f'<article class="feat reveal">{_feature_demo(k)}<h3>{esc(t)}</h3><p>{esc(x)}</p></article>' for k, t, x in FEATURES)
-    rows = "".join(f'<tr><th scope="row">{esc(a)}</th><td class="cmp-them">{esc(b)}</td><td class="cmp-us">{esc(c)}</td></tr>' for a, b, c in COMPARE)
-    cities = ["Mumbai", "Dubai", "London", "New York", "Singapore", "Karachi", "Lagos", "Johannesburg", "Hong Kong", "Sydney", "Zürich", "Toronto", "Riyadh", "Nairobi", "São Paulo", "Istanbul", "Kuala Lumpur", "Manila", "Frankfurt"]
-    city_html = "".join(f"<span>{esc(c)}</span>" for c in cities)
-    faqs = [
-        {"q": "What will I see inside the community?", "a": "Rooms for the daily game plan, live market sessions, chart reviews, trade ideas, wins and lessons, plus level rooms that unlock as you grow. Goldie, the AI mentor, answers questions and reviews your charts any time."},
-        {"q": "Who is Goldie?", "a": "Goldie is the community's AI mentor. It explains concepts, reviews the reasoning on your chart, posts the daily game plan and keeps the rooms clean. It never tells you to buy or sell; it helps you build your own judgement."},
-        {"q": "How do I join?", "a": f"[Claim your spot](/membership/#registration). The first 50 founding members get the full community free for 3 months, then it's {C.PLANNED_PRICE}/month."},
-    ]
-    body = f"""<section class="inside-hero">
-  <div class="wrap center">
-    <span class="status-pill status-pill--offer intro" style="--d:0"><span class="dot dot--gold"></span>Look inside · Founding 50</span>
-    <h1 class="inside-title"><span class="ht-l"><span class="ht-in" style="--d:1">Step inside</span></span> <span class="ht-l"><span class="ht-in" style="--d:2">the <em class="serif gold-text">rooms.</em></span></span></h1>
-    <p class="hero__lede intro" style="--d:4">This is where gold traders from every time zone plan the day, watch the market live, review each other's charts and learn from every trade, with Goldie, our AI mentor, always on.</p>
-    <div class="btn-row intro" style="--d:5; justify-content:center"><a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free spot {ARROW}</a><a class="btn btn--ghost" href="#app">Explore the rooms</a></div>
-  </div>
-</section>
-
-<section class="stage" id="app" aria-label="Interactive preview of the community rooms">
+def room_stage():
+    return """<section class="stage" id="app" aria-label="Interactive preview of the community rooms">
   <div class="stage__inner">
-    <div class="float float--a" aria-hidden="true"><span class="fd-live__badge"><i></i>LIVE</span> NY open · 87 watching</div>
+    <div class="float float--a" aria-hidden="true"><span class="fd-live__badge"><i></i>LIVE</span> NY open session today</div>
     <div class="float float--b" aria-hidden="true"><b class="fd-r fd-r--loss">−1.0R</b> Loss logged, lesson saved</div>
     <div class="float float--c" aria-hidden="true"><span class="float__ai">AI</span> Goldie reviewed your chart</div>
     <div class="float float--d" aria-hidden="true"><span class="float__poll"><i style="--w:44%"></i></span> 212 voted on today's bias</div>
@@ -103,7 +81,37 @@ def inside_page():
       </div>
     </div>
   </div>
+</section>"""
+
+
+def room_scripts():
+    payload = json.dumps(_data(), ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    return f'<script type="application/json" id="inside-data">{payload}</script>\n<script src="/assets/js/inside.js" defer></script>'
+
+
+def inside_page():
+    path = "/community/inside/"
+    crumbs = [("/", "Home"), ("/community/", "Community"), (path, "Look Inside")]
+    d = _data()
+    feats = "".join(f'<article class="feat reveal">{_feature_demo(k)}<h3>{esc(t)}</h3><p>{esc(x)}</p></article>' for k, t, x in FEATURES)
+    rows = "".join(f'<tr><th scope="row">{esc(a)}</th><td class="cmp-them">{esc(b)}</td><td class="cmp-us">{esc(c)}</td></tr>' for a, b, c in COMPARE)
+    cities = ["Mumbai", "Dubai", "London", "New York", "Singapore", "Karachi", "Lagos", "Johannesburg", "Hong Kong", "Sydney", "Zürich", "Toronto", "Riyadh", "Nairobi", "São Paulo", "Istanbul", "Kuala Lumpur", "Manila", "Frankfurt"]
+    city_html = "".join(f"<span>{esc(c)}</span>" for c in cities)
+    faqs = [
+        {"q": "What will I see inside the community?", "a": "Rooms for the daily game plan, live market sessions, chart reviews, trade ideas, wins and lessons, plus level rooms that unlock as you grow. Goldie, the AI mentor, answers questions and reviews your charts any time."},
+        {"q": "Who is Goldie?", "a": "Goldie is the community's AI mentor. It explains concepts, reviews the reasoning on your chart, posts the daily game plan and keeps the rooms clean. It never tells you to buy or sell; it helps you build your own judgement."},
+        {"q": "How do I join?", "a": f"[Claim your spot](/membership/#registration). The first 50 founding members get the full community free for 3 months, then it's {C.PLANNED_PRICE}/month."},
+    ]
+    body = f"""<section class="inside-hero">
+  <div class="wrap center">
+    <span class="status-pill status-pill--offer intro" style="--d:0"><span class="dot dot--gold"></span>Look inside · Founding 50</span>
+    <h1 class="inside-title"><span class="ht-l"><span class="ht-in" style="--d:1">Step inside</span></span> <span class="ht-l"><span class="ht-in" style="--d:2">the <em class="serif gold-text">rooms.</em></span></span></h1>
+    <p class="hero__lede intro" style="--d:4">This is where gold traders from every time zone plan the day, watch the market live, review each other's charts and learn from every trade, with Goldie, our AI mentor, always on.</p>
+    <div class="btn-row intro" style="--d:5; justify-content:center"><a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free spot {ARROW}</a><a class="btn btn--ghost" href="#app">Explore the rooms</a></div>
+  </div>
 </section>
+
+{room_stage()}
 
 <div class="marquee marquee--cities" aria-hidden="true"><div class="marquee__inner">{city_html}{city_html}</div></div>
 
@@ -170,8 +178,7 @@ def inside_page():
     <div class="wrap--text" style="margin:56px auto 0">{L.faq_html(faqs)}</div>
   </div>
 </section>
-<script type="application/json" id="inside-data">{payload}</script>
-<script src="/assets/js/inside.js" defer></script>
+{room_scripts()}
 <i hidden data-lazy-js data-src="/assets/js/coin.js" data-when=".coin3d"></i>"""
     return L.page(path=path, title="Look Inside the XAUUSD Global Community Rooms",
                   description="Step inside the XAUUSD Global rooms: daily gold game plans, live market sessions, AI chart reviews, trade recaps and level rooms. First 50 members get 3 months free.",

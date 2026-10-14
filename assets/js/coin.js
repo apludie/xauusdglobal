@@ -10,8 +10,8 @@
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function heightMap(front) {
-    var S = 1024, c = document.createElement("canvas"); c.width = c.height = S;
-    var x = c.getContext("2d"), m = S / 2;
+    var S = 1024, P = 768, c = document.createElement("canvas"); c.width = c.height = P;
+    var x = c.getContext("2d"), m = S / 2; x.setTransform(P / S, 0, 0, P / S, 0, 0);
     function g(v) { var k = Math.round(v * 255); return "rgb(" + k + "," + k + "," + k + ")"; }
     x.fillStyle = g(0.32); x.fillRect(0, 0, S, S);
     // machined concentric field
@@ -54,8 +54,8 @@
       star(m - m * 0.66, m, 22); star(m + m * 0.66, m, 22);
     }
     // soften so the relief has bevelled edges
-    var o = document.createElement("canvas"); o.width = o.height = S; var ox = o.getContext("2d");
-    ox.filter = "blur(2.2px)"; ox.drawImage(c, 0, 0); ox.filter = "none";
+    var o = document.createElement("canvas"); o.width = o.height = P; var ox = o.getContext("2d");
+    ox.filter = "blur(1.7px)"; ox.drawImage(c, 0, 0); ox.filter = "none";
     return ox.filter === "none" ? o : c;
   }
 
@@ -79,7 +79,7 @@
     "void main(){",
     "  vec3 n=normalize(vN); float h=0.6; float cav=1.;",
     "  if(vK<1.5){",
-    "    float e=1.6/1024.; vec2 uv=vUV; float hc, gx, gy;",
+    "    float e=1.4/768.; vec2 uv=vUV; float hc, gx, gy;",
     "    if(vK<0.5){ hc=texture2D(uF,uv).r; gx=texture2D(uF,uv+vec2(e,0.)).r-texture2D(uF,uv-vec2(e,0.)).r; gy=texture2D(uF,uv+vec2(0.,e)).r-texture2D(uF,uv-vec2(0.,e)).r; }",
     "    else { hc=texture2D(uB,uv).r; gx=texture2D(uB,uv+vec2(e,0.)).r-texture2D(uB,uv-vec2(e,0.)).r; gy=texture2D(uB,uv+vec2(0.,e)).r-texture2D(uB,uv-vec2(0.,e)).r; }",
     "    float s=5.5; vec3 on = vK<0.5 ? vec3(-gx*s, gy*s, 1.) : vec3(gx*s, gy*s, -1.);",
@@ -160,9 +160,11 @@
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
     }
-    function textures() { tex(0, heightMap(true)); tex(1, heightMap(false)); }
+    var idle = window.requestIdleCallback || function (f) { return setTimeout(f, 16); };
+    function textures(done) { tex(0, heightMap(true)); idle(function () { tex(1, heightMap(false)); if (done) done(); }); }
+    var fontsReady = !document.fonts || document.fonts.status === "loaded";
     textures();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { textures(); kick(); });
+    if (!fontsReady && document.fonts.ready) document.fonts.ready.then(function () { idle(function () { textures(kick); }); });
     var Uf = {}; ["uM", "uPV", "uF", "uB", "uEye", "uT"].forEach(function (n) { Uf[n] = gl.getUniformLocation(pr, n); });
     gl.uniform1i(Uf.uF, 0); gl.uniform1i(Uf.uB, 1); gl.uniform3fv(Uf.uEye, EYE);
     gl.enable(gl.DEPTH_TEST); gl.clearColor(0, 0, 0, 0);
