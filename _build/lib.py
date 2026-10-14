@@ -415,7 +415,7 @@ def page(*, path, title, description, body, crumbs=None, og_type="website", sche
          article_meta=None, noindex=False, body_attrs=""):
     url = canonical(path)
     og_img = C.SITE_URL + "/assets/images/og-default.png"
-    og_alt = "XAUUSD Global — One Market. One Global Community."
+    og_alt = "XAUUSD Global — Trade Gold. Think Deeper. Grow Together."
     if not noindex and path != "/":
         key = og_key(path)
         OG_MANIFEST.append({"key": key, "path": path, "title": title.split(" | ")[0]})
