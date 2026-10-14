@@ -542,7 +542,7 @@ def community_cta(compact=False):
   <span class="eyebrow">Founding 50 · 3 months free</span>
   <h2 id="cta-h">Find your mentor. Find your people. Trade gold <em class="serif gold-text">together.</em></h2>
   <p>Traders from every corner of the world are taking their seats. Learn live on the market, get your charts reviewed by experienced traders, and grow your skills every single day. The first 50 members join <strong>free for 3 months</strong> — then just {C.PLANNED_PRICE}/month.</p>
-  <div class="btn-row"><a class="btn btn--gold" href="/membership/#registration">Claim my free spot {icon("arrow")}</a><a class="btn btn--ghost" href="/community/">See inside the community</a></div>
+  <div class="btn-row"><a class="btn btn--gold" href="/membership/#registration">Claim my free spot {icon("arrow")}</a><a class="btn btn--ghost" href="/community/inside/">Look inside the rooms</a></div>
   <p class="cta-sign">See you in the community rooms soon. ✦</p>
 </aside>"""
 

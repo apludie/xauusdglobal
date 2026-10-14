@@ -9,6 +9,7 @@ import config as C
 import lib as L
 from mock import chat_mockup
 import hours_page as HP
+import inside_page as IP
 from lib import esc, icon
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -25,6 +26,7 @@ TITLES = {
     "/about/": "About XAUUSD Global",
     "/tools/gold-market-hours/": "Live gold market hours in your time zone",
     "/tools/": "Free gold trading tools",
+    "/community/inside/": "Look inside the community rooms",
     "/contact/": "Contact XAUUSD Global",
     "/faq/": "Frequently asked questions",
     "/risk-disclaimer/": "Risk disclaimer",
@@ -191,7 +193,7 @@ def home(strategies, posts):
           <li>Feedback challenges the analysis, never the person.</li>
           <li>Every trade becomes a lesson you share with the whole room.</li>
         </ul>
-        <div class="btn-row"><a class="btn btn--gold" href="/community/">See inside the community {ARROW_BTN}</a></div>
+        <div class="btn-row"><a class="btn btn--gold" href="/community/inside/">Look inside the rooms {ARROW_BTN}</a></div>
       </div>
       <div>{chat_mockup(compact=True)}</div>
     </div>
@@ -568,7 +570,7 @@ def community_page():
         ("Lessons", "Afterwards: what happened, and what would you change?"),
     ]
     fcards = "".join(f'<article class="card reveal"><div class="card__num">{n:02d}</div><h3>{t}</h3><p>{d}</p></article>' for n, (t, d) in enumerate(framework, 1))
-    body = f"""{L.page_head(crumbs, 'Bring your charts. Bring your questions. <em class="serif gold-text">Bring your reasoning.</em>', 'A worldwide community of gold traders. Learn live on the market with mentors and experienced traders, connect with XAUUSD traders in every time zone, and grow your skills every day.', eyebrow='The community', extra='<div class="hero__status"><span class="status-pill"><span class="dot dot--gold"></span>Founding 50 · first 50 members get 3 months free</span></div><div class="btn-row mt-2"><a class="btn btn--gold" href="/membership/#registration">Claim my free spot</a></div>')}
+    body = f"""{L.page_head(crumbs, 'Bring your charts. Bring your questions. <em class="serif gold-text">Bring your reasoning.</em>', 'A worldwide community of gold traders. Learn live on the market with mentors and experienced traders, connect with XAUUSD traders in every time zone, and grow your skills every day.', eyebrow='The community', extra='<div class="hero__status"><span class="status-pill"><span class="dot dot--gold"></span>Founding 50 · first 50 members get 3 months free</span></div><div class="btn-row mt-2"><a class="btn btn--gold" href="/membership/#registration">Claim my free spot</a><a class="btn btn--ghost" href="/community/inside/">Look inside the rooms</a></div>')}
 <section class="section section--tight">
   <div class="wrap">
     <div class="section-head reveal"><span class="eyebrow">A look inside</span><h2>A peek inside the rooms</h2>
@@ -1233,6 +1235,7 @@ def build_all(strategies, posts, titles):
         ("/tools/position-size-calculator/", calculator_page(), "0.8"),
         ("/tools/gold-market-hours/", HP.hours_page(), "0.9"),
         ("/tools/", HP.tools_index(), "0.7"),
+        ("/community/inside/", IP.inside_page(), "0.9"),
     ]
     for name, prio in [("contact", "0.4"), ("faq", "0.6"), ("risk-disclaimer", "0.4"), ("privacy-policy", "0.3"), ("terms", "0.3")]:
         meta, body = L.load_md(os.path.join(CONTENT, "pages", f"{name}.md"))
