@@ -7,6 +7,7 @@ import yaml
 
 import config as C
 import lib as L
+from mock import chat_mockup
 from lib import esc, icon
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -172,6 +173,25 @@ def home(strategies, posts):
         <div class="compare__col compare__col--good"><h3>A reasoned idea also tells you</h3><ul>
           <li>The market context</li><li>The thesis and its evidence</li><li>What would prove it wrong</li><li>The risk being taken</li><li>Other ways to read the chart</li><li>What to learn afterwards</li></ul></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split split--mock">
+      <div class="reveal">
+        <span class="eyebrow">A look inside the community</span>
+        <h2>Not a signal feed. A room full of reasoning.</h2>
+        <p class="lead">Post your chart and your thinking. Get it tested by traders who read gold differently — then review what really happened.</p>
+        <ul class="checklist">
+          <li>Every idea shares its context, thesis, invalidation and risk.</li>
+          <li>Feedback challenges the analysis, never the person.</li>
+          <li>Wins and losses are reviewed with the same honesty.</li>
+        </ul>
+        <div class="btn-row"><a class="btn btn--gold" href="/community/">See how the community will work {ARROW_BTN}</a></div>
+      </div>
+      <div>{chat_mockup(compact=True)}</div>
     </div>
   </div>
 </section>
@@ -616,6 +636,14 @@ def community_page():
     ]
     fcards = "".join(f'<article class="card reveal"><div class="card__num">{n:02d}</div><h3>{t}</h3><p>{d}</p></article>' for n, (t, d) in enumerate(framework, 1))
     body = f"""{L.page_head(crumbs, 'Bring your charts. Bring your questions. <span class="gold-text">Bring your reasoning.</span>', 'XAUUSD Global is a learning community for gold traders, built around market reasoning, honest discussion, transparent trade reviews and continuous improvement. Leave room to learn.', eyebrow='The community', extra='<div class="hero__status"><span class="status-pill"><span class="dot dot--gold"></span>In development · Launch-updates waitlist open</span></div>')}
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">A look inside</span><h2>What a conversation will look like</h2>
+      <p>One member shares a chart with their reasoning. Others test it from different angles — structure, liquidity, risk. Afterwards, the trade is reviewed honestly, win or lose.</p></div>
+    {chat_mockup()}
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap">
     <div class="split">

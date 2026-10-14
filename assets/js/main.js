@@ -226,3 +226,25 @@
     apply();
   }
 })();
+
+/* 3D tilt: chat preview and hero chart follow the pointer (desktop only, respects reduced motion) */
+(function () {
+  if (!window.matchMedia || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  var els = document.querySelectorAll("[data-tilt], .hero__visual");
+  Array.prototype.forEach.call(els, function (el) {
+    var base = el.classList.contains("hero__visual") ? [4, -8] : el.classList.contains("mock-wrap--compact") ? [6, -10] : [4, -5];
+    el.addEventListener("pointermove", function (e) {
+      var r = el.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      el.classList.add("is-tilting");
+      el.style.setProperty("--ry", (x * 14).toFixed(2) + "deg");
+      el.style.setProperty("--rx", (-y * 10).toFixed(2) + "deg");
+    });
+    el.addEventListener("pointerleave", function () {
+      el.classList.remove("is-tilting");
+      el.style.setProperty("--ry", base[1] + "deg");
+      el.style.setProperty("--rx", base[0] + "deg");
+    });
+  });
+})();
