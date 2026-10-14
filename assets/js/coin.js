@@ -104,6 +104,13 @@
     "}"
   ].join("\n");
 
+  var ELEGANT = document.documentElement.classList.contains("look-elegant");
+  if (ELEGANT) {
+    FS = FS.replace("vec3 gold=vec3(1.0,0.74,0.30);", "vec3 gold=vec3(0.84,0.69,0.46);")
+           .replace("vec3 c=env(R)*F*1.15;", "vec3 c=env(R)*F*0.82;")
+           .replace("c+=vec3(1.,0.95,0.85)*sp*0.9;", "c+=vec3(1.,0.95,0.85)*sp*0.22;")
+           .replace("mix(gold, vec3(1.0,0.93,0.78), pow(1.-ndv,4.)*0.75)", "mix(gold, vec3(0.95,0.88,0.76), pow(1.-ndv,4.)*0.4)");
+  }
   function build() {
     // coin with its axis along Z: faces at z=±T, rounded edge of radius T at r=1-T
     var T = 0.075, RC = 1 - T, SEG = 160, RINGS = 6, P = [], N = [], U = [], K = [];
@@ -191,7 +198,7 @@
       var dt = last ? Math.min(0.05, (now - last) / 1000) : 0.016; last = now;
       mx += (tx - mx) * 0.06; my += (ty - my) * 0.06;
       spin += scrollV; scrollV *= 0.0; spin *= Math.pow(0.04, dt);
-      ang += (reduce ? 0 : 0.45 * dt) + spin * dt * 6;
+      ang += (reduce ? 0 : (ELEGANT ? 0.28 : 0.45) * dt) + spin * dt * 6;
       var m = mul(rotX(0.10 + my * 0.32), mul(rotY(ang + mx * 0.5), rotZ(Math.sin(now * 0.0006) * 0.05)));
       gl.uniformMatrix4fv(Uf.uM, false, m); gl.uniform1f(Uf.uT, now / 1000);
       gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT); gl.drawArrays(gl.TRIANGLES, 0, geo.n);

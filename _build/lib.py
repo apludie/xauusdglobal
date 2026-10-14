@@ -494,7 +494,8 @@ def page(*, path, title, description, body, crumbs=None, og_type="website", sche
 <link rel="preload" as="style" href="{FONT_URL}">
 <link rel="stylesheet" href="{FONT_URL}" media="print" onload="this.media='all';window.__gf&&window.__gf()">
 <noscript><link rel="stylesheet" href="{FONT_URL}"></noscript>
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" id="css" href="/assets/css/style.css" data-href="/assets/css/style-elegant.css">
+<script>(function(){{try{{var q=location.search.match(/[?&]look=([a-z]+)/);if(q)sessionStorage.setItem("look",q[1]);if(sessionStorage.getItem("look")==="elegant"){{var l=document.getElementById("css");l.href=l.getAttribute("data-href");document.documentElement.classList.add("look-elegant");}}}}catch(e){{}}}})()</script>
 <script type="application/ld+json">{ld}</script>
 <script src="/assets/js/main.js" defer></script>
 {analytics}
