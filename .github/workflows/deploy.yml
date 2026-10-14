@@ -50,3 +50,21 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Tell Bing and other IndexNow search engines about the pages
+        if: github.event_name == 'push'
+        continue-on-error: true
+        run: |
+          python3 - <<'PY'
+          import json, re, urllib.request
+          key = "d79008840f5b420ebabf774d6c3dc196"
+          urls = re.findall(r"<loc>(.*?)</loc>", open("sitemap.xml").read())
+          body = json.dumps({"host": "www.xauusdglobal.com", "key": key,
+                             "keyLocation": f"https://www.xauusdglobal.com/{key}.txt", "urlList": urls}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          try:
+              print("IndexNow:", urllib.request.urlopen(req, timeout=30).status, len(urls), "URLs")
+          except Exception as e:
+              print("IndexNow skipped:", e)
+          PY
