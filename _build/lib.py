@@ -451,7 +451,7 @@ def page(*, path, title, description, body, crumbs=None, og_type="website", sche
 <meta name="description" content="{esc(description)}">
 <meta name="robots" content="{robots}">
 {canon}
-<meta name="theme-color" content="#08090b">
+<meta name="theme-color" content="#08090b">{('<meta name="p:domain_verify" content="' + C.PINTEREST_VERIFY + '"/>') if getattr(C, "PINTEREST_VERIFY", "") else ""}
 <meta property="og:site_name" content="{C.SITE_NAME}">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="{og_type}">

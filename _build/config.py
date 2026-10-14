@@ -36,3 +36,6 @@ UMAMI_SCRIPT = "https://cloud.umami.is/script.js"
 
 # Brevo waitlist form endpoint (public form URL, not a secret).
 BREVO_FORM_ACTION = "https://a89ceefb.sibforms.com/serve/MUIFAHGfIidhPtSk4pDIdJfo6MfNsvNZ1Iylxx2xaD-FtwtUxJXYQ4ex5YC8HF0AM3B96cXyierwwFtdWbGjyavl6VTe8uulKUn2pKWRK36lG4YBFQdn0mUHOihWDFNjeGOZT-YE6E9XLbjcZmtDBeGvF_Ru-vRrCeQoYNnBJX0ObSYXFjDmt735NSGRmMGNmIx4zox-uGpAj6_wMw=="
+
+# Pinterest website claim (Settings -> Claimed accounts)
+PINTEREST_VERIFY = "a272e1fcadf957d6a047ec1f5fdea1e0"
