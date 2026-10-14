@@ -145,6 +145,16 @@
   "title": "XAUUSD Position Size Calculator \u2014 Gold Lot Size Calculator"
  },
  {
+  "key": "tools-gold-market-hours",
+  "path": "/tools/gold-market-hours/",
+  "title": "Gold Market Hours Live \u2014 XAUUSD Sessions in Your Time Zone"
+ },
+ {
+  "key": "tools",
+  "path": "/tools/",
+  "title": "Free Gold Trading Tools \u2014 XAUUSD Calculators & Live Market Hours"
+ },
+ {
   "key": "contact",
   "path": "/contact/",
   "title": "Contact XAUUSD Global"

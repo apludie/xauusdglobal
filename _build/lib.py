@@ -304,7 +304,7 @@ NAV = [
     ("/xauusd-news/", "News"),
     ("/xauusd-trading-strategies/", "Strategies"),
     ("/blog/", "Blog"),
-    ("/tools/position-size-calculator/", "Calculator"),
+    ("/tools/", "Tools"),
     ("/community/", "Community"),
     ("/membership/", "Membership"),
     ("/about/", "About"),
@@ -391,6 +391,7 @@ def footer():
         <li><a href="/xauusd-trading-strategies/">Strategy hub</a></li>
         <li><a href="/strategies/smart-money-concepts-xauusd/">Smart Money Concepts</a></li>
         <li><a href="/strategies/xauusd-risk-management/">Risk management</a></li>
+        <li><a href="/tools/gold-market-hours/">Gold market hours</a></li>
         <li><a href="/tools/position-size-calculator/">Position size calculator</a></li>
         <li><a href="/blog/">Blog</a></li>
       </ul></div>

@@ -8,6 +8,7 @@ import yaml
 import config as C
 import lib as L
 from mock import chat_mockup
+import hours_page as HP
 from lib import esc, icon
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -65,11 +66,16 @@ def sessions_html():
 
 
 def tool_band():
-    return f"""<a class="tool-band reveal" href="/tools/position-size-calculator/">
+    return f"""<div class="tool-bands"><a class="tool-band reveal" href="/tools/gold-market-hours/">
+      <div class="tool-band__icon">{icon("clock")}</div>
+      <div class="tool-band__text"><span class="eyebrow">Free tool · live</span><h3>Gold Market Hours</h3>
+        <p>Is gold open right now? Live sessions in your time zone and the best time to trade today.</p></div>
+      <span class="btn btn--gold btn--sm">Open market hours {ARROW_BTN}</span></a>
+    <a class="tool-band reveal" href="/tools/position-size-calculator/">
       <div class="tool-band__icon">{icon("scale")}</div>
       <div class="tool-band__text"><span class="eyebrow">Free tool</span><h3>XAUUSD Position Size Calculator</h3>
         <p>Enter your balance, risk % and stop-loss — get your gold lot size and risk-to-reward before you trade.</p></div>
-      <span class="btn btn--gold btn--sm">Open calculator {ARROW_BTN}</span></a>"""
+      <span class="btn btn--gold btn--sm">Open calculator {ARROW_BTN}</span></a></div>"""
 
 
 def card(path, title, text, tag=None, meta=None, ico=None, num=None):
@@ -1223,6 +1229,8 @@ def build_all(strategies, posts, titles):
         ("/membership/", membership_page(), "0.8"),
         ("/about/", about_page(), "0.6"),
         ("/tools/position-size-calculator/", calculator_page(), "0.8"),
+        ("/tools/gold-market-hours/", HP.hours_page(), "0.9"),
+        ("/tools/", HP.tools_index(), "0.7"),
     ]
     for name, prio in [("contact", "0.4"), ("faq", "0.6"), ("risk-disclaimer", "0.4"), ("privacy-policy", "0.3"), ("terms", "0.3")]:
         meta, body = L.load_md(os.path.join(CONTENT, "pages", f"{name}.md"))
