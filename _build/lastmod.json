@@ -1,0 +1,142 @@
+{
+ "/": {
+  "date": "2026-10-14",
+  "hash": "be7c1b73c2f09827cbb127d0d1cc7adbeb95e166"
+ },
+ "/about/": {
+  "date": "2026-10-14",
+  "hash": "3e4b96fdbbcd6c3c9d22b380177cbd6bdec09086"
+ },
+ "/blog/": {
+  "date": "2026-10-14",
+  "hash": "18fa7312f319ae63c3a39e8e8a83d51c1c919a6f"
+ },
+ "/blog/common-mistakes-intermediate-gold-traders/": {
+  "date": "2026-10-14",
+  "hash": "8c357e03fa3f26baa87d86a34aee007abe62dde7"
+ },
+ "/blog/how-to-build-a-xauusd-trading-plan/": {
+  "date": "2026-10-14",
+  "hash": "f9f052421743196668989ed7244e09a0b19b050b"
+ },
+ "/blog/how-to-identify-support-and-resistance-gold/": {
+  "date": "2026-10-14",
+  "hash": "90b17af28f94f3f9b70d3cb3a90e2a4b1c780709"
+ },
+ "/blog/how-to-keep-a-trading-journal/": {
+  "date": "2026-10-14",
+  "hash": "1819eb88776f7b3800cd66afce5cf30c43472bbc"
+ },
+ "/blog/ict-concepts-for-gold-trading/": {
+  "date": "2026-10-14",
+  "hash": "4c6b004df8c4a25f3907bc94c46ec48e09297a99"
+ },
+ "/blog/london-vs-new-york-sessions/": {
+  "date": "2026-10-14",
+  "hash": "f9d10cd8f8c99cd9c046120298238fa5e5c55f0d"
+ },
+ "/blog/risk-management-volatile-gold-markets/": {
+  "date": "2026-10-14",
+  "hash": "2cf27c2bb32674e572c1fab6601ff1ff6b1cf7b3"
+ },
+ "/blog/smart-money-concepts-explained-xauusd/": {
+  "date": "2026-10-14",
+  "hash": "4e5fa7db035e17a8d01bd93109f142a652df9be7"
+ },
+ "/blog/what-is-xauusd/": {
+  "date": "2026-10-14",
+  "hash": "611daffe908901a5c22c5493cb8a719185097a68"
+ },
+ "/blog/what-moves-gold-prices/": {
+  "date": "2026-10-14",
+  "hash": "945d1e2e5eb6854b43e263a84d3b3b6cec4104a8"
+ },
+ "/community/": {
+  "date": "2026-10-14",
+  "hash": "f0affdeb032967181450ce96160068558b788ee1"
+ },
+ "/contact/": {
+  "date": "2026-10-14",
+  "hash": "a1ca80fd6b684fefe224d8fab1d2f62656c34945"
+ },
+ "/faq/": {
+  "date": "2026-10-14",
+  "hash": "394574d1adeef8dcdfbbd8832fccb49a0e676246"
+ },
+ "/membership/": {
+  "date": "2026-10-14",
+  "hash": "6305d9054ff5aae2d2cd289ad21534b8e01f836e"
+ },
+ "/privacy-policy/": {
+  "date": "2026-10-14",
+  "hash": "6b3723bb39f4c92aab00b3acdbc75328870a180c"
+ },
+ "/risk-disclaimer/": {
+  "date": "2026-10-14",
+  "hash": "59252e25a760c406cae3ef77a4586ec649763986"
+ },
+ "/strategies/fair-value-gap-xauusd/": {
+  "date": "2026-10-14",
+  "hash": "35f7b3f6aaf17c601a3719ec57a3a1b22242c46d"
+ },
+ "/strategies/gold-breakout-retest-strategy/": {
+  "date": "2026-10-14",
+  "hash": "906211c1311456e895619564cd254f86e176dd7f"
+ },
+ "/strategies/ict-trading-xauusd/": {
+  "date": "2026-10-14",
+  "hash": "47bda8b5367a419f75f6a5a5d06c5776bf330259"
+ },
+ "/strategies/liquidity-sweep-xauusd/": {
+  "date": "2026-10-14",
+  "hash": "1d04cb4dbc9b02259d0786cce18b87873429bd09"
+ },
+ "/strategies/london-session-gold-trading/": {
+  "date": "2026-10-14",
+  "hash": "44f8ad6097c401df62f3e34239ef33873333e589"
+ },
+ "/strategies/market-structure-xauusd/": {
+  "date": "2026-10-14",
+  "hash": "79880bad58752938bab9f84e61bff8e2a1bb2838"
+ },
+ "/strategies/new-york-session-gold-trading/": {
+  "date": "2026-10-14",
+  "hash": "da9196dc3b4ce404f944fba9068985a71f30eaff"
+ },
+ "/strategies/order-blocks-xauusd/": {
+  "date": "2026-10-14",
+  "hash": "ce86374a1d26314a6e6b26aacc3454068e197a79"
+ },
+ "/strategies/smart-money-concepts-xauusd/": {
+  "date": "2026-10-14",
+  "hash": "ccbaa2e1e96f53f2dd33cb527ebce0abee20e945"
+ },
+ "/strategies/support-and-resistance-xauusd/": {
+  "date": "2026-10-14",
+  "hash": "ec07f2524108d543b2ae74e857d26177b0330359"
+ },
+ "/strategies/xauusd-risk-management/": {
+  "date": "2026-10-14",
+  "hash": "6473cbca50bbdc0459a87f65d89434a986f7cc59"
+ },
+ "/terms/": {
+  "date": "2026-10-14",
+  "hash": "5c2aaf35181163187c4d54829dec955befeaa33b"
+ },
+ "/tools/position-size-calculator/": {
+  "date": "2026-10-14",
+  "hash": "c98a359e79c99502a204714edf07214b10f9ecaa"
+ },
+ "/xauusd-news/": {
+  "date": "2026-10-14",
+  "hash": "4b4b996d6b7a9f791fbcb10288d15036998f93a6"
+ },
+ "/xauusd-price/": {
+  "date": "2026-10-14",
+  "hash": "cb6c90a41fd17849cd5df7982ac742f747fb9bfe"
+ },
+ "/xauusd-trading-strategies/": {
+  "date": "2026-10-14",
+  "hash": "4a94d7ef4cc78669be57beab6511c3f2960b8b70"
+ }
+}

@@ -205,9 +205,18 @@ def main():
     json.dump(L.OG_MANIFEST, open(os.path.join(HERE, "og_manifest.json"), "w"), indent=1)
 
     # sitemap
+    # lastmod: the date each page's HTML last actually changed (tracked by content hash)
+    import hashlib, datetime
+    lm_file = os.path.join(HERE, "lastmod.json")
+    lm = json.load(open(lm_file)) if os.path.exists(lm_file) else {}
+    today = datetime.date.today().isoformat()
     urls = []
-    for path, _, prio in sorted(pages, key=lambda p: (p[0] != "/", p[0])):
-        urls.append(f"  <url><loc>{L.canonical(path)}</loc><lastmod>{C.FIRST_PUBLISHED}</lastmod><priority>{prio}</priority></url>")
+    for path, html, prio in sorted(pages, key=lambda p: (p[0] != "/", p[0])):
+        h = hashlib.sha1(html.encode("utf-8")).hexdigest()
+        if lm.get(path, {}).get("hash") != h:
+            lm[path] = {"hash": h, "date": today if path in lm or os.path.exists(lm_file) else C.FIRST_PUBLISHED}
+        urls.append(f"  <url><loc>{L.canonical(path)}</loc><lastmod>{lm[path]['date']}</lastmod><priority>{prio}</priority></url>")
+    json.dump(lm, open(lm_file, "w"), indent=1, sort_keys=True)
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(urls) + "\n</urlset>\n"
     open(os.path.join(ROOT, "sitemap.xml"), "w").write(sm)
     open(os.path.join(ROOT, "robots.txt"), "w").write(
