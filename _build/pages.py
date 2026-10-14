@@ -128,13 +128,12 @@ def home(strategies, posts):
         <span class="status-pill"><span class="dot dot--gold"></span>Community: waitlist open</span>
       </div>
     </div>
-    <div class="hero__visual">
-      <div class="chart-card">
-        <div class="particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="chart-card__top"><span class="chart-card__sym">XAU/USD · ANALYSIS VIEW</span><span class="tf" aria-hidden="true"><span>M15</span><span class="on">H1</span><span>H4</span></span></div>
-        {L.chart_svg(HERO_CHART, "Illustrative gold chart showing a liquidity sweep into a demand zone followed by a break of structure")}
-        <p class="chart-card__note">Illustration with hypothetical data — not live prices. <a href="/xauusd-price/">See the XAUUSD chart</a>.</p>
+    <div class="hero__visual hero__visual--globe">
+      <div class="globe-card">
+        <canvas id="globe" class="globe" aria-label="Rotating globe connecting gold trading hubs: London, New York, Zürich, Dubai, Mumbai, Singapore, Hong Kong, Tokyo and Sydney" role="img"></canvas>
+        <div class="globe-cap"><span class="dot dot--gold"></span>Gold trades around the clock — from London to New York to Asia</div>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -337,7 +336,8 @@ def home(strategies, posts):
     <div class="mt-2">{L.notice("<strong>Risk warning.</strong> Leveraged trading and CFDs can result in substantial losses. Content on XAUUSD Global is educational and not personalised financial advice. No strategy or community participation guarantees results.", "risk", "alert")}</div>
   </div>
 </section>
-<script src="/assets/js/hero3d.js" defer></script>"""
+<script src="/assets/js/hero3d.js" defer></script>
+<script src="/assets/js/globe.js" defer></script>"""
     return L.page(path="/", title="XAUUSD Global — Learn to Understand Gold, Not Chase Signals",
                   description="A gold trading learning community built on market reasoning, honest discussion and trade reviews. Free XAUUSD guides now; membership launching soon.",
                   body=body)
