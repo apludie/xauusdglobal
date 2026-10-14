@@ -989,3 +989,18 @@ h3 { letter-spacing: -0.015em; }
 }
 @keyframes introUp { from { opacity: 0; transform: translate3d(0, 18px, 0); } to { opacity: 1; transform: none; } }
 @keyframes lineUp { from { transform: translate3d(0, 108%, 0); } to { transform: none; } }
+
+/* ---------- Blur-in intro (GPU layers: transform + opacity + filter, promoted ahead of time) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero--home .hero__title .ht-l { overflow: visible; }
+  .js .hero--home .ht-in { opacity: 0; transform: translate3d(0, 38px, 0) scale(.985); filter: blur(14px);
+    will-change: transform, opacity, filter; backface-visibility: hidden;
+    animation: blurUp 1.5s cubic-bezier(.19, 1, .22, 1) both; animation-delay: calc(var(--d, 0) * 120ms + 40ms); }
+  .js .intro { opacity: 0; transform: translate3d(0, 20px, 0); filter: blur(8px); will-change: transform, opacity, filter; backface-visibility: hidden;
+    animation: blurUpSm 1.3s cubic-bezier(.19, 1, .22, 1) both; animation-delay: calc(var(--d, 0) * 120ms + 60ms); }
+  .js .globe-box { transform: scale(.92); transition: opacity 1.8s cubic-bezier(.19, 1, .22, 1), transform 2.4s cubic-bezier(.19, 1, .22, 1); }
+  .js .globe-box.on { transform: none; }
+  .js .globe-box.settled { will-change: auto; filter: none; }
+}
+@keyframes blurUp { 0% { opacity: 0; transform: translate3d(0, 38px, 0) scale(.985); filter: blur(14px); } 60% { filter: blur(0); } 100% { opacity: 1; transform: none; filter: blur(0); } }
+@keyframes blurUpSm { 0% { opacity: 0; transform: translate3d(0, 20px, 0); filter: blur(8px); } 100% { opacity: 1; transform: none; filter: blur(0); } }

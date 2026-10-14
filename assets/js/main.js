@@ -392,3 +392,12 @@
     el.addEventListener("pointerleave", function () { rect = null; tx = base[0]; ty = base[1]; go(); });
   });
 })();
+
+/* free GPU layers once intro animations finish */
+(function () {
+  document.addEventListener("animationend", function (e) {
+    var t = e.target; if (t.classList && (t.classList.contains("ht-in") || t.classList.contains("intro"))) { t.style.willChange = "auto"; t.style.filter = "none"; }
+  });
+  var gb = document.querySelector(".globe-box");
+  if (gb) gb.addEventListener("transitionend", function (e) { if (e.propertyName === "filter" && gb.classList.contains("on")) gb.classList.add("settled"); });
+})();
