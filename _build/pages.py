@@ -115,7 +115,7 @@ def home(strategies, posts):
   <div class="wrap hero__grid">
     <div>
       <span class="status-pill"><span class="dot"></span>Free guides available now · Community launching soon</span>
-      <h1>Stop Chasing Signals. <span class="gold-text">Start Understanding Gold.</span></h1>
+      <h1>Trade Gold. Think Deeper. <span class="gold-text">Grow Together.</span></h1>
       <p class="hero__lede">Learn to read the market, question trading ideas, review your decisions, and develop your own process alongside traders who take improvement seriously.</p>
       <div class="btn-row">
         <a class="btn btn--gold" href="/xauusd-trading-strategies/">Explore the Free Guides {ARROW_BTN}</a>
