@@ -63,6 +63,14 @@ def sessions_html():
             'It is not a market-data feed and ignores public holidays. Spot gold and gold CFDs usually trade almost 24 hours on weekdays, with a short daily break that varies by broker.</p>')
 
 
+def tool_band():
+    return f"""<a class="tool-band reveal" href="/tools/position-size-calculator/">
+      <div class="tool-band__icon">{icon("scale")}</div>
+      <div class="tool-band__text"><span class="eyebrow">Free tool</span><h3>XAUUSD Position Size Calculator</h3>
+        <p>Enter your balance, risk % and stop-loss — get your gold lot size and risk-to-reward before you trade.</p></div>
+      <span class="btn btn--gold btn--sm">Open calculator {ARROW_BTN}</span></a>"""
+
+
 def card(path, title, text, tag=None, meta=None, ico=None, num=None):
     t = f'<span class="tag">{esc(tag)}</span>' if tag else ""
     i = f'<div class="card__icon">{icon(ico)}</div>' if ico else ""
@@ -189,6 +197,7 @@ def home(strategies, posts):
       <p>Each guide covers what a framework claims, how traders apply it to XAUUSD, where it breaks down, and how to manage risk around it.</p></div>
     <div class="cards cards--3">{strat_cards}</div>
     <div class="mt-3"><a class="btn btn--ghost" href="/xauusd-trading-strategies/">Browse all 18 strategy topics {ARROW_BTN}</a></div>
+    <div class="mt-3">{tool_band()}</div>
   </div>
 </section>
 
@@ -394,7 +403,7 @@ def price_page():
     {L.faq_html(faqs)}
   </div>
 </section>
-<section class="section--tight section"><div class="wrap">{L.community_cta()}</div></section>"""
+<section class="section--tight section"><div class="wrap">{tool_band()}<div class="mt-3">{L.community_cta()}</div></div></section>"""
     return L.page(path="/xauusd-price/", title="XAUUSD Price Today — Live Gold Price Chart | XAUUSD Global",
                   description="Check the XAUUSD price on a live gold chart with timeframe controls, active trading sessions, and a clear guide to what moves the gold price today.",
                   body=body, crumbs=crumbs)
@@ -466,7 +475,7 @@ def news_page():
     </ul></div>
   </div>
 </section>
-<section class="section--tight section"><div class="wrap">{L.community_cta()}</div></section>"""
+<section class="section--tight section"><div class="wrap">{tool_band()}<div class="mt-3">{L.community_cta()}</div></div></section>"""
     return L.page(path="/xauusd-news/", title="XAUUSD News & Economic Calendar — Gold Market Headlines",
                   description="Gold market news for XAUUSD traders: economic calendar, hourly gold headlines, and how the Fed, inflation, the dollar and yields move the gold price.",
                   body=body, crumbs=crumbs)
@@ -514,7 +523,7 @@ def strategy_hub(strategies):
 <section class="section section--alt">
   <div class="wrap wrap--text prose">{"".join(sections)}</div>
 </section>
-<section class="section"><div class="wrap">{L.community_cta()}</div></section>"""
+<section class="section"><div class="wrap">{tool_band()}<div class="mt-3">{L.community_cta()}</div></div></section>"""
     item_list = {"@type": "ItemList", "name": "XAUUSD strategy guides", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "url": L.canonical(s["path"]), "name": s["title"]} for i, s in enumerate(strategies)]}
     return L.page(path="/xauusd-trading-strategies/", title="XAUUSD Trading Strategies — 18 Gold Trading Methods Explained",

@@ -304,6 +304,7 @@ NAV = [
     ("/xauusd-news/", "News"),
     ("/xauusd-trading-strategies/", "Strategies"),
     ("/blog/", "Blog"),
+    ("/tools/position-size-calculator/", "Calculator"),
     ("/community/", "Community"),
     ("/membership/", "Membership"),
     ("/about/", "About"),
