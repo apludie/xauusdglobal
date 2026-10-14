@@ -879,7 +879,7 @@ def membership_page():
               <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Sorry, we couldn't save your details. Please check your email address and try again.</span></div>
             </div>
             <div id="success-message" class="sib-form-message-panel waitlist__msg waitlist__msg--ok" role="status">
-              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text"><strong>Almost done!</strong> Please check your inbox and click the confirmation link to confirm your launch updates. (If you don't see it, check your spam or promotions folder.)</span></div>
+              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text"><strong>Almost done! Check your email to confirm.</strong> We've sent a confirmation link. <strong>Gmail users: look in the Promotions tab</strong> (or Spam) — it often lands there. Click the link to secure your spot.</span></div>
             </div>
             <div id="sib-container" class="sib-container--large sib-container--vertical">
               <form id="sib-form" method="POST" action="{C.BREVO_FORM_ACTION}" data-type="subscription">
