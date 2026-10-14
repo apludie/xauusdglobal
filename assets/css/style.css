@@ -742,3 +742,7 @@ strong { color: #fff; font-weight: 600; }
 @media (max-width: 959px) { .globe { max-width: 420px; } }
 .globe-card::before { content: ""; position: absolute; inset: -6% -6% 4%; z-index: -1; border-radius: 50%; background: radial-gradient(circle, rgba(8,9,11,.92) 40%, rgba(8,9,11,0) 70%); }
 .globe-cap { position: relative; z-index: 1; margin-top: -8%; }
+/* globe sizing fix: square box, canvas fills it */
+.globe-box { position: relative; width: 100%; max-width: 600px; margin: 0 auto; }
+.globe-box::before { content: ""; display: block; padding-top: 100%; }
+.globe-box .globe { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; aspect-ratio: auto; }
