@@ -57,7 +57,7 @@ Our [XAUUSD price page](/xauusd-price/), the price preview on our homepage and t
 
 ### 3.6 Email service provider (Brevo)
 
-Waitlist sign-ups and related emails are processed by **Brevo** (Sendinblue SAS), an email marketing provider based in the European Union, acting as our processor. When you submit the waitlist form, your details and technical information about the submission (such as your IP address and the time of sign-up, which help prove consent and prevent abuse) are sent to and stored by Brevo. Emails we send through Brevo may contain links and images that allow us to see, in aggregate, whether emails are delivered, opened or clicked. Brevo's processing is governed by its own privacy policy and data-processing terms.
+Waitlist sign-ups and related emails are processed by **Brevo** (Sendinblue SAS), an email marketing provider based in the European Union, acting as our processor. When you submit the waitlist form, your details and technical information about the submission (such as your IP address and the time of sign-up, which help prove consent and prevent abuse) are sent to and stored by Brevo. Emails we send through Brevo may contain links and images that allow us to see, in aggregate, whether emails are delivered, opened or clicked. Brevo's processing is governed by its own privacy policy and data-processing terms. As a backup, a copy of each sign-up (your email address, optional first name and the page you signed up on) is also sent to our own inbox through **FormSubmit**, a form-delivery service, so that no request is lost.
 
 ### 3.7 News headlines
 

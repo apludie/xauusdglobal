@@ -858,6 +858,22 @@ def membership_page():
     var AUTOHIDE = Boolean(0);
   </script>
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+  <script>
+  /* Backup: every sign-up is also emailed instantly to the owner, so no lead is lost if the provider is slow. */
+  (function () {{
+    var f = document.getElementById("sib-form"); if (!f) return;
+    f.addEventListener("submit", function () {{
+      try {{
+        var em = ((f.querySelector("#EMAIL") || {{}}).value || "").trim(), fn = ((f.querySelector("#FIRSTNAME") || {{}}).value || "").trim();
+        if (!/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(em)) return;
+        fetch("https://formsubmit.co/ajax/{C.CONTACT_EMAIL}", {{
+          method: "POST", headers: {{ "Content-Type": "application/json", "Accept": "application/json" }},
+          body: JSON.stringify({{ _subject: "New Founding 50 sign-up: " + em, email: em, first_name: fn, page: location.href, _template: "table", _captcha: "false" }})
+        }}).catch(function () {{}});
+      }} catch (e) {{}}
+    }}, true);
+  }})();
+  </script>
 </section>
 
 <section class="section section--alt">
