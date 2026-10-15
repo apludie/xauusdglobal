@@ -812,8 +812,8 @@ def membership_page():
                 <div class="sib-input sib-form-block">
                   <div class="form__entry entry_block">
                     <div class="form__label-row">
-                      <label class="entry__label" for="FIRSTNAME">First name <span class="muted">(optional)</span></label>
-                      <div class="entry__field"><input class="input" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="given-name" placeholder="Your first name"></div>
+                      <label class="entry__label" for="FIRSTNAME" data-required="*">First name</label>
+                      <div class="entry__field"><input class="input" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="given-name" placeholder="Your first name" data-required="true" required></div>
                     </div>
                     <label class="entry__error entry__error--primary"></label>
                   </div>
