@@ -158,7 +158,7 @@
               <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Sorry, we couldn't save your details. Please check your email address and try again.</span></div>
             </div>
             <div id="success-message" class="sib-form-message-panel waitlist__msg waitlist__msg--ok" role="status">
-              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text"><strong>Almost done! Check your email to confirm.</strong> We've sent a confirmation link. <strong>Gmail users: look in the Promotions tab</strong> (or Spam) — it often lands there. Click the link to secure your spot.</span></div>
+              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text"><strong>You're on the list! 🎉</strong> Your founding spot is reserved. Taking you to your welcome page…</span></div>
             </div>
             <div id="sib-container" class="sib-container--large sib-container--vertical">
               <form id="sib-form" method="POST" action="https://a89ceefb.sibforms.com/serve/MUIFAHGfIidhPtSk4pDIdJfo6MfNsvNZ1Iylxx2xaD-FtwtUxJXYQ4ex5YC8HF0AM3B96cXyierwwFtdWbGjyavl6VTe8uulKUn2pKWRK36lG4YBFQdn0mUHOihWDFNjeGOZT-YE6E9XLbjcZmtDBeGvF_Ru-vRrCeQoYNnBJX0ObSYXFjDmt735NSGRmMGNmIx4zox-uGpAj6_wMw==" data-type="subscription">
@@ -226,6 +226,12 @@
         }).catch(function () {});
       } catch (e) {}
     }, true);
+    var ok = document.getElementById("success-message");
+    if (ok && "MutationObserver" in window) {
+      new MutationObserver(function () {
+        if (ok.offsetParent !== null || getComputedStyle(ok).display !== "none") setTimeout(function () { location.href = "/waitlist-confirmed/"; }, 1400);
+      }).observe(ok, { attributes: true, attributeFilter: ["style", "class"] });
+    }
   })();
   </script>
 </section>

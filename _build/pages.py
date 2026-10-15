@@ -804,7 +804,7 @@ def membership_page():
               <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Sorry, we couldn't save your details. Please check your email address and try again.</span></div>
             </div>
             <div id="success-message" class="sib-form-message-panel waitlist__msg waitlist__msg--ok" role="status">
-              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text"><strong>Almost done! Check your email to confirm.</strong> We've sent a confirmation link. <strong>Gmail users: look in the Promotions tab</strong> (or Spam) — it often lands there. Click the link to secure your spot.</span></div>
+              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text"><strong>You're on the list! 🎉</strong> Your founding spot is reserved. Taking you to your welcome page…</span></div>
             </div>
             <div id="sib-container" class="sib-container--large sib-container--vertical">
               <form id="sib-form" method="POST" action="{C.BREVO_FORM_ACTION}" data-type="subscription">
@@ -872,6 +872,12 @@ def membership_page():
         }}).catch(function () {{}});
       }} catch (e) {{}}
     }}, true);
+    var ok = document.getElementById("success-message");
+    if (ok && "MutationObserver" in window) {{
+      new MutationObserver(function () {{
+        if (ok.offsetParent !== null || getComputedStyle(ok).display !== "none") setTimeout(function () {{ location.href = "/waitlist-confirmed/"; }}, 1400);
+      }}).observe(ok, {{ attributes: true, attributeFilter: ["style", "class"] }});
+    }}
   }})();
   </script>
 </section>
@@ -1068,13 +1074,13 @@ def contact_body():
 
 
 def waitlist_confirmed():
-    """Shown after a visitor clicks the double opt-in link in Brevo's email."""
+    """Thank-you page shown right after a successful sign-up."""
     body = f"""<section class="hero grid-bg">
   <div class="wrap wrap--text center">
     <div class="confirm-badge" aria-hidden="true">{icon("shield")}</div>
-    <span class="eyebrow">Founding spot · Confirmed</span>
-    <h1>You're in. <span class="gold-text">Welcome.</span></h1>
-    <p class="hero__lede" style="margin-left:auto;margin-right:auto">Thank you for confirming your email. Your founding spot request is in, and your invitation to the community rooms will arrive by email. Warm up with the free guides in the meantime — see you in the community rooms soon!</p>
+    <span class="eyebrow">Founding spot · Reserved</span>
+    <h1>Thank you. <span class="gold-text">You're on the list.</span></h1>
+    <p class="hero__lede" style="margin-left:auto;margin-right:auto">Your Founding 50 spot is reserved: 3 months free when the rooms open. Your invitation will arrive by email from info@xauusdglobal.com. Warm up with the free guides in the meantime. See you in the community rooms soon!</p>
     <div class="btn-row" style="justify-content:center"><a class="btn btn--gold" href="/xauusd-trading-strategies/">Explore trading strategies {ARROW_BTN}</a><a class="btn btn--ghost" href="/community/">See inside the community</a></div>
   </div>
 </section>
