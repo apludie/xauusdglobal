@@ -92,4 +92,4 @@ Europe ends summer time on **Sunday, October 25**. From the next day, the London
 
 ## Trade it with the room
 
-This is exactly the kind of week the XAUUSD Global community is built for: traders in London, New York, Dubai and Mumbai marking the same levels, sharing their plans before the Fed and reviewing every move together. [Claim one of the 50 founding spots](/membership/#registration) and get 3 months free.
+This is exactly the kind of week the XAUUSD Global community is built for: traders in London, New York, Dubai and Mumbai marking the same levels, sharing their plans before the Fed and reviewing every move together. [Claim your first month free](/membership/#registration) and trade the week alongside them.

@@ -15,7 +15,7 @@ eyebrow: "Contact"
 
 - **Content corrections.** If you believe an article contains an error, tell us the page and the issue. We take accuracy seriously and will review it.
 - **Website feedback.** Broken links, accessibility problems or display issues.
-- **Community questions.** Anything about the community or the Founding 50 offer. [Claim your free spot](/membership/#registration) — the first 50 members get 3 months free.
+- **Community questions.** Anything about the community or membership. [Claim your free month](/membership/#registration) — your first month is free.
 - **Partnership or media enquiries.**
 
 ## What we can't help with

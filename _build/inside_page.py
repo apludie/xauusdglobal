@@ -13,68 +13,29 @@ def _data():
         return json.load(f)
 
 
-FEATURES = [
-    ("plan", "Daily game plan", "Bias, key levels, session times and the day's news, pinned before London opens."),
-    ("recap", "Trade recaps in R", "Entry, stop, exit and result in R-multiples. Wins, losses and breakevens, all logged."),
-    ("review", "AI chart reviews", "Post your chart and Goldie checks your reasoning point by point in seconds."),
-    ("live", "Live market rooms", "Watch London and New York unfold with mentors, with questions answered as price moves."),
-    ("poll", "Bias polls", "See how the room leans into big events, then compare it with what really happened."),
-    ("levels", "Levels that unlock", "Starter, Advanced, Pro and Degen rooms open up as your skill and contribution grow."),
-]
-
-COMPARE = [
-    ("The trade", "\"BUY GOLD NOW\"", "The reasoning, the levels and what would invalidate the idea"),
-    ("Results", "Only the wins get posted", "Every recap logged in R: wins, losses and breakevens"),
-    ("Questions", "One-way broadcast", "Ask Goldie any time, plus mentors and members in threads"),
-    ("Risk", "Calls without a stop", "Every idea comes with a stop and a risk-to-reward"),
-    ("Structure", "One noisy feed", "Separate rooms for the plan, live market, reviews and each level"),
-    ("The goal", "Copy someone else", "Build your own skill with a journal, checklists and challenges"),
-]
-
-
-def _feature_demo(kind):
-    if kind == "plan":
-        return ('<div class="fd fd-plan"><div class="fd-row"><span>Structure</span><b>Bearish below 4,150</b></div>'
-                '<div class="fd-row"><span>Support</span><b>4,050 · 4,000</b></div><div class="fd-row"><span>Key event</span><b>PPI · 6:00 PM IST</b></div></div>')
-    if kind == "recap":
-        return ('<div class="fd fd-recap"><div class="fd-recap__top"><span class="fd-dir fd-dir--long">LONG</span><b class="fd-r fd-r--win">+3.3R</b></div>'
-                '<div class="fd-recap__grid"><span>Entry<b>4,061</b></span><span>Stop<b>4,048</b></span><span>Exit<b>4,104</b></span></div></div>')
-    if kind == "review":
-        return ('<ul class="fd fd-checks"><li class="ok">Context: sweep + displacement</li><li class="ok">Invalidation below the sweep</li>'
-                '<li class="no">Risk: stop inside the noise</li></ul>')
-    if kind == "live":
-        return ('<div class="fd fd-live"><span class="fd-live__badge"><i></i>LIVE</span><b>NY open + PPI prep</b><span class="fd-live__eye">87 watching</span></div>')
-    if kind == "poll":
-        return ('<div class="fd fd-poll"><div class="fd-bar" style="--w:44%"><span>Bearish</span><b>44%</b></div>'
-                '<div class="fd-bar" style="--w:33%"><span>Flat</span><b>33%</b></div><div class="fd-bar" style="--w:23%"><span>Bullish</span><b>23%</b></div></div>')
-    return ('<div class="fd fd-levels"><span class="lv lv--s">Starter</span><span class="lv lv--a">Advanced</span>'
-            '<span class="lv lv--p">Pro <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>'
-            '<span class="lv lv--d">Degen <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span></div>')
-
-
 def room_stage():
     return """<section class="stage" id="app" aria-label="Interactive preview of the community rooms">
   <div class="stage__inner">
-    <div class="float float--a" aria-hidden="true"><span class="fd-live__badge"><i></i>LIVE</span> NY open session today</div>
-    <div class="float float--b" aria-hidden="true"><b class="fd-r fd-r--loss">−1.0R</b> Loss logged, lesson saved</div>
-    <div class="float float--c" aria-hidden="true"><span class="float__ai">AI</span> Goldie reviewed your chart</div>
-    <div class="float float--d" aria-hidden="true"><span class="float__poll"><i style="--w:44%"></i></span> 212 voted on today's bias</div>
+    <div class="float float--a" aria-hidden="true"><span class="fd-live__badge"><i></i>LIVE</span> Daily briefing ready before London</div>
+    <div class="float float--b" aria-hidden="true"><b class="fd-r fd-r--win">4.5/5</b> Trade scored by your peers</div>
+    <div class="float float--c" aria-hidden="true"><span class="float__ai">XG</span> Your pod posted the Monday plan</div>
+    <div class="float float--d" aria-hidden="true"><span class="float__poll"><i style="--w:72%"></i></span> Daily chart challenge: answered</div>
     <div class="app3d">
       <div class="app" data-app>
         <div class="app__bar"><span class="app__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="app__url">community.xauusdglobal.com</span><span class="app__tag">Interactive preview · sample conversations</span></div>
         <div class="app__body">
           <nav class="app__side" aria-label="Rooms" data-rooms></nav>
           <div class="app__main">
-            <header class="app__head"><div><h2 data-room-name># daily-game-plan</h2><p data-room-desc></p></div><span class="app__watch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.5l-4.2 1.9L12 16l-1.8-4.6L6 9.5l4.2-1.9z"/></svg>Goldie is in this room</span></header>
+            <header class="app__head"><div><h2 data-room-name># daily-game-plan</h2><p data-room-desc></p></div><span class="app__watch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.5l-4.2 1.9L12 16l-1.8-4.6L6 9.5l4.2-1.9z"/></svg>Mentors in this room</span></header>
             <div class="app__pin" data-pin hidden></div>
             <div class="app__thread" data-thread role="log" aria-live="off"></div>
             <div class="app__typing" data-typing hidden><span class="dots"><i></i><i></i><i></i></span><span data-typing-name></span></div>
-            <form class="app__compose" data-compose><label class="sr-only" for="app-msg">Write a message</label><input id="app-msg" type="text" autocomplete="off" placeholder="Ask Goldie anything about gold trading…"><button class="btn btn--gold btn--sm" type="submit">Send</button></form>
+            <form class="app__compose" data-compose><label class="sr-only" for="app-msg">Write a message</label><input id="app-msg" type="text" autocomplete="off" placeholder="Ask the mentors anything about gold…"><button class="btn btn--gold btn--sm" type="submit">Send</button></form>
           </div>
           <aside class="app__rail" aria-label="Room details">
-            <div class="rail-card rail-card--live"><div class="rail-k"><i></i>LIVE NOW</div><b>NY open + PPI prep</b><span>with Lindiwe · <span data-viewers>87</span> watching</span></div>
+            <div class="rail-card rail-card--live"><div class="rail-k"><i></i>LIVE NOW</div><b>NY open + PPI prep</b><span>Live walkthrough with a mentor</span></div>
             <div class="rail-card"><div class="rail-k">ONLINE NOW</div><div class="rail-online" data-online></div></div>
-            <div class="rail-card"><div class="rail-k">THIS WEEK'S CHALLENGE</div><b>Only A+ setups, max 3 trades</b><div class="rail-prog"><i style="width:62%"></i></div><span>62% of members on track</span></div>
+            <div class="rail-card"><div class="rail-k">THIS WEEK'S CHALLENGE</div><b>Only A+ setups, max 3 trades</b><div class="rail-prog"><i style="width:62%"></i></div><span>Your pod's weekly goal</span></div>
             <div class="rail-card"><div class="rail-k">JOURNAL STREAK LEADERS</div><ol class="rail-lead" data-lead></ol></div>
           </aside>
         </div>
@@ -89,25 +50,93 @@ def room_scripts():
     return f'<script type="application/json" id="inside-data">{payload}</script>\n<script src="/assets/js/inside.js" defer></script>'
 
 
+TOUR = [
+    ("briefing", "Today", "Wake up to a plan, not a blank chart.",
+     "Every morning the desk writes your gold briefing from live data: what changed overnight, the levels that matter, high-impact news and the scenarios on both sides. Then a six-step routine keeps you consistent: plan, challenge, pod, journal, check-in, learn.",
+     ["Automatic daily briefing from live XAU/USD data", "Pre-session checklist and end-of-session recap", "Price alerts and session-open reminders"]),
+    ("rooms", "The rooms", "Gold traders from every time zone, in one place.",
+     "Mumbai, Dubai, London, Lagos, New York, Singapore: members sit in the same rooms, each with their country flag. Share charts, reply in threads, react, and ask the mentors when you're stuck.",
+     ["Rooms for game plans, live sessions, chart reviews, wins and lessons", "Share chart screenshots in a tap", "Clean by design: no paid signals, no DM spam"]),
+    ("pod", "Trading pods", "Your own small crew of 5 to 8 traders.",
+     "You're matched with traders on your level in your session: Sydney, Tokyo, London or New York. Post your plan on Monday, check in on Wednesday, review the week on Friday. A volunteer host rotates every week.",
+     ["Matched by skill floor and session", "Weekly process goals everyone can see", "Accountability that keeps you showing up"]),
+    ("review", "Peer reviews", "Get your trades scored on what you control.",
+     "Post a trade with your entry, stop, target and reasoning. Members rate it 1 to 5 on plan, execution and risk, and leave written feedback. A well-planned loss can score higher than a lucky win.",
+     ["Scores for plan, execution and risk", "Feedback from traders and mentors", "Your average shows exactly what to fix"]),
+    ("planner", "Trade planner", "Validate the trade before you click buy or sell.",
+     "Enter entry, stop and target. The planner checks reward-to-risk, whether your stop is inside normal volatility, upcoming news, timeframe alignment and nearby liquidity, then gives the plan a quality score.",
+     ["Position size rounded down so you never over-risk", "News, volatility and liquidity checks", "Save plans, mark them taken or skipped, log the result"]),
+    ("intel", "Market intelligence", "See structure, liquidity and confluence at a glance.",
+     "Market structure on 4H, 1H and 15M with every break of structure, liquidity pools and sweeps, a multi-timeframe confluence score, how gold reacts to each US release, and gold against the dollar and yields.",
+     ["BOS / CHoCH and swing levels across timeframes", "Liquidity map: untouched, swept and broken levels", "News-impact stats and live correlations"]),
+    ("challenge", "Academy", "Learn by doing, every single day.",
+     "Short lessons with quizzes, unlimited structure drills and a daily chart challenge: a real moment from gold's history, the same chart for every member, scored by the server. Members also write lessons for the community library.",
+     ["Lessons from foundations to structure and liquidity", "Daily chart challenge on real XAU/USD history", "Community library, voted by members"]),
+    ("risk", "Risk lab", "Know your drawdowns before the market shows you.",
+     "Run 5,000 simulations of your own win rate and R. See typical drawdowns, the odds of losing streaks, risk of ruin, and how much you'd need to recover. Fill it straight from your journal.",
+     ["Monte Carlo on your real numbers", "Losing-streak and drawdown odds", "Recovery table for every drawdown"]),
+    ("journal", "Journal & mindset", "Track the trader, not just the trades.",
+     "Log trades in R in seconds and watch your stats build: win rate, expectancy, profit factor and streaks. A 30-second daily check-in links your mood, sleep and discipline to your results.",
+     ["Private journal with R-curve and stats", "Daily mindset and discipline check-in", "See how your state shows up in your P&L"]),
+]
+ALL = [
+    ("Live XAU/USD chart", "Full TradingView chart with drawing tools"), ("Session clock", "Sydney, Tokyo, London and New York, in your time zone"),
+    ("Key levels", "Previous day, Asian range and session highs and lows"), ("Economic calendar", "High-impact news with countdown alerts"),
+    ("Volatility meter", "ATR across timeframes so you size correctly"), ("Position-size calculator", "Exact lots for your account and stop"),
+    ("Daily gold briefing", "Written automatically before London"), ("Market structure", "Breaks of structure on 4H, 1H and 15M"),
+    ("Liquidity & sweeps", "Where stops sit and when they get taken"), ("Confluence score", "How many timeframes agree, −100 to +100"),
+    ("News impact", "How gold reacted to every US release"), ("Correlations", "Gold against the US dollar and 10-year yields"),
+    ("Trade planner", "Score every plan before you trade"), ("Risk lab", "5,000 simulations of your edge"),
+    ("Trade journal", "Stats, R-curve and streaks"), ("Mindset tracker", "Mood, sleep and discipline, linked to results"),
+    ("Trading pods", "Your crew of 5 to 8 in your session"), ("Peer reviews", "Trades scored on plan, execution and risk"),
+    ("Academy", "Lessons, quizzes and structure drills"), ("Daily chart challenge", "One real chart a day, scored for you"),
+    ("Community library", "Lessons written by members"), ("Skill floors", "Starter, Advanced, Pro and Mentor's Lab"),
+    ("Reputation & badges", "Earned by helping and staying consistent"), ("Install as an app", "On your phone and desktop, alerts included"),
+]
+FLOORS = [
+    ("Starter", "#8fd3ff", "Foundations, gold basics and beginner chart reviews. Everyone starts here."),
+    ("Advanced", "#45d6c4", "Pass the exam and keep a 10-day journal streak to unlock analysis and trade breakdowns."),
+    ("Pro", "#f2c14e", "Show three detailed trade breakdowns to step into the Pro rooms."),
+    ("Mentor's Lab", "#c9a7ff", "The top floor: traders who lead pods, review in depth and help others grow."),
+]
+COMPARE = [
+    ("The trade", "\"BUY GOLD NOW\"", "The reasoning, the levels and what would invalidate the idea"),
+    ("Results", "Only the wins get posted", "Every trade logged in R: wins, losses and breakevens"),
+    ("Feedback", "Emojis and hype", "Peer scores on plan, execution and risk, with written notes"),
+    ("Risk", "Calls without a stop", "Planner, position sizing and a risk lab built in"),
+    ("Structure", "One noisy feed", "Rooms by topic, skill floors and a small pod in your session"),
+    ("The goal", "Copy someone else", "Build your own edge with a journal, routine and daily practice"),
+]
+
+
 def inside_page():
     path = "/community/inside/"
     crumbs = [("/", "Home"), ("/community/", "Community"), (path, "Look Inside")]
-    d = _data()
-    feats = "".join(f'<article class="feat reveal">{_feature_demo(k)}<h3>{esc(t)}</h3><p>{esc(x)}</p></article>' for k, t, x in FEATURES)
+    tour = ""
+    for i, (img, k, h, p, pts) in enumerate(TOUR):
+        lis = "".join(f"<li>{esc(x)}</li>" for x in pts)
+        tour += f"""<div class="tour__row{' tour__row--flip' if i % 2 else ''} reveal">
+      <div class="tour__txt"><span class="eyebrow">{esc(k)}</span><h3>{esc(h)}</h3><p>{esc(p)}</p><ul class="checklist">{lis}</ul></div>
+      <figure class="tour__shot"><img src="/assets/images/inside/{img}.webp" alt="{esc(k)} screen in the XAUUSD Global community app" loading="lazy" decoding="async"></figure>
+    </div>"""
+    allg = "".join(f'<div class="incl__i"><b>{esc(a)}</b><span>{esc(b)}</span></div>' for a, b in ALL)
+    floors = "".join(f'<div class="floor reveal" style="--c:{c}"><span class="floor__n">Floor {i + 1}</span><b>{esc(n)}</b><p>{esc(t)}</p></div>' for i, (n, c, t) in enumerate(FLOORS))
     rows = "".join(f'<tr><th scope="row">{esc(a)}</th><td class="cmp-them">{esc(b)}</td><td class="cmp-us">{esc(c)}</td></tr>' for a, b, c in COMPARE)
-    cities = ["Mumbai", "Dubai", "London", "New York", "Singapore", "Karachi", "Lagos", "Johannesburg", "Hong Kong", "Sydney", "Zürich", "Toronto", "Riyadh", "Nairobi", "São Paulo", "Istanbul", "Kuala Lumpur", "Manila", "Frankfurt"]
+    cities = ["Mumbai", "Dubai", "London", "New York", "Singapore", "Karachi", "Lagos", "Johannesburg", "Hong Kong", "Sydney", "Zürich", "Toronto", "Riyadh", "Nairobi", "São Paulo", "Istanbul", "Kuala Lumpur", "Manila"]
     city_html = "".join(f"<span>{esc(c)}</span>" for c in cities)
     faqs = [
-        {"q": "What will I see inside the community?", "a": "Rooms for the daily game plan, live market sessions, chart reviews, trade ideas, wins and lessons, plus level rooms that unlock as you grow. Goldie, the AI mentor, answers questions and reviews your charts any time."},
-        {"q": "Who is Goldie?", "a": "Goldie is the community's AI mentor. It explains concepts, reviews the reasoning on your chart, posts the daily game plan and keeps the rooms clean. It never tells you to buy or sell; it helps you build your own judgement."},
-        {"q": "How do I join?", "a": f"[Claim your spot](/membership/#registration). The first 50 founding members get the full community free for 3 months, then it's {C.PLANNED_PRICE}/month."},
+        {"q": "What will I get inside the community?", "a": "Everything on this page: the rooms, your trading pod, peer reviews, the trade planner, market intelligence, the academy and daily chart challenge, the risk lab, your journal and mindset tracker, plus the live chart, session clock, key levels and news calendar."},
+        {"q": "Do you give buy or sell signals?", "a": "No. We share reasoning, levels and risk, and help you build your own skill. Every idea comes with an invalidation and a stop."},
+        {"q": "I'm a beginner. Is it for me?", "a": "Yes. You start on the Starter floor with lessons, a daily routine and a pod of traders at your level. You unlock the next floors as your skill and discipline grow."},
+        {"q": "Does it work on my phone?", "a": "Yes. Open it in your browser and install it as an app on your phone or desktop, alerts and reminders included."},
+        {"q": "How do I join?", "a": f"[Claim your free month](/membership/#registration). Your first month is free, then it's {C.PLANNED_PRICE}/month. We'll email your personal invitation to the rooms."},
     ]
     body = f"""<section class="inside-hero">
   <div class="wrap center">
-    <span class="status-pill status-pill--offer intro" style="--d:0"><span class="dot dot--gold"></span>Look inside · Founding 50</span>
-    <h1 class="inside-title"><span class="ht-l"><span class="ht-in" style="--d:1">Step inside</span></span> <span class="ht-l"><span class="ht-in" style="--d:2">the <em class="serif gold-text">rooms.</em></span></span></h1>
-    <p class="hero__lede intro" style="--d:4">This is where gold traders from every time zone plan the day, watch the market live, review each other's charts and learn from every trade, with Goldie, our AI mentor, always on.</p>
-    <div class="btn-row intro" style="--d:5; justify-content:center"><a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free spot {ARROW}</a><a class="btn btn--ghost" href="#app">Explore the rooms</a></div>
+    <span class="status-pill status-pill--offer intro" style="--d:0"><span class="dot dot--gold"></span>Look inside · First month free</span>
+    <h1 class="inside-title"><span class="ht-l"><span class="ht-in" style="--d:1">Gold traders from</span></span> <span class="ht-l"><span class="ht-in" style="--d:2">every time zone. <em class="serif gold-text">One desk.</em></span></span></h1>
+    <p class="hero__lede intro" style="--d:4">XAUUSD Global connects gold traders from all over the world. Plan the session together, trade with a pod that has your back, get your trades scored by peers, and grow with tools built only for gold.</p>
+    <div class="btn-row intro" style="--d:5; justify-content:center"><a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free month {ARROW}</a><a class="btn btn--ghost" href="#tour">Take the tour</a></div>
   </div>
 </section>
 
@@ -115,64 +144,53 @@ def inside_page():
 
 <div class="marquee marquee--cities" aria-hidden="true"><div class="marquee__inner">{city_html}{city_html}</div></div>
 
-<section class="section">
+<section class="section" id="tour">
   <div class="wrap">
-    <div class="section-head section-head--center reveal"><span class="eyebrow">What you get inside</span><h2>Everything a serious gold trader <em class="serif gold-text">needs.</em></h2>
-      <p>Built for learning on the live market, not for copying calls.</p></div>
-    <div class="feats">{feats}</div>
+    <div class="section-head section-head--center reveal"><span class="eyebrow">The tour</span><h2>Everything a serious gold trader <em class="serif gold-text">needs.</em></h2>
+      <p>Real screens from the members' app. Built for learning on the live market, not for copying calls.</p></div>
+    <div class="tour">{tour}</div>
+    <p class="tour__note">Screens from the community app. Market data is live; member names shown are examples.</p>
   </div>
 </section>
 
 <section class="section section--alt">
+  <div class="wrap">
+    <div class="split split--mock">
+      <div class="reveal"><span class="eyebrow">In your pocket</span><h2>Your trading desk, <em class="serif gold-text">on your phone.</em></h2>
+        <p class="lead">Install the community as an app. Your briefing, pod, alerts and journal are one tap away, from the Sydney open to the New York close.</p>
+        <ul class="checklist"><li>Session-open reminders and price alerts</li><li>Bottom tab bar made for one hand</li><li>Works on iPhone, Android and desktop</li></ul>
+        <a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free month {ARROW}</a></div>
+      <div class="phone reveal"><img src="/assets/images/inside/phone.webp" alt="The community app on a phone" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head section-head--center reveal"><span class="eyebrow">All included</span><h2>24 tools. <em class="serif gold-text">One membership.</em></h2><p>Every member gets every tool, from day one.</p></div>
+    <div class="incl reveal">{allg}</div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head section-head--center reveal"><span class="eyebrow">Skill floors</span><h2>The deeper you go, the <em class="serif gold-text">sharper</em> it gets.</h2>
+      <p>You don't buy your way up. You climb with skill, discipline and by helping others.</p></div>
+    <div class="floors">{floors}</div>
+  </div>
+</section>
+
+<section class="section">
   <div class="wrap">
     <div class="section-head section-head--center reveal"><span class="eyebrow">Why it's different</span><h2>A Telegram group vs <em class="serif gold-text">our rooms.</em></h2></div>
-    <div class="cmp-wrap reveal"><table class="cmp"><thead><tr><th scope="col"><span class="sr-only">Topic</span></th><th scope="col">Typical Telegram group</th><th scope="col">XAUUSD Global rooms</th></tr></thead><tbody>{rows}</tbody></table></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="split">
-      <div class="reveal">
-        <span class="eyebrow">Meet Goldie</span>
-        <h2>Your AI mentor that <em class="serif gold-text">never sleeps.</em></h2>
-        <p class="lead">Ask about a fair value gap at 3 AM, post a chart before London, or get the day's plan before your first coffee. Goldie answers in seconds, checks your reasoning and keeps every room clean.</p>
-        <ul class="checklist">
-          <li>Explains any concept, from basics to ICT and SMC</li>
-          <li>Reviews your chart: context, invalidation, risk and timing</li>
-          <li>Posts the daily gold game plan before London opens</li>
-          <li>Removes spam, scams and "DM me for signals" instantly</li>
-        </ul>
-      </div>
-      <div class="goldie-card reveal" aria-hidden="true">
-        <div class="gc-msg gc-msg--me">Is a CHoCH on M15 enough to flip my bias?</div>
-        <div class="gc-msg gc-msg--ai"><span class="float__ai">AI</span><div>On its own, rarely. An M15 CHoCH against an H4 downtrend is usually a pullback. Look for displacement, a fair value gap and the higher-timeframe level it formed at. If all three line up, it's worth a plan.</div></div>
-        <div class="gc-msg gc-msg--me">So what would make it valid?</div>
-        <div class="gc-typing"><span class="dots"><i></i><i></i><i></i></span> Goldie is typing…</div>
-      </div>
-    </div>
+    <div class="cmp-wrap reveal"><table class="cmp"><thead><tr><th scope="col"><span class="sr-only">Topic</span></th><th scope="col">Typical Telegram group</th><th scope="col">XAUUSD Global</th></tr></thead><tbody>{rows}</tbody></table></div>
   </div>
 </section>
 
 <section class="section section--alt">
   <div class="wrap">
-    <div class="section-head section-head--center reveal"><span class="eyebrow">Level rooms</span><h2>The deeper you go, the <em class="serif gold-text">sharper</em> it gets.</h2>
-      <p>Degen lab and the Mentor circle unlock as you contribute. Here's a glimpse of the conversations waiting for you.</p></div>
-    <div class="locked reveal">
-      <div class="locked__blur" aria-hidden="true">
-        <p><b>rohan_mumbai</b> With 10-year yields at 5.2%, a hike on the 28th is partly priced. The asymmetric trade is a dovish surprise: watch the front-end, not the headline.</p>
-        <p><b>weiling_sg</b> Agreed. DXY failed to make a new high while gold swept 4,056. That SMT divergence is the confirmation I want before any long.</p>
-        <p><b>aisha_dxb</b> Mitigation block at 4,104 vs the breaker at 4,138: which one do you respect if PPI comes in hot?</p>
-      </div>
-      <div class="locked__over"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><b>Mentor circle</b><span>Unlocks as you level up</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
     <div class="offer-stage reveal">
-      <div class="coin-wrap" aria-hidden="true"><canvas class="coin3d"></canvas><div class="coin-shadow"></div><div class="coin-fallback">50</div></div>
+      <div class="coin-wrap" aria-hidden="true"><canvas class="coin3d"></canvas><div class="coin-shadow"></div><div class="coin-fallback">1</div></div>
       {L.offer_box()}
     </div>
     <div class="wrap--text" style="margin:56px auto 0">{L.faq_html(faqs)}</div>
@@ -180,6 +198,6 @@ def inside_page():
 </section>
 {room_scripts()}
 <i hidden data-lazy-js data-src="/assets/js/coin.js" data-when=".coin3d"></i>"""
-    return L.page(path=path, title="Look Inside the XAUUSD Global Community Rooms",
-                  description="Step inside the XAUUSD Global rooms: daily gold game plans, live market sessions, AI chart reviews, trade recaps and level rooms. First 50 members get 3 months free.",
+    return L.page(path=path, title="Look Inside the XAUUSD Global Community",
+                  description="Look inside XAUUSD Global: gold traders from every time zone, daily briefings, trading pods, peer-scored trades, a trade planner, an academy and a risk lab.",
                   body=body, crumbs=crumbs, schema_extra=[L.faq_schema(faqs)])

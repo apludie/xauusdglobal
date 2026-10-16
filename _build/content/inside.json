@@ -255,7 +255,7 @@
      "type": "text",
      "from": "goldie",
      "time": "9:04 AM",
-     "text": "Hi, I'm Goldie, the AI mentor in this community. I'm an AI, not a human trader, and I never give buy or sell signals. I can explain concepts, review your reasoning before you act, size positions with the calculator, and flag risk around events like today's PPI.",
+     "text": "Hi everyone, Noura here, one of the mentors. No buy or sell calls in this community: we share reasoning, levels and risk. Post your chart with your entry, stop and why, and someone from your session will review it. Tip for newcomers: start in your trading pod and do the daily chart challenge.",
      "reactions": [
       [
        "🤖",
@@ -338,7 +338,7 @@
    "id": "plan",
    "name": "daily-game-plan",
    "group": "Every day",
-   "desc": "Goldie's levels, events and session plan, refreshed before London",
+   "desc": "Levels, events and the session plan, refreshed before London",
    "live": false,
    "pinned": "Levels refresh daily before London (12:30 PM IST). Educational context only, not signals.",
    "messages": [
@@ -609,9 +609,9 @@
    "id": "ask",
    "name": "ask-the-mentors",
    "group": "Learn together",
-   "desc": "Any question, beginner or advanced. Mentors and Goldie answer",
+   "desc": "Any question, beginner or advanced. Mentors and members answer",
    "live": false,
-   "pinned": "Ask anything. Mentors and Goldie explain; nothing here is a signal.",
+   "pinned": "Ask anything. Mentors and members explain; nothing here is a signal.",
    "messages": [
     {
      "type": "text",
@@ -735,9 +735,9 @@
    "id": "charts",
    "name": "chart-reviews",
    "group": "Learn together",
-   "desc": "Post a chart, get Goldie's checklist and mentor feedback",
+   "desc": "Post a chart, get a checklist review and peer scores",
    "live": false,
-   "pinned": "Post timeframe, entry, stop and target. Goldie reviews reasoning, not outcomes.",
+   "pinned": "Post timeframe, entry, stop and target. Reviews score the reasoning, not the outcome.",
    "messages": [
     {
      "type": "text",

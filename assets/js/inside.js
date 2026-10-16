@@ -9,10 +9,10 @@
   var D = JSON.parse(src.textContent);
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var M = {}; D.members.forEach(function (m) { M[m.id] = m; });
-  M.goldie = { id: "goldie", name: "Goldie", handle: "Goldie", level: "AI mentor", color: "#f2c14e", cc: "AI", ai: true };
+  M.goldie = { id: "goldie", name: "Noura", handle: "noura_riyadh", level: "Mentor", color: "#f2c14e", cc: "SA", ai: false };
   var $ = function (s, r) { return (r || app).querySelector(s); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
-  var LV = { Starter: "lv-s", Advanced: "lv-a", Pro: "lv-p", Degen: "lv-d", Mentor: "lv-m", "AI mentor": "lv-ai" };
+  var LV = { Starter: "lv-s", Advanced: "lv-a", Pro: "lv-p", Degen: "lv-d", "Mentor's Lab": "lv-d", Mentor: "lv-m", "AI mentor": "lv-ai" };
   var ICON = {
     hash: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L7 20M17 4l-2 16M4 9h17M3 15h17"/></svg>',
     lock: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',
@@ -38,7 +38,7 @@
   function who(m) {
     var u = M[m.from] || M.goldie;
     var av = '<div class="msg__av' + (u.ai ? " msg__av--ai" : "") + '" style="--c:' + u.color + '" aria-hidden="true">' + (u.ai ? "AI" : esc(u.name.charAt(0))) + "</div>";
-    var meta = '<div class="msg__meta"><b>' + esc(u.ai ? "Goldie" : u.handle) + '</b><span class="lv ' + (LV[u.level] || "") + '">' + esc(u.level) + "</span>" +
+    var meta = '<div class="msg__meta"><b>' + esc(u.handle) + '</b><span class="lv ' + (LV[u.level] || "") + '">' + esc(u.level) + "</span>" +
       (u.ai || u.id === "__you" ? "" : '<span class="cc">' + esc(u.cc) + "</span>") + "<time>" + esc(m.time || "") + "</time></div>";
     return { av: av, meta: meta, ai: !!u.ai };
   }
@@ -110,7 +110,7 @@
   }
   function renderMsg(m) {
     var el = document.createElement("article");
-    if (m.type === "mod") { el.className = "msg msg--mod"; el.innerHTML = '<div class="msg__av msg__av--ai" aria-hidden="true">AI</div><div class="msg__c"><div class="msg__meta"><b>Goldie</b><span class="lv lv-ai">Auto-mod</span><time>' + esc(m.time) + '</time></div><p class="mod">' + esc(m.text) + "</p></div>"; return el; }
+    if (m.type === "mod") { el.className = "msg msg--mod"; el.innerHTML = '<div class="msg__av msg__av--ai" aria-hidden="true">XG</div><div class="msg__c"><div class="msg__meta"><b>XAUUSD Global</b><span class="lv lv-ai">Auto-mod</span><time>' + esc(m.time) + '</time></div><p class="mod">' + esc(m.text) + "</p></div>"; return el; }
     var w = who(m);
     el.className = "msg" + (w.ai ? " msg--ai" : "") + " msg--" + m.type;
     el.innerHTML = w.av + '<div class="msg__c">' + w.meta + '<div class="msg__b">' + body(m) + "</div>" + reacts(m) + "</div>";
@@ -129,7 +129,7 @@
     timer = 0;
     if (!queue.length || !visible) { typing.hidden = true; return; }
     var m = queue[0], u = M[m.from] || M.goldie;
-    typingName.textContent = (m.type === "mod" || u.ai ? "Goldie" : u.handle) + " is typing…";
+    typingName.textContent = (m.type === "mod" ? "Auto-mod" : u.handle) + " is typing…";
     typing.hidden = false;
     var len = (m.text || m.note || m.question || m.title || "").length;
     timer = setTimeout(function () {
@@ -171,20 +171,20 @@
     ["Should I buy gold now?", "I never tell anyone to buy or sell. What I can do is help you build your own plan: the context, the level where you'd be wrong, and a size that keeps the risk small. Post your chart in #chart-reviews and I'll check the reasoning with you."]
   ];
   var chipsEl = document.createElement("div"); chipsEl.className = "app__chips";
-  chipsEl.innerHTML = '<span>Try asking Goldie:</span>' + CHIPS.map(function (c, i) { return '<button type="button" data-chip="' + i + '">' + esc(c[0]) + "</button>"; }).join("");
+  chipsEl.innerHTML = '<span>Ask the mentors:</span>' + CHIPS.map(function (c, i) { return '<button type="button" data-chip="' + i + '">' + esc(c[0]) + "</button>"; }).join("");
   var form = $("[data-compose]"); form.parentNode.insertBefore(chipsEl, form);
   var pending = false, asked = 0;
   function ask(q, a) {
     if (pending) return; pending = true;
     clearTimeout(timer); timer = 0; queue = [];
     add({ type: "text", from: "__you", time: "Just now", text: q }, true);
-    typing.hidden = false; typingName.textContent = "Goldie is typing…";
+    typing.hidden = false; typingName.textContent = "noura_riyadh is typing…";
     setTimeout(function () {
       typing.hidden = true; pending = false; asked++;
       add({ type: "text", from: "goldie", time: "Just now", text: a }, true);
       if (asked === 1) {
         var bar = document.createElement("div"); bar.className = "app__join";
-        bar.innerHTML = '<span><b>Your seat is waiting.</b> First 50 members get 3 months free.</span><a class="btn btn--gold btn--sm" href="/membership/#registration">Claim my spot</a>';
+        bar.innerHTML = '<span><b>Your seat is waiting.</b> Your first month is free.</span><a class="btn btn--gold btn--sm" href="/membership/#registration">Claim my spot</a>';
         form.parentNode.insertBefore(bar, form); 
       }
     }, 1400);

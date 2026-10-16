@@ -354,7 +354,7 @@ def header(current):
     icur = ' aria-current="page"' if inside else ""
     ihref = "/community/inside/"
     links.append(f'<li class="nav-inside"><a href="{ihref}"{icur}><span class="live-dot" aria-hidden="true"></span>Inside the rooms</a></li>')
-    links.append('<li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Claim my free spot</a></li>')
+    links.append('<li class="nav-cta"><a class="btn btn--gold btn--sm" href="/membership/#registration">Claim my free month</a></li>')
     return f"""<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
@@ -413,7 +413,7 @@ def footer():
       </ul></div>
     </div>
     {social_links()}
-    <div class="footer-bottom"><span>&copy; {year} {C.SITE_NAME}. All rights reserved.</span><span>Founding 50 · first 50 members get 3 months free.</span></div>
+    <div class="footer-bottom"><span>&copy; {year} {C.SITE_NAME}. All rights reserved.</span><span>One market. One global community. First month free.</span></div>
   </div>
 </footer>"""
 
@@ -543,10 +543,10 @@ def faq_schema(faqs):
 
 def community_cta(compact=False):
     return f"""<aside class="cta-band" aria-labelledby="cta-h">
-  <span class="eyebrow">Founding 50 · 3 months free</span>
+  <span class="eyebrow">Your first month free</span>
   <h2 id="cta-h">Find your mentor. Find your people. Trade gold <em class="serif gold-text">together.</em></h2>
-  <p>Traders from every corner of the world are taking their seats. Learn live on the market, get your charts reviewed by experienced traders, and grow your skills every single day. The first 50 members join <strong>free for 3 months</strong> — then just {C.PLANNED_PRICE}/month.</p>
-  <div class="btn-row"><a class="btn btn--gold" href="/membership/#registration">Claim my free spot {icon("arrow")}</a><a class="btn btn--ghost" href="/community/inside/">Take the full tour</a></div>
+  <p>Traders from every corner of the world are taking their seats. Learn live on the market, get your charts reviewed by experienced traders, and grow your skills every single day. Your <strong>first month is free</strong> — then just {C.PLANNED_PRICE}/month.</p>
+  <div class="btn-row"><a class="btn btn--gold" href="/membership/#registration">Claim my free month {icon("arrow")}</a><a class="btn btn--ghost" href="/community/inside/">Take the full tour</a></div>
   <p class="cta-sign">See you in the community rooms soon. ✦</p>
 </aside>"""
 
@@ -558,7 +558,7 @@ BENEFITS = [
     ("chart", "Real-time trade ideas", "See live setups with the full reasoning behind them, so you can act on ideas with confidence and build your own edge."),
     ("target", "Your charts reviewed", "Post your analysis and get feedback from traders at the next level. The fastest way to sharpen your skills."),
     ("news", "Daily gold game plan", "Key levels, sessions and the news that moves gold — so you start every day prepared."),
-    ("layers", "Level rooms that grow with you", "Starter, Advanced, Pro and Degen rooms. Level up through contribution and unlock new circles."),
+    ("layers", "Level rooms that grow with you", "Starter, Advanced, Pro and Mentor's Lab floors. Level up through contribution and unlock new circles."),
     ("message", "A community that has your back", "Ask anything, any time. Celebrate wins, break down lessons and grow together with people who get it."),
 ]
 
@@ -571,7 +571,7 @@ def benefits_grid(n=None):
 
 def offer_box():
     return f"""<div class="offer-box">
-  <p class="offer-box__price"><span class="offer-box__free">3 months <em class="serif">free</em></span> <span class="offer-box__then">for the first 50 members, then {C.PLANNED_PRICE}/month</span></p>
-  <a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free spot {icon("arrow")}</a>
+  <p class="offer-box__price"><span class="offer-box__free">1st month <em class="serif">free</em></span> <span class="offer-box__then">then {C.PLANNED_PRICE}/month</span></p>
+  <a class="btn btn--gold magnetic" href="/membership/#registration">Claim my free month {icon("arrow")}</a>
   <p class="offer-box__note">No card needed to claim your spot. See you in the community rooms soon.</p>
 </div>"""

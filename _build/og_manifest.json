@@ -137,7 +137,7 @@
  {
   "key": "membership",
   "path": "/membership/",
-  "title": "Membership \u2014 First 50 Get 3 Months Free"
+  "title": "Membership \u2014 First Month Free"
  },
  {
   "key": "about",
@@ -162,7 +162,7 @@
  {
   "key": "community-inside",
   "path": "/community/inside/",
-  "title": "Look Inside the XAUUSD Global Community Rooms"
+  "title": "Look Inside the XAUUSD Global Community"
  },
  {
   "key": "contact",
