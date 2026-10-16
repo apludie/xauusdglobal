@@ -50,3 +50,7 @@ SOCIAL = [
     ("Medium", "https://medium.com/@xauusdglobal"),
     ("Quora", "https://www.quora.com/profile/XAUUSD-Global"),
 ]
+
+# Community database: website sign-ups are saved here too (public anon key; it can only add a sign-up, never read)
+SUPABASE_URL = "https://vklibmfbdojdzivvspin.supabase.co"
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZrbGlibWZiZG9qZHppdnZzcGluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIwODYyMDIsImV4cCI6MjEwNzY2MjIwMn0.4qERORdTcyFtw1Xe5mBIpyXwaivixitWLgbGwB6QWc8"

@@ -833,7 +833,7 @@ def membership_page():
                     Claim my free month
                   </button>
                 </div>
-                <p class="waitlist__legal">By joining, you agree to receive emails from XAUUSD Global about the community. We'll send a quick confirmation email first. Unsubscribe anytime. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+                <p class="waitlist__legal">By joining, you agree to receive emails from XAUUSD Global about the community. We'll email your personal invitation to the rooms. Unsubscribe anytime. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
                 <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <input type="hidden" name="locale" value="en">
               </form>
@@ -869,6 +869,11 @@ def membership_page():
         fetch("https://formsubmit.co/ajax/{C.CONTACT_EMAIL}", {{
           method: "POST", headers: {{ "Content-Type": "application/json", "Accept": "application/json" }},
           body: JSON.stringify({{ _subject: "New free-month sign-up: " + em, email: em, first_name: fn, page: location.href, _template: "table", _captcha: "false" }})
+        }}).catch(function () {{}});
+        /* safety net 2: saved straight into the community database, whatever happens with the email provider */
+        fetch("{C.SUPABASE_URL}/rest/v1/rpc/add_lead", {{
+          method: "POST", keepalive: true, headers: {{ "Content-Type": "application/json", "apikey": "{C.SUPABASE_ANON_KEY}", "Authorization": "Bearer {C.SUPABASE_ANON_KEY}" }},
+          body: JSON.stringify({{ p_email: em, p_first_name: fn, p_page: location.href }})
         }}).catch(function () {{}});
       }} catch (e) {{}}
     }}, true);
